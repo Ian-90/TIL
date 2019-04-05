@@ -25,3 +25,12 @@
   * 데이터가 변하면 UI도 업데이트됨.
 
 * 설치
+```bash
+npx create-react-app 폴더명
+```
+
+## 2. Component 그리고 Props
+
+* Component
+  * JSX문법(React로 작성하는 HTML문법)을 사용 
+  * 모든 Component는 render function을 가짐. (render - 출력)
