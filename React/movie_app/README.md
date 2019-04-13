@@ -132,3 +132,6 @@ npx create-react-app 폴더명
     })}
     ```
     컴포넌트에 고유한 key값을 props로 내려주면 error가 사라진다.
+
+* Validating Props with PropTypes
+  * propTypes를 이용하여 부모컴포넌트에서 받는 데이터 정보를 확인 할 수 있다.
