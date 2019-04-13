@@ -204,3 +204,22 @@ npx create-react-app 폴더명
   * Loading States
     * [Loading 만들기](https://github.com/Ian-90/TIL/commit/7f5b4f234f0eb6ca8d852d253d0bb9cf11cccc74)
     * [conditional ternary operator](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+
+## 5. Stateless Functional Components
+  * Smart vs Dumb Component
+    * state가 있는 컴포넌트 - class 컴포넌트, render() 있음, Lifecycle 있음
+    * state가 없는 컴포넌트 - functional 컴포넌트, render() 없음, Lifecycle 없음
+    * functional 컴포넌트 작성법 - javascript 함수 작성하듯이 하면 됨. 단, 부모로부터 받은 props들은 this를 사용하지 않는다.
+    ```javascript
+    const MoviePoster = (props) => {
+      return (
+        <img src={props.poster} alt='Movie Poster' />
+      )
+    }
+    ```
+    * propsTypes 사용법
+    ```javascript
+    MoviePoster.propTypes = {
+      poster: PropTypes.string.isRequired
+    }
+    ```
