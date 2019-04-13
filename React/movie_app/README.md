@@ -166,7 +166,7 @@ npx create-react-app 폴더명
     * state를 변경하는 방법 - this.setState()를 이용해야 한다. 절대로 this.state.key = value를 해서는 안된다. 예를 들어
     위 코드에서 componentDidMount() 안에 this.state.greeting = 'something'을 작성하면 에러가 난다.
       * state error
-      [state error](./assets/lecture_4-1_state_error.png)
+      ![state error](./assets/lecture_4-1_state_error.png)
       
       * setState() 사용
       ```javascript
