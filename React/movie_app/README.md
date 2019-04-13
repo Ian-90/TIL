@@ -121,3 +121,14 @@ npx create-react-app 폴더명
     }
   }
   ```
+
+  * key - Array의 자식 컴포넌트들은 key값을 가져야 한다. key는 고유해야함.
+    * key error
+    ![key error](./assets/lecture_2-4_key_error.png)
+    * App.js Refactoring
+    ```javascript
+    {movies.map((movie, idx) => {
+      return <Movie title={movie.title} poster={movie.poster} key={idx} />
+    })}
+    ```
+    컴포넌트에 고유한 key값을 props로 내려주면 error가 사라진다.
