@@ -135,3 +135,11 @@ npx create-react-app 폴더명
 
 * Validating Props with PropTypes
   * propTypes를 이용하여 부모컴포넌트에서 받는 데이터 정보를 확인 할 수 있다.
+
+##3 컴포넌트 Lifecycle
+  * Lifecycle Events on React
+    * [React 공식문서 Lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) - 최신판
+    * Lifecycle - 컴포넌트는 여러 기능들을 정해진 순서대로 실행
+    * Render: componentWillMount() => render() => componentDidMount()
+    * Update: componentWillReceiveProps() => shouldComponentUpdate() => componentWillUpdate() => render() => componenetDidUpdate()
+    * 조금 오래된 강의라 최신버전은 Lifecycle이 업데이트 되어서 위에 공식문서가 더 정확합니다. 이것은 강의 내용 요약때문에 써놓은 것입니다.
