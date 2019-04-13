@@ -17,7 +17,7 @@ const movies = [
   },
   {
     title: 'Star Wars',
-    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDhhUig0ltFxr99G4LY90vweM34VJOoNoyvBaP-0Nm6MZSdhoab'
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDhhUig0ltFxr99G4LY90vweM34VJOoNoyvBaP-0Nm6MZSdhoabA'
   }
 ]
 
@@ -25,8 +25,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {movies.map(movie => {
-          return <Movie title={movie.title} poster={movie.poster} />
+        {movies.map((movie, idx) => {
+          return <Movie title={movie.title} poster={movie.poster} key={idx} />
         })}
       </div>
     );
