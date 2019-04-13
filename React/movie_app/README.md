@@ -200,3 +200,7 @@ npx create-react-app 폴더명
     * [setTimeout()](https://developer.mozilla.org/ko/docs/Web/API/WindowTimers/setTimeout) - 지정된 시간이 만료된 후 콜백함수 실행
 
     * [Spread Operator](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_operator)
+
+  * Loading States
+    * [Loading 만들기](https://github.com/Ian-90/TIL/commit/7f5b4f234f0eb6ca8d852d253d0bb9cf11cccc74)
+    * [conditional ternary operator](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
