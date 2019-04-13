@@ -193,3 +193,10 @@ npx create-react-app 폴더명
       }
       ```
       5초 후, state가 변경되므로 Hello가 Hello again!으로 바뀌고 컴포넌트가 리렌더링된다.
+      
+  * Practicing this.setState()
+    * [setState 연습](https://github.com/Ian-90/TIL/commit/ec9cecbe5049dd3eb222e75d8ae401a654ad3954#diff-c5c30be4a164ee75953a2917bc3b2811)
+
+    * [setTimeout()](https://developer.mozilla.org/ko/docs/Web/API/WindowTimers/setTimeout) - 지정된 시간이 만료된 후 콜백함수 실행
+
+    * [Spread Operator](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_operator)
