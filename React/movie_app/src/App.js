@@ -23,7 +23,7 @@ const movies = [
 
 class App extends Component {
   state = {
-    greeting: 'Hello'
+    greeting: 'Hellog'
   }
 
   componentDidMount = () => {
@@ -33,6 +33,7 @@ class App extends Component {
       })
     }, 5000)
   }
+  
   render() {
     return (
       <div className="App">
