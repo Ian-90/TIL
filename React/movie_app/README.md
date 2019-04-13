@@ -217,7 +217,7 @@ npx create-react-app 폴더명
       )
     }
     ```
-    * propsTypes 사용법
+    * functional 컴포넌트 propTypes 사용법
     ```javascript
     MoviePoster.propTypes = {
       poster: PropTypes.string.isRequired
