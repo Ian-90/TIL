@@ -136,10 +136,56 @@ npx create-react-app 폴더명
 * Validating Props with PropTypes
   * propTypes를 이용하여 부모컴포넌트에서 받는 데이터 정보를 확인 할 수 있다.
 
-##3 컴포넌트 Lifecycle
+## 3. 컴포넌트 Lifecycle
   * Lifecycle Events on React
     * [React 공식문서 Lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) - 최신판
     * Lifecycle - 컴포넌트는 여러 기능들을 정해진 순서대로 실행
     * Render: componentWillMount() => render() => componentDidMount()
     * Update: componentWillReceiveProps() => shouldComponentUpdate() => componentWillUpdate() => render() => componenetDidUpdate()
     * 조금 오래된 강의라 최신버전은 Lifecycle이 업데이트 되어서 위에 공식문서가 더 정확합니다. 이것은 강의 내용 요약때문에 써놓은 것입니다.
+
+## 4. State
+  * Thinking in React Component State
+    * state는 리액트 안에 있는 오브젝트.
+    * state가 바뀔 때 마다 컴포넌트가 리렌더됨.
+    * state를 만드는 방법 - 컴포넌트안에 state = {} 작성 후, 원하는 key, value를 적어주면 된다.
+    ```javascript
+    class App extends Component {
+      state = {
+        greeting : 'Hello'
+      }
+      render() {
+        return (
+          <div>
+            ...생략
+          </div>
+        )
+      }
+    }
+    ```
+    * state를 변경하는 방법 - this.setState()를 이용해야 한다. 절대로 this.state.key = value를 해서는 안된다. 예를 들어
+    위 코드에서 componentDidMount() 안에 this.state.greeting = 'something'을 작성하면 에러가 난다.
+    ```javascript
+    class App extends Component {
+      state = {
+        greeting : 'Hello'
+      }
+
+      componentDidMount = () => {
+        setTimeout(() => {
+          this.setState({
+            greeting: 'Hello again!'
+          })
+        }, 5000)
+      }
+      render() {
+        return (
+          <div>
+            {this.state.greeting}
+            ...생략
+          </div>
+        )
+      }
+    }
+    ```
+    5초 후, state가 변경되므로 Hello가 Hello again!으로 바뀌고 컴포넌트가 리렌더링된다.
