@@ -238,3 +238,7 @@ npx create-react-app 폴더명
     * Promise에서 then을 많이쓰는 콜백지옥을 경험 할 수 있기 때문에 Async Await 문법을 쓰면 간편하다.
     * [Async Await](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function)
     * Array.map에서 key를 index로 사용하면 느려짐.
+
+## 7. Finishing Up
+  * Updating Movie Component
+    * 디자인을 따라하기 위해서 genre, synopsis등 Movie컴포넌트에 props로 내려주고, 컴포넌트를 생성함.
