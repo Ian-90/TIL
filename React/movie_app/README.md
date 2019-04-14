@@ -227,3 +227,9 @@ npx create-react-app 폴더명
   * Ajax in React
     * Ajax(Asynchronous JavaScript and XML) - url을 자바스크립트로 비동기적 방법으로 불러옴
     * 사용하는 이유 - 무언가를 불러 올 때 마다 페이지를 새로고침 하고싶지 않음.
+    * 강의에서는 GET 방식만 사용할 것임.
+  
+  * Promises
+    * [Fetch API 개념](https://developer.mozilla.org/ko/docs/Web/API/Fetch_API)
+    * [Fetch API 사용법](https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Fetch%EC%9D%98_%EC%82%AC%EC%9A%A9%EB%B2%95)
+    * [Promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)
