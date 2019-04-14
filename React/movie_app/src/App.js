@@ -8,18 +8,29 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://yts.am/api/v2/list_movies.json?sort_by=download_count')
-    .then(res => res.json())
-    .then(json => console.log(json))
-    .catch(err => console.log(err))
+    this.getMovies();
   }
 
   renderMovies = () => {
-    const movies = this.state.movies.map((movie, idx) => {
-      return <Movie title={movie.title} poster={movie.poster} key={idx} />
+    const movies = this.state.movies.map(movie => {
+      return <Movie title={movie.title} poster={movie.large_cover_image} key={movie.id} />
     })
 
     return movies
+  }
+  
+  getMovies = async () => {
+    const movies = await this.callApi()
+    this.setState({
+      movies
+    }) 
+  }
+
+  callApi = () => {
+    return fetch('https://yts.am/api/v2/list_movies.json?sort_by=download_count')
+    .then(res => res.json())
+    .then(json => json.data.movies)
+    .catch(err => console.log(err))
   }
 
   render() {
