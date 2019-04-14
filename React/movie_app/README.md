@@ -197,7 +197,7 @@ npx create-react-app 폴더명
   * Practicing this.setState()
     * [setState 연습](https://github.com/Ian-90/TIL/commit/ec9cecbe5049dd3eb222e75d8ae401a654ad3954#diff-c5c30be4a164ee75953a2917bc3b2811)
 
-    * [setTimeout()](https://developer.mozilla.org/ko/docs/Web/API/WindowTimers/setTimeout) - 지정된 시간이 만료된 후 콜백함수 실행
+    * [setTimeout()](https://developer.mozilla.org/ko/docs/Web/API/WindowTimers/setTimeout) - 지정된 시간이 만료된 후 콜백함수를 실행
 
     * [Spread Operator](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_operator)
 
