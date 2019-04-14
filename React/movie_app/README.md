@@ -223,3 +223,7 @@ npx create-react-app 폴더명
       poster: PropTypes.string.isRequired
     }
     ```
+## 6. AJAX
+  * Ajax in React
+    * Ajax(Asynchronous JavaScript and XML) - url을 자바스크립트로 비동기적 방법으로 불러옴
+    * 사용하는 이유 - 무언가를 불러 올 때 마다 페이지를 새로고침 하고싶지 않음.
