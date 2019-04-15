@@ -244,3 +244,7 @@ npx create-react-app 폴더명
     * 디자인을 따라하기 위해서 genre, synopsis등 Movie컴포넌트에 props로 내려주고, 컴포넌트를 생성함.
   * Giving some CSS to Movie
     * CSS에 대한 설명은 무엇을 작업했다라고만 말해줌. 자세한건 카카오톡 클론코딩 수업 들으라고함
+
+## 8. Building for Production
+  * Building for production
+    * yarn build와 package.json을 통해서 github에 호스팅함
