@@ -30,6 +30,7 @@
     * JSX란 ? React에서 사용하는 HTML과 비슷한 자바스크립트 문법
     * 문법
       * 꼭 닫혀야 하는 태그 - 태그를 닫지 않으면 에러가 난다.
+
       ```javascript
       import React, { Component } from 'react'
 
@@ -43,9 +44,11 @@
         }
       }
       ```
+
       ![JSX error-1](./assets/lecture_3-1_JSX_error-1.png)
 
       * 두개 이상의 엘리먼트는 무조건 하나의 엘리먼트로 감싸져 있어야 한다. 감싸져있지 않으면 에러가 난다.
+      
       ```javascript
       import React, { Component } from 'react'
       
@@ -58,9 +61,11 @@
         }
       }
       ```
+      
       ![JSX error-2](./assets/lecture_3-1_JSX_error-2.png)
 
       * JSX 안에 자바스크립트 값 사용하기 - 중괄호 안에 자바스크립트 값(변수, 메소드 등)을 써준다.
+      
       ```javascript
       import React, { Component } from 'react'
       
@@ -75,6 +80,7 @@
       ```
 
       * 조건부 렌더링 - 중괄호 안에 if문은 쓰지 못하므로 삼항연산자를 쓴다. if문을 선언하고 싶다면, 함수를 선언 후 즉시실행함수(IIFE)를 사용해주면 된다.
+      
       ```javascript
       import React, { Component } from 'react'
       
@@ -93,3 +99,64 @@
         }
       }
       ```
+      * 스타일링하기
+        * 스타일객체의 key는 카멜케이스로, value는 스트링으로 써야 한다. 
+        * class대신 className으로 적어야 한다. 단, class를 써도 작동은 한다.
+
+        ```javascript
+        import React, { Component } from 'react'
+        
+        class App extends Component {
+          const style = {
+            backgroundColor: 'black',
+            padding:  '16px',
+            color: 'white',
+            fontSize: '36px'
+          }
+          render() {
+            return (
+              <div style={style} className='App'>
+                안녕하세요
+              </div>
+            )
+          }
+        }
+        ```
+
+      * 주석 작성하기
+        * javascript 주석으로 쓰면 주석이 렌더링 된다.
+          * 주석이 안먹히는 예
+         
+          ```javascript
+          import React, { Component } from 'react'
+          
+          class App extends Component {
+            render() {
+              return (
+                <div>
+                  // 안녕하세요
+                </div>
+              )
+            }
+          }
+          ```
+
+          ![주석 에러](./assets/lecture_3-2_comment_error.png)
+
+        * {/* 주석내용 */}으로 주석을 처리해야 한다.
+  
+          ```javascript
+          import React, { Component } from 'react'
+          
+          class App extends Component {
+            render() {
+              return (
+                <div>
+                  {/* <h1>안녕하세요</h1> */}
+                </div>
+              )
+            }
+          }
+          ```
+
+          ![주석](./assets/lecture_3-2_comment.png)
