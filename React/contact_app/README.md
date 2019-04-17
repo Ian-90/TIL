@@ -459,3 +459,18 @@
         export defaut Counter;
         ```
         * ES6 문법인 arrow function으로 정의해주면 간편하게 해결된다.
+
+## 5. LifeCycle API
+  * LifeCycle API 소개 및 사용법
+  ![LifeCycle API](./assets/lecture_5-1_lifeCycle_API)
+    * Mounting - 컴포넌트가 브라우저 상에 나타날 때
+      * constructor - 생성자 함수, 컴포넌트가 생성될 때 가장 먼저 실행되는 함수. state 초기 설정이나 컴포넌트가 만들어 질 때 미리 해야하는 작업을 해준다.
+      * render - 어떤 돔을 만들게 될 지 브라우저상에 그려줍니다.
+      * componentDidMount - 렌더 후에 호출 됩니다. 외부 Chart 라이브러리를 사용 할 때, 네트워크 요청 할 때 사용. 컴포넌트가 나타나고 나서 어떠한 작업을 하고 싶을 때 사용.
+
+    * Updating - 컴포넌트가 업데이트 될 때(props나 state가 변할 때)
+      * shouldComponentUpdate - 부모 컴포넌트가 렌더링되면 자식 컴포넌트들도 렌더링이 발생하기 때문에, Virtual DOM에 그리는 성능을 최적화 하기 위해서 사용한다.
+      * getSnapshotBeforeUpdate - 브라우저 상에 렌더링 하기 바로 직전에 호출되는 함수. 렌더링 후 업데이트 하기 전에 해당 DOM의 크기를 사전에 가져오고 싶을 때 사용.
+      * componentDidUpdate - 컴포넌트가 업데이트 되었을 때 실행되는 함수. 기존 props나 state와 업데이트 이후가 변했을 때 실행 되는 함수. 
+    * Unmounting - 컴포넌트가 브라우저 상에서 사라질 때
+      * componentWillUnmount - componentDidMount의 설정한 EventListner를 없앨수 있음.
