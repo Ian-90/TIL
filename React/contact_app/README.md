@@ -1,5 +1,6 @@
 # 누구든지 하는 리액트 : 초심자를 위한 React 핵심 강의
   * [벨로퍼트 리액트 강좌](https://www.inflearn.com/course/react-velopert/)
+  * 저는 개인적으로 강의에서 설명해주는 ES6문법은 따로 요약하지 않습니다.
 
 ## 1. 리액트는 무엇인가 ?
   * 프론트엔드 라이브러리란 무엇인가?
@@ -162,7 +163,7 @@
           
           ![주석](./assets/lecture_3-2_comment.png)
 
-## 4. props와 state 
+## 4. Props와 State 
   * Props를 사용하는 방법
     * 부모컴포넌트가 자식컴포넌트한테 값을 전달 할 때 사용하는 것.
     * 파일구조 - App.js > MyName.js
@@ -244,7 +245,7 @@
       ```
 
     * 컴포넌트를 만드는 또다른 방법 - 함수형 컴포넌트
-      * 별 다른 기능없이 prop를 받아서 보여주는 경우 사용.
+      * 별 다른 기능없이 props를 받아서 보여주는 경우 사용.
       * 작성방법 (위의 MyName.js를 예시로 작성)
       ```javascript
       import React from 'react'
@@ -260,3 +261,199 @@
       export default MyName;
       ```
       * 기본 props설정은 ClassName.defaultProps를 이용해야함.
+
+  * State를 사용하는 방법
+    * 컴포넌트 자신이 들고 있다.
+    * state값을 변화 시킬 땐 내장함수인 setState를 이용해야한다.
+    * state값이 변할때 마다 컴포넌트는 리렌더링 된다.
+    * 파일구조 - App.js > Counter.js
+      * App.js
+      ```javascript
+      import React, { Component } from 'react'
+      import Counter from './Counter'
+
+      class App extends Component {
+
+        render() {
+          return (
+            <div>
+              <Counter />
+            </div>
+          )
+        }
+      }
+      
+      export defaut App;
+      ```      
+      * Counter.js
+      ```javascript
+      import React, { Component } from 'react'
+
+      class Counter extends Component {
+        state = {
+          number: 0
+        }
+
+        handleIncrease = () => {
+          this.setState({
+            number: this.state.number + 1
+          })
+        }
+
+        handleDecrease = () => {
+          this.setState({
+            number: this.state.number - 1
+          })
+        }
+
+        render() {
+          return (
+            <div>
+              <h1>카운터</h1>
+              <div>값: {this.state.number}</div>
+              <button onClick={this.handleIncrease}>+</button>
+              <button onClinck={this.handleDecrease}>-</button>
+            </div>
+          )
+        }
+      }
+      
+      export default Counter;
+      ```
+    * state 선언 방법
+      * 위의 코드 처럼 state = { key: value }로 선언해준다.
+      * 또다른 방식은 constructor 내부에서 this.state = { key: value } 선언해준다.
+      ```javascript
+      import React, { Component } from 'react'
+
+      class Counter extends Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            number: 0
+          }
+        }
+
+        handleIncrease = () => {
+          this.setState({
+            number: this.state.number + 1
+          })
+        }
+
+        handleDecrease = () => {
+          this.setState({
+            number: this.state.number - 1
+          })
+        }
+
+        render() {
+          return (
+            <div>
+              <h1>카운터</h1>
+              <div>값: {this.state.number}</div>
+              <button onClick={this.handleIncrease}>+</button>
+              <button onClinck={this.handleDecrease}>-</button>
+            </div>
+          )
+        }
+      }
+      
+      export defaut Counter;
+      ```
+    * 리액트에서 메소드 정의 방법
+      * ES5 - functionName () {} (위 코드의 메소드를 예시로 들음)
+      ```javascript
+      handleIncrease() {
+        this.setState({
+          number: this.state.number + 1
+        })
+      }
+      ```
+      * ES6 - functionName = () => {}
+      ```javascript
+      handleIncrease = () => {
+        this.setState({
+          number: this.state.number + 1
+        })
+      }
+      ```
+      * 둘 중 ES6 문법인 arrow function을 사용하는 방법이 더 좋다.
+        * 이유는 ? ES5 메소드 정의법을 이용하면 this가 무엇인지 모르게 된다.
+        ```javascript
+        import React, { Component } from 'react'
+
+        class Counter extends Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              number: 0
+            }
+          }
+
+          handleIncrease () {
+            console.log(this)
+            this.setState({
+              number: this.state.number + 1
+            })
+          }
+
+          handleDecrease () {
+            this.setState({
+              number: this.state.number - 1
+            })
+          }
+
+          render() {
+            return (
+              <div>
+                <h1>카운터</h1>
+                <div>값: {this.state.number}</div>
+                <button onClick={this.handleIncrease}>+</button>
+                <button onClinck={this.handleDecrease}>-</button>
+              </div>
+            )
+          }
+        }
+        
+        export defaut Counter;
+        ```
+        * 위 코드에서 console.log에 찍히는 this는 undefined가 뜬다.
+      * 해결 방법
+        * ES5문법을 쓰고 싶을 때 - bind를 통해 this를 지정해준다.
+        ```javascript
+        import React, { Component } from 'react'
+
+        class Counter extends Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              number: 0
+            }
+            this.handleIncrease = this.handleIncrease.bind(this);
+            this.handleDecrease = this.handleDecrease.bind(this);
+          }
+
+          handleIncrease () {
+            this.setState({
+              number: this.state.number + 1
+            })
+          }
+
+          handleDecrease () {
+            this.setState({
+              number: this.state.number - 1
+            })
+          }
+
+          render() {
+            return (
+              <div>
+                ...
+              </div>
+            )
+          }
+        }
+        
+        export defaut Counter;
+        ```
+        * ES6 문법인 arrow function으로 정의해주면 간편하게 해결된다.
