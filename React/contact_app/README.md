@@ -24,3 +24,72 @@
     ![Webpack](./assets/lecture_2-1_webpack.png)
     * Babel - 브라우저에서 최신문법을 다 지원하지 않기 때문에, 브라우저가 이해 할 수 있도록 코드를 기존 문법으로 번역해줌. 
     ![Bable](./assets/lecture_2-1_babel.png)
+
+## 3. JSX
+  * JSX 기본문법 알아보기
+    * JSX란 ? React에서 사용하는 HTML과 비슷한 자바스크립트 문법
+    * 문법
+      * 꼭 닫혀야 하는 태그 - 태그를 닫지 않으면 에러가 난다.
+      ```javascript
+      import React, { Component } from 'react'
+
+      class App extends Component {
+        render() {
+          return (
+            <div>
+              <input type='text' >
+            </div>
+          )
+        }
+      }
+      ```
+      ![JSX error-1](./assets/lecture_3-1_JSX_error-1.png)
+
+      * 두개 이상의 엘리먼트는 무조건 하나의 엘리먼트로 감싸져 있어야 한다. 감싸져있지 않으면 에러가 난다.
+      ```javascript
+      import React, { Component } from 'react'
+      
+      class App extends Component {
+        render() {
+          return (
+            <div>1</div>
+            <div>2</div>
+          )
+        }
+      }
+      ```
+      ![JSX error-2](./assets/lecture_3-1_JSX_error-2.png)
+
+      * JSX 안에 자바스크립트 값 사용하기 - 중괄호 안에 자바스크립트 값(변수, 메소드 등)을 써준다.
+      ```javascript
+      import React, { Component } from 'react'
+      
+      class App extends Component {
+        render() {
+          const name = 'IAN-90'
+          return (
+            <div>Hi {name}</div>
+          )
+        }
+      }
+      ```
+
+      * 조건부 렌더링 - 중괄호 안에 if문은 쓰지 못하므로 삼항연산자를 쓴다. if문을 선언하고 싶다면, 함수를 선언 후 즉시실행함수(IIFE)를 사용해주면 된다.
+      ```javascript
+      import React, { Component } from 'react'
+      
+      class App extends Component {
+        render() {
+          return (
+            <div>
+              {
+                1 + 1 === 3 ?
+                '틀리다'
+                :
+                '맞다'
+              }
+            </div>
+          )
+        }
+      }
+      ```
