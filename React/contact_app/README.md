@@ -161,3 +161,102 @@
           ```
           
           ![주석](./assets/lecture_3-2_comment.png)
+
+## 4. props와 state 
+  * Props를 사용하는 방법
+    * 부모컴포넌트가 자식컴포넌트한테 값을 전달 할 때 사용하는 것.
+    * 파일구조 - App.js > MyName.js
+      * App.js
+        ```javascript
+        import React, { Component } from 'react'
+        import MyName from './MyName'
+         
+         class App extends Component {
+           render() {
+             return (
+               <div>
+                 <MyName name={'IAN-90'} />
+               </div>
+             )
+           }
+         }
+        ```
+
+      * MyName.js
+        ```javascript
+        import React, { Component } from 'react'
+         
+        class MyName extends Component {
+          render() {
+            return (
+              <div>
+                <span>안녕하세요! 이름은 {this.props.name} 입니다.</span>
+              </div>
+            )
+          }
+        }
+
+        export default MyName;
+        ```
+
+    * props가 없을때는 ? 에러가 나기 때문에 기본 props를 설정해준다
+      * static defaultProps를 이용하는 경우(조금 더 최신문법)
+      ```javascript
+      import React, { Component } from 'react'
+        
+      class MyName extends Component {
+        static defaultProps = {
+          name: '기본이름'
+        }
+
+        render() {
+          return (
+            <div>
+              <span>안녕하세요! 이름은 {this.props.name} 입니다.</span>
+            </div>
+          )
+        }
+      }
+
+      export default MyName;
+      ```
+
+      * ClassName.defaultProps를 이용하는 경우
+      ```javascript
+      import React, { Component } from 'react'
+        
+      class MyName extends Component {
+
+        render() {
+          return (
+            <div>
+              <span>안녕하세요! 이름은 {this.props.name} 입니다.</span>
+            </div>
+          )
+        }
+      }
+
+      MyName.defaultProps = {
+        name: '기본이름'
+      }
+
+      export default MyName;
+      ```
+
+    * 컴포넌트를 만드는 또다른 방법 - 함수형 컴포넌트
+      * 별 다른 기능없이 prop를 받아서 보여주는 경우 사용.
+      * 작성방법 (위의 MyName.js를 예시로 작성)
+      ```javascript
+      import React from 'react'
+        
+      const MyName = ({ name }) => {
+        return (
+          <div>
+            <span>안녕하세요! 이름은 {name} 입니다.</span>
+          </div>
+        )
+      }
+
+      export default MyName;
+      ```
+      * 기본 props설정은 ClassName.defaultProps를 이용해야함.
