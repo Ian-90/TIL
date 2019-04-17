@@ -17,3 +17,10 @@
   * 리액트를 특별하게 만드는 점
     * 어마어마한 생태계
     * FACEBOOK, Airbnb, BBC, eBay, ... 등등 사용하는곳이 많다.
+
+## 2. 리액트 프로젝트 시작하기
+  * 본격적인 리액트 코드 작성하기
+    * Webpack - 의존하는 파일들을 합쳐서 하나 또는 여러개의 파일로 만들어줌
+    ![Webpack](./assets/lecture_2-1_webpack.png)
+    * Babel - 브라우저에서 최신문법을 다 지원하지 않기 때문에, 브라우저가 이해 할 수 있도록 코드를 기존 문법으로 번역해줌. 
+    ![Bable](./assets/lecture_2-1_babel.png)
