@@ -199,6 +199,8 @@
 
         export default MyName;
         ```
+       * 렌더링 화면
+       ![렌더링 화면](./assets/lecture_4-1_props.png) 
 
     * props가 없을때는 ? 에러가 나기 때문에 기본 props를 설정해준다
       * static defaultProps를 이용하는 경우(조금 더 최신문법)
@@ -312,7 +314,7 @@
               <h1>카운터</h1>
               <div>값: {this.state.number}</div>
               <button onClick={this.handleIncrease}>+</button>
-              <button onClinck={this.handleDecrease}>-</button>
+              <button onClick={this.handleDecrease}>-</button>
             </div>
           )
         }
@@ -352,7 +354,7 @@
               <h1>카운터</h1>
               <div>값: {this.state.number}</div>
               <button onClick={this.handleIncrease}>+</button>
-              <button onClinck={this.handleDecrease}>-</button>
+              <button onClick={this.handleDecrease}>-</button>
             </div>
           )
         }
@@ -409,7 +411,7 @@
                 <h1>카운터</h1>
                 <div>값: {this.state.number}</div>
                 <button onClick={this.handleIncrease}>+</button>
-                <button onClinck={this.handleDecrease}>-</button>
+                <button onClick={this.handleDecrease}>-</button>
               </div>
             )
           }
@@ -417,7 +419,7 @@
         
         export defaut Counter;
         ```
-        * 위 코드에서 console.log에 찍히는 this는 undefined가 뜬다.
+        * 위 코드에서 onClick 이벤트를 실행 할 때 console.log에 찍히는 this는 undefined가 뜬다.
       * 해결 방법
         * ES5문법을 쓰고 싶을 때 - bind를 통해 this를 지정해준다.
         ```javascript
