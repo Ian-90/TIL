@@ -13,3 +13,7 @@
     * 리액트개발 - 변화가 없이 데이터가 바뀌면 뷰를 날리고 새로운 뷰를 만들어버리기. 성능적으로 문제가 있어서 Virtual DOM 제작
     * 변화가 일어나면 Virtual DOM에 렌더링 하여 기존의 DOM과 비교해서 바뀐부분만 찾아서 뷰를 바꾸어줌
     * [React and the Virtual DOM](https://youtube.be/muc2ZF0QIO4)
+
+  * 리액트를 특별하게 만드는 점
+    * 어마어마한 생태계
+    * FACEBOOK, Airbnb, BBC, eBay, ... 등등 사용하는곳이 많다.
