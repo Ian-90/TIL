@@ -80,7 +80,7 @@
       ```
 
       * 조건부 렌더링 - 중괄호 안에 if문은 쓰지 못하므로 삼항연산자를 쓴다. if문을 선언하고 싶다면, 함수를 선언 후 즉시실행함수(IIFE)를 사용해주면 된다.
-      
+
       ```javascript
       import React, { Component } from 'react'
       
@@ -99,10 +99,11 @@
         }
       }
       ```
+
       * 스타일링하기
         * 스타일객체의 key는 카멜케이스로, value는 스트링으로 써야 한다. 
         * class대신 className으로 적어야 한다. 단, class를 써도 작동은 한다.
-
+        
         ```javascript
         import React, { Component } from 'react'
         
@@ -126,7 +127,6 @@
       * 주석 작성하기
         * javascript 주석으로 쓰면 주석이 렌더링 된다.
           * 주석이 안먹히는 예
-         
           ```javascript
           import React, { Component } from 'react'
           
@@ -144,7 +144,7 @@
           ![주석 에러](./assets/lecture_3-2_comment_error.png)
 
         * {/* 주석내용 */}으로 주석을 처리해야 한다.
-  
+          
           ```javascript
           import React, { Component } from 'react'
           
@@ -153,10 +153,11 @@
               return (
                 <div>
                   {/* <h1>안녕하세요</h1> */}
+                  주석처리 성공
                 </div>
               )
             }
           }
           ```
-
+          
           ![주석](./assets/lecture_3-2_comment.png)
