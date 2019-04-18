@@ -559,3 +559,9 @@
     * Unmounting - 컴포넌트가 브라우저 상에서 사라질 때
       * componentWillUnmount - componentDidMount의 설정한 EventListner를 없앨수 있다.
 
+## 6. 리액트 작업환경 직접 설정하기
+  * 필요한 도구 설치하기
+    * [nodejs 설치](https://nodejs.org/ko/download/)
+    * [yarn 설치](https://yarnpkg.com/en/docs/install#mac-stable)
+    * [에디터 - VSCode](https://code.visualstudio.com/)
+
