@@ -562,6 +562,24 @@
 ## 6. 리액트 작업환경 직접 설정하기
   * 필요한 도구 설치하기
     * [nodejs 설치](https://nodejs.org/ko/download/)
+      * 설치확인
+      ```bash
+      node -v
+      ```
     * [yarn 설치](https://yarnpkg.com/en/docs/install#mac-stable)
+      * 설치확인
+      ```bash
+      yarn -v
+      ```
     * [에디터 - VSCode](https://code.visualstudio.com/)
 
+  * Create react app 사용하기
+    * create react app은 페이스북에서 만든 프로젝트가 환경설정이 기본으로 되어있는 보일러 플레이트
+    * 프로젝트 생성 방법 - 터미널에 프로젝트 네임을 적용해서 코드를 입력하면 폴더들이 생성된다
+    ```bash
+    npx create-react-app project_name
+    ```
+    * 프로젝트 커스텀하기 - 터미널에서 yarn eject후 필요한 설정 커스텀하기
+    ```bash
+    yarn eject
+    ```
