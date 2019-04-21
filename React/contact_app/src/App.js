@@ -20,11 +20,21 @@ class App extends Component {
     })
   }
 
+  handleRemove = (id) => {
+    const { infomation } = this.state;
+    this.setState({
+      infomation: infomation.filter(info => info.id !== id)
+    })
+  }
+
   render() {
     return (
       <div>
         <PhoneForm onCreate={this.handleCreate} />
-        <PhoneInfoList data={this.state.infomation} />
+        <PhoneInfoList 
+          data={this.state.infomation} 
+          onRemove={this.handleRemove}
+        />
       </div>
     );
   }
