@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PhoneForm from './components/PhoneForm';
+import PhoneInfoList from './components/PhoneInfoList';
 
 
 class App extends Component {
@@ -13,10 +14,9 @@ class App extends Component {
   handleCreate = (data) => {
     const { infomation } = this.state
     this.setState({
-      infomation: infomation.concat({
-        ...data,
+      infomation: infomation.concat(Object.assign({}, data, {
         id: this.id++
-      })
+      }))
     })
   }
 
@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <div>
         <PhoneForm onCreate={this.handleCreate} />
-        {JSON.stringify(this.state.infomation)}
+        <PhoneInfoList data={this.state.infomation} />
       </div>
     );
   }
