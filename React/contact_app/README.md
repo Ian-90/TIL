@@ -520,7 +520,7 @@
         }
 
         static getDerivedStateFromProps = (nextProps, prevState) => {
-          if (preState.value !== nextProps.value) {
+          if (prevState.value !== nextProps.value) {
             return {
               value: nextProps.value
             }
