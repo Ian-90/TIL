@@ -30,3 +30,18 @@
       <!-- 인자가 2개 이상 일 때 -->
       const sayHello = (name, mark) => {return "Hello " + name + mark;} //인자가 2개이상이면 인자를 ()로 감싸줘야한다.
       ```
+
+    * 1-2 Template Literals
+      * ES5 문자 + 변수 작성법 - 'text' + 변수
+      ```javascript 
+      function sayHello(name) {
+        return "Hello " + name;
+      }
+      ```
+
+      * ES6 [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) - `(back-tick)으로 열고 닫는다. 변수는 ${변수}로 사용한다.
+      ```javascript 
+      function sayHello(name) {
+        return `Hello ${name}`;
+      }
+      ```
