@@ -45,3 +45,66 @@
         return `Hello ${name}`;
       }
       ```
+    * 1-3 Object Destructuring
+      * ES5 - const 변수명 = 담을객체.속성명 or 담을객체[속성명]
+      ```javascript
+      const human = {
+        name: 'Ian',
+        lastName: 'John',
+        nationality: 'Wish I was Korean'
+      }
+      const name = human.name;
+      const lastName = human,lastName;
+      console.log(name, lastName) // "Ian John"이 출력
+      ```
+
+      * ES6 - [Object Destructuring](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) - 객체의 속성을 해체하여 그 값을 변수에 담는 방법
+      cosnt { 속성명 } = 객체
+      ```javascript
+      const human = {
+        name: 'Ian',
+        lastName: 'John',
+        nationality: 'Wish I was Korean'
+      }
+      const {name, lastName } = human;
+      
+      console.log(name, lastName) // "Ian John"이 출력
+      ```
+      기존 코드와 비교하면, 상당히 간편해진다는걸 알 수 있다.
+        * 다른 이름을 쓰고 싶을 때 - const { 속성명: 변경할 속성명 } = 객체
+        ```javascript
+        const human = {
+          name: 'Ian',
+          lastName: 'John',
+          nationality: 'Wish I was Korean'
+        }
+        //ES5
+        const difName = human.nationality;
+
+        //ES6
+        const { nationality: difName } = human;
+        console.log(difName) // "Wish I was Korean"이 동일하게 출력됨
+        ```
+        코드가 많아 질수록 ES6가 간결한걸 알 수 있다.
+
+        * 객체가 중첩됬을 때
+        ```javascript
+        const human = {
+          name: 'Ian',
+          lastName: 'John',
+          nationality: 'Wish I was Korean',
+          favFood: {
+            breakfast: 'hamberger',
+            lunch: 'pizza',
+            dinner: 'chicken'
+          }
+        }
+        //ES5
+        const breakfast = human.favFood.breakfast;
+        const lunch = human.favFood.lunch;
+        const dinner = human.favFood.dinner;
+
+        //ES6
+        const { favFood: {breakfast, lunch, dinner} } = human;
+        console.log(breakfast, lunch, dinner) // "hamberger, pizza, chicken"이 동일하게 출력됨 
+        ```
