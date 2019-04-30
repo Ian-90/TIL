@@ -108,3 +108,31 @@
         const { favFood: {breakfast, lunch, dinner} } = human;
         console.log(breakfast, lunch, dinner) // "hamberger, pizza, chicken"이 동일하게 출력됨 
         ```
+
+    * 1-4 Spread Operator
+      * [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) - 배열이라 객체를 unpack하고 싶을 때 사용하면 유용하다.
+      ```javascript
+      const days = ["Mon", "Tue", "Wed"];
+      const otherDays = ["Thu", "Fri", "Sat"];
+
+      const allDays = [days, otherDays];
+      console.log(allDays) // [["Mon","Tue","Wed"],["Thu","Fri","Sat"]] 출력
+
+      const allDays2 = [...days, ...otherDays, "Sun"]
+      console.log(allDays2) // ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"] 출력
+
+      const ob = {
+        first: "hi",
+        second: "hello"
+      };
+
+      const ab = {
+        third: "bye bye"
+      }
+
+      const two = {ob, ab};
+      console.log(two); // {{first: "hi", second: "hello"}, {third: "bye bye"}} 출력
+
+      const two2 = {...ob, ...ab};
+      console.log(two2) // {first: "hi", second: "hello", third: "bye bye"}
+      ```
