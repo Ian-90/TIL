@@ -217,3 +217,13 @@
     console.log(myBaby);
     console.log(myBaby.cry(), myBaby.sayname());
     ```
+
+  * 1-6 [Array.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+
+  ```javascript
+  const days = ["Mon", "Tue", "Wed", " Thu", "Fri"];
+  const addSmile = day => `☺️ ${day}`;
+  const smilingDays = days.map(addSmile);
+
+  console.log(similingDays);
+  ```
