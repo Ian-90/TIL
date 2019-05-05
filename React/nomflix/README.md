@@ -227,3 +227,13 @@
 
   console.log(similingDays);
   ```
+
+  - 1-7 [Array.filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+
+  ```javascript
+  const numbers = [1, 2, 5, 6, 11, 17, 24, 67];
+
+  const biggerThan15 = numbers.filter(n => n > 15);
+
+  console.log(biggerThan15); // [17, 24, 67]
+  ```
