@@ -264,3 +264,4 @@
 
     console.log(greetings) // ["Hi", "Howdy", "Suup", "Hello"]
     ```
+## Project Setup
