@@ -1,6 +1,6 @@
 # NOMAD CODERS
 
-* [Popcorn Time Clone](https://academy.nomadcoders.co/p/react-for-beginners)
+* [Nomflix](https://academy.nomadcoders.co/p/react-for-beginners) - Learning React and ES6 by building a Movie Discovery App.
 
 ## 1. Fundamentals
 
