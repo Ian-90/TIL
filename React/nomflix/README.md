@@ -2,6 +2,12 @@
 
 * [Nomflix](https://academy.nomadcoders.co/p/react-for-beginners) - Learning React and ES6 by building a Movie Discovery App.
 
+## Screens
+- [ ] Home
+- [ ] TV Shows
+- [ ] Search
+- [ ] Detail
+
 ## 1. Fundamentals
 
 * 1-1 Arrow Functions
@@ -264,4 +270,76 @@
 
     console.log(greetings) // ["Hi", "Howdy", "Suup", "Hello"]
     ```
-## Project Setup
+## 2. Project Setup
+  * 2-1. Setting Up the Project - CRA(create react app)을 이용해서 프로젝트를 생성한다.
+    * Project Setup
+    ```bash
+    npx create-react-app filename
+    ```
+    예를 들어, npx create-react-app newFolder로 명령어를 입력하면 newFolder라는 프로젝트가 생성된다.
+    npx를 사용하는 이유는 최신버전의 리액트를 사용하기 위해서 이다.
+
+    * .env - 상대경로를 절대경로로 지정해준다. package.json과 같은 폴더위치에 생성해준다.
+      * 사용법
+      ```javascript
+      NODE_PATH = src // src 폴더를 보게됨.
+      ```
+
+      * 예시
+      ![폴더 경로](./assets/lecture_2_1_env.png)
+      이러한 폴더 구조가 있다.
+      ```javascript
+      // index.js 에서 App.js를 렌더링하려면?
+
+      // 기존 상대경로
+      import App from './view/App'
+
+      // .env를 이용한 절대경로
+      import App from 'view/App'
+      ```
+      경로가 복잡해질수록 경로가 깔끔해진다.
+    
+    * 2-2. [React Router](https://reacttraining.com/react-router/web/guides/quick-start/installation) - 리액트에서 가장 많이 사용하는 라우터
+      * 라우팅 - 다른 주소에 따라 다른 뷰를 보여주는것
+      
+      * 설치
+      ```bash
+      cd [project folder] // 프로젝트 폴더로 이동한다
+      yarn add react-router-dom
+      ```
+      * 사용법
+      ```javascript
+      import React from "react";
+      import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+      function App() {
+        return (
+          <Router>
+            <div>
+              <Route exact path="/" exact component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/about/new" render={() => <h2>new</h2>} />
+            </div>
+          </Router>
+        );
+      }
+
+      function Home() {
+        return <h2>Home</h2>;
+      }
+
+      function About() {
+        return <h2>About</h2>;
+      }
+
+      export default App;     
+      ```
+        1. react-router-dom을 import - 필요한 라우터들 사용
+        2. 
+        ```html 
+        <Router>
+          {Route 코드 작성}
+        </Router>
+        ```
+        Router 컴포넌트로 감싸고 내부에 Route 컴포넌트를 넣는다. 하지만, Router 컴포넌트는 단, 1개의 children 컴포넌트만 가져야 한다.
+        3. <Route> 작성법 - <Route path={뷰를 보여줄 주소} (exact) component={주소에 렌더링할 컴포넌트}> - exact가 있으면 정확히 렌더링할 주소와 일치하는 컴포넌트만 렌더링, exact가 없으면 같은 주소명을 가진 컴포넌트 모두를 렌더링. 위 코드에서 주소가 /about/new로 접속하면, /about주소에 컴포넌트와 /about/new의 컴포넌트가 둘다 렌더링 된다.
