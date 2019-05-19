@@ -351,3 +351,18 @@
     * 방법 2 - 컴포넌트별로 폴더를 만들어서 css를 import
 
   * 3-2. CSS in React part Two
+    * 방법 3 - CRA로 만든 프로젝트라면 컴포넌트이름.module.css를 사용 - javascript 객체처럼 사용 할 수 있다.
+    ```javascript
+    import React from 'react'
+    import styles from './Header.module.css' //동일 폴더 안에 Header.module.css파일이 있다고 가정하고 import
+
+    export default () => (
+    <header>
+      <ul className={styles.navList}>
+        <li>
+          hello
+        </li>
+      </ul>
+    </header>
+    )
+    ```
