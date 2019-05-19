@@ -344,3 +344,8 @@
         ```
         
         3. <Route> 작성법 - <Route path={뷰를 보여줄 주소} (exact) component={주소에 렌더링할 컴포넌트}> - exact가 있으면 정확히 렌더링할 주소와 일치하는 컴포넌트만 렌더링, exact가 없으면 같은 주소명을 가진 컴포넌트 모두를 렌더링. 위 코드에서 주소가 /about/new로 접속하면, /about주소에 컴포넌트와 /about/new의 컴포넌트가 둘다 렌더링 된다.
+
+## 3. Styles
+  * 3-1. CSS in React part One
+    * 방법 1 - index.js에 style.css를 import 
+    * 방법 2 - 컴포넌트별로 폴더를 만들어서 css를 import
