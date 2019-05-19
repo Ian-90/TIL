@@ -335,11 +335,12 @@
       export default App;     
       ```
         1. react-router-dom을 import - 필요한 라우터들 사용
-        2. 
+        
+        2. Router 컴포넌트로 감싸고 내부에 Route 컴포넌트를 넣는다. 하지만, Router 컴포넌트는 단, 1개의 children 컴포넌트만 가져야 한다. 
         ```html 
         <Router>
           {Route 코드 작성}
         </Router>
         ```
-        Router 컴포넌트로 감싸고 내부에 Route 컴포넌트를 넣는다. 하지만, Router 컴포넌트는 단, 1개의 children 컴포넌트만 가져야 한다.
+        
         3. <Route> 작성법 - <Route path={뷰를 보여줄 주소} (exact) component={주소에 렌더링할 컴포넌트}> - exact가 있으면 정확히 렌더링할 주소와 일치하는 컴포넌트만 렌더링, exact가 없으면 같은 주소명을 가진 컴포넌트 모두를 렌더링. 위 코드에서 주소가 /about/new로 접속하면, /about주소에 컴포넌트와 /about/new의 컴포넌트가 둘다 렌더링 된다.
