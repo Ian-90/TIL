@@ -285,9 +285,8 @@
       NODE_PATH = src // src 폴더를 보게됨.
       ```
 
-      * 예시
+      * 예시 - 이러한 폴더 구조가 있다.
       ![폴더 경로](./assets/lecture_2_1_env.png)
-      이러한 폴더 구조가 있다.
       ```javascript
       // index.js 에서 App.js를 렌더링하려면?
 
@@ -366,3 +365,6 @@
     </header>
     )
     ```
+
+  * 3-3. CSS in React part Three
+    * 방법 4 - [styled components](https://academy.nomadcoders.co/p/styled-components-like-a-boss)를 사용하자. 
