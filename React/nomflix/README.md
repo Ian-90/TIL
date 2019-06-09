@@ -8,6 +8,13 @@
 - [ ] Search
 - [ ] Detail
 
+## API Verbs
+- [ ] Now playing
+- [ ] Upcoming(Movie)
+- [ ] Top Rated(TV, Movie)
+- [ ] Popular(TV, Movie)
+- [ ] Airing Today(TV)
+
 ## 1. Fundamentals
 
 * 1-1 Arrow Functions
