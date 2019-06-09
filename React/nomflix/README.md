@@ -383,3 +383,24 @@
       2. settings
       3. API Create
       4. v3 c dopy
+
+  * 4-2. Sexy Networking with Axios Instances
+    * [axios](https://github.com/axios/axios) 설치
+    ```bash
+    cd [project folder] // 프로젝트 폴더로 이동한다
+    yarn add axios@0.18.1 // 강의에서 에러가안나기위해 0.18.1로 설치
+    ```
+
+    * axios 사용법
+    ```javascript
+    import axios from 'axios'
+    
+    const api = axios.create({
+      baseURL: '[api call url]',
+      params: {
+        //...
+      }
+    })
+
+    export default axios;
+    ```
