@@ -368,3 +368,11 @@
 
   * 3-3. CSS in React part Three
     * 방법 4 - [styled components](https://academy.nomadcoders.co/p/styled-components-like-a-boss)를 사용하자. 
+
+## 4. Networking
+  * 4-1. Introduction to The Movie DB API
+    * [API KEY](https://www.themoviedb.org) 생성
+      1. 회원가입
+      2. settings
+      3. API Create
+      4. v3 c dopy
