@@ -9,11 +9,13 @@
 - [ ] Detail
 
 ## API Verbs
-- [ ] Now playing
-- [ ] Upcoming(Movie)
-- [ ] Top Rated(TV, Movie)
-- [ ] Popular(TV, Movie)
-- [ ] Airing Today(TV)
+- [x] Now playing
+- [x] Upcoming(Movie)
+- [x] Top Rated(TV)
+- [x] Popular(TV, X)
+- [x] Airing Today(TV)
+- [ ] TV Show Detail
+- [ ] Movie detail
 
 ## 1. Fundamentals
 
