@@ -14,8 +14,9 @@
 - [x] Top Rated(TV)
 - [x] Popular(TV, X)
 - [x] Airing Today(TV)
-- [ ] TV Show Detail
-- [ ] Movie detail
+- [x] TV Show Detail
+- [x] Movie detail
+- [x] Search(Movie, TV)
 
 ## 1. Fundamentals
 
