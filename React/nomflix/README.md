@@ -407,3 +407,8 @@
 
     export default axios;
     ```
+
+## 5. Container
+  * 5-1. Container Presenter Pattern part One
+    * Container Presenter Pattern - Container는 data와 state를 가지고 api를 불러오고 모든 로직을 처리한다. Presenters는 data를 보여주는 역할이고, state도 없으며 함수형 컴포넌트이다.
+    * 방법 - 항상 각각 폴더와 index.js를 생성해야한다. 
