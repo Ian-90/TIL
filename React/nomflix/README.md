@@ -411,4 +411,33 @@
 ## 5. Container
   * 5-1. Container Presenter Pattern part One
     * Container Presenter Pattern - Container는 data와 state를 가지고 api를 불러오고 모든 로직을 처리한다. Presenters는 data를 보여주는 역할이고, state도 없으며 함수형 컴포넌트이다.
+
     * 방법 - 항상 각각 폴더와 index.js를 생성해야한다. 
+
+  * 5-3. Home Container
+    * [async await](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function) - 내가 뭔가를 끝낼때까지 기다려라라는 의미로 사용한다.
+
+    ```javascript
+    function resolveAfter2Seconds() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve('resolved');
+        }, 2000);
+      });
+    }
+
+    async function asyncCall() {
+      console.log('calling');
+      var result = await resolveAfter2Seconds();
+      console.log(result);
+    }
+
+    asyncCall(); 
+    /* 
+    expected output: 
+    'calling'
+    'resolved'
+    */
+    ```
+
+    * [try catch finally](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/try...catch) - try 먼저 실행하고, try에서 에러가있으면 catch를 실행하고, 마지막에 finally가 실행된다. try가 성공하건, 실패해서 catch가 실행되어도 마지막에는 finally가 무조건 실행된다.
