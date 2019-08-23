@@ -8,6 +8,19 @@ export default class extends React.Component {
     loading: true
   }
 
+  async componentDidMount() {
+    const {
+      match: {
+        params: { id }
+      },
+      history: { push }
+    } = this.props;
+    const parseId = parseInt(id);
+    if (isNaN(parseId)) {
+      return push("/")
+    }
+  }
+
   render () {
     const { result, error, loading} = this.state;
     return (
