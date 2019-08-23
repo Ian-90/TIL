@@ -441,3 +441,14 @@
     ```
 
     * [try catch finally](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/try...catch) - try 먼저 실행하고, try에서 에러가있으면 catch를 실행하고, 마지막에 finally가 실행된다. try가 성공하건, 실패해서 catch가 실행되어도 마지막에는 finally가 무조건 실행된다.
+  
+  * 5-8. Destructuring assignment with let
+    * [Assignment without declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Assignment_without_declaration) - 아래 코드1과 코드2는 동일한 코드이다. 
+
+    ```javascript
+    // code1
+    var { a, b } = {a: 1, b: 2}
+    // code2
+    var a, b;
+    ({a, b} = {a: 1, b: 2});
+    ```
