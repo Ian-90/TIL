@@ -2,8 +2,8 @@
   * [인프런 강좌](https://www.inflearn.com/course/es6-%EA%B0%95%EC%A2%8C-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8#description)
 
   ## 목차
-  1. [Scope]('./1.Scope/Scope.md')
-  2. [String]('./2/String/String.md')
+  1. [Scope](./1.Scope/Scope.md)
+  2. [String](./2.String/String.md)
   3. Array
   4. 실습 1 - 특정 문자열이 포함된 배열 만들어 반환하기
   5. Object
