@@ -35,3 +35,14 @@ for(let value of str) {
 // h, e, l, l, o, " "
 ```
 
+## 2. spread operator - 배열의 복사
+
+* [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+ - 기존의 참조를 끊고 완전히 복사를 한 것이다.
+  ```javascript
+  let pre = ["apple", "orange", 100];
+  let newData = [...pre];
+  console.log(pre, newData); // [["apple", "orange", 100], ["apple", "orange", 100]]
+
+  console.log(pre === newData) // false
+  ```
