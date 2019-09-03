@@ -74,3 +74,34 @@ sum(...pre)
 * 정리
   1. 배열을 바꾸지 않고, 새로운 값을 복사가능(Immutable Array)
   2. 배열을 합치거나, 펼쳐진 상태로 새로운 함수의 파라미터로 전달 가능
+
+## 4. from 메서드로 진짜 배열 만들기
+* [from](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+
+* [arguments]() - 배열은 아니지만, 유사배열이다. 하지만 배열이 아니기 때문에 배열의 메소드들을 사용 할 수 없다.
+```javascript
+function addMark() {
+  let newData = [];
+  for (let i = 0; i < arguments.length; i++) {
+    newData.push(arguments[i] + "!")
+  }
+  console.log(newData);
+}
+
+addMark(1, 2, 3, 4, 5) // ["1!", "2!", "3!", "4!", "5!"]
+```
+
+* 유사배열을 진짜 배열로 바꾸려면?
+```javascript
+function addMark() {
+  let newArray = Array.from(arguments);
+  let newData = newArray.map(function(value) {
+    return value + "!";
+  })
+  console.log(newData);
+}
+
+addMark(1, 2, 3, 4, 5)
+```
+
+* DOM 조작시 노드리스트도 진짜 배열로 만들어 줄 수 있다.
