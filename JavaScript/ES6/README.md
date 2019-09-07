@@ -5,7 +5,7 @@
   1. [Scope](./1.Scope/Scope.md)
   2. [String](./2.String/String.md)
   3. [Array](./3.Array/Array.md)
-  4. 실습 1 - 특정 문자열이 포함된 배열 만들어 반환하기
+  4. [실습 1 - 특정 문자열이 포함된 배열 만들어 반환하기](./실습/example1.md)
   5. Object
   6. Destructuring
   7. Set & WeakSet
