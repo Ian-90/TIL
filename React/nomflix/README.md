@@ -452,3 +452,35 @@
     var a, b;
     ({a, b} = {a: 1, b: 2});
     ```
+
+## 6. Presenters
+  * 6-11. React Helmet
+    * [React Helmet](https://github.com/nfl/react-helmet) - 페이지의 기본 정보로 사용하는 title, description 등 head 설정을 JSX에서 할 수 있게 해주는 유용한 라이브러리
+
+    * 설치
+    ```bash
+    cd [project folder] // 프로젝트 폴더로 이동한다
+    yarn add react-helmet 
+    ```
+
+    * 사용법 - Helmet 태그 안에 head 설정 태그를 넣어준다.
+    ```javascript
+    import React from "react";
+    import Helmet from "react-helmet";
+
+    class App extends React.Component {
+      render () {
+        return (
+            <div className="application">
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>My Title</title>
+                    <link rel="canonical" href="http://mysite.com/example" />
+                </Helmet>
+                ...
+            </div>
+        );
+      }
+    };
+    export default App;
+    ```
