@@ -32,7 +32,7 @@ function getObj() {
   console.log(obj2)
 ```
 
-* ES6에서는 Object에서 key와 value값이 같으면 [Object literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Property_definitions) 작성이 편해진다.
+* ES6에서는 Object에서 key와 value값이 같으면 [Object literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Property_definitionss) 작성이 편해진다.
 ```javascript
 const name = 'ian90';
 const age = '31';
