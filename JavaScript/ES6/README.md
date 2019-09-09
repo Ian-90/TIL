@@ -7,7 +7,7 @@
   3. [Array](./3.Array/Array.md)
   4. [실습 1 - 특정 문자열이 포함된 배열 만들어 반환하기](./4.실습1/example1.md)
   5. [Object](./5.Object/Object.md)
-  6. Destructuring
+  6. [Destructuring](./6.Destructuring/Destructuring.md)
   7. Set & WeakSet
   8. Map & WeakMap
   9. 실습 2 - Destructuring 과 Set을 활용한 로또 번호 생성기
