@@ -9,7 +9,7 @@
   5. [Object](./5.Object/Object.md)
   6. [Destructuring](./6.Destructuring/Destructuring.md)
   7. [Set & WeakSet](./7.Set&WeakSet/Set&WeakSet.md)
-  8. Map & WeakMap
+  8. [Map & WeakMap](./8.Map&WeakMap/Map&WeakMap.md)
   9. 실습 2 - Destructuring 과 Set을 활용한 로또 번호 생성기
   10. Template
   11. Function
