@@ -128,3 +128,38 @@
   ```
 
   * 결론 - bind를 하지않아도 된다는 장점때문에 편리하다.
+
+## 3. function default parameters
+
+  * [default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+
+  * default parameter가 없을때 문제점
+  ```javascript
+  function sum(value, size) {
+    return value * size;
+  }
+
+  console.log(sum(3, 10)) // 30
+  console.log(sum(3)) // NaN
+  ```
+
+  * 기존 해결책
+    ```javascript
+  function sum(value, size) {
+    size = size || 1;
+    return value * size;
+  }
+
+  console.log(sum(3, 10)) // 30
+  console.log(sum(3)) // 3
+  ```
+
+  * ES6 해결책
+  ```javascript
+  function sum(value, size = 1) {
+    return value * size;
+  }
+
+  console.log(sum(3, 10)) // 30
+  console.log(sum(3)) // 3
+  ```
