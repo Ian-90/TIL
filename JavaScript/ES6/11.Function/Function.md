@@ -144,7 +144,7 @@
   ```
 
   * 기존 해결책
-    ```javascript
+  ```javascript
   function sum(value, size) {
     size = size || 1;
     return value * size;
@@ -163,3 +163,29 @@
   console.log(sum(3, 10)) // 30
   console.log(sum(3)) // 3
   ```
+
+## 4. rest parameters
+
+  * [rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) - spread operatort와 비슷하지만 다르게 동작한다. 인자를 배열로 받는다.
+
+  * n개의 인자값을 넘길때 작동하는 함수를 어떻게 작성해야 하는가?
+    * 기존 - arguments를 활용
+    ```javascript
+    function checkNum() {
+      const argArray = Array.prototype.slice.call(arguments) // Array.from도 이용가능
+      const result = argArray.every(v => typeof v === 'number');
+      console.log(result);
+    }
+
+    const result = checkNum(10, 2, 3, 4, 5, '55'); // faluse
+    ```
+
+    * ES6
+    ```javascript
+    function checkNum(...argArray) {
+      const result = argArray.every(v => typeof v === 'number');
+      console.log(result);
+    }
+
+    const result = checkNum(10, 2, 3, 4, 5, '55'); // faluse
+    ```
