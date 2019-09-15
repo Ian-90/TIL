@@ -26,7 +26,7 @@ function getRandomNumber({count, maxNumber}) {
   const lottoNumberSet = new Set();
   while (lottoNumberSet.size < count) {
     let randomNumber = Math.floor(Math.random() * maxNumber) + 1
-    lottoNumberSet.has(randomNumber) ? null : lottoNumberSet.add(randomNumber)
+    lottoNumberSet.add(randomNumber)
   }
   return lottoNumberSet
 }
