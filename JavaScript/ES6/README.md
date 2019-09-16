@@ -13,6 +13,6 @@
   9. [실습 2 - Destructuring 과 Set을 활용한 로또 번호 생성기](./9.실습2/example.md)
   10. [Template](./10.Template/Template.md)
   11. [Function](./11.Function/Function.md)
-  12. 객체
+  12. [객체](./12.객체/객체.md)
   13. Module
   14. Proxy
