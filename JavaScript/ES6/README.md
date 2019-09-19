@@ -15,4 +15,4 @@
   11. [Function](./11.Function/Function.md)
   12. [객체](./12.객체/객체.md)
   13. [Module](./13.Module/Module.md)
-  14. Proxy
+  14. [Proxy](./14.Proxy/Proxy.md)
