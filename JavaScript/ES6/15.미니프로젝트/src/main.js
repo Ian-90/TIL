@@ -19,12 +19,37 @@ class Blog {
 
     this.blogList.addEventListener('click', ({target}) => {
       const targetClassName = target.className;
-      if (targetClassName !== 'like') return;
-      const postTitle = target.previousElementSibling.textContent;
-      this.likedSet.add(postTitle);
+      if (targetClassName !== 'like' && targetClassName !== 'unlike') return;
 
-      this.likedSet.forEach((v) => console.log(v))
+
+      const postTitle = target.previousElementSibling.textContent;
+
+      // 찜 취소를 클릭한 경우에, 찜하기로 다시 변경하고, 찜목록을 제거하고, 찜목록 뷰를 렌더링한다.
+      if (targetClassName === 'unlike') {
+        target.className = 'like';
+        target.innerText = '찜하기';
+
+        this.likedSet.delete(postTitle)
+      } else {
+        // 찜 된 목록(div)의 클래스를 like에서 unlike로 변경하기.
+        target.className = 'unlike';
+        target.innerText = '찜취소';
+        // 찜 목록에 추가
+        this.likedSet.add(postTitle);
+      }
+
+      // 내 찜 목록 뷰에 추가
+      this.updateLikedList();
     })
+  }
+
+  updateLikedList() {
+    const ul = document.querySelector('.like-list > ul');
+    let likedSum = '';
+    this.likedSet.forEach(v => {
+      likedSum += `<li> ${v} </li>`
+    })
+    ul.innerHTML = likedSum
   }
 
   setInitData(dataURL) {
