@@ -5,7 +5,9 @@
 ### 간단한 개념
 
 - npm - node pacakge manager이다. javascript library를 쉽게 공유하기 위해서 만들어졌다.
-- express - 웹 및 모바일 애플리케이션을 위한 일련의 강력한 기능을 제공하는 간결하고 유연한 Node.js 웹 애플리케이션 프레임워크이다.
+  <<<<<<< HEAD
+- # express - 웹 및 모바일 애플리케이션을 위한 일련의 강력한 기능을 제공하는 간결하고 유연한 Node.js 웹 애플리케이션 프레임워크이다.
+  > > > > > > > aacafb161796d288688f8955727f0a336a4efaf8
 
 ### Project
 
