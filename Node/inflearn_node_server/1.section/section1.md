@@ -5,9 +5,7 @@
 ### 간단한 개념
 
 - npm - node pacakge manager이다. javascript library를 쉽게 공유하기 위해서 만들어졌다.
-  <<<<<<< HEAD
-- # express - 웹 및 모바일 애플리케이션을 위한 일련의 강력한 기능을 제공하는 간결하고 유연한 Node.js 웹 애플리케이션 프레임워크이다.
-  > > > > > > > aacafb161796d288688f8955727f0a336a4efaf8
+- express - 웹 및 모바일 애플리케이션을 위한 일련의 강력한 기능을 제공하는 간결하고 유연한 Node.js 웹 애플리케이션 프레임워크이다.
 
 ### Project
 
@@ -76,3 +74,25 @@ console.log("end of server code...");
     ```
 
     2. 종료방법 - node사용법이랑 동일하다.
+
+## 3. URL Routing 처리
+
+### 간단한 개념
+
+- [기본 라우팅](https://expressjs.com/ko/starter/basic-routing.html) - 라우팅은 URI(또는 경로) 및 특정한 HTTP 요청 메소드(GET, POST 등)인 특정 엔드포인트에 대한 클라이언트 요청에 애플리케이션이 응답하는 방법을 결정하는 것을 말합니다.
+
+### Project
+
+- app.js에 routing 추가
+
+```javascript
+...
+app.get("/", (req, res) => {
+  res.send('<h1>hello world</h1>')
+});
+```
+
+- localhost로 접속해서 브라우저에서 확인
+  ![확인](../assets/1-3_1.png)
+
+* html 파일같은건 어떻게 보내나? [res.sendFile](https://expressjs.com/ko/4x/api.html#res.sendFile)을 이용한다.
