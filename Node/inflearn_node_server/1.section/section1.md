@@ -96,3 +96,9 @@ app.get("/", (req, res) => {
   ![확인](../assets/1-3_1.png)
 
 * html 파일같은건 어떻게 보내나? [res.sendFile](https://expressjs.com/ko/4x/api.html#res.sendFile)을 이용한다.
+
+## 4. static 디렉토리 설정
+
+- js, css, image등 정적인 파일을 제공하려면 ? [app.use](https://expressjs.com/ko/4x/api.html#app.use) 와 [express.static](https://expressjs.com/ko/4x/api.html#express.static)을 이용하세요.
+
+- [tutorial](https://expressjs.com/ko/starter/static-files.html)
