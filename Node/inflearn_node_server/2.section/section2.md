@@ -14,3 +14,35 @@
 ```bash
 yarn add body-parser --dev
 ```
+
+- body-parser 사용법
+
+```javascript
+// app.js
+...
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
+```
+
+## 2. View engine을 활용한 응답처리
+
+### 간단한 개념
+
+- ejs view template - 응답을 줄 때, 데이터와 html을 결합해서 주는 방식.
+- [express template engine](http://expressjs.com/en/guide/using-template-engines.html)
+
+### Project
+
+- [ejs 설치](https://github.com/mde/ejs)
+
+```bash
+yarn add ejs --dev
+```
+
+- [ejs 사용법](https://github.com/mde/ejs#example) - 공식문서 참조
