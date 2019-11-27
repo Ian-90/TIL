@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>email form</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>email form</title>
-</head>
+  <body>
+    <form action="/email_post" method="POST">
+      email: <input type="text" name="email" /><br />
+      submit <input type="submit" />
+    </form>
 
-<body>
-  <form action="/email_post" method="POST">
-    email: <input type="text" name="email"><br />
-    submit <input type="submit">
-  </form>
-</body>
+    <button class="ajaxsend">ajaxsend</button>
+    <div class="result"></div>
+    <script>
+      document.querySelector(".ajaxsend").addEventListener("click", () => {
+        const inputData = document.forms[0].elements[0].value;
+        sendAjax("http://127.0.0.1:3000/ajax_send_email", inputData);
+      });
 
+      function sendAjax(url, data) {
+        let sendData = {
+          email: data
+        };
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify(sendData));
+        xhr.addEventListener("load", () => {
+          const result = JSON.parse(xhr.responseText);
+          if (result.result !== "ok") return;
+          document.querySelector(".result").innerHTML = result.email;
+        });
+      }
+    </script>
+  </body>
 </html>

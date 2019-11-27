@@ -46,3 +46,33 @@ yarn add ejs --dev
 ```
 
 - [ejs 사용법](https://github.com/mde/ejs#example) - 공식문서 참조
+
+## 3. JSON 활용한 Ajax처리
+
+### 간단한 개념
+
+- [AJAX](https://developer.mozilla.org/ko/docs/Web/Guide/AJAX/Getting_Started) - 비동기 자바스크립트와 XML (Asynchronous JavaScript And XML)을 말한다. 간단히 말하면, 서버와 통신하기 위해 XMLHttpRequest 객체를 사용하는 것을 말합니다. JSON, XML, HTML 그리고 일반 텍스트 형식 등을 포함한 다양한 포맷을 주고 받을 수 있습니다.
+
+### Project
+
+- form에서 AJAX 해보기
+  - [XMLHttpRequest 객체 이용](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+  ```javascript
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", url);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send(JSON.stringify(sendData));
+  xhr.addEventListener("load", () => {
+    const result = JSON.parse(xhr.responseText);
+    if (result.result !== "ok") return;
+    document.querySelector(".result").innerHTML = result.email;
+  });
+  ```
+
+* 서버에서 처리 - [app.post](https://expressjs.com/ko/4x/api.html#app.post.method) 이용
+
+```javascript
+app.post("/", function(req, res) {
+  res.send("POST request to homepage");
+});
+```
