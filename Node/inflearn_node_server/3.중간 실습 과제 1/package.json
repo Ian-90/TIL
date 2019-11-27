@@ -1,0 +1,11 @@
+{
+  "name": "node_misson_1",
+  "version": "1.0.0",
+  "description": "inflearn_node_mission_1",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.1"
+  }
+}

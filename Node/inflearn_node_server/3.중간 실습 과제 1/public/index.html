@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>inflearn mission 1</title>
+  </head>
+  <body>
+    <form action="/search_result" method="POST">
+      <input type="text" />
+    </form>
+    <button class="search_btn">검색</button>
+    <div class="result"></div>
+    <script>
+      document.querySelector(".search_btn").addEventListener("click", () => {
+        const searchTerm = document.forms[0].elements[0].value;
+        sendSearch("/search_result", searchTerm);
+      });
+
+      function sendSearch(url, term) {
+        const searchResult = {
+          term
+        };
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify(searchResult));
+        xhr.addEventListener("load", () => {
+          const result = JSON.parse(xhr.responseText);
+          document.querySelector(".result").innerHTML = result.map(
+            el => el[term]
+          );
+        });
+      }
+    </script>
+  </body>
+</html>

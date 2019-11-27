@@ -5,7 +5,7 @@
 ## 목차
 
 1. [nodeJS + Express 웹서버 설정](./1.section/section1.md)
-2. Request,Response 처리 기본
+2. [Request,Response 처리 기본](./2.section/sectionㅈ.md)
 3. 중간 실습 과제 1
 4. Database 연동 기본
 5. Router 개선 - 모듈화
