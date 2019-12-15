@@ -106,7 +106,7 @@
       insert into [table name] (table column1, table column2, ..) values (table column1 values, table column2 values, ...);
       ```
 
-- project에 설치
+- project에 [mysql](https://github.com/mysqljs/mysql)설치
 
 ```bash
 yarn add mysql --dev
@@ -131,3 +131,35 @@ connection.query("SELECT 1 + 1 AS solution", function(err, rows, fields) {
 
 connection.end();
 ```
+
+## 2. MySQL 연동 구현
+
+- Table Select, Insert, Update, Delete
+
+  - Insert(추가)
+
+  ```bash
+  insert into [table name] (table column1, table column2, ..) values (table column1 values, table column2 values, ...);
+  ```
+
+  - Select(추가한 데이터 조회)
+
+  ```bash
+  // 전체
+  select * from [table name]
+
+  // 특별한 행
+  select * from [table name] where [condition]
+  ```
+
+  - Update(수정) : **where**를 입력안하면 전체 데이터가 바뀌기 때문에 조심해야 한다.
+
+  ```bash
+  update [table name] set [change column] = [change value] where [condition]
+  ```
+
+  - Delete(삭제)
+
+  ```bash
+  delete from [table name] where [condition]
+  ```

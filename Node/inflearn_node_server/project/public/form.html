@@ -31,8 +31,10 @@
         xhr.send(JSON.stringify(sendData));
         xhr.addEventListener("load", () => {
           const result = JSON.parse(xhr.responseText);
-          if (result.result !== "ok") return;
-          document.querySelector(".result").innerHTML = result.email;
+          const resultDiv = document.querySelector(".result");
+          if (result.result !== "ok")
+            return (resultDiv.innerHTML = "your email is not found");
+          else resultDiv.innerHTML = result.name;
         });
       }
     </script>
