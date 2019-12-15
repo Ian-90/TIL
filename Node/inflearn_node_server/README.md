@@ -5,9 +5,9 @@
 ## 목차
 
 1. [nodeJS + Express 웹서버 설정](./1.section/section1.md)
-2. [Request,Response 처리 기본](./2.section/sectionㅈ.md)
+2. [Request,Response 처리 기본](./2.section/section2.md)
 3. 중간 실습 과제 1
-4. Database 연동 기본
+4. [Database 연동 기본](./4.section/section4.md)
 5. Router 개선 - 모듈화
 6. DB에 데이터추가
 7. 패스포트기반 인증 로직 구현 (회원가입, 로그인, 로그아웃)
