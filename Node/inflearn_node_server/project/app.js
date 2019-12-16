@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
+const main = require("./router/main");
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -21,6 +22,8 @@ app.use(
   })
 );
 app.set("view engine", "ejs");
+
+app.use("/main", main);
 
 app.listen(3000, () => {
   console.log("start, express server on port 3000");

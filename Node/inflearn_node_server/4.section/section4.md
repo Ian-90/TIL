@@ -146,20 +146,20 @@ connection.end();
 
   ```bash
   // 전체
-  select * from [table name]
+  select * from [table name];
 
   // 특별한 행
-  select * from [table name] where [condition]
+  select * from [table name] where [condition];
   ```
 
   - Update(수정) : **where**를 입력안하면 전체 데이터가 바뀌기 때문에 조심해야 한다.
 
   ```bash
-  update [table name] set [change column] = [change value] where [condition]
+  update [table name] set [change column] = [change value] where [condition];
   ```
 
   - Delete(삭제)
 
   ```bash
-  delete from [table name] where [condition]
+  delete from [table name] where [condition];
   ```
