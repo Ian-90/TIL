@@ -28,3 +28,9 @@ router.get("/calendar", function(req, res, next) {
 // only requests to /calendar/* will be sent to our "router"
 app.use("/calendar", calendar);
 ```
+
+## 3. Routing 리팩토링
+
+### 간단한 개념
+
+- index.js에서 router를 모두다 처리한다. 그러면 app.js는 깔끔해지고, 미들웨어만 처리하게 된다.
