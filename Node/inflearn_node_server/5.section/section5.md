@@ -1,6 +1,6 @@
 # section 5. Router 개선 - 모듈화
 
-## 1. Routing 모듈화
+## 1. Routing 모듈화, 2. Routing 모듈화 2(DB연결부분)
 
 ### 간단한 개념
 
