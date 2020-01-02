@@ -15,3 +15,14 @@ npx create-react-app [project folder name]
 ```bash
 yarn add styled-components styled-reset styled-flex-component typography --dev
 ```
+
+## 2. Creating the Store
+
+- [Context API](https://ko.reactjs.org/docs/context.html#api)
+  - Provider - Store에 데이터를 제공해준다.
+
+* prop-types와 react-fontawesome 설치
+
+```bash
+yarn add prop-types react-fontawesome --dev
+```
