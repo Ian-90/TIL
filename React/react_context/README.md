@@ -121,10 +121,14 @@ yarn add prop-types react-fontawesome --dev
     render() {
       return (
         <Store.Consumer>
-          {store => <button onClick={store.changeData}>Click</button>} // button
-          클릭 할 때 마다, console창에 console창에 출력 된다.
+          {store => <button onClick={store.changeData}>Click</button>}
+          // button 클릭 할 때 마다, console창에 bye가 출력 된다.
         </Store.Consumer>
       );
     }
   }
   ```
+
+## 5. Rendering the Notifications
+
+- [Object.keys](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
