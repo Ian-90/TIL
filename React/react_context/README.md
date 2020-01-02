@@ -83,3 +83,48 @@ yarn add prop-types react-fontawesome --dev
     }
   }
   ```
+
+## 4. Updating the Store
+
+- Provider에 포함 시킬 함수는 constructor에 있어야함.
+
+  - App.js
+
+  ```javascript
+  import Store from "store";
+  class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this._changeData = () => {
+        console.log('bye')
+      }
+      this.state = {
+        data: "a"
+        changeData: this._changeData
+      };
+    }
+    render() {
+      return (
+        <Store.Provider value={this.state}>
+          <AppPresenter />
+        </Store.Provider>
+      );
+    }
+  }
+  ```
+
+  - NotificationPresenter.js
+
+  ```javascript
+  import Store from "store";
+  class NotificationPresenter extends React.Component {
+    render() {
+      return (
+        <Store.Consumer>
+          {store => <button onClick={store.changeData}>Click</button>} // button
+          클릭 할 때 마다, console창에 console창에 출력 된다.
+        </Store.Consumer>
+      );
+    }
+  }
+  ```
