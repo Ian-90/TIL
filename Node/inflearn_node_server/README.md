@@ -10,6 +10,6 @@
 4. [Database 연동 기본](./4.section/section4.md)
 5. [Router 개선 - 모듈화](./5.section/section5.md)
 6. [DB에 데이터추가](./6.section/section6.md)
-7. 패스포트기반 인증 로직 구현 (회원가입, 로그인, 로그아웃)
+7. [패스포트기반 인증 로직 구현 (회원가입, 로그인, 로그아웃)](./7.section/section7.md)
 8. 중간 실습 과제 2
 9. RESTful API

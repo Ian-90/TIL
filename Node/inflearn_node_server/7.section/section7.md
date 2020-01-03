@@ -1,0 +1,12 @@
+# section 7. 패스포트기반 인증 로직 구현(회원가입, 로그인, 로그아웃)
+
+## 1. passport 환경구축
+
+### 간단한 개념
+
+- session : 클라이언트가 로그인했을 때, 서버에서 로그인정보를 아이디값을 만들어서 디비에 저장.
+- 사용자가 특별한 페이지에 접근을 했을 때, 로그인했다는 정보를 서버에서 확인하고 상태값을 유지 해야함.
+- [passport](https://github.com/jaredhanson/passport) - 인증관련된 모듈 처리하는 미들웨어
+- [passport-local](https://github.com/jaredhanson/passport-local) - 일반적인 로그인 처리하는 미들웨어
+- [express-session](https://github.com/expressjs/session) - express에서 세션 관련된 처리해주는 미들웨어
+- [connect-flash](https://github.com/jaredhanson/connect-flash) - 에러메세지들을 쉽게전달
