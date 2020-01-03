@@ -132,3 +132,7 @@ yarn add prop-types react-fontawesome --dev
 ## 5. Rendering the Notifications
 
 - [Object.keys](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+
+## 6. Counting Unseen Notifications ~ 7. Deleting and Seeing Notifications
+
+- code
