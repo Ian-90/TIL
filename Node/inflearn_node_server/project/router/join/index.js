@@ -18,7 +18,7 @@ const connection = mysql.createConnection({
 connection.connect();
 
 router.get("/", (req, res) => {
-  res.render("join.ejs");
+  res.render("join.ejs", { message: "" });
 });
 
 passport.use(
@@ -33,6 +33,15 @@ passport.use(
       console.log("local-join callback called");
     }
   )
+);
+
+router.post(
+  "/",
+  passport.authenticate("local-join", {
+    successRedirect: "/main",
+    failureRedirect: "/join",
+    failureFlash: true
+  })
 );
 
 // router.post("/", (req, res) => {

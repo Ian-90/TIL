@@ -14,3 +14,5 @@
 ## 2. middleware, strategy 설정
 
 - 위에 미들웨어 사용법들 참고해서 설정
+
+## 3. passport 기반 router 설정
