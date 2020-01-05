@@ -16,3 +16,7 @@
 - 위에 미들웨어 사용법들 참고해서 설정
 
 ## 3. passport 기반 router 설정
+
+- routing 처리
+
+## 4. local-strategy 콜백완성
