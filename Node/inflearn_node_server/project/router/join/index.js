@@ -24,12 +24,22 @@ router.get("/", (req, res) => {
   res.render("join.ejs", { message: msg });
 });
 
+passport.serializeUser((user, done) => {
+  console.log("passport session save : ", user.id);
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  console.log("passport session get id : ", id);
+  done(null, id);
+});
+
 passport.use(
   "local-join",
   new LocalStrategy(
     {
       usernameField: "email",
-      passwrodFied: "password",
+      passwordField: "password",
       passReqToCallback: true
     },
     (req, email, password, done) => {
@@ -43,13 +53,13 @@ passport.use(
             console.log("existed user");
             return done(null, false, { message: "your email is already used" });
           } else {
-            const sql = { email, pw: password };
+            const sql = { email: email, pw: password };
             const query = connection.query(
               "insert into user set ?",
               sql,
               (err, rows) => {
                 if (err) throw err;
-                return done(null, { email, id: rows.insertId });
+                return done(null, { email: email, id: rows.insertId });
               }
             );
           }
