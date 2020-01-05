@@ -10,3 +10,7 @@
 - [passport-local](https://github.com/jaredhanson/passport-local) - 일반적인 로그인 처리하는 미들웨어
 - [express-session](https://github.com/expressjs/session) - express에서 세션 관련된 처리해주는 미들웨어
 - [connect-flash](https://github.com/jaredhanson/connect-flash) - 에러메세지들을 쉽게전달
+
+## 2. middleware, strategy 설정
+
+- 위에 미들웨어 사용법들 참고해서 설정
