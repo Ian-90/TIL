@@ -6,7 +6,7 @@ const path = require("path");
 router.get("/", (req, res) => {
   console.log("main js loaded", req.user);
   const id = req.user;
-  // res.sendFile(path.join(__dirname, "../../public/index.html"));
+  if (!id) res.render("login.ejs");
   res.render("main.ejs", { id });
 });
 
