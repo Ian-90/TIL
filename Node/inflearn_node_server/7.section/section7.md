@@ -22,3 +22,7 @@
 ## 4. local-strategy 콜백완성
 
 ## 5. passport기반 세션처리
+
+## 6. 로그인 로직 구현
+
+## 7. Ajax 기반의 passport 인증처리

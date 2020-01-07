@@ -14,6 +14,6 @@ router.get("/", (req, res) => {
 router.use("/main", main);
 router.use("/email", email);
 router.use("/join", join);
-router.use("/login", join);
+router.use("/login", login);
 
 module.exports = router;

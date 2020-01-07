@@ -50,18 +50,13 @@ passport.use(
           if (err) return done(err);
 
           if (rows.length) {
-            console.log("existed user");
-            return done(null, false, { message: "your email is already used" });
-          } else {
-            const sql = { email: email, pw: password };
-            const query = connection.query(
-              "insert into user set ?",
-              sql,
-              (err, rows) => {
-                if (err) throw err;
-                return done(null, { email: email, id: rows.insertId });
-              }
+            return done(
+              null,
+              { email: email, id: rows[0].uid },
+              { message: "your email is already used" }
             );
+          } else {
+            return done(null, false, { message: "your login is not found" });
           }
         }
       );
@@ -69,13 +64,16 @@ passport.use(
   )
 );
 
-router.post(
-  "/",
-  passport.authenticate("local-join", {
-    successRedirect: "/main",
-    failureRedirect: "/join",
-    failureFlash: true
-  })
-);
+router.post("/", (req, res, next) => {
+  passport.authenticate("local-login", (err, user, info) => {
+    if (err) res.status(500).json(err);
+    if (!user) return res.status(401).json(info.message);
+
+    req.logIn(user, err => {
+      if (err) return next(err);
+      return res.json(user);
+    });
+  })(req, res, next);
+});
 
 module.exports = router;
