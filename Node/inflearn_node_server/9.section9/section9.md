@@ -54,3 +54,5 @@
   | 3   | wall-E             | animation | 8     | robot         |
   | 4   | Zootopia           | adventure | 7     | Judy hops     |
   | 5   | The Sound of Music | musical   | 6     | Julie Andrews |
+
+## 3. RESTful API POST

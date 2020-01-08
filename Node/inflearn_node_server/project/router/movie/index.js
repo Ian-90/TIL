@@ -19,7 +19,7 @@ router.get("/list", (req, res) => {
   res.render("movie.ejs");
 });
 
-// /movie, GET 요청
+// 1. /movie, GET 요청
 router.get("/", (req, res) => {
   const responseData = {};
   const query = connection.query("select title from movie", (err, rows) => {
@@ -32,6 +32,24 @@ router.get("/", (req, res) => {
     }
     res.json(responseData);
   });
+});
+
+// 2. /movie, POST 요청
+router.post("/", (req, res) => {
+  const title = req.body.title;
+  const type = req.body.type;
+  const grade = req.body.grade;
+  const actor = req.body.actor;
+
+  const sql = { title, type, grade, actor };
+  const query = connection.query(
+    "insert into movie set ?",
+    sql,
+    (err, rows) => {
+      if (err) throw err;
+      return res.json({ result: 1 });
+    }
+  );
 });
 
 module.exports = router;
