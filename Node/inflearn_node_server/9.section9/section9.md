@@ -40,3 +40,17 @@
 | /movies        | POST    | 영화 추가                |
 | /movies/:title | DELETE  | title 해당 영화 삭제     |
 | /movies/:title | PUT     | title 해당 영화 업데이트 |
+
+## 2. RESTful API GET
+
+- project
+
+  - 기존 DB에 밑에 테이블을 만든다.
+
+  | id  | title              | type      | grade | actor         |
+  | --- | ------------------ | --------- | ----- | ------------- |
+  | 1   | master             | action    | 9     | leebynghun    |
+  | 2   | moonlight          | drama     | 9     | Barry Jenkins |
+  | 3   | wall-E             | animation | 8     | robot         |
+  | 4   | Zootopia           | adventure | 7     | Judy hops     |
+  | 5   | The Sound of Music | musical   | 6     | Julie Andrews |
