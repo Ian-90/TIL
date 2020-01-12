@@ -58,3 +58,5 @@
 ## 3. RESTful API POST
 
 ## 4. RESTful API GET SUB-URI
+
+## 5. RESTful API DELETE

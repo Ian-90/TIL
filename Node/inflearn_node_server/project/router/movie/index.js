@@ -72,4 +72,24 @@ router.get("/:title", (req, res) => {
   );
 });
 
+// 4. /movie:title, DELETE 요청
+router.delete("/:title", (req, res) => {
+  const title = req.params.title;
+  const responseData = {};
+  const query = connection.query(
+    "delete from movie where title=?",
+    [title],
+    (err, rows) => {
+      if (err) throw err;
+      if (rows.affectedRows > 0) {
+        responseData.result = 1;
+        responseData.data = title;
+      } else {
+        responseData.result = 0;
+      }
+      res.json(responseData);
+    }
+  );
+});
+
 module.exports = router;
