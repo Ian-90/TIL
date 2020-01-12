@@ -56,3 +56,5 @@
   | 5   | The Sound of Music | musical   | 6     | Julie Andrews |
 
 ## 3. RESTful API POST
+
+## 4. RESTful API GET SUB-URI

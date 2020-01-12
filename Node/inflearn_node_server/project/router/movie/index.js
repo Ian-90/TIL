@@ -52,4 +52,24 @@ router.post("/", (req, res) => {
   );
 });
 
+// 3. /movie:title, GET 요청
+router.get("/:title", (req, res) => {
+  const title = req.params.title;
+  const responseData = {};
+  const query = connection.query(
+    "select * from movie where title=?",
+    [title],
+    (err, rows) => {
+      if (err) throw err;
+      if (rows[0]) {
+        responseData.result = 1;
+        responseData.data = rows;
+      } else {
+        responseData.result = 0;
+      }
+      res.json(responseData);
+    }
+  );
+});
+
 module.exports = router;
