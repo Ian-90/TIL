@@ -2,26 +2,31 @@ const App = require("../src/components/ClickCounter");
 const ViewApp = require("../src/components/ClickCountView");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
-const { document } = new JSDOM(`<!DOCTYPE html><span></span>)`).window;
+const { document } = new JSDOM(
+  `<!DOCTYPE html><span></span><button>increase</button>)`
+).window;
 
 describe("App.ClickCountView 모듈", () => {
-  let clickCounter, updateEl, view;
+  let clickCounter, triggerEl, updateEl, view;
   beforeEach(() => {
     clickCounter = App.ClickCounter();
     updateEl = document.createElement("span");
-    view = ViewApp.ClickCountView(clickCounter, updateEl);
+    triggerEl = document.createElement("button");
+    view = ViewApp.ClickCountView(clickCounter, { updateEl, triggerEl });
   });
 
-  it("clickCounter를 주입하지 않으면 에러를 던진다.", () => {
-    clickCounter = null;
-    const actual = () => ViewApp.ClickCountView(clickCounter, updateEl);
-    expect(actual).toThrowError("clickCounter");
-  });
+  describe("네거티브 테스트", () => {
+    it("clickCounter를 주입하지 않으면 에러를 던진다.", () => {
+      const actual = () => ViewApp.ClickCountView(null, { updateEl });
+      expect(actual).toThrowError(
+        ViewApp.ClickCountView.messages.noClickCounter
+      );
+    });
 
-  it("updateEl을 주입하지 않으면 에러를 던진다.", () => {
-    updateEl = null;
-    const actual = () => ViewApp.ClickCountView(clickCounter, updateEl);
-    expect(actual).toThrowError("updateEl");
+    it("updateEl을 주입하지 않으면 에러를 던진다.", () => {
+      const actual = () => ViewApp.ClickCountView(clickCounter, { triggerEl });
+      expect(actual).toThrowError(ViewApp.ClickCountView.messages.noUpdateEl);
+    });
   });
 
   describe("updateView()", () => {
@@ -43,6 +48,13 @@ describe("App.ClickCountView 모듈", () => {
       spyOn(view, "updateView");
       view.increaseAndUpdateView();
       expect(view.updateView).toHaveBeenCalled();
+    });
+
+    it("클릭 이벤트가 발생하면 increaseAndUpdateView를 실행한다.", () => {
+      spyOn(view, "increaseAndUpdateView");
+      // click
+      triggerEl.click();
+      expect(view.increaseAndUpdateView).toHaveBeenCalled();
     });
   });
 });
