@@ -9,7 +9,8 @@ const { document } = new JSDOM(
 describe("App.ClickCountView 모듈", () => {
   let clickCounter, triggerEl, updateEl, view;
   beforeEach(() => {
-    clickCounter = App.ClickCounter();
+    const data = { value: 0 };
+    clickCounter = App.ClickCounter(data);
     updateEl = document.createElement("span");
     triggerEl = document.createElement("button");
     view = ViewApp.ClickCountView(clickCounter, { updateEl, triggerEl });
