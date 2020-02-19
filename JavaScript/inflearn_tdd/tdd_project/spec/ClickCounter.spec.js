@@ -1,7 +1,8 @@
 const App = require("../src/components/ClickCounter");
 
 describe("App.ClickCounter", () => {
-  let counter, data;
+  let counter;
+  const data = { value: 0 };
 
   it("초기값을 주입하지 않으면 에러를 던진다", () => {
     const actual = () => (counter = App.ClickCounter());
@@ -9,7 +10,6 @@ describe("App.ClickCounter", () => {
   });
 
   beforeEach(() => {
-    data = { value: 0 };
     counter = App.ClickCounter(data);
   });
 
@@ -19,11 +19,21 @@ describe("App.ClickCounter", () => {
     });
   });
 
-  describe("increase()", () => {
+  describe("count()", () => {
     it("카운터를 1 올린다", () => {
       const initValue = counter.getValue();
-      counter.increase();
+      counter.count();
       expect(counter.getValue()).toBe(initValue + 1);
+    });
+  });
+
+  describe("setCountFn()", () => {
+    it("인자로 함수를 넘기면 count()를 대체한다.", () => {
+      const add2 = value => value + 2;
+      const expected = add2(data.value);
+      counter.setCountFn(add2).count();
+      const actual = counter.getValue();
+      expect(actual).toBe(expected);
     });
   });
 });
