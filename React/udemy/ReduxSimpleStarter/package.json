@@ -13,10 +13,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.19.2",
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
+    "react-google-maps": "^9.4.5",
+    "react-sparklines": "^1.7.0",
+    "redux-promise": "^0.6.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
