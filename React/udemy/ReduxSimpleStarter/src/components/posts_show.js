@@ -4,12 +4,20 @@ import { fetchPost, deletePost } from '../actions/index'
 import { Link } from 'react-router-dom'
 
 class PostsShow extends React.Component {
-  componentWillMount() {
-    this.props.fetchPost(this.props.match.params.id)
+  // section 6
+  // componentWillMount() {
+  //   this.props.fetchPost(this.props.match.params.id)
+  // }
+
+  // section 9
+  componentDidMount() {
+    const { id } = this.props.match.params
+    this.props.fetchPost(id)
   }
 
   onDeletePost = () => {
-    this.props.deletePost(this.props.match.params.id)
+    const { id } = this.props.match.params
+    this.props.deletePost(id)
       .then(() => {
         this.props.history.push('/')
       })
@@ -38,10 +46,17 @@ class PostsShow extends React.Component {
     )
   }
 }
+// section 6
+// function mapStateToProps(state) {
+//   return {
+//     post: state.posts.post
+//   }
+// }
 
-function mapStateToProps(state) {
+// section 9
+function mapStateToProps({ posts }, ownProps) {
   return {
-    post: state.posts.post
+    post: posts[ownProps.match.params.id]
   }
 }
 

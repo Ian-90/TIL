@@ -2,23 +2,39 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchPosts } from '../actions/index'
 import { Link } from 'react-router-dom'
+import _ from 'lodash'
 
 class PostIndex extends React.Component {
-  componentWillMount() {
-    this.props.fetchPosts()
-  }
+  // section 6
+  // componentWillMount() {
+  //   this.props.fetchPosts()
+  // }
 
   renderPosts = () => {
-    return this.props.posts.map((post) => {
+    // section 6
+    // return this.props.posts.map((post) => {
+    //   return (
+    //     <li className="list-group-item" key={post.id}>
+    //       <Link to={`posts/${post.id}`}>
+    //         <span className="pull-xs-right">{post.categories}</span>
+    //         <strong>{post.title}</strong>
+    //       </Link>
+    //     </li>
+    //   )
+    // })
+    return _.map(this.props.posts, post => {
       return (
         <li className="list-group-item" key={post.id}>
-          <Link to={`posts/${post.id}`}>
-            <span className="pull-xs-right">{post.categories}</span>
-            <strong>{post.title}</strong>
+          <Link to={`/posts/${post.id}`}>
+            {post.title}
           </Link>
         </li>
       )
     })
+  }
+
+  componentDidMount() {
+    this.props.fetchPosts();
   }
 
   render() {

@@ -3,7 +3,6 @@ import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 import { createPost } from '../actions/index'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 const renderField = ({
   input,
@@ -33,30 +32,51 @@ class PostsNew extends React.Component {
       })
   }
 
+  renderField = (field) => {
+    const { meta: { touched, error } } = filed
+    const className = `form-group ${touched && error ? 'is-invalid' : ''}`
+    return (
+      <div className={className}>
+        <label>{field.label}</label>
+        <input
+          type="text"
+          className="form-control"
+          {...field.input}
+        />
+        <div className="text-danger">
+          {touched ? error : ''}
+        </div>
+      </div>
+    )
+  }
+
   render() {
     const { handleSubmit } = this.props
     return (
       <form onSubmit={handleSubmit(this.onSubmit)}>
         <h3>Create A New Post</h3>
         <div className="form-group">
-          <label>Title</label>
+          {/* <label>Title</label> */}
           <Field
             name="title"
-            component={renderField}
+            label="Title"
+            component={this.renderField}
             type="text"
           />
         </div>
         <div className="form-group">
-          <label>Categories</label>
+          {/* <label>Categories</label> */}
           <Field
             name="categories"
-            component={renderField}
+            label="Categories"
+            component={this.renderField}
             type="text"
           />
         </div>
         <div className="form-group">
           <label>Content</label>
           <Field
+            label="Content"
             name="content"
             component={renderField}
             type="textarea"
@@ -87,7 +107,16 @@ const validate = values => {
   return errors
 }
 
-export default connect(null, { createPost })(reduxForm({
-  form: 'PostsNewForm',
+// export default connect(null, { createPost })(reduxForm({
+//   form: 'PostsNewForm',
+//   validate,
+// })(PostsNew))
+
+// section9
+
+export default reduxForm({
   validate,
-})(PostsNew))
+  form: 'PostsNewFrom'
+})(
+  connect(null, { createPost })(PostsNew)
+)
