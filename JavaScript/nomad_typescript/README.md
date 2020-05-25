@@ -68,3 +68,24 @@ const sayHi = (person: Human): string => {
   return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}!!`
 }
 ```
+## 4. Class
+* interface js로 컴파일 되지 않는데, js로 컴파일되도록 넣으려면? class 사용
+* example
+```javascript
+class Human {
+  public name: string;
+  public age: number;
+  public gender: string;
+  constructor(name: string, age: number, gender: string) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+}
+
+const Ian = new Human("Ian", 22, "male")
+
+const sayHi = (person: Human): string => {
+  return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}!!`
+}
+```
