@@ -2,7 +2,7 @@
 
 - [TypeScript로 블록체인 만들기](https://academy.nomadcoders.co/p/build-a-blockchain-with-typescript)
 
-## Setting
+## 1. Setting
 * 설치
 ```
 yarn global add typescript
@@ -26,10 +26,10 @@ yarn global add typescript
 tsc [파일명] --watch
 ```
 
-## Types
+## 2. Types
 1. function
 ```
-const func(arguments: type, ...): return type => {}
+const func(arguments: [type], ...): [함수의 return할 type] => {}
 ```
 
 * example
@@ -38,4 +38,33 @@ const sayHi = (name: string, age: number, gender: string): string => {
   return `Hello ${name}, you are ${age}, you are a ${gender}`
 }
 
+```
+
+## 3. Interface
+* object를 함수의 인자로 넘기려면 ? interface를 이용하기
+  * interface는 js로 컴파일 되지 않는다.
+```
+interface [objectname] {
+  key: type;
+  ...
+}
+```
+
+* example
+```javascript
+interface Human {
+  name: string;
+  age: number;
+  gender: string;
+}
+
+const person = {
+  name: "Ian",
+  age: 22,
+  gender: "male"
+}
+
+const sayHi = (person: Human): string => {
+  return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}!!`
+}
 ```
