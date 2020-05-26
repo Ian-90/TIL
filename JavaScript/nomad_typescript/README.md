@@ -21,10 +21,25 @@ yarn global add typescript
   npx tsc [파일명]
   ```
 
-* 계속 컴파일 하려면 ? 컴파일 명령어에 -w 또는 --watch 옵션을 붙인다.
-```
-tsc [파일명] --watch
-```
+* 계속 컴파일 하려면 ? 
+  * cli 옵션 이용 - 컴파일 명령어에 -w 또는 --watch 옵션을 붙인다.
+  ```
+  tsc [파일명] --watch
+  ```
+
+  * [tsc-watch](https://github.com/gilamran/tsc-watch) 이용
+    * 설치
+    ```
+    yarn add tsc-watch
+    ```
+
+    * package.json 명령어 추가
+    ```
+    "scripts": {
+      "start": "tsc-watch --onSuccess \" node dist/index.js\" "
+    }
+    ```
+    
 
 ## 2. Types
 1. function
