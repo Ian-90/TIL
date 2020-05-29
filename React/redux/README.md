@@ -15,3 +15,13 @@ yarn add redux
 * reducer - 앱의 데이터를 리턴하는 함수
 * action - reducer와 소통 하는 방법(데이터를 변경하는 함수)
 * dispath - action을 받아서 store에 보내는 함수
+* subscribe - state의 변화에 대응하는 함수
+
+## 2. Pure Redux: TodoList
+
+* state
+  * 읽기 전용이어야 한다. 
+  * 변경하지말고 새로운 오브젝트를 리턴한다.
+
+* actionCreator
+  * 오브젝트만 리턴
