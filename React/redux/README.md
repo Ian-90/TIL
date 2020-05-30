@@ -25,3 +25,15 @@ yarn add redux
 
 * actionCreator
   * 오브젝트만 리턴
+
+## 3. React Redux
+
+* [react에서 redux를 사용하려면?](https://redux.js.org/basics/usage-with-react#installing-react-redux) - react-redux를 설치.
+  * react-redux install
+  ```
+  yarn add react-redux
+  ```
+
+* connect - 컴포넌트들을 store에 연결
+* mapStateToProps - redux의 state를 컴포넌트의 props로 전달
+* mapDispatchToProps - redux의 dispatch를 컴포넌트의 props로 전달
