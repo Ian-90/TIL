@@ -37,3 +37,28 @@ yarn add redux
 * connect - 컴포넌트들을 store에 연결
 * mapStateToProps - redux의 state를 컴포넌트의 props로 전달
 * mapDispatchToProps - redux의 dispatch를 컴포넌트의 props로 전달
+
+## 4. React Toolkit
+
+* [redux toolkit](https://redux.js.org/redux-toolkit/overview)이란 ? - 더 적은 양의 redux 코드를 짤 수 있도록 도와주는 도구
+
+* install
+```
+yarn add @reduxjs/toolkit
+```
+
+* createAction - action함수를 대체
+```javascript
+createAction(typeName)
+{
+  type: typeName,
+  payload: dispatch로 보내는 데이터
+}
+
+```
+
+* createReducer - reducer함수를 대체. state를 변형해서 리턴해도 된다.(switch문을 사용하지 않는다.)
+
+* configureStore - default로 redux devtools를 지원
+
+* createSlice - initial state, reducer, action 등 모두 지원
