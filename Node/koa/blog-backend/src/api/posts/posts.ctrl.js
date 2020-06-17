@@ -1,93 +1,131 @@
-let postId = 1
+const Post = require('models/post')
+const Joi = require('joi')
+const { ObjectId } = require('mongoose').Types
 
-const posts = [
-  {
-    id: 1,
-    title: '제목',
-    body: '내용'
-  }
-]
-
-exports.write = (ctx) => {
-  const { title, body } = ctx.request.body
-  postId += 1
-
-  const post = { id: postId, title, body }
-  posts.push(post)
-  ctx.body = post
-}
-
-exports.list = (ctx) => {
-  ctx.body = posts
-}
-
-exports.read = (ctx) => {
+exports.checkObjectId = (ctx, next) => {
   const { id } = ctx.params
-  const post = posts.find(p => p.id.toString() === id)
 
-  if(!post) {
-    ctx.status = 404
-    ctx.body = {
-      message: '포스트가 존재하지 않습니다.'
-    }
+  if(!ObjectId.isValid(id)) {
+    ctx.status = 400
+    return null
+  }
+
+  return next()
+}
+ 
+exports.write = async (ctx) => {
+  const schema = Joi.object().keys({
+    title: Joi.string().required(),
+    body: Joi.string().required(),
+    tags: Joi.array().items(Joi.string()).required(),
+  })
+
+  const result = Joi.validate(ctx.request.body, schema)
+  
+  if(result.error) {
+    ctx.status = 400
+    ctx.body = result.error
+  }
+  const { title, body, tags } = ctx.request.body
+
+  const post = new Post({
+    title, body, tags
+  })
+
+  try {
+    await post.save()
+    ctx.body = post
+  } catch(e) {
+    ctx.throw(e, 500)
+  }
+}
+
+exports.list = async(ctx) => {
+  const page = parseInt(ctx.query.page || 1, 10)
+  if(page < 1) {
+    ctx.status = 400
     return
   }
 
-  ctx.body = post
+  try {
+    const posts = await Post.find()
+      .sort({ _id: -1 })
+      .limit(10)
+      .skip((page - 1) * 10)
+      .lean()
+      .exec()
+    
+    const postCount = await Post.countDocuments().exec()
+    const limitBodyLength = post => ({
+      ...post,
+      body: post.body.length < 200 ? post.body : `${post.body.slice(0, 200)}...`
+    })
+
+    ctx.set('Last-Page', Math.ceil(postCount / 10))
+    ctx.body = posts.map(limitBodyLength)
+  } catch(e) {
+    ctx.throw(e, 500)
+  }
+
 }
 
-exports.remove = (ctx) => {
+exports.read = async(ctx) => {
   const { id } = ctx.params
-  const index = posts.findIndex(p => p.id.toString() === id)
+  try {
+    const post = await Post.findById(id).exec()
 
-  if (index === -1) {
-    ctx.status = 404
-    ctx.body = {
-      message: '포스트가 존재하지 않습니다.'
+    if(!post) {
+      ctx.status = 404
+      return
     }
-    return
+    ctx.body = post
+  } catch(e) {
+    ctx.throw(e, 500)
   }
 
-  posts.splice(index, 1)
-  ctx.status = 204
 }
 
-exports.replace = (ctx) => {
+exports.remove = async(ctx) => {
   const { id } = ctx.params
-  const index = posts.findIndex(p => p.id.toString() === id)
-
-  if (index === -1) {
-    ctx.status = 404
-    ctx.body = {
-      message: '포스트가 존재하지 않습니다.'
-    }
-    return
+  try {
+    await Post.findByIdAndRemove(id).exec()
+    ctx.status = 204
+  } catch(e) {
+    ctx.throw(e, 500)
   }
 
-  posts[index] = {
-    id,
-    ...ctx.request.body
-  }
-
-  ctx.body = posts[index]
 }
 
-exports.update = (ctx) => {
+exports.replace = async(ctx) => {
   const { id } = ctx.params
-  const index = posts.findIndex(p => p.id.toString() === id)
+  try {
+    const post = await Post.findByIdAndUpdate(id, ctx.request.body, {
+      new: true
+    }).exec()
 
-  if (index === -1) {
-    ctx.status = 404
-    ctx.body = {
-      message: '포스트가 존재하지 않습니다.'
+    if(!post) {
+      ctx.status = 404
+      return
     }
-    return
+    ctx.body = post
+  } catch(e) {
+    ctx.throw(e, 500)
   }
+}
 
-  posts[index] = {
-    ...posts[index],
-    ...ctx.request.body
+exports.update = async(ctx) => {
+  const { id } = ctx.params
+  try {
+    const post = await Post.findByIdAndUpdate(id, ctx.request.body, {
+      new: true
+    }).exec()
+
+    if(!post) {
+      ctx.status = 404
+      return
+    }
+    ctx.body = post
+  } catch(e) {
+    ctx.throw(e, 500)
   }
-
-  ctx.body = posts[index]
 }
