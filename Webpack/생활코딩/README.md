@@ -73,6 +73,20 @@ yarn add webpack webpack-cli --dev
 npx webpack src/index.js -o dist/index_bundle.js
 ```
 
+* [scripts 사용법](https://webpack.js.org/guides/getting-started/#npm-scripts)
+  * package.json에 scripts 추가
+  ```json
+  ...,
+  "scripts": {
+    "build": "webpack"
+  }
+  ```
+
+  * 사용법
+  ```bash
+  yarn build
+  ```
+
 ## 4. 설정파일 도입
 
 * [webpack.config.js](https://webpack.js.org/configuration/#options)
@@ -95,3 +109,7 @@ npx webpack src/index.js -o dist/index_bundle.js
 ## 6. 로더의 도입
 
 * [loader](https://webpack.js.org/concepts/#loaders) - 입력한 asset들을 loader를 통과시키면, 원하는 것을 만들어주는 가공공정
+
+## 7. output 설정
+
+* [output](https://webpack.js.org/concepts/output/) - 여러가지 형태의 아웃풋을 만들 수 있는 옵션

@@ -4,6 +4,9 @@
   "description": "webpack study...",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
   "devDependencies": {
     "css-loader": "^3.6.0",
     "style-loader": "^1.2.1",
