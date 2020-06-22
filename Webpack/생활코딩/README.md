@@ -87,3 +87,7 @@ npx webpack src/index.js -o dist/index_bundle.js
   ```bash
   npx webpack --config [webpack config filename]
   ```
+
+## 5. 모드의 도입
+
+* [mode](https://webpack.js.org/configuration/mode/)
