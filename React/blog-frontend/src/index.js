@@ -4,8 +4,6 @@ import Root from './Root'
 import 'styles/base.scss'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Root />
-  </React.StrictMode>,
+  <Root />,
   document.getElementById('root')
 );
