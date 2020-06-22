@@ -91,3 +91,7 @@ npx webpack src/index.js -o dist/index_bundle.js
 ## 5. 모드의 도입
 
 * [mode](https://webpack.js.org/configuration/mode/)
+
+## 6. 로더의 도입
+
+* [loader](https://webpack.js.org/concepts/#loaders) - 입력한 asset들을 loader를 통과시키면, 원하는 것을 만들어주는 가공공정
