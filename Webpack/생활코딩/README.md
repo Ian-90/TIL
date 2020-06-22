@@ -70,5 +70,20 @@ yarn add webpack webpack-cli --dev
 
 * [cli 사용법](https://webpack.js.org/api/cli/#usage-without-configuration-file)
 ```bash
-npx webpack ./src/index.js -o ./dist/index_bundle.js
+npx webpack src/index.js -o dist/index_bundle.js
 ```
+
+## 4. 설정파일 도입
+
+* [webpack.config.js](https://webpack.js.org/configuration/#options)
+
+* [config를 이용한 cli](https://webpack.js.org/api/cli/#configuration-options)
+  * config파일이 webpack.config.js 일 때,
+  ```bash
+  npx webpack
+  ```
+
+  * config파일이 다른 파일명 일 때,
+  ```bash
+  npx webpack --config [webpack config filename]
+  ```
