@@ -1,3 +1,3 @@
-var word = 'Hello'
+const word = 'Hello'
 
 export default word

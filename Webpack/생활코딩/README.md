@@ -58,3 +58,17 @@ export default word
 * import,export는 최신브라우저에서만 동작
 * 수많은 파일을 다운로드 받는다고 하면, 로딩이 길어진다.
 * 그러므로 webpack같은 번들러가 필요하다.
+
+## 3. 웹팩의 도입
+
+* [설치](https://webpack.js.org/guides/getting-started/#basic-setup)
+```bash
+yarn add webpack webpack-cli --dev
+```
+
+* index.js - entry 파일(입구)
+
+* [cli 사용법](https://webpack.js.org/api/cli/#usage-without-configuration-file)
+```bash
+npx webpack ./src/index.js -o ./dist/index_bundle.js
+```
