@@ -113,3 +113,7 @@ npx webpack src/index.js -o dist/index_bundle.js
 ## 7. output 설정
 
 * [output](https://webpack.js.org/concepts/output/) - 여러가지 형태의 아웃풋을 만들 수 있는 옵션
+
+## 8. 플러그인의 도입
+
+* [plugin](https://webpack.js.org/concepts/#plugins) - 최종적인 결과물을 변형하는것
