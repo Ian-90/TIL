@@ -1,13 +1,11 @@
 import React from 'react'
 import PageTemplate from 'components/common/PageTemplate'
-import PostInfo from 'components/post/PostInfo'
-import PostBody from 'components/post/PostBody'
-
-const PostPage = () => {
+import Post from 'containers/post/Post'
+const PostPage = ({ match }) => {
+  const { id } = match.params
   return (
     <PageTemplate>
-      <PostInfo />
-      <PostBody />
+      <Post id={id} />
     </PageTemplate>
   )
 }

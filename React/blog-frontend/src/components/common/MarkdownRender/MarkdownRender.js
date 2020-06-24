@@ -4,6 +4,7 @@ import styles from './MarkdownRender.module.scss'
 import marked from 'marked'
 import Prism from 'prismjs'
 import 'prismjs/themes/prism-okaidia.css'
+import DOMPurify from 'dompurify'
 
 const cx = classNames.bind(styles)
 
@@ -12,7 +13,7 @@ class MarkdownRender extends Component {
     super(props);
     const { markdown } = props
     this.state = {
-      html: markdown ? marked(markdown, { breaks: true, sanitize: true }) : '',
+      html: markdown ? DOMPurify.sanitize(marked(markdown, { breaks: true })) : '',
     }
   }
 
@@ -25,12 +26,13 @@ class MarkdownRender extends Component {
     }
 
     this.setState({
-      html: marked(markdown, {
-        breaks: true,
-        sanitize: true
-      })
+      html: DOMPurify.sanitize(marked(markdown, {
+        breaks: true
+      }))
     })
   }
+
+  componentDidMount = () => Prism.highlightAll()
 
   componentDidUpdate = (prevProps, prevState) => {
     if(prevProps.markdown !== this.props.markdown) {
