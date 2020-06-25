@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
 import * as editorActions from 'store/modules/editor'
+import queryString from 'query-string'
 
 class EditorHeaderContainer extends Component {
   handleGoBack = () => {
@@ -17,7 +18,8 @@ class EditorHeaderContainer extends Component {
       markdown,
       tags,
       EditorActions,
-      history
+      history,
+      location
     } = this.props
     const post = {
       title,
@@ -26,6 +28,12 @@ class EditorHeaderContainer extends Component {
     }
 
     try {
+      const { id } = queryString.parse(location.search)
+      if (id) {
+        await EditorActions.editPost({ id, ...post })
+        history.push(`/post/${id}`)
+        return
+      }
       await EditorActions.writePost(post)
       history.push(`/post/${this.props.postId}`)
     } catch(e) {
@@ -34,16 +42,23 @@ class EditorHeaderContainer extends Component {
   }
 
   componentDidMount = () => {
-    const { EditorActions } = this.props
+    const { EditorActions, location } = this.props
     EditorActions.initialize()
+
+    const { id } = queryString.parse(location.search)
+    if (id) {
+      EditorActions.getPost(id)
+    }
   }
 
   render() {
     const { handleGoBack, handleSubmit } = this
+    const { id } = queryString.parse(this.props.location.search)
     return (
       <EditorHeader
         onGoBack={handleGoBack}
         onSubmit={handleSubmit}
+        isEdit={id ? true : false}
       />
     )
   }
