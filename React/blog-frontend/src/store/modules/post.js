@@ -4,8 +4,10 @@ import { pender } from 'redux-pender'
 import * as api from 'lib/api'
 
 const GET_POST = 'post/GET_POST'
+const REMOVE_POST = 'post/REMOVE_POST'
 
 export const getPost = createAction(GET_POST, api.getPost)
+export const removePost = createAction(REMOVE_POST, api.removePost)
 
 const initiaState = Map({
   post: Map({})

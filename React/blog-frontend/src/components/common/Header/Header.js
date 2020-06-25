@@ -19,7 +19,7 @@ const Header = ({ postId, onRemove }) => (
             <Button key="remove" theme="outline" onClick={onRemove}>삭제</Button>
           ]
         }
-        <Button theme="outline" to="editor">
+        <Button theme="outline" to="/editor">
           새 포스트
         </Button>
       </div>
