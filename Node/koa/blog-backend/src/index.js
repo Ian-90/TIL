@@ -4,10 +4,12 @@ const Koa = require('koa')
 const Router = require('koa-router')
 const bodyParser = require('koa-bodyparser')
 const mongoose = require('mongoose')
+const session = require('koa-session')
 
 const {
   PORT: port = 4000,
-  MONGO_URI: mongoURI
+  MONGO_URI: mongoURI,
+  COOKIE_SIGN_KEY: signKey
 } = process.env
 
 mongoose.connect(mongoURI, {
@@ -30,9 +32,15 @@ router.get('/', (ctx) => {
 
 router.use('/api', api.routes())
 
+const sessionConfig = {
+  maxAge: 86400000,
+}
 app.use(bodyParser())
+app.use(session(sessionConfig, app))
 app.use(router.routes())
 app.use(router.allowedMethods())
+
+app.keys = [signKey]
 
 app.listen(port, () => {
   console.log('listeing to port', port)
