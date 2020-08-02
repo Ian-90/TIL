@@ -43,3 +43,28 @@
       ...
     </html>
     ```
+  
+# 4. meta요소 알아보기
+
+* 문자 코드셋을 제외하고, 다른 meta 태그는 필수로 쓰지 않아도 된다.
+```html
+<html lang="en">
+  <head>
+    <meta name="keywords" content=""> <!-- 웹페이지에서 대표되는 단어들 -->
+    <meta name="description" content=""> <!-- 문서에 대한 설명 -->
+    <meta name="author" content=""> <!-- 저자 -->
+    <meta name="generator" content=""> <!-- 웹페이지 프레임워크 정보 -->
+    <meta name="robots" content="index,follow"> <!-- 검색엔진 허용 관련 -->
+    <!-- 오픈 그래픽(카카오톡 같은거 메세지 보내면 뜨는 정보들) -->
+    <meta name="og:title" content="페이지제목"> 
+    <meta name="og:url" content="http://사이트주소/">
+    <meta name="og:image" content="http://이미지경로">
+    <meta name="og:type" content="website">
+    <meta name="og:description" content="사이트 설명">
+    <!-- 일정 시간 후, 다른페이지로 redirect하는 meta tag -->
+    <meta http-equiv="refresh" content="시간; url=이동할 페이지 주소">
+    <!-- 반응형 작업 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  ...
+</html>
+```
