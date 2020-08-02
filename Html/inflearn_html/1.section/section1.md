@@ -64,7 +64,44 @@
     <!-- 일정 시간 후, 다른페이지로 redirect하는 meta tag -->
     <meta http-equiv="refresh" content="시간; url=이동할 페이지 주소">
     <!-- 반응형 작업 -->
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
   ...
+</html>
+```
+# 5. html템플릿 작성하기
+* 주석은 코드량이 많을 때, 찾기 편하기 위해서 하는 것
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>template</title>
+</head>
+<body>
+  <p><a href="#content">본문바로가기</a></p>
+  <div id="wrap">
+    <!-- header -->
+    <div id="header">
+
+    </div>
+    <!-- /header -->
+    <!-- container -->
+    <div id="container">
+      <!-- content -->
+      <div id="content">
+
+      </div>
+      <!-- /content -->
+    </div>
+    <!-- /container -->
+    <!-- footer -->
+    <div id="footer">
+
+    </div>
+    <!-- /footer -->
+  </div>
+</body>
 </html>
 ```
