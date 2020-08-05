@@ -78,3 +78,11 @@
     * download - href에 맞는 파일을 다운로드 하도록 해준다. 
     * accesskey - 링크에 대한 단축키를 생성(크롬은 alt + 설정키)
     * tabindex - a, input, button, select, textarea등 tab이 적용되는데, tab의 순서를 바꾸고 싶을 때, 적용
+
+  # 9. img요소 알아보기
+
+  * img - 이미지를 나타내준다.
+    * src - 이미지의 경로
+    * alt - 경로가 잘못되거나 다운되지 않아서 이미지가 나타나지 않을 때, 대체 텍스트(필수)
+    * title - 부가설명
+    * longdesc - 긴 설명글
