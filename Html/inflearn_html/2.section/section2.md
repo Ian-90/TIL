@@ -67,3 +67,14 @@
     * rowspan - row를 합칠 때 사용
   * colgroup - 각 column의 넓이를 지정
     * col을 사용(맨마지막 col은 width를 지정하지 않으면, 나머지가 width로 지정된다 )
+  
+  # 8. a요소 알아보기
+
+  * a - webpage 연결하기 위해서 사용
+    * href - 연결 할 주소
+      * email은 mailto:email address로 사용
+    * title - hover시 부연설명
+    * target - _blank로 적용하면, 새로운 탭이 뜬다.
+    * download - href에 맞는 파일을 다운로드 하도록 해준다. 
+    * accesskey - 링크에 대한 단축키를 생성(크롬은 alt + 설정키)
+    * tabindex - a, input, button, select, textarea등 tab이 적용되는데, tab의 순서를 바꾸고 싶을 때, 적용
