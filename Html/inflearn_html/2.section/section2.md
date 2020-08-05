@@ -46,3 +46,24 @@
 * dl - 일반적인 목록이며, 메뉴를 만드는데는 적합하지 않다. 하위에 dt가 여러개이고, dd가 한개인건 불가능 하다.
   * dt - 내부에는 inline tag만 가능
   * dd - 어떤 block tag던 가능
+
+# 7. 테이블 작성하기
+
+* table
+  * caption - table의 제목
+  * thead - table의 header를 나타낸다.
+  * tbody - table의 body 영역을 나타낸다.
+  * tfoot - table의 footer 영역을 나타낸다.
+  * tr - table의 row
+  * th - table의 header cell
+    * scope(제목이 나타내주는 범위) 속성을 써준다.
+      * col
+      * row
+      * colgroup
+      * rowgroup
+  * td - table의 cell
+  * cell 합치기
+    * colspan - column을 합칠 때 사용
+    * rowspan - row를 합칠 때 사용
+  * colgroup - 각 column의 넓이를 지정
+    * col을 사용(맨마지막 col은 width를 지정하지 않으면, 나머지가 width로 지정된다 )

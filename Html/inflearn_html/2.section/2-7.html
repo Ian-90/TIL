@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table</title>
+</head>
+<body>
+  <table border width="100%">
+    <caption>table title</caption>
+    <colgroup>
+      <col width="200">
+      <col width="200" >
+      <col width="200" >
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">table header cell</th>
+        <th scope="col">table header cell</th>
+        <th scope="col">table header cell</th>
+        <th scope="col">table header cell</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="3">cell</td>
+        <td>cell</td>
+        <td>cell</td>
+        <td>cell</td>
+      </tr>
+      <tr>
+        <!-- <td>cell</td> -->
+        <td>cell</td>
+        <td>cell</td>
+        <td>cell</td>
+      </tr>
+      <tr>
+        <!-- <td>cell</td> -->
+        <td>cell</td>
+        <td>cell</td>
+        <td>cell</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row">result</th>
+        <td colspan="3">...</td>
+        <!-- <td>...</td>
+        <td>...</td> -->
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
