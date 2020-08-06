@@ -6,3 +6,5 @@
 1. [html 작성 기초](./1.section/section1.md)
 
 2. [각종 html 요소 알아보기](./2.section/section2.md)
+
+3. [웹페이지 코딩 실습](./3.section/section3.md)
