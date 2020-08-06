@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form</title>
+</head>
+<body>
+  <form action="#" method="POST">
+    <fieldset>
+      <legend>fieldset legend</legend>
+      <p>
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" value="">
+      </p>
+      <p>
+        <label for="idname">아이디</label>
+        <input type="text" id="idname" name="idname" value="">
+        <input type="button" value="아이디중복확인">
+      </p>
+      <p>
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" name="password" value="">
+      </p>
+      <p>
+        <label for="comment">의견</label>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+      </p>
+      <p>
+        <label for="select">지역선택</label>
+        <select name="select" id="select">
+          <option value="">서울</option>
+          <option value="">부산</option>
+          <option value="">광주</option>
+          <option value="">대구</option>
+          <option value="">대전</option>
+        </select>
+      </p>
+      <p>
+        <span>성별</span>
+        <label for="male">남자</label>
+        <input type="radio" name="radio" id="male" value="male">
+        <label for="female">남자</label>
+        <input type="radio" name="radio" id="female" value="female">
+      </p>
+      <p>
+        <span>취미</span>
+        <label for="trip">여행</label>
+        <input type="checkbox" id="trip" name="trip" value="">
+        <label for="read">독서</label>
+        <input type="checkbox" id="read" name="read" value="">
+        <label for="movie">영화감상</label>
+        <input type="checkbox" id="movie" name="movie" value="">
+      </p>
+      <!-- 감싸면 id랑 name을 맞추지 않아도 된다. 표준에도 맞는 방법이다. -->
+      <p>
+        <span>취미</span>
+        <label>
+          여행
+          <input type="checkbox" name="trip" value="">
+        </label>
+        <label>
+          독서
+          <input type="checkbox" name="read" value="">
+        </label>
+        <label>
+          영화감상
+          <input type="checkbox" name="movie" value="">
+        </label>
+      </p>
+    </fieldset>
+    <p>
+      <input type="submit" value="전송">
+      <input type="reset" value="취소">
+      <!-- 기능은 같다. button tag가 종료가 있기 때문에, 아이콘 같은것을 넣어주기 편하다 -->
+      <button type="submit">전송</button>
+      <button type="reset">취소</button>
+    </p>
+  </form>
+</body>
+</html>
