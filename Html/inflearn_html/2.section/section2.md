@@ -110,3 +110,20 @@
   * legend - 그룹화한 폼엘리먼트들의 제목
 
   * input은 label로 묶어주는것이 좋다.
+
+  # 13. html5에서 추가 된 폼 컨트롤과 속성들
+
+  * input 속성들
+    * type
+      * email - 입력값이 email양식에 맞는지 검증을 해준다. 검증을 하기 싫을 땐, form 태그에 속성 novalidate 추가
+      * url - 웹사이트 주소양식이 맞는지 검증을 해준다.
+      * number - 숫자를 컨트롤러로 입력가능하게 해준다. min과 max로 최소와 최댓값을 지정해 줄수 있다.
+      * range - slider를 만든다. min과 max로 최소와 최댓값 지정, step로 이동 간격을 지정해줄 수 있다.
+      * date - 캘린더를 생성해준다. 모든 브라우저를 지원하지는 않는다.
+      * color - 색상을 선택할 수 있는 선택창 생성해준다. value는 hex코드를 입력해준다.
+      * tel - 전화번호
+
+    * placeholder - 입력 힌트 제공
+    * autofocus - input창에 커서가 깜박거리게 한다.
+    * required - 필수입력항목 생성
+    * autocomplete - 자동완성
