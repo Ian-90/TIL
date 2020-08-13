@@ -20,3 +20,7 @@
 
 # 웹 페이지 제작(Markup) 실습 1
 - [예제 사이트](http://www.subcide.com/examples/creating-a-css-layout-from-scratch/)
+
+# 웹 페이지 제작(Markup) 실습 2
+- [예제 사이트](https://www.wah.or.kr:444/Accessibility/define.asp)
+- [markup이 맞나 안맞나 확인](http://validator.w3.org)

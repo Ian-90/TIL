@@ -122,6 +122,7 @@
       * date - 캘린더를 생성해준다. 모든 브라우저를 지원하지는 않는다.
       * color - 색상을 선택할 수 있는 선택창 생성해준다. value는 hex코드를 입력해준다.
       * tel - 전화번호
+      * image - submit과 비슷한 역할을 한다.
 
     * placeholder - 입력 힌트 제공
     * autofocus - input창에 커서가 깜박거리게 한다.
