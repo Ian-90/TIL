@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css selecor</title>
+  <style>
+    body {
+      font-size: 12px;
+    }
+
+    .lead {
+      color: green;
+    }
+
+    #test {
+      background-color: lime;
+    }
+
+    h1, p {
+      text-decoration: underline;
+    }
+
+    #header > p {
+      border: 3px solid black;
+    }
+
+    #header em {
+      background-color: orange;
+    }
+
+    .list li + li {
+      background-color: lightblue;
+    }
+
+    a[title] {
+      background-color: purple;
+      color: white;
+    }
+
+    a[href ^= 'http:/'] {
+      background-color: black;
+      color: yellow;
+    }
+
+    a[href $= '.pdf'] {
+      background-color: yellow;
+    }
+
+    li[title ~= 'text'] {
+      background-color: lime;
+    }
+
+    li[lang |= 'ja'] {
+      border-bottom: 2px solid red;
+    }
+
+    #wrap2 a:link {
+      color: green;
+      text-decoration: underline;
+    }
+
+    #wrap2 a:visited {
+      color: gray;
+      text-decoration: underline;
+    }
+
+    #wrap2 a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+
+    #wrap2 a:active {
+      color: orange;
+      text-decoration: underline;
+    }
+
+    #wrap2 a:focus {
+      background: red;
+    }
+
+    p.lorem::first-line {
+      background-color: lime;
+    }
+
+    p.lorem::first-letter {
+      font-size: 5em;
+    }
+
+    #wrap2 h1::before {
+      content: "Before area ";
+      color: blue;
+    }
+
+    #wrap2 h1::after {
+      content: " After area";
+      color: red;
+    }
+    /* 우선순위 */
+    #wrap2 div {
+      background-color: lime;
+    }
+
+    #wrap2 .sample {
+      background-color: green;
+    }
+
+    #wrap2 #sample {
+      background-color: purple;
+    }
+
+    #wrap2 div {
+      background-color: red !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header id="header">
+      <h1>css <em>selector</em></h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos magni quasi voluptate voluptas, eligendi nobis, ducimus quae voluptates dicta rem, sit molestias tempore assumenda fuga tempora nihil repellat exercitationem quis?</p>
+    </header>
+  
+    <div id="content">
+      <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut odio cupiditate doloribus velit numquam, sapiente modi eius vitae at laborum fuga possimus quos reprehenderit minima illum. Quidem maxime distinctio fugiat?</p>
+      <ol class="list">
+        <li lang="en">Lorem ipsum dolor sit amet consectetur</li>
+        <li lang="zh">Lorem ipsum dolor sit amet consectetur</li>
+        <li lang="ja">Lorem ipsum dolor sit amet consectetur</li>
+        <li>Lorem ipsum dolor sit amet consectetur</li>
+        <li>Lorem ipsum dolor sit amet consectetur</li>
+      </ol>
+      <ul>
+        <li><a href="http://www.google.com">google</a></li>
+        <li><a href="http://www.naver.com">naver</a></li>
+        <li><a href="mailto:yohan4551@gmail.com" title="mail">yohan4551@gmail.com</a></li>
+        <li><a href="file/download.pdf">download</a></li>
+        <li title="some text sample">Lorem ipsum dolor sit amet consectetur</li>
+        <li>Lorem ipsum dolor sit amet consectetur</li>
+        <li>Lorem ipsum dolor sit amet consectetur</li>
+      </ul>
+      <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut odio cupiditate doloribus velit numquam, sapiente modi eius vitae at laborum fuga possimus quos reprehenderit minima illum. Quidem maxime distinctio fugiat?</p>  
+      <p id="test">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut odio cupiditate doloribus velit numquam, sapiente modi eius vitae at laborum fuga possimus quos reprehenderit minima illum. Quidem maxime distinctio fugiat?</p>
+    </div>
+  </div>
+  <div id="wrap2">
+    <h1>css selector</h1>
+    <p class="lorem"><a href="http://www.naver.com">naver</a> dolor sit amet consectetur adipisicing elit. Quibusdam adipisci dolore beatae earum consequatur mollitia cum quasi expedita iste veritatis! Praesentium, voluptates? Quis, harum dignissimos fuga deleniti dicta ad quasi?</p>
+
+    <hr>
+
+    <div class="sample" id="sample" style="background-color: orange;">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vero ad quod perferendis reprehenderit cupiditate repellat deleniti tempora, optio sapiente laborum commodi corrupti temporibus eum quam explicabo ex officia autem?
+    </div>
+    
+  </div>
+</body>
+</html>

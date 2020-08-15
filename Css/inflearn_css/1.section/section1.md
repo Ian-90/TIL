@@ -85,3 +85,131 @@ selector {
   * em - 글자 크기를 기준으로 하는 단위(ex. font-size가 12px이면, 50em은 50 * 12px로 600px이다.)
   * rem - em과 비슷함. root의 글자 크기를 기준으로 하는 단위(html5에서 새로 생김)(ex. html의 font-size가 20px이면, 50rem은 50 * 20px로 1000px이다.)
   * % - 비율
+
+# 3. css 선택자와 선택자의 우선순위
+
+* inheritance(상속)
+
+* 선택자
+  * tag - 모든 태그를 선택
+  ```css
+  p {
+    /* style */
+  }
+  ```
+
+  * class - 중복 스타일을 적용할 때, 사용
+  ```css
+  .classname {
+    /* style */
+  }
+  ```
+
+  * id - 고유한 이름
+  ```css
+  #idname {
+    /* style */
+  }
+  ```
+
+  * 여러개의 선택자를 사용하려면? 콤마(,)로 구분한다.
+  ```css
+  tagname, .class, #id, ... {
+    /* style */
+  }
+  ```
+
+  * 자손선택자 - 부모 하위에 있는 모든것을 선택 가능
+  ```css
+  selector selector {
+    /* style */
+  }
+  ```
+
+  * 자식선택자 - 부모 바로 밑에 있는 것만 선택 가능
+  ```css
+  selector > selector {
+    /* style */
+  }
+  ```
+
+  * 인접형제 선택자 - 첫번째 selecor 다음에 있는(인접한) 두번째 selector를 선택
+  ```css
+  selector + selector {
+    /* style */
+  }
+  ```
+
+  * 속성 선택자
+    * 속성 모든것을 선택
+    ```css
+    [attribute] {
+      /* style */
+    }
+    ```
+
+    * 속성이 value와 같은것을 선택
+    ```css
+    [attribute = value] {
+      /* style */
+    }
+    ```
+
+    * 속성이 value로 시작 하는것을 선택(많이 쓰임)
+    ```css
+    [attribute ^= value] {
+      /* style */
+    }
+    ```
+
+    * 속성이 value로 끝나는 것을 선택(많이 쓰임)
+    ```css
+    [attribute $= value] {
+      /* style */
+    }
+    ```
+
+    * 속성이 특정 value문구(단어여야됨)를 포함하는것을 선택
+    ```css
+    [attribute ~= value] {
+      /* style */
+    }
+    ```
+
+    * 속성이 특정 value문구(단어가 아니여도 됨)를 포함하는것을 선택
+    ```css
+    [attribute *= value] {
+      /* style */
+    }
+    ```
+
+  * 가상 클래스 선택자 - 우선순위때문에 link, visited, hover, active 순서로 사용하는 것이 좋다.
+    * a:link - 방문하지않은 link 선택
+    * a:visited - 방문을 했었던 link 선택
+    * tag:hover - 마우스가 올라가있는 동안 선택
+    * tag:active - 마우스 클릭 또는 마우스 엔터가 눌린 동안 선택
+    * tag:focus - tab등 포커싱 되었을 때, 선택
+
+  * 가상 엘리먼트 선택자
+    * tag::first-line - 요소의 첫번째 라인만 선택
+    * tag::first-letter - 요소의 첫번째 글자만 선택
+    * tag::before - 요소의 시작지점을 선택. float를 해지 할 때 활용
+    * tag::after - 요소의 마지막지점을 선택. float를 해지 할 때 활용
+
+* 우선순위
+  * 선택자 우선순위가 같을 때, 뒤에 선언된 css 적용
+  * tag - 1
+  * class - 10
+  * id - 100
+    * 우선순위 계산
+    ```css
+    /* 1 + 10 + 100 = 111 */
+    div.sample#sample {
+      /* style */
+    }
+    ```
+  * inline - 1000
+  * !important - 무조건 적용되는 값
+  ```
+  !important > inline > id > class > tag
+  ```
