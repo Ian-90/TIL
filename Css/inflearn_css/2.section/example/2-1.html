@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>font / text</title>
+  <style>
+    body, h1, h2 {
+      /* font-family: '돋움', dotum, Helvetica, sans-serif; */
+      font-family: 'Malgun Gothic', Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    h1 {
+      background-color: green;
+      font-size: 2.4em;
+      text-transform: uppercase;
+    }
+
+    h1 small {
+      background-color: lime;
+      font-size: .5em;
+      vertical-align: baseline;
+    }
+
+    h2 {
+      font-variant: small-caps;
+      font-size: 2em;
+      color: #ff0;
+      letter-spacing: .1em;
+      text-decoration: line-through;
+    }
+
+    .lead {
+      font-size: 1.2em;
+      font-weight: bold;
+      word-spacing: 1em;
+    }
+
+    address {
+      font-style: normal;
+    }
+
+    .text {
+      line-height: 1.6em;
+      text-align: center;
+      text-indent: 1em;
+      white-space: nowrap;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <h1>style example<small>sample</small></h1>
+    <h2>Style Example (font-variant)</h2>
+    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias suscipit cum atque error deserunt praesentium nesciunt. Excepturi nobis voluptas esse optio quo ex quod eaque itaque illum. Sapiente, nisi corrupti.
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque velit atque, in fugit, totam doloremque fuga voluptates maxime, optio dignissimos saepe quia ipsam quas possimus! Vero laborum neque atque provident.
+    </p>
+    <hr>
+    <address>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque beatae debitis dicta magni, cupiditate itaque. Ut, error molestias! In ut libero nobis laudantium saepe fuga, corrupti necessitatibus illo tenetur alias.</address>
+  </div>
+</body>
+</html>
