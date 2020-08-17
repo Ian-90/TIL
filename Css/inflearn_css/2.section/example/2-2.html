@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@font-face</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  @font-face {
+    font-family: NGothic;
+    src: url(fonts/NanumGothic.eot);
+    src: url(fonts/NanumGothic.eot?#iefix) format('embeded-opentype'),
+      url(fonts/NanumGothic.woff) format('woff'),
+      url(fonts/NanumGothic.ttf) format('truetype'),     
+  }
+
+  body {
+    font-size: 20px;
+  }
+
+  .nanum {
+    font-family: NGothic, sans-serif;
+  }
+
+  .google_web_font {
+    font-family: 'Roboto', sans-serif;
+  }
+  </style>
+</head>
+<body>
+  <h1 class="google_web_font">@font-face</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, eaque commodi perspiciatis est maxime officia autem nulla voluptatibus qui voluptas eum facilis, eveniet voluptatum sequi in. Quam illum eum error!
+  </p>
+  <p class="nanum">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, eaque commodi perspiciatis est maxime officia autem nulla voluptatibus qui voluptas eum facilis, eveniet voluptatum sequi in. Quam illum eum error!
+  </p>
+  <p>서체는 그 웹페이지를 보는 사람의 디바이스에 해당 서체가 있어야 제대로 표현 됨.</p>
+  <p class="nanum">서체는 그 웹페이지를 보는 사람의 디바이스에 해당 서체가 있어야 제대로 표현 됨.</p>
+</body>
+</html>

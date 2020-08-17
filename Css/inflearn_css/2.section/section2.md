@@ -55,3 +55,17 @@
   * white-space
     * nowrap - 줄바꿈이 안된다.
   * word-spacing - 단어 간격(띄어쓰기 한자리라고 생각하면 됨)
+
+# 2. @font-face와 구글폰트 적용
+
+* @font-face - 서체가 없는 사람들에게 서체를 적용하기 위해 사용
+```css
+@font-face {
+  font-family: '아래 로딩할 파일 font의 이름 지정';
+  src: url('폰트 경로');
+  src: url('폰트 경로') format(''),... ;
+}
+```
+
+* [google font](https://fonts.google.com/)
+* [goolge font earlyacees](https://fonts.google.com/earlyaccess) - font의 모든 두께를 포함
