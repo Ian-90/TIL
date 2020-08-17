@@ -79,3 +79,14 @@
   * pre - 줄바꿈 유지
   * pre-wrap 
   * pre-line
+
+# 4. 목록 관련 스타일
+* bullet
+  * list-style
+  * list-style-position - 많이 안씀
+    * inside
+    * outside
+  * list-style-type - bullet의 모양 지정
+    * square
+    * circle
+    * disc
