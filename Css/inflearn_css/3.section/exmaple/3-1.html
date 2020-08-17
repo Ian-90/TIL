@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>boxmodels</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 600px;
+      /* border: 5px solid black;
+      padding: 20px; */
+      margin: 30px;
+      background-color: lime;
+    }
+
+    .box2 {
+      border: 5px solid black;
+      padding: 20px;
+    }
+
+    .box3 {
+      box-sizing: border-box;
+    }
+
+    .box4 {
+      background-color: lime;
+      margin: 20px;
+      padding: 100px 50px 10px 0;
+      border: 5px solid black;
+      border-style: double;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est aperiam amet voluptates eaque tempore. Inventore amet animi quod obcaecati illum velit quisquam natus harum, neque qui expedita a, delectus cumque?
+  </div>
+  <div class="box box2">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est aperiam amet voluptates eaque tempore. Inventore amet animi quod obcaecati illum velit quisquam natus harum, neque qui expedita a, delectus cumque?
+  </div>
+  <div class="box box2 box3">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est aperiam amet voluptates eaque tempore. Inventore amet animi quod obcaecati illum velit quisquam natus harum, neque qui expedita a, delectus cumque?
+  </div>
+  <div class="box4">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est aperiam amet voluptates eaque tempore. Inventore amet animi quod obcaecati illum velit quisquam natus harum, neque qui expedita a, delectus cumque?
+  </div>
+</body>
+</html>
