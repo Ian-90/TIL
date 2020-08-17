@@ -69,3 +69,13 @@
 
 * [google font](https://fonts.google.com/)
 * [goolge font earlyacees](https://fonts.google.com/earlyaccess) - font의 모든 두께를 포함
+
+# 3. 단어 깨트리기, 줄바꿈 지정하기
+* word-break
+  * break-all - 한줄로 된 단어를 영역에 맞게 줄바꿈 시켜준다.
+
+* white-space
+  * nowrap - 줄이 바뀌지 않고, 한줄로 쭉 나열
+  * pre - 줄바꿈 유지
+  * pre-wrap 
+  * pre-line

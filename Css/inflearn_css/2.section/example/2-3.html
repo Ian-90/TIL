@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>word-break, white-space</title>
+  <style>
+    body {
+      font-size: 16px;
+      font-family: 'Malgun Gothic', sans-serif;
+    }
+
+    .content, .content2, .content3 {
+      width: 500px;
+      border: 3px solid black;
+    }
+
+    .content p {
+      word-break: break-all;
+    }
+
+    .content2 p {
+      text-align: justify;
+    }
+
+    .content3 p {
+      text-align: justify;
+      word-break: break-all;
+    }
+
+    .white1 {
+      width: 600px;
+      border: 2px solid black;
+      white-space: pre;
+    }
+
+    .white2 {
+      width: 600px;
+      border: 2px solid black;
+      white-space: pre-wrap;
+    }
+
+    .white3 {
+      width: 600px;
+      border: 2px solid black;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <p>
+      Loremipsum,dolorsitametconsecteturadipisicingelit.Blanditiisobcaecatidelenitiaperiamteneturanimiquodnonillumasperiores.Itaquevelitaliaslaudantiumperferendiscommodiquiainvoluptasquasoptiotemporibus.
+    </p>
+  </div>
+  <div class="content2">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed doloribus ullam enim, odit quod soluta laborum consectetur ipsa ex inventore ut cumque rem vero expedita, ad sint est quasi.
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae ut iusto, est tenetur fuga voluptatem, provident animi numquam architecto nesciunt, commodi dolorum minus. Totam quam, autem corrupti nemo voluptatem et.
+    </p>
+  </div>
+  <div class="content3">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed doloribus ullam enim, odit quod soluta laborum consectetur ipsa ex inventore ut cumque rem vero expedita, ad sint est quasi.
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae ut iusto, est tenetur fuga voluptatem, provident animi numquam architecto nesciunt, commodi dolorum minus. Totam quam, autem corrupti nemo voluptatem et.
+    </p>
+  </div>
+  <hr>
+  <div class="white1">
+    Lorem
+    ipsum dolor sit amet consectetur adipisicing elit.
+    Asperiores laborum nemo doloribus dolorem ut ullam illo odio blanditiis aliquid esse.
+    Recusandae voluptatem dignissimos libero qui excepturi nostrum culpa pariatur optio!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo doloremque, omnis, reprehenderit porro, quae voluptate placeat minus in similique doloribus ex obcaecati repudiandae error cumque debitis facilis nihil officiis minima.
+  </div>
+  <div class="white2">
+    Lorem
+    ipsum dolor sit amet consectetur adipisicing elit.
+    Asperiores laborum nemo doloribus dolorem ut ullam illo odio blanditiis aliquid esse.
+    Recusandae voluptatem dignissimos libero qui excepturi nostrum culpa pariatur optio!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo doloremque, omnis, reprehenderit porro, quae voluptate placeat minus in similique doloribus ex obcaecati repudiandae error cumque debitis facilis nihil officiis minima.
+  </div>
+  <div class="white3">
+    Lorem
+    ipsum dolor sit amet consectetur adipisicing elit.
+    Asperiores laborum nemo doloribus dolorem ut ullam illo odio blanditiis aliquid esse.
+    Recusandae voluptatem dignissimos libero qui excepturi nostrum culpa pariatur optio!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo doloremque, omnis, reprehenderit porro, quae voluptate placeat minus in similique doloribus ex obcaecati repudiandae error cumque debitis facilis nihil officiis minima.
+  </div>
+</body>
+</html>
