@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      /* font: weight style variant size/line-height family */
+      font: 12px/1.6 'Malgun Gothic', sans-serif;
+    }
+    
+    img {
+      vertical-align: top;
+    }
+
+    #wrap {
+      width: 800px;
+      margin: 0 auto;
+    }
+
+    #wrap h1 {
+      padding: 15px 0;
+    }
+
+    #wrap .thumb {
+      float: left;
+      border: 3px solid black;
+      margin: 15px 0 15px 0;
+    }
+
+    #wrap .text {
+      margin-left: 115px;
+      background-color: lime;
+    }
+
+    #wrap .text p {
+      margin-bottom: 15px;
+    }
+
+    #wrap #text {
+      clear: left;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <h1>float example</h1>
+    <p class="thumb"><img src="http://placehold.it/100x120?text=1" alt=""></p>
+    <p class="thumb"><img src="http://placehold.it/100x160?text=2" alt=""></p>
+    <p class="thumb"><img src="http://placehold.it/100x120?text=3" alt=""></p>
+    <p class="thumb"><img src="http://placehold.it/100x120?text=4" alt=""></p>
+    <p class="thumb"><img src="http://placehold.it/100x120?text=4" alt=""></p>
+    <p class="thumb"><img src="http://placehold.it/100x120?text=4" alt=""></p>
+    <p class="thumb"><img src="http://placehold.it/100x120?text=4" alt=""></p>
+    <p class="thumb"><img src="http://placehold.it/100x120?text=4" alt=""></p>
+    <p class="thumb"><img src="http://placehold.it/100x120?text=4" alt=""></p>
+    <p class="thumb"><img src="http://placehold.it/100x120?text=4" alt=""></p>
+    <div id="text">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam sit aut, non dolore beatae voluptate officiis accusamus debitis cum suscipit nam enim, quis voluptates laborum ut ea, ad unde distinctio?</p>
+    </div>
+    <div class="text">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi dolorem esse minima velit dicta quasi optio facilis atque placeat quod rerum a assumenda quidem, similique nisi accusantium! Minus, eligendi necessitatibus!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi dolorem esse minima velit dicta quasi optio facilis atque placeat quod rerum a assumenda quidem, similique nisi accusantium! Minus, eligendi necessitatibus!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi dolorem esse minima velit dicta quasi optio facilis atque placeat quod rerum a assumenda quidem, similique nisi accusantium! Minus, eligendi necessitatibus!
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi dolorem esse minima velit dicta quasi optio facilis atque placeat quod rerum a assumenda quidem, similique nisi accusantium! Minus, eligendi necessitatibus!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi dolorem esse minima velit dicta quasi optio facilis atque placeat quod rerum a assumenda quidem, similique nisi accusantium! Minus, eligendi necessitatibus!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi dolorem esse minima velit dicta quasi optio facilis atque placeat quod rerum a assumenda quidem, similique nisi accusantium! Minus, eligendi necessitatibus!
+      </p>
+    </div>
+  </div>
+</body>
+</html>
