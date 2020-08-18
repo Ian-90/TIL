@@ -9,3 +9,25 @@
     * left
     * right
     * both
+
+# 플롯 해지하기
+
+* img 간격 없애기
+```css
+img {
+  vertical-align: top
+}
+```
+
+* 감싸는 영역에 ::after로 clear를 적용해야 한다(공식)
+  * 익스플로러 7버전이하는 안된다. 그렇다면 ?
+    * 감싸는 영역에 *zoom 적용
+    ```css
+    selector {
+      *zoom: 1;
+    }
+    ```
+
+* 다른 방법은 ?
+  * 감싸는 영역에 overflow:hidden 적용
+  * 보통은 위에 방법을 사용한다.

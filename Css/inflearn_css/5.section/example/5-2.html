@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clear</title>
+  <style>
+    img {
+      vertical-align: top;
+    }
+    .area {
+      width: 800px;
+      margin: 0 auto;
+      border: 3px dashed red;
+      overflow: hidden;
+      *zoom: 1;
+    }
+
+    /* .area::after {
+      content: '';
+      display: block;
+      clear: both;
+    } */
+
+    .area .thumb {
+      float: left;
+      border: 3px solid black;
+    }
+
+    .cls {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <div class="area">
+    <div class="thumb"><img src="http://placehold.it/100x120text=1" alt=""></div>
+    <div class="thumb"><img src="http://placehold.it/100x120text=2" alt=""></div>
+    <div class="thumb"><img src="http://placehold.it/100x120text=3" alt=""></div>
+    <div class="thumb"><img src="http://placehold.it/100x120text=4" alt=""></div>
+    <!-- clear 위치 -->
+  </div>
+  <p class="cls">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores officiis maxime, quibusdam quae sapiente tenetur tempore eum quo voluptatibus vitae perferendis odio temporibus dicta similique numquam reprehenderit. Quisquam, eum cupiditate?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim et pariatur labore quod, unde eius deleniti blanditiis exercitationem soluta doloribus ullam ratione cum praesentium provident, quaerat assumenda culpa molestiae asperiores.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, eum voluptatibus. Voluptatum quo eos placeat quisquam facere consequatur qui ipsam maiores veritatis, officia omnis ut laboriosam dolores soluta, fugit inventore.
+  </p>
+</body>
+</html>
