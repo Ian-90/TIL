@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position, center</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 400px;
+    margin-left: -400px;
+    margin-top: -200px;
+    background-color: lime;
+  }
+
+  .content2 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 400px;
+    margin-left: -400px;
+    margin-top: -200px;
+    background-color: lime;
+  }
+
+  .content3 {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    right: 100px;
+    bottom: 100px;
+    background-color: lime;
+  }
+/* box-sizing대신 크로스브라우징 사용법 */
+  .content .inn, .content2 .inn, .content3 .inn {
+    padding: 20px;
+  }
+  </style>
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat laudantium ut dignissimos molestias dolorum veritatis ipsa quos sapiente! Reprehenderit sequi, necessitatibus perferendis consectetur quis molestias in quod quidem odit quo?</p>
+  <div class="content">
+    <div class="inn"></div>
+    <h1>content title</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, cupiditate autem. Modi, ducimus assumenda repudiandae facere aliquid temporibus nam dolorum necessitatibus sequi quo iure delectus. Quasi incidunt sed magni molestias!
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum dolore vero iusto temporibus! Optio deleniti facere odit laudantium iste culpa itaque voluptatum. Ducimus harum quis delectus deserunt repellendus blanditiis quo?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus rem aperiam obcaecati, porro vel odit. Enim deserunt pariatur laboriosam dicta accusamus, sequi dolores vel, et labore totam nisi minus exercitationem.
+    </p>
+  </div>
+  <hr>
+  <div class="content2">
+    <div class="inn"></div>
+    <h1>content2 title</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, cupiditate autem. Modi, ducimus assumenda repudiandae facere aliquid temporibus nam dolorum necessitatibus sequi quo iure delectus. Quasi incidunt sed magni molestias!
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum dolore vero iusto temporibus! Optio deleniti facere odit laudantium iste culpa itaque voluptatum. Ducimus harum quis delectus deserunt repellendus blanditiis quo?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus rem aperiam obcaecati, porro vel odit. Enim deserunt pariatur laboriosam dicta accusamus, sequi dolores vel, et labore totam nisi minus exercitationem.
+    </p>
+  </div>
+  <hr>
+
+  <div class="content3">
+    <div class="inn"></div>
+    <h1>content3 title</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, cupiditate autem. Modi, ducimus assumenda repudiandae facere aliquid temporibus nam dolorum necessitatibus sequi quo iure delectus. Quasi incidunt sed magni molestias!
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum dolore vero iusto temporibus! Optio deleniti facere odit laudantium iste culpa itaque voluptatum. Ducimus harum quis delectus deserunt repellendus blanditiis quo?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus rem aperiam obcaecati, porro vel odit. Enim deserunt pariatur laboriosam dicta accusamus, sequi dolores vel, et labore totam nisi minus exercitationem.
+    </p>
+  </div>
+</body>
+</html>

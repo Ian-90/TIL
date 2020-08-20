@@ -41,3 +41,17 @@ img {
   * static
 
 * z-index - 사용을 하면 큰숫자가 맨앞으로 나온다.
+
+# 4. 포지션을 활용한 가운데 위치 지정
+
+* box-sizing: border-box의 크로스 브라우징 사용법
+  * padding을 내부에 div를 만들어서 준다.
+
+* absolute or fixed를 활용한 가운데 위치 지정
+  * absolute box에 css top: 50%, left: 50%를 추가하고, box의 margin-left: -width/2, margin-top: -height/2를 추가한다.
+
+* relative를 활용한 가운데 위치 지정
+  * html,body에 width: 100%, height: 100% 지정
+
+* 크기가 없는 box 가운데 위치 지정(디바이스 크기가 모두 다를때 활용)
+  * position: absolute, top,left,bottom,right에 같은 픽셀값을 추가
