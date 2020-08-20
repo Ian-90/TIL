@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position</title>
+  <style>
+  .box {
+    width: 400px;
+    padding: 20px;
+    background-color: rgba(255,0, 0, .5);
+    border: 5px solid black;
+    font: 12px/1.6 verdana,sans-serif;
+  }
+
+  .box::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .area {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    border: 5px dashed red;
+  }
+
+  .a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(255, 0, 0, .8);
+  }
+  .b {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 2;
+    background-color: rgba(0, 255, 0, .8);
+  }
+  .c {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-color: rgba(0, 0, 255, .8);
+  }
+
+  .a2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 0, 0, .8);
+  }
+  .b2 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: rgba(0, 255, 0, .8);
+  }
+  .c2 {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-color: rgba(0, 0, 255, .8);
+  }
+
+  .a3 {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 0, 0, .8);
+  }
+  .b3 {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    background-color: rgba(0, 255, 0, .8);
+  }
+  .c3 {
+    position: relative;
+    top: 100px;
+    left: 100px;
+    background-color: rgba(0, 0, 255, .8);
+  }
+  </style>
+</head>
+<body>
+  <div class="area">
+    <div class="box a">
+      A Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus blanditiis odit quos commodi labore, natus dolor explicabo provident eius nam placeat, pariatur obcaecati similique repellat in corrupti facere necessitatibus.
+    </div>
+    <div class="box b">
+      B Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus blanditiis odit quos commodi labore, natus dolor explicabo provident eius nam placeat, pariatur obcaecati similique repellat in corrupti facere necessitatibus.
+    </div>
+    <div class="box c">
+      C Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus blanditiis odit quos commodi labore, natus dolor explicabo provident eius nam placeat, pariatur obcaecati similique repellat in corrupti facere necessitatibus.
+    </div>
+  </div>
+  <hr>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus aliquid, alias iure hic sit, ullam officia numquam sequi aliquam molestiae eum rerum consequatur saepe neque explicabo doloremque est reprehenderit. Ratione.
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto optio expedita eos illum laudantium quos similique ratione quaerat sapiente alias perferendis, consequatur sit rerum incidunt. Qui blanditiis neque quos soluta?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, deleniti tempora in aliquam nihil id architecto quaerat magnam, iusto corporis ipsa alias laborum sunt amet debitis atque tempore itaque officia.
+  </p>
+  <hr>
+
+  <div class="area">
+    <div class="box a2">
+      A Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus blanditiis odit quos commodi labore, natus dolor explicabo provident eius nam placeat, pariatur obcaecati similique repellat in corrupti facere necessitatibus.
+    </div>
+    <div class="box b2">
+      B Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus blanditiis odit quos commodi labore, natus dolor explicabo provident eius nam placeat, pariatur obcaecati similique repellat in corrupti facere necessitatibus.
+    </div>
+    <div class="box c2">
+      C Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus blanditiis odit quos commodi labore, natus dolor explicabo provident eius nam placeat, pariatur obcaecati similique repellat in corrupti facere necessitatibus.
+    </div>
+  </div>
+  <hr>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus aliquid, alias iure hic sit, ullam officia numquam sequi aliquam molestiae eum rerum consequatur saepe neque explicabo doloremque est reprehenderit. Ratione.
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto optio expedita eos illum laudantium quos similique ratione quaerat sapiente alias perferendis, consequatur sit rerum incidunt. Qui blanditiis neque quos soluta?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, deleniti tempora in aliquam nihil id architecto quaerat magnam, iusto corporis ipsa alias laborum sunt amet debitis atque tempore itaque officia.
+  </p>
+
+  <hr>
+  <div class="area">
+    <div class="box a3">
+      A Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus blanditiis odit quos commodi labore, natus dolor explicabo provident eius nam placeat, pariatur obcaecati similique repellat in corrupti facere necessitatibus.
+    </div>
+    <div class="box b3">
+      B Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus blanditiis odit quos commodi labore, natus dolor explicabo provident eius nam placeat, pariatur obcaecati similique repellat in corrupti facere necessitatibus.
+    </div>
+    <div class="box c3">
+      C Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus blanditiis odit quos commodi labore, natus dolor explicabo provident eius nam placeat, pariatur obcaecati similique repellat in corrupti facere necessitatibus.
+    </div>
+  </div>
+  <hr>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus aliquid, alias iure hic sit, ullam officia numquam sequi aliquam molestiae eum rerum consequatur saepe neque explicabo doloremque est reprehenderit. Ratione.
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto optio expedita eos illum laudantium quos similique ratione quaerat sapiente alias perferendis, consequatur sit rerum incidunt. Qui blanditiis neque quos soluta?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, deleniti tempora in aliquam nihil id architecto quaerat magnam, iusto corporis ipsa alias laborum sunt amet debitis atque tempore itaque officia.
+  </p>
+</body>
+</html>
