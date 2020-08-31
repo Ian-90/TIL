@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box</title>
+  <style>
+  /* reset */
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
+  body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  body, h1, h2, h3, input, select, textarea, button, th, td {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 12px;
+  }
+
+  /* style */
+  .section {
+    position: relative;
+    margin: 20px;
+    border: 1px solid #ccc;
+  }
+
+  .section .hx {
+    border: 1px solid #fff;
+    padding: 8px;
+    background-color: #eee;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+
+  .section .tx {
+    border-top: 1px solid #ccc;
+    padding: 8px;
+    color: #555;
+    line-height: 1.5em;
+  }
+
+  .section .section_more {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+  }
+
+  .section .section_more a {
+    position: relative;
+    color: #666;
+    text-decoration: none;
+    letter-spacing: -1px;
+  }
+
+  .section .section_more a .ico {
+    position: absolute;
+    top: 3px;
+    left: -7px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 10px solid red;
+    border-width: 5px 0 5px 5px;
+    border-color: transparent transparent transparent #aaa;
+  }
+  </style>
+</head>
+<body>
+
+<div class="section">
+  <h2 class="hx">제목</h2>
+  <div class="tx">내용</div>
+  <p class="section_more">
+    <a href="#"><span class="ico"></span> 더보기</a>
+  </p>
+</div>
+
+</body>
+</html>
