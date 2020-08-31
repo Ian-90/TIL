@@ -3,3 +3,7 @@
 * cross browsing - 여러 브라우저에서 기능 및 뷰가 똑같도록 하는것(ie8까지 맞추도록 작업해보기)
 
 * input, select, textarea, button같은 서식 tage들은 body에 font를 적용해줘도 상속이 안되기 때문에, 따로 적용해주어야 한다
+
+# Box2 - 모서리 라운드 처리
+* css3에선 border-radius를 이용하지만, position을 연습하기 위해서 예제 해보기. 하지만 border-radius를 이용하기
+* line-height - box내의 텍스트가 여러줄이 되는 일이 생길 때 사용

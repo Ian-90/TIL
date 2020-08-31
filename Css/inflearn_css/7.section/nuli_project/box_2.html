@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box</title>
+  <style>
+  /* reset */
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
+  body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  body, h1, h2, h3, input, select, button, th, td {
+    font-family: 'Malgun Gothic', sans-serif;
+    font-size: 12px;
+  }
+
+  /* style */
+  .box_type {
+    margin: 20px;
+    padding: 10px;
+    /* border: 10px solid #a8e469; */
+    border-radius: 10px;
+    background-color: #a8e469;
+  }
+
+  .box_type .inner {
+    position: relative;
+    border: 1px solid #418f30;
+    border-radius: 6px;
+    padding: 0 20px;
+    background: #fff;
+  }
+
+  .box_type p {
+    margin: 10px;
+    line-height: 1.5em;
+  }
+  /* style 
+  .box_type .lt,
+  .box_type .rt,
+  .box_type .lb,
+  .box_type .rb {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #fff url(img/bg_border_corner.gif) no-repeat;
+  }
+
+  .box_type .lt {
+    top: -5px;
+    left: -5px;
+    background-position: 0 0;
+  }
+  
+  .box_type .rt {
+    top: -5px;
+    right: -5px;
+    background-position: 100% 0;
+
+  }
+  
+  .box_type .lb {
+    left: -5px;
+    bottom: -5px;
+    background-position: 0 100%;
+  }
+  
+  .box_type .rb {
+    right: -5px;
+    bottom: -5px;
+    background-position: 100% 100%;
+  }
+  */
+  </style>
+</head>
+<body>
+  <div class="box_type">
+	<div class="inner">
+		<p>내용은 이미지와 다를 수 있습니다.</p>
+		<p>내용은 이미지와 다를 수 있습니다.</p>
+    <p>내용은 이미지와 다를 수 있습니다. 내용은 이미지와 다를 수 있습니다. 내용은 이미지와 다를 수 있습니다.</p>
+	</div>
+</div>
+</body>
+</html>
