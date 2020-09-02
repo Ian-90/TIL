@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* reset */
+	html,body{width:100%;height:100%}
+	body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+	body,input,textarea,select,button,table{font-family:'Malgun Gothic',Dotum,AppleGothic,sans-serif;font-size:12px}
+	img,fieldset{border:0}
+	ul,ol{list-style:none}
+	em,address{font-style:normal}
+	a{text-decoration:none}
+	a:hover,a:active,a:focus{text-decoration:underline}
+
+  /* style */
+  .wrap {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .paginate {
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .paginate a,
+  .paginate strong {
+    display: inline-block;
+    border: 1px solid transparent;
+    padding: 6px 8px;
+    color: #666;
+    font-family: Verdana, 'Malgun Gothic', sans-serif;
+    font-size: 1.2em;
+    font-weight: normal;
+    line-height: 1.2em;
+  }
+
+  .paginate a {
+  }
+
+  .paginate a:hover,
+  .paginate .direction {
+    border-color: #ddd;
+  }
+
+  .paginate strong {
+    border-color: #4dc136;
+    color: #1eb501;
+  }
+
+  .paginate .direction:hover {
+    color: #000;
+  }
+
+  .paginate .direction span {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 4px solid #666;
+    vertical-align: 2px;
+  }
+
+  .paginate .direction.prev span {
+    border-width: 4px 4px 4px 0;
+    border-color: transparent #666 transparent transparent;
+  }
+
+  .paginate .direction.next span {
+    border-width: 4px 0 4px 4px;
+    border-color: transparent transparent transparent #666;
+  }
+
+  .paginate .direction.prev:hover span {
+    border-color: transparent #000 transparent transparent;
+  }
+
+  .paginate .direction.next:hover span {
+    border-color: transparent transparent transparent #000;
+  }
+
+</style>
+<body>
+<div class="wrap">
+	<div class="paginate">
+		<a href="#" class="direction prev"><span></span><span></span> 처음</a>
+		<a href="#" class="direction prev"><span></span> 이전</a>
+		<a href="#">1</a>
+		<a href="#">2</a>
+		<a href="#">3</a>
+		<a href="#">4</a>
+		<strong>5</strong>
+		<a href="#">6</a>
+		<a href="#">7</a>
+		<a href="#">8</a>
+		<a href="#">9</a>
+		<a href="#" class="direction next">다음 <span></span></a>
+		<a href="#" class="direction next">끝 <span></span><span></span></a>
+	</div>
+</div>
+</body>
+</html>

@@ -19,3 +19,8 @@
 * 요즘 button을 이렇게 안만들지만, 예전에 만들었던 방식 실습..?
 * 요즘은 img로 border를 둥글게 하지않고, border-radius를 이용
 * 아이콘도 img가 아닌 font를 이용해서 적용
+
+# 5. paginate - 게시판의 페이징 부분
+* box영역이 클릭 되도록 inline-block을 이용
+* 글자와 숫자의 높이가 다를 때, line-height를 폰트사이즈만큼 추가
+* icon 위치는 position abolsute로 해야 크로스 브라우징을 해결 할 수 있음
