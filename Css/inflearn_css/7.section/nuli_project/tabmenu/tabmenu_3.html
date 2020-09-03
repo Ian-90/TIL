@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/reset.css">
+  <title>tabmenu</title>
+  <style>
+  .wrap {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .tab_list {
+   position: relative; 
+   width: 500px;
+   /* height: 200px; */
+   padding-top: 36px;
+  }
+
+  .tab_list li.m1 > a,
+  .tab_list li.m2 > a,
+  .tab_list li.m3 > a {
+    display: block;
+    /* float: left; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    text-align: center;
+    /* padding: 0 30px; */
+    border: 1px solid #aaa;
+    background-color: #eee;
+    color: #666;
+    font-size: 13px;
+    line-height: 35px;
+    text-decoration: none;
+  }
+
+  .tab_list li.m2 > a {
+    left: 82px;
+  }
+
+  .tab_list li.m3 > a {
+    left: 164px;
+  }
+
+  .tab_list li.m1.active > a,
+  .tab_list li.m2.active > a,
+  .tab_list li.m3.active > a {
+    /* position: relative; */
+    z-index: 1;
+    border-bottom-color: #fff;
+    background-color: #fff;
+    color: #222;
+    font-weight: bold;
+  }
+
+  .tab_list li.m1 ul,
+  .tab_list li.m2 ul,
+  .tab_list li.m3 ul {
+    display: none;
+    /* position: absolute;
+    left: 0;
+    top: 36px; */
+    width: 100%;
+    border-top: 1px solid #aaa;
+    padding-top: 10px;
+  }
+
+  .tab_list li.m1 ul li,
+  .tab_list li.m2 ul li,
+  .tab_list li.m3 ul li {
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    line-height: 1.5;
+    border-bottom: 1px dashed #ddd;
+    /* overflow: hidden; */
+    *zoom: 1;
+  }
+
+  .tab_list li.m1 ul li::after,
+  .tab_list li.m2 ul li::after,
+  .tab_list li.m3 ul li::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  .tab_list li.m1 ul li a,
+  .tab_list li.m2 ul li a,
+  .tab_list li.m3 ul li a {
+    float: left;
+    color: #666;
+  }
+
+  .tab_list li.m1 ul li span,
+  .tab_list li.m2 ul li span,
+  .tab_list li.m3 ul li span {
+    float: right;
+    color: #666;
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+  }
+
+
+  .tab_list li.m1.active ul,
+  .tab_list li.m2.active ul,
+  .tab_list li.m3.active ul {
+    display: block;
+  }
+
+  .tab_list li.m1 .more,
+  .tab_list li.m2 .more,
+  .tab_list li.m3 .more {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 12px;
+    line-height: 1.5;
+  }
+
+  .tab_list li.m1 .more a,
+  .tab_list li.m2 .more a,
+  .tab_list li.m3 .more a {
+    color: #666;
+    letter-spacing: -1px;
+  }
+
+
+  .tab_list li.m1.active .more,
+  .tab_list li.m2.active .more,
+  .tab_list li.m3.active .more {
+    display: block;
+  }
+
+  </style>
+</head>
+<body>
+<div class="wrap">	
+  <!-- UI Object -->
+  <div class="tab_list">
+    <ul>
+      <li class="m1">
+        <a href="#"><span>공지사항</span></a>
+        <ul>
+          <li><a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a><span>2020-09-01</span></li>
+          <li><a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a><span>2020-09-02</span></li>
+          <li><a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a><span>2020-09-03</span></li>
+        </ul>
+        <p class="more"><a href="#">공지사항 더보기</a></p>
+      </li>
+      <li class="m2 active">
+        <a href="#"><span>보도자료</span></a>
+        <ul>
+          <li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a><span>2020-09-04</span></li>
+          <li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a><span>2020-09-05</span></li>
+          <li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a><span>2020-09-06</span></li>
+          <li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a><span>2020-09-07</span></li>
+        </ul>
+        <p class="more"><a href="#">보도자료 더보기</a></p>
+      </li>
+      <li class="m3">
+        <a href="#"><span>해명자료</span></a>
+        <ul>
+          <li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a><span>2020-09-08</span></li>
+          <li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a><span>2020-09-09</span></li>
+          <li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a><span>2020-09-10</span></li>
+          <li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a><span>2020-09-11</span></li>
+          <li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a><span>2020-09-12</span></li>
+        </ul>
+        <p class="more"><a href="#">해명자료 더보기</a></p>
+      </li>
+    </ul>
+  </div>
+  <!-- //UI Object -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum illo, qui, illum suscipit ea soluta! Praesentium consequatur minima perspiciatis ut quis esse eaque est itaque totam facere iusto, id nam, eos molestias aut dolor deserunt tenetur delectus! Dicta aliquam voluptatibus, error accusamus corrupti illum quod cupiditate maxime quia incidunt ad eum nobis sapiente, ab deserunt optio omnis id ratione suscipit ut delectus totam debitis. Omnis asperiores nam, esse tempora repellendus, nulla ipsa ea commodi, voluptate, ipsam iure. Deserunt consectetur quos obcaecati, quia corrupti possimus recusandae at autem iure magnam reiciendis, delectus suscipit porro minus impedit cupiditate rem officiis ut vero!</p>
+</div>
+</body>
+</html>

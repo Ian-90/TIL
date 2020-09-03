@@ -24,3 +24,6 @@
 * box영역이 클릭 되도록 inline-block을 이용
 * 글자와 숫자의 높이가 다를 때, line-height를 폰트사이즈만큼 추가
 * icon 위치는 position abolsute로 해야 크로스 브라우징을 해결 할 수 있음
+
+# 6. menu - 탭메뉴, 메뉴
+* position: absolute를 사용하는 탭메뉴와 사용하지않는 탭메뉴
