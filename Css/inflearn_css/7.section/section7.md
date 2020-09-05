@@ -27,3 +27,6 @@
 
 # 6. menu - 탭메뉴, 메뉴
 * position: absolute를 사용하는 탭메뉴와 사용하지않는 탭메뉴
+
+# 7. faq list - 질문과 답변 목록
+* 접히는 형태는 js로

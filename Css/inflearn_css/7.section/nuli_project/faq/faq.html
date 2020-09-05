@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/reset.css">
+  <title>faq</title>
+  <style>
+  .faq {
+    width: 600px;
+    margin: 0 auto
+  }
+
+  .faq .hgroup {
+    *zoom: 1;
+  }
+
+  .faq .hgroup::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  .faq .hgroup h2 {
+    float: left;
+    padding: 15px 0;
+  }
+
+  .faq .hgroup button {
+    float: right;
+    margin-top: 18px;
+    border: 0;
+    background: none;
+    letter-spacing: -1px;
+    cursor: pointer;
+  }
+
+  .faq .faq_list {
+    border-top: 1px solid #ccc;
+  }
+
+  .faq .faq_list dt a {
+    display: block;
+    padding: 8px 10px;
+    /* border-top: 1px solid #ccc; */
+    border-bottom: 1px solid #ccc;
+    color: #666;
+  }
+
+  .faq .faq_list dt a:hover {
+    background-color: #eee;
+    color: #222;
+  }
+
+  .faq .faq_list dt.active a {
+    border-bottom: none;
+    background-color: #eee;
+    color: #222;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+
+  .faq .faq_list dd {
+    padding: 0 10px;
+    border-bottom: 1px solid #ccc;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .faq .faq_list dd.active {
+    display: block;
+  }
+
+  .faq .faq_list dd p {
+    margin: 8px 0;
+  }
+  </style>
+</head>
+<body>
+<div class="faq">
+	<div class="hgroup">
+		<h2>FAQ</h2>
+		<button type="button"><span>답변 모두 여닫기</span></button>
+	</div>
+	<dl class="faq_list">
+		<dt class="active"><a href="#a1">Q:질문과 답변 목록은 무엇으로 마크업 해야 하나요?</a></dt>
+		<dd id="a1" class="active">
+			<p>A:비 순차 목록, 순차 목록, 정의 목록으로 마크업 할 수 있습니다. 더 나아가 각각의 항목 안에서 '질문'과 '답변'을 무엇으로 마크업 할 것인지에 대하여는 많은 고민이 필요 합니다.</p>
+		</dd>
+
+		<dt><a href="#a2">Q:질문과 답변 목록은 무엇으로 마크업 해야 하나요?</a></dt>
+		<dd id="a2">
+			<p>A:비 순차 목록, 순차 목록, 정의 목록으로 마크업 할 수 있습니다. 더 나아가 각각의 항목 안에서 '질문'과 '답변'을 무엇으로 마크업 할 것인지에 대하여는 많은 고민이 필요 합니다.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi officiis nisi maxime quas explicabo officia, itaque nihil voluptatibus velit quo dolore quae quidem illum, tempore dolor provident quis expedita at.</p>
+		</dd>
+
+		<dt><a href="#a3">Q:질문과 답변 목록은 무엇으로 마크업 해야 하나요?</a></dt>
+		<dd id="a3">
+			<p>A:비 순차 목록, 순차 목록, 정의 목록으로 마크업 할 수 있습니다. 더 나아가 각각의 항목 안에서 '질문'과 '답변'을 무엇으로 마크업 할 것인지에 대하여는 많은 고민이 필요 합니다.</p>
+		</dd>
+	</dl>
+</div> 
+</body>
+</html>
