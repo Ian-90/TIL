@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/reset.css">
+  <title>list text</title>
+  <style>
+  img {
+    vertical-align: top;
+  }
+  #content {
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  #content h1 {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .flexible_img_row li {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+    *zoom: 1;
+  }
+
+  .flexible_img_row li::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  .flexible_img_row li a {
+    color: #333;
+  }
+
+  .flexible_img_row li a .thumb {
+    float: left;
+    margin: 0 15px 15px 0;
+  }
+
+  .flexible_img_row li a strong {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .flexible_img_row li p {
+    color: #666;
+    line-height: 1.5;
+  }
+
+  </style>
+</head>
+<body>
+<div id="content">
+  <!-- UI Object -->
+  <h1>Flexible Image+Text Row List</h1>
+  <div class="flexible_img_row">
+    <ul>
+    <li>
+      <a href="#">
+        <span class="thumb">
+          <img src="img/@thumb.jpg" width="160" alt="">
+        </span> 
+        <strong>이미지의 너비가 가변폭이어야 할 때</strong>
+      </a>
+      <p>이미지의 너비가 가변폭일 때 이 스타일을 사용 합니다. 이미지보다 글의 양이 많아지면 이미지 아래쪽으로 글이 흐르는 것을 확인 할 수 있습니다. 이미지의 너비가 가변폭일 때 이 스타일을 사용 합니다. 이미지보다 글의 양이 많아지면 이미지 아래쪽으로 글이 흐르는 것을 확인 할 수 있습니다. 이미지의 너비가 가변폭일 때 이 스타일을 사용 합니다. 이미지보다 글의 양이 많아지면 이미지 아래쪽으로 글이 흐르는 것을 확인 할 수 있습니다. 이미지의 너비가 가변폭일 때 이 스타일을 사용 합니다. 이미지보다 글의 양이 많아지면 이미지 아래쪽으로 글이 흐르는 것을 확인 할 수 있습니다. 이미지의 너비가 가변폭일 때 이 스타일을 사용 합니다. 이미지보다 글의 양이 많아지면 이미지 아래쪽으로 글이 흐르는 것을 확인 할 수 있습니다. </p>
+    </li>
+    <li>
+      <a href="#"><span class="thumb"><img src="img/@thumb.jpg" width="120" alt=""></span> <strong>이미지의 너비가 가변폭이어야 할 때</strong></a>
+      <p>이미지의 너비가 가변폭일 때 이 스타일을 사용 합니다. 이미지보다 글의 양이 많아지면 이미지 아래쪽으로 글이 흐르는 것을 확인 할 수 있습니다.</p>
+    </li>
+    <li>
+      <a href="#"><span class="thumb"><img src="img/@thumb.jpg" width="80" alt=""></span> <strong>이미지의 너비가 가변폭이어야 할 때</strong></a>
+      <p>이미지의 너비가 가변폭일 때 이 스타일을 사용 합니다. 이미지보다 글의 양이 많아지면 이미지 아래쪽으로 글이 흐르는 것을 확인 할 수 있습니다.</p>
+    </li>
+    <li>
+      <a href="#">
+        <strong>이미지가 없는 항목</strong>
+      </a>
+      <p>이미지가 포함되지 않은 경우 이미지 자리를 표시하지 않고 글만 출력 합니다. 이 목록 스타일의 장점은 가변폭 이미지를 수용할 수 있다는 점 입니다. 단점은 서로 다른 이미지 크기 때문에 수직 정렬이 맞지 않아서 정돈되지 않은 느낌을 줍니다.</p>
+    </li>
+    </ul>
+  </div>
+  <!-- //UI Object -->
+</div>
+</body>
+</html>
