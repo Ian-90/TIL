@@ -30,3 +30,13 @@
 
 # 7. faq list - 질문과 답변 목록
 * 접히는 형태는 js로
+
+# 8. list - 갤러리 형식의 목록 1
+* img list에서 float을 해지하지말고, height를 넣어주기 (이미지가 몇개 들어갈지 모르기 때문)
+* img 공백제거 - img에 vertical-align: top
+* float을 지정하면, 꼭 해지를 잘해줘야 한다.(gallery 하위 부분에 내용을 추가해보면 왜해주는지 알 수 있다)
+* border가 겹쳤을 때, margin이나 position속성으로 조정
+
+# 8. list - 갤러시 형식의 목록 2
+* 일정한 이미지가 아닌 이미즈 사이즈들이 다 다를 때 적용
+* 이미지 높이가 다 다를 때, 이미지의 line-heigh를 제일 작은 이미지 높이에 맞추고, 글씨를 제일 큰 이미지 높이에 맞춘다. 나머지는 overflow: hidden으로 처리

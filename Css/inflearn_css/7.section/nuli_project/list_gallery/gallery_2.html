@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/reset.css">
+  <title>gallery</title>
+  <style>
+  img {
+    vertical-align: top;
+  }
+
+  #content {
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  #content h1 {
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .flexible_img_col ul {
+    border-bottom: 1px solid #ccc;
+    *zoom: 1;
+  }
+
+  .flexible_img_col ul::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  .flexible_img_col li {
+    position: relative;
+    top: 1px;
+    float: left;
+    width: 120px;
+    height: 250px;
+    padding: 20px 15px 0 15px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .flexible_img_col li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .flexible_img_col li a .thumb {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    background-color: #ededed;
+    line-height: 80px;
+    text-align: center;
+  }
+
+  .flexible_img_col li a .thumb img {
+    width: 100%;
+  }
+
+  .flexible_img_col li a .thumb em {
+    display: none;
+    opacity: .6;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -100px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    line-height: 200px;
+  }
+
+  .flexible_img_col li a:hover .thumb em {
+    display: block;
+  }
+
+  .flexible_img_col li a strong {
+    display: block;
+    padding: 6px 0 2px;
+    line-height: 1.5;
+  }
+
+  .flexible_img_col li a:hover strong {
+    text-decoration: underline;
+  }
+
+  .flexible_img_col li p {
+    color: #666;
+    font-size: .9em;
+  }
+  </style>
+</head>
+<body>
+<div id="content">	
+  <!-- UI Object -->
+  <h1>Flexible Image+Text Col List</h1>
+  <div class="flexible_img_col">
+    <ul>
+    <li>
+      <a href="#">
+        <span class="thumb">
+          <img src="img/@thumbHr.jpg" alt=""> 
+          <em>Category</em>
+        </span> 
+        <strong>이미지 제목</strong>
+      </a>
+      <p>2010-12-24</p>
+    </li>
+    <li>
+      <a href="#"><span class="thumb"><img src="img/@thumbVr.jpg" alt=""> <em>카테고리</em></span> <strong>이미지 제목 이미지 제목 이미지 제목</strong></a>
+      <p>2010-12-24</p>
+    </li>
+    <li>
+      <a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+      <p>2010-12-24</p>
+    </li>
+    <li>
+      <a href="#"><span class="thumb"><img src="img/@thumbHr.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+      <p>2010-12-24</p>
+    </li>
+    <li>
+      <a href="#"><span class="thumb"><img src="img/@thumbVr.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+      <p>2010-12-24</p>
+    </li>
+    <li>
+      <a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+      <p>2010-12-24</p>
+    </li>
+    <li>
+      <a href="#"><span class="thumb"><img src="img/@thumbHr.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+      <p>2010-12-24</p>
+    </li>
+    <li>
+      <a href="#"><span class="thumb"><img src="img/@thumbVr.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+      <p>2010-12-24</p>
+    </li>
+    <li>
+      <a href="#"><span class="thumb"><img src="img/@thumbVr.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+      <p>2010-12-24</p>
+    </li>
+    <li>
+      <a href="#"><span class="thumb">No Images <em>Category</em></span> <strong>이미지 제목</strong></a>
+      <p>2010-12-24</p>
+    </li>
+    </ul>
+  </div>
+  <!-- //UI Object -->
+</div>
+</body>
+</html>
