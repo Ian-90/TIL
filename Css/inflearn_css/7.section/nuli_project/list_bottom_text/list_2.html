@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/reset.css">
+  <title>list</title>
+  <style>
+  #content {
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  .lst_app {
+    *zoom: 1;
+  }
+
+  .lst_app::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  .lst_app li {
+    float: left;
+    margin: 10px;
+  }
+
+  .lst_app li .thmb {
+    width: 180px;
+    height: 180px;
+    background: url(img/bg_thmb.gif) no-repeat;
+  }
+
+  .lst_app li .btn_area {
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .lst_app li a {
+    text-decoration: none;
+  }
+  </style>
+</head>
+<body>
+<div id="content">
+  <!-- UI Object -->
+  <ul class="lst_app">
+    <li>
+        <div class="thmb">
+          <a href="#">
+            <img src="img/@tmp_thmb.gif" width="180" height="180" alt="팡야">
+          </a>
+        </div>
+        <div class="btn_area">
+            <a href="#">
+              <img src="img/btn_edt.gif" width="39" height="22" alt="수정">
+            </a>
+            <a href="#">
+              <img src="img/btn_del.gif" width="39" height="22" alt="삭제">
+            </a>
+        </div>
+    </li>
+    <li>
+        <div class="thmb"></div>
+        <div class="btn_area"><a href="#"><img src="img/btn_upld_img.gif" width="80" height="22" alt="이미지 올리기"></a></div>
+    </li>
+    <li>
+        <div class="thmb"></div>
+        <div class="btn_area"><a href="#"><img src="img/btn_upld_img.gif" width="80" height="22" alt="이미지 올리기"></a></div>
+    </li>
+    <li>
+        <div class="thmb"></div>
+        <div class="btn_area"><a href="#"><img src="img/btn_upld_img.gif" width="80" height="22" alt="이미지 올리기"></a></div>
+    </li>
+  </ul>
+  <!-- //UI Object -->
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ut illo aperiam, ex culpa vero magnam itaque sequi unde obcaecati blanditiis labore consequatur ab veniam iusto doloribus libero impedit dolor, ipsa eaque. Ut maxime facilis dolorum illo, non laudantium. Sapiente illo aliquam magni fuga aut ipsum esse. Debitis atque, ad maiores obcaecati distinctio harum quos optio explicabo magni commodi. Fuga enim, nemo tenetur veritatis iusto facere, quidem vel, pariatur, assumenda explicabo ducimus vero molestias aut culpa provident mollitia. Tenetur ducimus ea placeat vel dolores veritatis cumque sunt, dolore nulla ipsam ex provident enim totam voluptatem, in eveniet, laborum amet sint.</p>
+</div>
+</body>
+</html>
