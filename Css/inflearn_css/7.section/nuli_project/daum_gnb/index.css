@@ -1,0 +1,197 @@
+@import '../styles/reset.css';
+
+.blind {
+  display: block;
+  position: absolute;
+  top: -9999em;
+  left: 0;
+  overflow: hidden;
+}
+
+#header {
+  width: 978px;
+  margin: 0 auto;
+}
+
+#header .tle {
+  float: left;
+  margin: 35px 0 23px 3px;
+}
+
+#header .tle a {
+  display: block;
+  width: 103px;
+  height: 37px;
+  background: url(img/gnb.gif) no-repeat 0 0;
+  text-indent: -9999em;
+}
+
+#header .sub {
+  float: left;
+  margin: 42px 0 0 23px;
+}
+
+#header .sub li a {
+  display: block;
+  width: 44px;
+  height: 24px;
+  background: url(img/gnb.gif) no-repeat 0 -50px;
+  text-indent: -9999em;
+}
+
+#header .area {
+  border-top: 1px solid #333;
+  clear: both;
+}
+
+#header .area_inner {
+  position: relative;
+  height: 43px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #cdcdcd;
+  *zoom: 1;
+}
+
+#header .area_inner::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#header .area .gnb_real {
+  float: left;
+}
+
+#header .area .gnb_real li {
+  float: left;
+  margin-right: 1px;
+}
+
+#header .area .gnb_real li a {
+  display: block;
+  height: 44px;
+  background: url(img/gnb.gif) no-repeat;
+  text-indent: -9999em;
+}
+
+#header .area .gnb_real li.mm01 a {
+  width: 77px;
+  background-position: 0 -675px;
+}
+
+#header .area .gnb_real li.mm02 a {
+  width: 82px;
+  background-position: -78px -675px;
+}
+
+#header .area .gnb_real li.mm03 a {
+  width: 84px;
+  background-position: -161px -675px;
+}
+
+#header .area .gnb_real li.mm04 a {
+  width: 49px;
+  background-position: -246px -675px;
+}
+
+#header .area .gnb_real li.mm05 a {
+  width: 75px;
+  background-position: -296px -675px;
+}
+
+#header .area .gnb_real li.mm06 a {
+  width: 51px;
+  background-position: -372px -675px;
+}
+
+#header .area .gnb_real li.mm07 a {
+  width: 51px;
+  background-position: -424px -675px;
+}
+
+#header .area .gnb_real li.mm08 a {
+  width: 75px;
+  background-position: -476px -675px;
+}
+
+#header .area .gnb_real li.mm09 a {
+  width: 90px;
+  background-position: -552px -675px;
+}
+
+#header .area .gnb_real li.mm01 a.active,
+#header .area .gnb_real li.mm01 a:hover {
+  width: 77px;
+  background-position: 0 -725px;
+}
+
+#header .area .gnb_real li.mm02 a:hover {
+  width: 82px;
+  background-position: -78px -725px;
+}
+
+#header .area .gnb_real li.mm03 a:hover {
+  width: 84px;
+  background-position: -161px -725px;
+}
+
+#header .area .gnb_real li.mm04 a:hover {
+  width: 49px;
+  background-position: -246px -725px;
+}
+
+#header .area .gnb_real li.mm05 a:hover {
+  width: 75px;
+  background-position: -296px -725px;
+}
+
+#header .area .gnb_real li.mm06 a:hover{
+  width: 51px;
+  background-position: -372px -725px;
+}
+
+#header .area .gnb_real li.mm07 a:hover {
+  width: 51px;
+  background-position: -424px -725px;
+}
+
+#header .area .gnb_real li.mm08 a:hover {
+  width: 75px;
+  background-position: -476px -725px;
+}
+
+#header .area .gnb_real li.mm09 a:hover {
+  width: 90px;
+  background-position: -552px -725px;
+}
+
+#header .area .gnb_with {
+  float: right;
+  margin-right: 85px;
+}
+
+#header .area .gnb_with li a {
+  display: block;
+  width: 100px;
+  height: 44px;
+  background: url(img/gnb.gif) no-repeat -793px -675px;
+  text-indent: -9999em;  
+}
+
+#header .area .gnb_with li a:hover {
+  background-position: -793px -725px;
+}
+
+#header .area .gnb_app {
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+
+#header .area .gnb_app a {
+  display: block;
+  width: 82px;
+  height: 30px;
+  background: url(img/gnb.gif) no-repeat 0 -125px;
+  text-indent: -9999em;
+}
