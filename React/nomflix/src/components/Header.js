@@ -25,14 +25,14 @@ const Item = styled.li`
   height: 50px;
   text-align: center;
   border-bottom: 3px solid ${props => (props.current ? '#3498db' : 'transparent') };
-  transiton: border-bottom 0.5s ease-in-out
+  transiton: border-bottom 0.5s ease-in-out;
 `;
 
 const SLink = styled(Link)`
   height: 50px;
   display: flex;
   align-items: center;
-  justfy-content: center;
+  justify-content: center;
 `;
 
 
