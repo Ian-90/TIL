@@ -1,0 +1,43 @@
+@import '../styles/reset.css';
+
+table {
+  border-collapse: collapse;
+}
+
+caption {
+  display: none;
+}
+
+.tbl {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.tbl h1 {
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.tbl table {
+  width: 100%;
+}
+
+.tbl table th, .tbl table td {
+  padding: 4px 0;
+  border: 1px solid #ccc;
+  color: #777;
+  text-align: center;
+}
+
+.tbl table thead th {
+  padding: 6px 0;
+  background-color: #efefef;
+  color: #666;
+}
+
+.tbl table tfoot th, .tbl table tfoot td {
+  padding: 6px 0;
+  background-color: #efefef;
+  color: #666;
+  font-weight: bold; 
+}

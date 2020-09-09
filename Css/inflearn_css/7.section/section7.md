@@ -58,3 +58,7 @@
 
 # 12. 다음 부동산 메뉴
 * 크로스 브라우징때문에 이미지를 넣는게 신기..
+
+# 13. table - 테이블 작성 예제
+* html5에선 summary property대신 caption으로 정리
+* table은 항상 border-collapse를 지정
