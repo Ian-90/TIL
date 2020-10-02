@@ -1,0 +1,122 @@
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+body,input,textarea,select,button,table{font-family:'Malgun Gothic','돋움',Dotum,AppleGothic,sans-serif;font-size:12px}
+img,fieldset{border:0}
+img{vertical-align:top}
+ul,ol{list-style:none}
+em,address{font-style:normal}
+a{text-decoration:none}
+a:hover,a:active,a:focus{text-decoration:underline}
+legend,.blind{display:block;position:absolute;left:0;top:-9999em;overflow:hidden}
+
+.login {
+  width: 384px;
+  border: 2px solid #555;
+  position: relative;
+  background: #fff;
+}
+
+.login fieldset {
+  padding: 28px 28px 10px;
+}
+
+.login fieldset .field {
+  margin-bottom: 5px;
+}
+
+.login fieldset .inp_field {
+  width: 326px;
+  height: 28px;
+  border: 1px solid #b7b7b7;
+  border-color: #b7b7b7 #e1e1e1 #e1e1e1 #b7b7b7;
+  color: #767676;
+  font: bold 11px/28px Verdana, Geneva, Tahoma, sans-serif;
+  text-indent: 9px;
+}
+
+.login fieldset .area {
+  padding-top: 5px;
+  *zoom: 1;
+}
+
+.login fieldset .area:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.login fieldset .chk_field {
+  float: left;
+  margin-top: 7px;
+  color: #767676;
+  font: 11px '돋움', dotum, helvetica, sans-serif;
+}
+
+.login fieldset .chk_field input {
+  vertical-align: middle;
+}
+
+.login fieldset .btn_area {
+  float: right;
+  margin-right: 4px;
+}
+
+.login fieldset .btn_area .btn_submit {
+  overflow: visible;
+  background: none;
+  border: 0 none;
+  padding-left: 40px;
+  background: url(img/btn_login.gif) no-repeat 0 0;
+  cursor: pointer;
+}
+
+.login fieldset .btn_area .btn_submit span {
+  display: block;
+  left: 4px;
+  height: 32px;
+  padding-right: 20px;
+  background: url(img/btn_login.gif) no-repeat 100% 0;
+  color: #fff;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+.login .nav {
+  padding: 14px 0;
+  background-color: #fafafa;
+  border: 1px solid #d9d9d9;
+  text-align: center;
+}
+
+.login .nav li {
+  display: inline;
+  margin-right: 8px;
+  padding-right: 10px;
+  border-right: 1px solid #c3c3c3;
+}
+
+.login .nav li.last {
+  margin-right: 0;
+  padding-right: 0;
+  border: 0;
+}
+
+.login .nav li a {
+  color: #767676;
+}
+
+.login .btn_close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.login .btn_close button {
+  width: 26px;
+  height: 26px;
+  background: none;
+  border: 0 none;
+  color: #cacaca;
+  font: bold 12px/26px Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  cursor: pointer;
+}

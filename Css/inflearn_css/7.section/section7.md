@@ -62,3 +62,7 @@
 # 13. table - 테이블 작성 예제
 * html5에선 summary property대신 caption으로 정리
 * table은 항상 border-collapse를 지정
+
+# 14. form - 로그인 만들기
+* input의 경우 line-height으로 중앙정렬이 익스플로러 낮은버전에서 되지 않는다. height와 line-height를 같이 사용해야한다
+* input은 브라우저마다 다르기 때문에 꼭 똑같이 하려고 하지 않아도 된다

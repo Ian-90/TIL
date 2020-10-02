@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<style>
+  #content {
+    width: 980px;
+    margin: 0 auto;
+  }
+
+  .bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+  }
+
+  .login {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    margin-left: -192px;
+    margin-top: -95px;
+    display: none;
+  }
+</style>
+<body>
+  <div id="content">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea perspiciatis fugit saepe dolores voluptatum quia natus delectus accusantium at sed molestiae suscipit laudantium, mollitia officiis corporis quisquam! Molestiae, totam harum.</p>
+    <hr>
+    <p><button class="btn_login">로그인</button></p>
+    <div class="login">
+      <form action="#" method="POST">
+        <fieldset>
+          <legend>로그인</legend>
+          <p class="field">
+            <label for="user_id" class="blind">ID</label>
+            <input type="text" id="user_id" name="user_id" value="" placeholder="ID" class="inp_field">
+          </p>
+          <p class="field">
+            <label for="user_pw" class="blind">PASSWORD</label>
+            <input type="password" id="user_pw" name="user_pw" value="" placeholder="PASSWORD" class="inp_field">
+          </p>
+          <div class="area">
+            <p class="chk_field">
+              <input type="checkbox" id="stay" name="stay" value="">
+              <label for="stay">로그인유지</label>
+            </p>
+            <p class="btn_area">
+              <button type="submit" class="btn_submit"><span>로그인</span></button>
+            </p>
+          </div>
+        </fieldset>
+        <div class="nav">
+          <ul>
+            <li><a href="#">아이디/비밀번호 찾기</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li class="last"><a href="#">Open ID</a></li>
+          </ul>
+        </div>
+      </form>
+      <p class="btn_close"><button type="button">X</button></p>
+    </div>
+  </div>
+<div class="bg"></div>
+<script>
+  document.querySelector('.btn_login').addEventListener('click', () => {
+    document.querySelector('.login').style.display = 'block'
+    document.querySelector('.bg').style.display = 'block'
+  })
+
+  document.querySelector('.btn_close button').addEventListener('click', () => {
+    document.querySelector('.login').style.display = 'none'
+    document.querySelector('.bg').style.display = 'none'
+  })
+</script>
+</body>
+</html>
