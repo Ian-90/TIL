@@ -1,0 +1,50 @@
+@import '../styles/reset.css';
+
+/* layout */
+#wrap {
+  width: 970px;
+  margin: 0 auto;
+  background-color: gray;
+}
+
+#header {
+  padding: 20px;
+  background-color: red;
+}
+
+#container {
+  padding-bottom: 30px;
+  *zoom: 1;
+  background-color: lime;
+}
+
+#container::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#container #content {
+  float: right;
+  width: 600px;
+  background-color: blue;
+}
+
+#container #content .inner {
+  padding: 20px;
+}
+
+#container .aside {
+  float: left;
+  width: 370px;
+  background-color: green;
+}
+
+#container .aside .inner {
+  padding: 20px;
+}
+
+#footer {
+  padding: 20px;
+  background-color: silver;
+}

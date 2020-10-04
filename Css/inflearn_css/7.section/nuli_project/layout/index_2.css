@@ -1,0 +1,32 @@
+@import '../styles/reset.css';
+@import './index_1.css';
+#wrap {
+  width: 100%;
+  margin: 0;
+}
+
+#header {
+  min-width: 970px;
+  padding: 20px 0;
+}
+
+/* layout */
+#header .header-area {
+  width: 970px;
+  margin: 0 auto;
+}
+
+#container {
+  width: 970px;
+  margin: 0 auto;;
+}
+
+#footer {
+  min-width: 970px;
+  padding: 20px 0;
+}
+
+#footer .footer-area {
+  width: 970px;
+  margin: 0 auto;
+}

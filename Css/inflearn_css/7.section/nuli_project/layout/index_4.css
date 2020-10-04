@@ -1,0 +1,29 @@
+@import '../styles/reset.css';
+@import './index_1.css';
+
+/* layout */
+#container #content {
+  width: 62%;
+}
+
+#container .aside {
+  width: 38%;
+}
+
+@media screen and (max-width: 970px) {
+  #wrap {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #container #content {
+    float: none;
+    width: auto;
+  }
+  
+  #container .aside {
+    float: none;
+    width: auto;
+  }
+}

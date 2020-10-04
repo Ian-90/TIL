@@ -1,0 +1,26 @@
+@import '../styles/reset.css';
+@import './index_1.css';
+
+/* layout */
+#container #content {
+  position: relative;
+  left: 24%;
+  float: left;
+  width: 52%;
+}
+
+#container .aside {
+  float: right;
+  width: 24%;
+}
+#container .nav {
+  position: relative;
+  left: -52%;
+  float: left;
+  width: 24%;
+  background-color: purple;
+}
+
+#container .nav .inner {
+  padding: 20px;
+}

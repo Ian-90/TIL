@@ -66,3 +66,23 @@
 # 14. form - 로그인 만들기
 * input의 경우 line-height으로 중앙정렬이 익스플로러 낮은버전에서 되지 않는다. height와 line-height를 같이 사용해야한다
 * input은 브라우저마다 다르기 때문에 꼭 똑같이 하려고 하지 않아도 된다
+
+# 15. layout - 레이아웃 실습
+* index_1
+  * box-sizing을 사용하지않으면서, 크로스 브라우징을 위해선, 영역내부에 div를 한개 더 감싼다.
+
+* index_2
+  * wrap이나 header에 크기가 없기 때문에, 창을 줄이고, 스크롤이 생긴다면 문제가 생긴다. 그러므로 min-width를 적용해서 해결 해야한다.
+
+* index_3
+  * content와 aside의 넓이가 %로 바꿔야 하며, 또한 div를 하나더 감싼다.
+
+* index_4
+  * wrap의 width를 변경할 일이 생길 수 있으므로, content나 aside는 반응형 시, %로 width를 만들어 주는 것이 좋다.
+
+* index_5
+  * nav, aside, content 순서
+
+* index_6
+  * content, nav, aside 순서
+  * float은 center가 없기 때문에, div로 2개를 감싸서 float을 이용 하거나, position을 활용
