@@ -34,13 +34,33 @@
 #header {
   position: relative;
   padding-bottom: 150px;
-  background: url(../img/visual_about.jpg) no-repeat 0 100%;
+  background: no-repeat 0 100%;
+}
+
+.about #header {
+  background-image: url(../img/visual_about.jpg);
+}
+
+.services #header {
+  background-image: url(../img/visual_services.jpg);
+}
+
+.portfolio #header {
+  background-image: url(../img/visual_portfolio.jpg);
+}
+
+.contact #header {
+  background-image: url(../img/visual_contact.jpg);
 }
 
 #header .logo {
   position: absolute;
   top: 106px;
   right: 26px;
+}
+
+.intro #header .logo {
+  position: static;
 }
 
 #header .lnb {
@@ -103,6 +123,12 @@
   content: '';
   display: block;
   clear: both;
+}
+
+.intro #container #content {
+  float: none;
+  width: auto;
+  text-align: center;
 }
 
 #container #content {

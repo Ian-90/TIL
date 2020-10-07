@@ -14,3 +14,9 @@
 
 # 2. 웹페이지 css 실습
 * float을 지정하려면 width가 있어야 한다.
+
+# 3. 웹페이지 link 실습
+* 일정 시간이 지난후 페이지 이동 meta tag
+```html
+	<meta http-equiv="refresh" content="시간; url=이동할 주소">
+```
