@@ -1,0 +1,44 @@
+body {
+  font: 12px 'Trebuchet MS', sans-serif;
+}
+
+.wrap h1 ~ p {
+  background-color: lime;
+}
+
+.wrap a[href ^= "http://"] {
+  background-color: orange;
+}
+
+.wrap a[href ^= "mail"] {
+  background-color: blue;
+  color: white;
+}
+
+.wrap a[href $= "pdf"] {
+  background-color: lime;
+}
+
+.wrap a[title *= "이동"] {
+  color: red;
+}
+
+.wrap p:empty {
+  border-bottom: 1px solid green;
+}
+
+.wrap ul li:nth-child(3) {
+  border-bottom: 3px solid red;
+}
+
+.wrap dl dd:nth-of-type(1) {
+  background-color: silver;
+}
+
+#sample {
+  display: none;
+}
+
+#sample:target {
+  display: block;
+}
