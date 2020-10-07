@@ -1,0 +1,12 @@
+  /* reset */
+	html,body{width:100%;height:100%}
+	body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+	body,input,textarea,select,button,table{font-family: 'Malgun Gothic',Dotum,AppleGothic,sans-serif;font-size:12px}
+	img,fieldset{border:0}
+	ul,ol{list-style:none}
+	em,address{font-style:normal}
+	a{text-decoration:none}
+	a:hover,a:active,a:focus{text-decoration:underline}
+	img{vertical-align: top;}
+	hr {display: none;}
+	

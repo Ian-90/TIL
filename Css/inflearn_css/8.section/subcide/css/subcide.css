@@ -1,0 +1,174 @@
+@charset "utf-8";
+@import './reset.css';
+
+.blind {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -9999em;
+}
+
+.skip-nav a {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -9999em;
+  width: 100%;
+  z-index: 9999;
+  background-color: navy;
+  color: #eee;
+  text-align: center;
+  line-height: 2.4em
+}
+
+.skip-nav a:focus {
+  top: 0;
+}
+
+/* style */
+#wrap {
+  width: 760px;
+  margin: 0 auto;
+}
+
+#header {
+  position: relative;
+  padding-bottom: 150px;
+  background: url(../img/visual_about.jpg) no-repeat 0 100%;
+}
+
+#header .logo {
+  position: absolute;
+  top: 106px;
+  right: 26px;
+}
+
+#header .lnb {
+  padding-left: 11px;
+  *zoom: 1;
+}
+
+#header .lnb::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#header .lnb li {
+  float: left;
+}
+
+#header .lnb li a {
+  display: block;
+  height: 50px;
+  background:  no-repeat 0 0;
+  text-indent: -9999em;
+}
+
+#header .lnb li a:hover {
+  background-position: 0 -50px;
+}
+
+#header .lnb li a.on,
+#header .lnb li a.on:hover {
+  background-position: 0 -100px;
+}
+
+#header .lnb li.mm1 a {
+  width: 71px;
+  background-image: url(../img/m_about.gif);
+}
+
+#header .lnb li.mm2 a {
+  width: 84px;
+  background-image: url(../img/m_services.gif);
+}
+
+#header .lnb li.mm3 a {
+  width: 95px;
+  background-image: url(../img/m_portfolio.gif);
+}
+
+#header .lnb li.mm4 a {
+  width: 106px;
+  background-image: url(../img/m_contact.gif);
+}
+
+#container {
+  *zoom: 1;
+  padding-bottom: 20px;
+}
+
+#container::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#container #content {
+  width: 63%;
+  float: left;
+  line-height: 1.4;
+  color: #666;
+}
+
+#container #content .padding {
+  padding: 25px 25px 0;
+}
+
+#container #content h2,
+#container #content p,
+#container #content address {
+  margin-bottom: 15px;
+}
+
+#container #content address p {
+  margin-bottom:  0;
+}
+
+#container #aside {
+  width: 37%;
+  float: right;
+  line-height: 1.4;
+  color: #666;
+}
+
+#container #aside .padding {
+  padding: 25px 25px 0 0;
+}
+
+#footer {
+  border-top: 1px solid #ccc;
+  padding: 25px 25px 35px;
+  color: #999;
+  font-size: .9em;
+  line-height: 1.8;
+  *zoom: 1;
+}
+
+#footer a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  color: brown;
+}
+
+#footer::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#footer .btn_menu {
+  float: right;
+}
+
+#footer .btn_menu dd {
+  display: inline;
+}
+
+#footer .copy {
+  float: left;
+}
