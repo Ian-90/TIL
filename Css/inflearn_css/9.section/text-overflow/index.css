@@ -1,0 +1,15 @@
+#wrap {
+  width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-width: 0 1px;
+  font: 12px arial, sans-serif;
+}
+
+.sample {
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

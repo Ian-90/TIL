@@ -1,0 +1,13 @@
+#wrap {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#wrap h1 {
+  border: 1px solid #333;
+  padding: .5em;
+  font: bold 100px arial, sans-serif;
+  text-transform: uppercase;
+  text-shadow: -10px 20px 10px rgba(0, 0, 0, .6), 2px 2px 0 rgba(255, 0, 0, 1);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, .5), inset 5px 5px 30px 10px rgba(255, 0, 0, .5);
+}

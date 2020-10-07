@@ -42,3 +42,28 @@
   * :root - 상속을 많이받으면, em은 헷갈린다. 그래서 rem을 사용하기 위해 사용한다.
     * rem은 html 글자크기만 가지고 계산
   * :target - tabmenu에서 활용
+
+# 2. 그림자처리, 말줄임표현, 투명도 지정하기
+* 접두어 - 필요한 속성에 따라 써줘야 한다(css3 generator를 이용하면, 접두어가 필요한 속성을 사용하기 편함)
+  * -webkit-attribute: value; Chrome, Safari
+  * -moz-attribute: value; Firefox
+  * -ms-attribute: value; IE, Outlook
+  * -o-attribute: value; Opera
+
+* 그림자 처리
+  * text-shadow - 가로방향 세로방향 blur 색상
+  * box-shadow - inset 가로방향 세로방향 blur spread 컬러
+
+* 말줄임 표현
+  * text-overflow
+    * 적용하기 위해선 width가 있어야 된다
+    * 줄바꿈 금지가 있어야 한다
+    * overflow: hidden이 필요하다
+    * inline을 적용하려면 display: block 추가
+
+* 투명도 지정하기
+  * 색상만 투명하게 하기
+    * rgba(red, green, blue, alpha) - 주로 이용
+    * hsla(각도, 채도, 밝기, 투명도)
+  * 요소전체 투명하게 하기
+    * opacity 이용
