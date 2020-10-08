@@ -1,0 +1,12 @@
+.box {
+  width: 400px;
+  padding: 20px;
+  border: 3px solid black;
+  background: 
+    /* url(../img/twt.png) no-repeat 50px 30px,
+    url(../img/insta.png) no-repeat 55px 35px, */
+    url(../img/photo.jpg) no-repeat 0 0 / cover;
+  background-clip: content-box;
+  background-origin: content-box;
+  color: white;
+}

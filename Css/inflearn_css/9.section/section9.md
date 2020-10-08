@@ -82,3 +82,25 @@
     * 한개의 값 - 전체
     * 한 줄 - 상 우 하 좌
     * 두 줄 - 가로방향 상 우 하 좌 / 세로방향 상 우 하 좌;
+
+# 4. 추가 된 배경처리 알아보기 & 그라데이션 적용
+* 추가 된 배경처리
+  * background
+    ```css
+    selector {
+      background:
+        url(path),
+        url(path),
+        ...
+        url(path);
+    }
+    ```
+    * 콤마로 나누어서 여러개 사용가능 
+    * 먼저 선언된 것이 상단으로 온다
+  * background-clip
+    * content-box - padding영역에서는 background가 보이지 않게 한다. 즉, content영역에서만 나온다.
+  * background-origin - background에 시작영역을 지정
+
+* 그라데이션 적용
+  * linear-gradient(방향, 영역별 색상) - 선형 그라데이션
+  * radial-gradient(방향, 영역별 색상) - 원형 그라데이션
