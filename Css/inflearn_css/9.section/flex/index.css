@@ -1,0 +1,13 @@
+#wrap {
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+}
+
+#wrap h1 {
+  flex: 1;
+}
+
+#wrap .text {
+  flex: 1;
+}

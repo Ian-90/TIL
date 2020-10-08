@@ -104,3 +104,17 @@
 * 그라데이션 적용
   * linear-gradient(방향, 영역별 색상) - 선형 그라데이션
   * radial-gradient(방향, 영역별 색상) - 원형 그라데이션
+
+# 5. 박스사이징&플렉스 지정하기
+* box-sizing
+  * border-box - width는 margin을 제외한 전체 영역
+  * content-box - width는 content 영역
+
+* flex
+  ```css
+  selector {
+    display: flex;
+  }
+  ```
+  * float처럼 해지를 하지 않아도 된다
+  * layout 영역은 flex 속성으로 비율을 지정
