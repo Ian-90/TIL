@@ -1,0 +1,19 @@
+body {
+  font: 12px 'Malgun Githic', sans-serif;
+}
+
+#wrap {
+  width: 800px;
+  margin: 0 auto;
+  /* -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  column-gap: 20px;
+  column-rule: 1px dashed #aaa; */
+  /* column-width: 200px; */
+  columns: 300px 2;
+}
+
+#wrap h1 {
+  column-span: all;
+}

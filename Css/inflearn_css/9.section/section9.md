@@ -67,3 +67,18 @@
     * hsla(각도, 채도, 밝기, 투명도)
   * 요소전체 투명하게 하기
     * opacity 이용
+
+# 3. 멀티칼럼&둥근모서리 지정하기
+* 멀티칼럼
+  * column-count - 해당 요소를 몇개의 칼럼으로 나눌것인가?
+  * column-gap - 컬럼 사이의 간격
+  * column-rule - 컬럼 사이의 보더
+  * column-width - 컬럼의 넓이 지정
+  * columns: column-width column-count ...;
+  * column-span - n개의 칼럼을 병합
+
+* 둥근모서리
+  * border-radius
+    * 한개의 값 - 전체
+    * 한 줄 - 상 우 하 좌
+    * 두 줄 - 가로방향 상 우 하 좌 / 세로방향 상 우 하 좌;
