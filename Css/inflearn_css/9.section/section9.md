@@ -183,3 +183,15 @@
   * perspective-origin - default는 50% 50%
   * transform-origin
   * trasform-style
+
+# 9. filter 지정하기
+* filter
+  * blur - 번짐
+  * brightness - 밝기
+  * contrast - 대비
+  * drop-shadow - 그림자처리
+  * grayscale - 흑백
+  * hue-rotate - 색상변경
+  * invert - 반대로 보이게 하기
+  * opacity - 투명도
+  * sepia - 브라운톤으로 보이게 하기
