@@ -167,3 +167,19 @@
   * animation-iteration-count - 진행횟수
   * animation-play-state - running | paused 멈추거나 진행
   * animatin-fill-mode - forwards | backwards 애니메이션이 끝나면 마지막 설정상태 유지를 하거나 초기상태로
+
+# 8. transform 지정하기
+* transform
+  * translate - 위치 이동(x, y)
+  * translate3d - 위치 이동(x, y, z)
+  * rotate - 회전
+  * rotate3d
+  * scale - 축소나 확대
+  * scale3d - z축은 rotate와 같이 확인해보면 좋다
+  * skew
+  * matrix(scaleX, skewY, skewX, scaleY, translateX, translateY)
+  * [matrix3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d)
+  * perspective - 화면의 앞뒤 깊이 지정
+  * perspective-origin - default는 50% 50%
+  * transform-origin
+  * trasform-style
