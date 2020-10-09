@@ -123,14 +123,14 @@
 * transition - 변화되는 과정에 효과를 줄 수 있다
   * shorthand
   ```css
-  selectort {
+  selector {
     transition: property durantion delay timing-function;
   }
   ```
   * transition-property
   * transition-duration
   * transition-delay
-  * [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function)
+  * [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function) - 진행속도의 변화 지정
     * linear
     * ease
     * ease-in
@@ -138,3 +138,32 @@
     * ease-out
     * cubic-bezier - 원하는 곡선 생성 가능
     * steps(count, start | end)
+
+# 7. animation 지정하기
+* animation
+  * shorthand
+  ```css
+  @keyframes name {
+    /* from {}
+    to {} */
+    0% {
+      property: value;
+    }
+
+    100% {
+      property: value;
+    }
+  }
+
+  selector {
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+  }
+  ```
+  * animation-duration - 진행시간
+  * animation-delay - 대기시간
+  * animation-name - 이름
+  * animation-timing-function - 진행속도의 변화 지정
+  * animation-direction - normal | reverse | alternate | alternate-reverse 진행방향
+  * animation-iteration-count - 진행횟수
+  * animation-play-state - running | paused 멈추거나 진행
+  * animatin-fill-mode - forwards | backwards 애니메이션이 끝나면 마지막 설정상태 유지를 하거나 초기상태로
