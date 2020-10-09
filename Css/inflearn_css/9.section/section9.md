@@ -91,7 +91,7 @@
       background:
         url(path),
         url(path),
-        ...
+        ...,
         url(path);
     }
     ```
@@ -118,3 +118,23 @@
   ```
   * float처럼 해지를 하지 않아도 된다
   * layout 영역은 flex 속성으로 비율을 지정
+
+# 6. transition 지정하기
+* transition - 변화되는 과정에 효과를 줄 수 있다
+  * shorthand
+  ```css
+  selectort {
+    transition: property durantion delay timing-function;
+  }
+  ```
+  * transition-property
+  * transition-duration
+  * transition-delay
+  * [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function)
+    * linear
+    * ease
+    * ease-in
+    * ease-in-out
+    * ease-out
+    * cubic-bezier - 원하는 곡선 생성 가능
+    * steps(count, start | end)

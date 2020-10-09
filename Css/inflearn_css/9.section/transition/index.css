@@ -1,0 +1,23 @@
+#wrap {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: lime;
+  /* transition: all 3s; */
+  /* transition:
+    width 3s linear,
+    height 1s 3s,
+    background-color 2s 4s; */
+  /* transition: width 1s ease-in; */
+  transition: width 1s steps(5, end);
+}
+
+.box:hover {
+  width: 100%;
+  /* height: 200px;
+  background-color: blue; */
+}
