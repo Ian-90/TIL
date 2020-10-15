@@ -26,3 +26,13 @@
 # 4. 웹페이지 실습 - script
   * menu click시 나오도록 jquery로 이용
   * 나는 그냥 javascript로 구현
+
+# 5. 웹호스팅 설정 & FTP활용 파일 전송
+  * 무료호스팅 - DOTHOME
+    1. FTP 설정
+    2. FileZilla - client 설치
+    3. DOTHOME에서 만든 주소(http 제거)와 아이디, 비밀번호를 FileZilla에 입력
+    4. 만든파일 드래그해서 올리기
+    5. DOTHOME 주소로 웹페이지 확인
+
+  * 그냥 github pages를 이용해서 호스팅하는것이 간편한듯 하다
