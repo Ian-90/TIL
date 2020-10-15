@@ -22,3 +22,7 @@
   
 # 3. 각 부위별 스타일 지정하기
   * 스타일 실습
+
+# 4. 웹페이지 실습 - script
+  * menu click시 나오도록 jquery로 이용
+  * 나는 그냥 javascript로 구현
