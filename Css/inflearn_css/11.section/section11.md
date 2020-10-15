@@ -15,3 +15,10 @@
   * normalize.css
   * reset.css
   * icon - fontawesome 사용(강의에서는 다운받아서 사용하지만, 나는 그냥 fontawesome 사이트 web script 사용)
+  * 지도는 구글맵쓰기 싫어서 개인적으로 카카오맵 적용
+
+# 2. 기본 스타일 지정하기
+  * 스타일 실습
+  
+# 3. 각 부위별 스타일 지정하기
+  * 스타일 실습

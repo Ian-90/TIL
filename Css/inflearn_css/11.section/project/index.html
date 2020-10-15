@@ -14,17 +14,17 @@
 </head>
 <body>
   <dl class="skip">
-    <dt><strong>skip navigation</strong></dt>
+    <dt class="blind"><strong>skip navigation</strong></dt>
     <dd><a href="#container">skip to content</a></dd>
   </dl>
   <hr>
   <div id="wrap">
     <!-- header -->
-    <header id="header">
+    <header id="header" class="clearfix">
       <h1 class="logo"><a href="#"><i class="fas fa-home"></i> Logo</a></h1>
       <nav>
-        <h2>Main navigation</h2>
-        <button type="button"><i class="fas fa-bars"></i> <span>Main menu</span></button>
+        <h2 class="blind">Main navigation</h2>
+        <button type="button" class="btn_nav"><i class="fas fa-bars"></i> <span class="blind">Main menu</span></button>
         <ul class="lnb">
           <li><a href="#">Team</a></li>
           <li><a href="#">Work</a></li>
@@ -37,17 +37,17 @@
     <!-- //header -->
     <!-- visual -->
     <section class="visual">
-      <h3>LEARN W3 CSS</h3>
-      <p><img src="img/pic1.jpg" alt=""></p>
+      <h3 class="tle">LEARN W3 CSS</h3>
+      <p class="pic"><img src="img/pic1.jpg" alt=""></p>
     </section>
     <!-- //visual -->
     <!-- container -->
     <div id="container">
       <!-- team -->
       <section class="team">
-        <h3>OUR TEAM</h3>
-        <p>Meet the team - our office rats:</p>
-        <ul>
+        <h3 class="tle">OUR TEAM</h3>
+        <p class="desc">Meet the team - our office rats:</p>
+        <ul class="human">
           <li>
             <figure>
               <img src="img/avatar.jpg" alt="">
@@ -89,8 +89,8 @@
       <!-- //team -->
       <!-- pricing -->
       <section class="pricing">
-        <h3>PRICING</h3>
-        <p>Choose a pricing plan that fits your needs.</p>
+        <h3 class="tle">PRICING</h3>
+        <p class="desc">Choose a pricing plan that fits your needs.</p>
         <dl>
           <dt><strong>Basic</strong></dt>
           <dd>
@@ -99,12 +99,12 @@
               <li><strong>10</strong> Emails</li>
               <li><strong>10</strong> Domains</li>
               <li><strong>Endless</strong> Support</li>
-              <li><strong>$</strong> <em>10</em> <span>per month</span></li>
+              <li><span class="pay"><strong>$</strong> <em>10</em></span> <span>per month</span></li>
             </ul>
-            <p><a href="#"><i class="fas fa-check"></i> Sign up</a></p>
+            <p class="sign"><a href="#"><i class="fas fa-check"></i> Sign up</a></p>
           </dd>
         </dl>
-        <dl>
+        <dl class="pro">
           <dt><strong>Pro</strong></dt>
           <dd>
             <ul>
@@ -112,9 +112,9 @@
               <li><strong>25</strong> Emails</li>
               <li><strong>25</strong> Domains</li>
               <li><strong>Endless</strong> Support</li>
-              <li><strong>$</strong> <em>25</em> <span>per month</span></li>
+              <li><span class="pay"><strong>$</strong> <em>25</em></span> <span>per month</span></li>
             </ul>
-            <p><a href="#"><i class="fas fa-check"></i> Sign up</a></p>
+            <p class="sign"><a href="#"><i class="fas fa-check"></i> Sign up</a></p>
           </dd>
         </dl>
         <dl>
@@ -125,17 +125,17 @@
               <li><strong>50</strong> Emails</li>
               <li><strong>50</strong> Domains</li>
               <li><strong>Endless</strong> Support</li>
-              <li><strong>$</strong> <em>50</em> <span>per month</span></li>
+              <li><span class="pay"><strong>$</strong> <em>50</em></span> <span>per month</span></li>
             </ul>
-            <p><a href="#"><i class="fas fa-check"></i> Sign up</a></p>
+            <p class="sign"><a href="#"><i class="fas fa-check"></i> Sign up</a></p>
           </dd>
         </dl>
       </section>
       <!-- //pricing -->
       <!-- contact -->
       <section class="contact">
-        <h3>Contact Us</h3>
-        <p>Swing by for a cup of coffee, or whatever.</p>
+        <h3 class="tle">Contact Us</h3>
+        <p class="desc">Swing by for a cup of coffee, or whatever.</p>
         <div id="map"></div>
       </section>
       <!-- //contact -->
@@ -143,13 +143,13 @@
     <!-- //container -->
     <!-- footer -->
     <div id="footer">
-      <p><strong>Follow Us</strong></p>
+      <p class="desc"><strong>Follow Us</strong></p>
       <dl>
-        <dt><strong>sns Link</strong></dt>
-        <dd><a href="#"><i class="fab fa-facebook-f"></i> <span>Go facebook</span></a></dd>
-        <dd><a href="#"><i class="fab fa-twitter"></i> <span>Go twiiter</span></a></dd>
-        <dd><a href="#"><i class="fab fa-google-plus-g"></i> <span>Go google plus</span></a></dd>
-        <dd><a href="#"><i class="fab fa-instagram"></i> <span>Go instagram</span></a></dd>
+        <dt class="blind"><strong>sns Link</strong></dt>
+        <dd><a href="#"><i class="fab fa-facebook-f"></i> <span class="blind">Go facebook</span></a></dd>
+        <dd><a href="#"><i class="fab fa-twitter"></i> <span class="blind">Go twiiter</span></a></dd>
+        <dd><a href="#"><i class="fab fa-google-plus-g"></i> <span class="blind">Go google plus</span></a></dd>
+        <dd><a href="#"><i class="fab fa-instagram"></i> <span class="blind">Go instagram</span></a></dd>
       </dl>
       <p class="copy">Powered by <a href="#">w3.css</a></p>
     </div>

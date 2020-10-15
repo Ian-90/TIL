@@ -1,6 +1,350 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 #map {
   width: 100%;
   height: 500px;
+}
+
+body {
+  padding-top: 50px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+}
+
+.blind {
+  display: block;
+  position: absolute;
+  top: -9999em;
+  left: 0;
+  overflow: hidden;
+}
+
+.skip a {
+  z-index: 9999;
+  position: absolute;
+  top: -9999em;
+  left: 0;
+  display: block;
+  width: 100%;
+  background-color: navy;
+  color: #efefef;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2;
+}
+
+.skip a:focus {
+  top: 0;
+}
+
+hr {
+  display: none;
+}
+
+#wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 30;
+  background-color: #000;
+  max-width: 1200px;
+}
+
+#header .logo {
+  float: left;
+}
+
+#header .logo a {
+  display: block;
+  padding: 0 20px;
+  background-color: #009688;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+#header .logo a:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+#header .logo a i {
+  margin-right: 10px;
+}
+
+#header .btn_nav {
+  float: right;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background-image: none;
+  background-color: #333;
+  color: #eee;
+  font-size: 22px;
+  cursor: pointer;
+  line-height: 50px;
+}
+
+#header .btn_nav:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+#header .lnb {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  display: none;
+}
+
+#header .lnb li a {
+  display: block;
+  padding-left: 20px;
+  border-bottom: 1px solid #333;
+  background-color: #222;
+  color: #ccc;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 40px;
+  letter-spacing: .2em;
+}
+
+#header .lnb li a:hover {
+  background-color: #ddd;
+  color: #000;
+}
+
+.visual {
+  position: relative;
+  z-index: 20;
+}
+
+.visual .tle {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 10;
+  padding: 0 20px;
+  background-color: #000;
+  color: #eee;
+  font-size: 2em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  line-height: 65px;
+  cursor: pointer;
+}
+
+.visual .tle:hover {
+  background-color: #009688;
+  color: #fff;
+}
+
+.visual .pic {
+  position: relative;
+  z-index: 5;
+}
+
+.visual .pic img {
+  width: 100%;
+  filter: sepia(0.6) grayscale(0.5);
+}
+
+#container {
+  text-align: center;
+}
+
+#container .team {
+  padding: 80px 0 60px;
+  border-bottom: 1px solid #ddd;
+}
+
+#container .team .tle {
+  font-size: 26px;
+  line-height: 60px;
+}
+
+#container .team .desc {
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+
+#container .human {
+
+}
+
+#container .human figure img {
+  width: 280px;
+  border-radius: 50%;
+}
+
+#container .human figcaption {
+  margin-bottom: 20px;
+}
+
+#container .human figcaption strong {
+  display: block;
+  font-size: 24px;
+  line-height: 50px;
+}
+
+#container .human figcaption small {
+  display: block;
+  font-size: 1.2em;
+  line-height: 24px;
+}
+
+#container .pricing {
+  padding: 80px 0 60px;
+  border-bottom: 1px solid #ddd;
+
+}
+
+#container .pricing .tle {
+  font-size: 26px;
+  line-height: 60px;
+}
+
+#container .pricing .desc {
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+
+#container .pricing dl {
+  margin: 0 20px 20px;
+  border: 1px solid #ccc;
+}
+
+#container .pricing dt strong {
+  display: block;
+  background-color: #222;
+  color: #eee;
+  font: bold 24px/3.4 'Verdana', sans-serif;
+}
+
+#container .pricing .pro dt strong {
+  background-color: #444;
+}
+
+#container .pricing dd li {
+  border-bottom: 1px solid #ccc;
+  font-size: 1.2em;
+  line-height: 50px;
+}
+
+#container .pricing dd li strong {
+  font-weight: bold;
+  color: #000;
+}
+
+#container .pricing dd li span {
+  display: block;
+}
+
+#container .pricing dd li span.pay {
+  padding: 15px 0 0;
+  font-size: 2em;
+}
+
+#container .pricing dd li span.pay + span {
+  color: #666;
+  font-size: .9em;
+}
+
+#container .pricing dd .sign {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+#container .pricing dd .sign a {
+  display: inline-block;
+  padding: 0 24px;
+  background-color: #009688;
+  color: #fff;
+  font-size: 1.2em;
+  text-decoration: none;
+  line-height: 45px;
+}
+
+#container .pricing dd .sign a:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+#container .pricing dd .sign a i {
+  margin-right: 10px;
+}
+
+#container .contact {
+  padding: 80px 0 0;
+}
+
+#container .contact .tle {
+  font-size: 26px;
+  line-height: 60px;
+}
+
+#container .contact .desc {
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+
+#footer {
+  padding: 30px 0 50px;
+  background-color: #222;
+  color: #eee;
+  text-align: center;
+}
+
+#footer a {
+  color: #fff;
+}
+
+#footer .desc {
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+#footer dl {
+  margin-bottom: 15px;
+}
+
+#footer dd {
+  display: inline;
+}
+
+#footer dd a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #009688;
+  color: #eee;
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 40px;
+}
+
+#footer dd a:hover {
+  background-color: #ccc;
+  color: #000;
 }
