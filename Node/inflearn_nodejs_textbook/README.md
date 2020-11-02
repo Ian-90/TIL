@@ -5,4 +5,4 @@
 ## 목차
 
 1. [노드 시작하기](./1.section/section1.md)
-
+2. [ES2018](./2.section/section2.md)
