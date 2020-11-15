@@ -64,6 +64,7 @@ module.exports = db
       }
     })
   }
+  ```
 
 # 4. 시퀄라이즈 관계 설정하기
 * 일대다 관계(hasMany, belongsTo)
