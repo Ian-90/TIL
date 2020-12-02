@@ -12,3 +12,4 @@
 6. [익스프레스 웹 서버 만들기](./6.section/section6.md)
 7. [MySQL과 시퀄라이즈](./7.section/section7.md)
 8. [몽고디비와 몽구스](./8.section/section8.md)
+9. [CLI 프로그램 만들기](./9.section/section9.md)
