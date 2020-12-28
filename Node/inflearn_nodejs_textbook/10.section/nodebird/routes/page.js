@@ -2,7 +2,6 @@ const express = require('express')
 const { Post, User } = require('../models')
 const router = express.Router()
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares')
-const { Post, User } = require('../models')
 
 // main
 router.get('/', (req, res, next) => {
