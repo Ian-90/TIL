@@ -5,8 +5,10 @@ module.exports = () => {
     if (process.env.NODE_ENV !== 'production') {
       mongoose.set('debug', true)
     }
-    mongoose.connect('mongodb://root:nodejsbook@localhostL27017/admin', {
+    mongoose.connect('mongodb://localhost/admin', {
       dbName: 'nodejs',
+      useNewUrlParser: true,
+      useCreateIndex: true,
     }, (err) => {
       if (err) {
         console.log('몽고디비 연결 에러', err)
