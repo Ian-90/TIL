@@ -45,3 +45,39 @@
 ```
 traceroute google.com
 ```
+
+# 2. 네트워크의 기준! 네트워크 모델
+
+## 네트워크 계층 모델
+* TCP/IP 모델 - 인터넷에서 컴퓨터들이 서로 정보를 주고받는데 쓰이는 통신 규약(프로토콜)의 모음
+* OSI 7계층 - ISO에서 표준으로 지정한 모델. 데이터를 주고 받을 때 데이터 자체의흐름을 각 구간별로 나눠 놓은 것
+* TCP/IP vs OSI 7계층
+
+![계층모델](./assets/layers_model.png)
+
+| | TCP/IP | OSI |
+|-|:----- | :---- |
+| 공통점 | 계층적 네트워크 모델, 계층간 역할 정의|
+|차이점  | 4계층 | 7계층 |
+| | 프로토콜 기반 | 역할 기반 |
+| | 4계층 | 7계층 |
+| | 데이터 전송기술 특화 | 통신 전반에 대한 표준 |
+
+## 네트워크를 통해 전달되는 데이터, 패킷
+* 패킷이란? - 네트워크 상에서 전달되는 데이터. 데이터의 형식화된 블록. 사용자 데이터는 페이로드라고도 부름. 여러번 포장된 택배 상자.
+* 형태 - | 헤더 | 페이로드 | 푸터(잘 안씀) |
+* 캡슐을 이용한 통신과정
+  ![캡슐화](./assets/encapsulation.png)
+  * 캡슐화(encapsulation) - 패킷을 만드는 과정. 높은 계층 -> 낮은계층
+  * 디캡슐화(decapsulation) - 패킷을 받았을 때 데이터를 확인하는 과정. 낮은계층 -> 높은계층
+
+* 계층별 패킷의 이름 PDU(protocol data unit)
+
+![PDU](./assets/pdu.jpg)
+| 계층 | PDU |
+|:---:|:---:|
+| Application layer | Data |
+| Transport layer | Segement |
+| Network layer | Packet |
+| Data Link layer | Frame |
+| Physical | Bit |
