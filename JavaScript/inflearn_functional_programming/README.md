@@ -7,3 +7,4 @@
 1. [함수형 자바스크립트 기본기](./section1.md)
 2. [ES6에서 순회와 이터러블:이터레이터 프로토콜](./section2.md)
 3. [제너레이터와 이터레이터](./section3.md)
+4. [map, filter, reduce](./section4.md)
