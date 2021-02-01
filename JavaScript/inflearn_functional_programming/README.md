@@ -8,3 +8,4 @@
 2. [ES6에서 순회와 이터러블:이터레이터 프로토콜](./section2.md)
 3. [제너레이터와 이터레이터](./section3.md)
 4. [map, filter, reduce](./section4.md)
+5. [코드를 값으로 다루어 표현력 높이기](./section5.md)
