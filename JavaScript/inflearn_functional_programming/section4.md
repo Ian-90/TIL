@@ -81,7 +81,7 @@ console.log(map(([k, a]) => [k, a * 2] , m))
 
 ## 4. filter
 ```js
-const filter = (f. iter) => {
+const filter = (f, iter) => {
   let res = []
   for (const a of iter) {
     it (f(a)) {
