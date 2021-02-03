@@ -22,7 +22,9 @@
 ## 2계층 프로토콜(중요)
 * Ethernet 프로토콜 - LAN에서 통신할 때 사용하는 프로토콜
   * 구조(Ethernet ||)
-  ![Ethernet ||](./assets/ethernet_structure.jpg)
+  
+    ![Ethernet ||](./assets/ethernet_structure.jpg)
+
   * 목적지 주소(DA) - 데이터를 전달받을 상대방 시스템의 MAC주소(6바이트)
   * 출발지 주소(SA) - 데이터를 전달하는 시스템의 MAC 주소(6바이트)
   * 상위 프로토콜 타입(Len/Type) - IPv4(0x0800), ARP(0x0806) (2바이트)
