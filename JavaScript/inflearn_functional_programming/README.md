@@ -9,3 +9,4 @@
 3. [제너레이터와 이터레이터](./section3.md)
 4. [map, filter, reduce](./section4.md)
 5. [코드를 값으로 다루어 표현력 높이기](./section5.md)
+6. [장바구니 예제](./section6.md)
