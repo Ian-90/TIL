@@ -10,3 +10,4 @@
 4. [map, filter, reduce](./section4.md)
 5. [코드를 값으로 다루어 표현력 높이기](./section5.md)
 6. [장바구니 예제](./section6.md)
+7. [지연성 1](./section7.md)
