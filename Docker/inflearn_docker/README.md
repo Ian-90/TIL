@@ -7,3 +7,4 @@
 3. [직접 도커 이미지를 만들어 보기](./section_3.md)
 4. [도커를 이용한 간단한 Node.js 어플 만들기](./section_4.md)
 5. [Docker Compose](./section_5.md)
+6. [간단한 어플을 실제로 배포해보기(개발 환경 부분)](./section_6.md)
