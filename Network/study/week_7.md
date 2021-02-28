@@ -88,7 +88,8 @@ SYN_SENT|-------SYN------>|
 
 ## 4. TCP 상태전이도
 * TCP 연결 상태의 변화
-![tcp 연결 상태 변화](./assets/tcp_connect_status.png)
+
+  ![tcp 연결 상태 변화](./assets/tcp_connect_status.png)
   * 실선 - 클라이언트 상태변화
   * 점선 - 서버의 상태변화
   * 중요한 상태
