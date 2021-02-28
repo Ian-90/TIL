@@ -8,3 +8,4 @@
 4. [도커를 이용한 간단한 Node.js 어플 만들기](./section_4.md)
 5. [Docker Compose](./section_5.md)
 6. [간단한 어플을 실제로 배포해보기(개발 환경 부분)](./section_6.md)
+7. [간단한 어플을 실제로 배포해보기(테스트 & 배포 부분)](./section_7.md)
