@@ -133,6 +133,7 @@ SYN_SENT|-------SYN------>|
 ## 1. NAT
 * NAT(Network Address Translation) 란?
   ![nat](./assets/nat.png)
+  
   * IP 패킷의 TCP/UDP 포트 숫자와 소스 및 목적지의 IP 주소 등을 재기록하면서 라우터를 통해 네트워크 트래픽을 주고 받는 기술
   * 특정 IP주소에 특정 포트번호로 가는 패킷을 다른 IP주소에 다른 포트번호로 바꿔주는 기술
   * 패킷 변화가 생기기 때문에 IP나 TCP/uDP의 체크섬도 다시 계산되어 재기록해야 한다
