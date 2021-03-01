@@ -1,15 +1,31 @@
-const express = require('express')
-const React = require('react')
-const rednerToString = require('react-dom/server'),rednerToString
-const Home = require('./client/components/Home').default
-const app = express()
+// const express = require('express')
+// const React = require('react')
+// const renderToString = require('react-dom/server').renderToString
+// const Home = require('./client/components/Home').default
+// const app = express()
+
+// app.get('/', (req, res) => {
+//   const content = renderToString(<Home />)
+
+//   res.send(content)
+// })
+
+// app.listen(3000, () => {
+//   console.log('Listening on port 300')
+// })
+
+const express = require('express');
+const React = require('react');
+const renderToString = require('react-dom/server').renderToString;
+const Home = require('./client/components/Home').default;
+const app = express();
 
 app.get('/', (req, res) => {
-  const content = rednerToString(<Home />)
+  const content = renderToString(<Home />);
 
-  res.send(content)
-})
+  res.send(content);
+});
 
 app.listen(3000, () => {
-  console.log('Listening on port 300')
-})
+  console.log('Listening on prot 3000');
+});
