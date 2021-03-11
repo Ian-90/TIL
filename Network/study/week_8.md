@@ -73,6 +73,7 @@
 
 ## 2. HTTP 요청 프로토콜
 * 프로토콜의 구조
+
   ![http_request](./assets/http_request.png)
   * Request Line - `[요청 타입]  [공백]  [요청 URI]  [공백]  HTTP/1.1`
   * Header(옵션)
@@ -98,6 +99,7 @@
 
 ## 3. HTTP 응답 프로토콜
 * 프로토콜의 구조
+
   ![http_response](./assets/http_response.png)
   * Status Line - `HTTP/1.1  [공백]  [상태 코드]  [공백]  [상태 메시지]`
   * Header(옵션)
