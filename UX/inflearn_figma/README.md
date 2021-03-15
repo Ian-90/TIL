@@ -1,0 +1,6 @@
+# 피그마(Figma)를 활용한 UI디자인 입문부터 실전까지 A to Z
+[인프런 강좌](https://www.inflearn.com/course/%ED%94%BC%EA%B7%B8%EB%A7%88-ui%EB%94%94%EC%9E%90%EC%9D%B8/dashboard)
+
+## 목차
+
+1. [UX, UI 디자인의 단계별 핵심 개념 이해하기](./section_1.md)
