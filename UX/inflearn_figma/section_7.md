@@ -4,3 +4,4 @@
 3. 하단의 토스트 메세지 Open 또는 나의 draft로 이동
 
 ## 2. 스플래시 UI화면 디자인하기
+* exercise/section_7-2.fig
