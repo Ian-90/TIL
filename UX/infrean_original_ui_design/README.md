@@ -8,5 +8,5 @@
 3. [UI/UX 디자인 실무](./section_3.md)
 4. [UI/UX 디자인 맛보기](./section_4.md)
 5. [UI/UX 디자인 TIP](./section_5.md)
-6. [UI/UX 디자인 포트폴리오](./section_6.md)
-7. [UI/UX 디자인의 성장](./section_7.md)
+6. UI/UX 디자인 포트폴리오
+7. UI/UX 디자인의 성장
