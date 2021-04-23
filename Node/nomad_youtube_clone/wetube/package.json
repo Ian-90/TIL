@@ -1,0 +1,20 @@
+{
+  "name": "wetube",
+  "description": "youtube clone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon --exec babel-node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.13.15",
+    "nodemon": "^2.0.7"
+  }
+}
