@@ -1,12 +1,10 @@
 import express from 'express'
+import morgan from 'morgan'
 
 const PORT = 4000
 const app = express()
 
-const logger = (req, res, next) => {
-  console.log(`${req.method} ${req.url}`)
-  next()
-}
+const logger = morgan('dev')
 
 const privateMiddleware = (req, res, next) => {
   const url = req.url
@@ -35,4 +33,3 @@ app.get('/protected', (req, res) => {
 const handleListening = () => console.log(`server listening on port http://localhost:${PORT}`)
 
 app.listen(PORT, handleListening)
-

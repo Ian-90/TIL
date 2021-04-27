@@ -31,7 +31,7 @@ app.listen(PORT, handleListening)
 ```
 
 ## 4. Responses
-* request - 유저가 요청을 하면, 서버에서 대답해주는 것
+* reponse - 유저가 요청을 하면, 서버에서 대답해주는 것
 ```js
 import express from 'express'
 
@@ -77,3 +77,20 @@ app.listen(PORT, handleListening)
 ```
 ## 7. Middlewares part Two
 * app.use - global middleware를 만들 수 있게 해준다. **사용시 순서가 중요하다. 그리고 모든 route에 적용된다.**
+
+## 8. Setup Recap
+* 복습
+  * bable-node - 최신문법을 이해하기 위해 사용
+
+## 9. Server Recap
+* 서버 복습
+* route 복습
+
+## 10. Controllers Recap
+* 모든 controller에는 req와 res가 있다.
+
+## 11. Middleware Recap
+* middleware는 순서대로 호출된다
+
+## 12. External Middlewares
+* morgan - request를 로깅하는 미들웨어
