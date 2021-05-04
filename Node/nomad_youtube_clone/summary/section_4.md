@@ -65,9 +65,36 @@ videoRouter.get('/watch', handleWatch)
 * `express.router()`를 이용하여 그룹 안에 url을 메소드에 따라 나눈다.
 
 ## 6. Architecture Recap
+* export default - 1개만 사용할 때
+* export - 여러 개 사용할 때
 
 ## 7. Planning Routes
+* 우리가 만들 라우터 주소 - 주소에 맞도록 라우터와 컨트롤러를 추가
+* / -> Home
+* /join -> Join
+* /login -> Login
+* /search -> Search
+
+* /users/:id -> See User
+* /users/lgout -> Log Out
+* /users/edit -> Edit MY Profile
+* /users/delete -> Delete MY Profile
+
+* /videos/:id -> See Video
+* /videos/:id/edit -> Edit
+* /videos/:id/delete -> Delete Video
+* /videos/upload -> Upload Video
 
 ## 8. URL Parameters part One
+* url parameter - url안에 변수 넣도록 해준다. 콜론(:)은 변수라는걸 알려주는 표시
+```js
+// url parameter가 있는 라우터 컨트롤러에서 확인해보기
+console.log('params', req.params)
+```
+* 만약 `/:id` 컨트롤러가 `/upload` 상단에 선언 되어 있다면 ?
+  * id가 upload로 들어온다면, `:/id` 컨트롤러가 실행된다.
 
 ## 9. URL Parameters part Two
+* `:id` parameter에 숫자만 받고 싶다면?
+  * 정규표현식을 이용 - `/:id(\\d+)`
+  * regexpal.com 테스트 홈페이지
