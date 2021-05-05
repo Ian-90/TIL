@@ -43,14 +43,41 @@ app.set('views', './src/views')
   ```
 
 ## 6. Recap
-* pug 복습
+* pug의 include, extends, block 복습
 
 ## 7. MVP Styles
+* [MVP.css](https://andybrewer.github.io/mvp/)를 이용하여 html을 괜찮게 꾸밈
 
 ## 8. Conditionals
+* 변수 선언 - 둘 다 변수 선언 방식이다.
+```pug
+h1#{pageTitle}
+h1=pageTitle
+```
+
+* js의 조건문이랑 사용법은 똑같다
 
 ## 9. Iteration
+* pug에서 반복문은 each를 이용
+```pug
+each item in list
+  tag=item
+```
 
 ## 10. Mixins
+* mixin - 데이터를 받을 수 있는 블록
+  * create
+  ```pug
+  mixin name(data)
+    tags
+  ```
+
+  * use
+  ```pug
+  include mixins file path
+
+  +mixinName(mixinData)
+  ```
 
 ## 11. Recap
+* pug의 iteration과 mixin 복습
