@@ -7,9 +7,11 @@
     * `a(href="/potato")` - localhost:4000/potato
     * `a(href="potato")` - localhost:4000/profile/potato
 
-
 ## 3. Edit Video part One
+* edit 페이지 form 작성
 
 ## 4. Edit Video part Two
+* `app.route`를 이용하여 url이 같고, 메소드가 다른것을 처리
+* edit form post request 처리 - `express.urlencoded` 이용
 
 ## 5. Recap
