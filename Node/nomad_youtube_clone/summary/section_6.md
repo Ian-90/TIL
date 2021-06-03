@@ -16,3 +16,10 @@
 
 ## 5. Recap
 * app.route - 같은 url의 라우터를 2개이상 처리할 때 사용
+
+## 6. More Practice pare One
+* form의 get과 post를 연습
+* upload 라우터 구현
+
+## 7. More Practice pare Two
+* upload 컨트롤러 구현
