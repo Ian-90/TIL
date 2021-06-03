@@ -15,3 +15,4 @@
 * edit form post request 처리 - `express.urlencoded` 이용
 
 ## 5. Recap
+* app.route - 같은 url의 라우터를 2개이상 처리할 때 사용
