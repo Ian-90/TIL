@@ -26,7 +26,22 @@ export const getUpload = (req, res) => {
   return res.render('upload', { pageTitle: 'Upload Video'})
 }
 
-export const postUpload = (req, res) => {
-  const { title } = req.body
-  return res.redirect('/')
+export const postUpload = async (req, res) => {
+  const { title, description, hashtags } = req.body
+  try {
+    await Video.create({
+      title,
+      description,
+      createAt: Date.now(),
+      hashtags: hastags.split(','),
+      meta: {
+        views: 0,
+        ratings: 0,
+      }
+    })
+  
+    return res.redirect('/')
+  } catch(err) {
+    console.log('DB create err', err)
+  }
 }

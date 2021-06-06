@@ -98,3 +98,39 @@ try {
     })  
   }
   ```
+
+## 15. Creating a Video part One ~ Two
+* `src/views/upload.pug` - 스키마 데이터에 맞도록 input 추가
+* video create
+```js
+export const postUpload = async (req, res) => {
+  const { title, description, hashtags } = req.body
+  // db data create
+  const video = new Video({
+    title,
+    description,
+    createAt: Date.now(),
+    hashtags: hastags.split(','),
+    meta: {
+      views: 0,
+      ratings: 0,
+    }
+  })
+  // db save
+  await video.save()
+
+  //  db data create + save
+  await Video,create({
+    title,
+    description,
+    createAt: Date.now(),
+    hashtags: hastags.split(','),
+    meta: {
+      views: 0,
+      ratings: 0,
+    }
+  })
+  return res.redirect('/')
+}
+```
+* db에 데이터를 추가하는방법은 new -> save나 create 두가지가 있다.
