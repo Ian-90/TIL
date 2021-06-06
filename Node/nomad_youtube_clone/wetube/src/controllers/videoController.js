@@ -34,14 +34,13 @@ export const postUpload = async (req, res) => {
       description,
       createAt: Date.now(),
       hashtags: hastags.split(','),
-      meta: {
-        views: 0,
-        ratings: 0,
-      }
     })
   
     return res.redirect('/')
   } catch(err) {
-    console.log('DB create err', err)
+    return res.render('upload', {
+      pageTitle: 'Upload Video',
+      errorMessage: err._message
+    })
   }
 }
