@@ -52,4 +52,38 @@
 
   // once는 한번만 호출, on은 여러번 호출 가능
   ```
-  
+
+## 10. CRUD Introduction
+  * C - create
+  * R - read
+  * U - update
+  * D - delete
+  * mongoose에게 우리가 사용할 데이터가 어떻게 생겼는지 알려주기 위해 models 생성(즉, 스키마 생성)
+
+## 11. Video Model
+* `src/models/Video.js`에 모델 구현
+* 스키마 구현시 `{ type: String }`이나 `String`이나 똑같다.
+
+## 12. Our First Query
+* `src/init.js`로 파일 분리 - `server.js`는 서버관련된 로직만 처리하고, `init.js`는 모든걸 import하는 영역
+* mongoose의 model 사용법 2가지
+  1. callback 방식 - 무언가 발생한 다음 어떤 것을 한다. 일종의 js의 기다림의 표현
+  ```js
+  import Video from '../models/Video'
+
+  Video.find({}, (err, videos) => {
+    return res.render('home', { pageTitle: 'Home', videos })
+  })
+  ```
+
+  2. promise 방식 - async await 이용
+
+## 13. Async Await
+```js
+try {
+  const videos = await Video.find({})
+  return res.render('home', { pageTitle: 'Home', videos })
+} catch (err) {
+  return res.render('server-error'. { err })
+}
+```
