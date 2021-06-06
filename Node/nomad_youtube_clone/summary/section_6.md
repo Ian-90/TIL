@@ -23,3 +23,33 @@
 
 ## 7. More Practice pare Two
 * upload 컨트롤러 구현
+
+## 8. Introduction to MongoDB
+* mongoDB에 저장하는 것들은 JSON-like documnets
+* 설치 - comunity editon 설치(무료)
+
+## 9. Connecting to Mongo
+* mongoose - node.js와 mongoDB를 이어주며, mongoDB작업을 js로 하도록 가능하게 해주는 라이브러리
+  * 설치
+  ```
+  yarn add mongoose
+  ```
+
+  * db.js - 몽고DB 연결
+  ```js
+  import mongoose from 'mongoose'
+
+  mongoose.connect('[db 주소]/[db 이름]')
+
+  const db = mongoose.connection
+
+  const handleError = (err) => console.log('DB Error', err)
+  const handleOpen = () => console.log('connected to DB')
+  // db 에러날 때 이벤트 호출
+  db.on('error', handleError)
+  // db 연결 성공했을 때 이벤트 호출
+  db.once('open', handleOpen)
+
+  // once는 한번만 호출, on은 여러번 호출 가능
+  ```
+  
