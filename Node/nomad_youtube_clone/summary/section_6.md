@@ -87,3 +87,14 @@ try {
   return res.render('server-error'. { err })
 }
 ```
+
+## 14. Returns and Renders
+* 어떤 함수를 호출했느냐가 express에서 중요하다. 실행되는 function에 집중해야한다.
+  * home함수에 return은 없지만 잘 동작한다.
+  ```js
+  export const home = async (req, res) => {
+    Video.find({}, (err, videos) => {
+      res.render('home', { pageTitle: 'Home', videos })
+    })  
+  }
+  ```
