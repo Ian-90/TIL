@@ -224,3 +224,7 @@ videoSchema.pre('save', async function() {
 ## 24. Statics
 * findOneAndUpdate의 경우에는 변경하려는 문서에 접근 불가능.
 * videoSchema.static으로 자주 사용하는 메소드를 만들어서 사용
+
+## 25. Delete Video
+* delete 컨트롤러, 라우터, 뷰 추가
+* delete vs remove - 항상 delete를 쓰는 것이 좋다.
