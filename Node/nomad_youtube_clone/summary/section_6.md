@@ -220,3 +220,7 @@ videoSchema.pre('save', async function() {
   this.hashtags = this.hashtags[0].split(',').map(word => word.startsWith('#') ? word: `#${word}`)
 })
 ```
+
+## 24. Statics
+* findOneAndUpdate의 경우에는 변경하려는 문서에 접근 불가능.
+* videoSchema.static으로 자주 사용하는 메소드를 만들어서 사용
