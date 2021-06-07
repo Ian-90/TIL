@@ -8,9 +8,10 @@ export const home = async (req, res) => {
     return res.render('error')
   }
 }
-export const watch = (req, res) => {
+export const watch = async (req, res) => {
   const { id } = req.params
-  return res.render('watch', { pageTitle: `Watching: ${video.title}`, video })
+  const video = await Video.findById(id)
+  return res.render('watch', { pageTitle: video.title, video })
 }
 export const getEdit = (req, res) => {
   const { id } = req.params
@@ -28,14 +29,15 @@ export const getUpload = (req, res) => {
 
 export const postUpload = async (req, res) => {
   const { title, description, hashtags } = req.body
+  console.log('dd', hashtags)
   try {
     await Video.create({
       title,
       description,
-      createAt: Date.now(),
-      hashtags: hastags.split(','),
+      createdAt: Date.now(),
+      hashtags: hashtags.split(','),
     })
-  
+    
     return res.redirect('/')
   } catch(err) {
     return res.render('upload', {

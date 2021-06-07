@@ -175,3 +175,8 @@ const videoSchema = new mongoose.Schema({
   * trim - 문자열 양옆의 모든 공백 제거
   * minLength - 문자열의 최소 길이
   * maxLength - 문자열의 최대 길이
+
+## 19. Video Detail
+* mongoDB의 id는 `hexadecimal string`이다.
+* 정규표현식을 통해 videoRouter 변경
+* findById로 db 데이터 이용
