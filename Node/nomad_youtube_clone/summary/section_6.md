@@ -188,3 +188,27 @@ const videoSchema = new mongoose.Schema({
 
 ## 21. Edit Video part Two
 * postEdit 컨트롤러 수정
+
+## 22. Edit Video part Three
+* findByIdAndUpdate를 이용하여 update를 간단히 하자
+```js
+export const postEdit = async (req, res) => {
+  ...
+  // 기존 코드
+  video.title = title
+  video.description = description
+  video.hashtags = hashtags.split(',').map((word) => word.startsWith('#')? word: `#${word}`)
+  await video.save()
+
+  // findByIdAndUpdate 이용코드
+  await Video.findByIdAndUpdate(id, {
+    title,
+    description,
+    hashtags: hashtags.split(',').map((word) => word.startsWith('#')? word: `#${word}`)
+  })
+  return res.redirect(`/videos/${id}`)
+}
+
+```
+* exist를 이용
+* mongoose 미들웨어를 이용하여 데이터가 저장되기전에 무언가 처라하기 - hastags에서 사용
