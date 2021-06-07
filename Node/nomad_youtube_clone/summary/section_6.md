@@ -184,5 +184,7 @@ const videoSchema = new mongoose.Schema({
 ## 20. Edit Video part One
 * query 실행 - `exec`를 이용
 * 존재하지않는 데이터 관련해서 404 페이지 렌더링
-* getEdit 컨트로럴와 edit.pug 수정
+* getEdit 컨트롤러와 edit.pug 수정
 
+## 21. Edit Video part Two
+* postEdit 컨트롤러 수정
