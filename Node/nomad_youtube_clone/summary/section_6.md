@@ -169,3 +169,9 @@ const videoSchema = new mongoose.Schema({
   },
 })
 ```
+
+## 18. More Schema
+* 다양한 스키마 옵션들
+  * trim - 문자열 양옆의 모든 공백 제거
+  * minLength - 문자열의 최소 길이
+  * maxLength - 문자열의 최대 길이
