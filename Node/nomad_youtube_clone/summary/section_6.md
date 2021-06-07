@@ -212,3 +212,11 @@ export const postEdit = async (req, res) => {
 ```
 * exist를 이용
 * mongoose 미들웨어를 이용하여 데이터가 저장되기전에 무언가 처라하기 - hastags에서 사용
+
+## 23. Middlewares
+* 미들웨어는 무조건 모델이 생성되기 전에 만들어야 한다
+```js
+videoSchema.pre('save', async function() {
+  this.hashtags = this.hashtags[0].split(',').map(word => word.startsWith('#') ? word: `#${word}`)
+})
+```
