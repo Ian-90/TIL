@@ -180,3 +180,9 @@ const videoSchema = new mongoose.Schema({
 * mongoDB의 id는 `hexadecimal string`이다.
 * 정규표현식을 통해 videoRouter 변경
 * findById로 db 데이터 이용
+
+## 20. Edit Video part One
+* query 실행 - `exec`를 이용
+* 존재하지않는 데이터 관련해서 404 페이지 렌더링
+* getEdit 컨트로럴와 edit.pug 수정
+
