@@ -228,3 +228,10 @@ videoSchema.pre('save', async function() {
 ## 25. Delete Video
 * delete 컨트롤러, 라우터, 뷰 추가
 * delete vs remove - 항상 delete를 쓰는 것이 좋다.
+
+## 26. Search part One
+* sort를 이용하여 몽고DB 데이터를 정렬할 수 있다
+```js
+const videos = await Video.find({}).sort({ createdAt: 'desc' })
+```
+* search 라우터 및 컨트롤러 생성
