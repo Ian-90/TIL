@@ -235,3 +235,18 @@ videoSchema.pre('save', async function() {
 const videos = await Video.find({}).sort({ createdAt: 'desc' })
 ```
 * search 라우터 및 컨트롤러 생성
+
+## 27. Search part Two
+* 정규표현식을 이용하여 검색 방식 개선 및 search 뷰 개선
+  * mongoDB 필터엔진 이용
+  ```js
+  Model.find({
+    [filterKey]: {
+      $regex: new RegExp([정규 표현식], 'i')
+    },
+  })
+  
+  ```
+    * `$regex: new RegExp(keyword, 'i')` - keyword 포함
+    * `$regex: new RegExp(`^${keyword}`, 'i')` - keyword로 시작
+    * `$regex: new RegExp(`${keyword}$`, 'i')` - keyword로 끝남
