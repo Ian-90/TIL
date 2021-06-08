@@ -250,3 +250,7 @@ const videos = await Video.find({}).sort({ createdAt: 'desc' })
     * `$regex: new RegExp(keyword, 'i')` - keyword 포함
     * `$regex: new RegExp(`^${keyword}`, 'i')` - keyword로 시작
     * `$regex: new RegExp(`${keyword}$`, 'i')` - keyword로 끝남
+
+## 28. Conclusions
+* mongoDB를 이용하여 비디오관련 CRUD 및 Search 기능을 만듬
+* 앞으로 구현할게 많다. 이번 섹션은 mongoos와 친해지는 섹션이었다.
