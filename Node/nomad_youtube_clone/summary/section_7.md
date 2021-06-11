@@ -42,3 +42,9 @@ if (exists) {
   return res.render('join', { pageTitle: 'Join', errorMessage: 'This email is already taken.'})
 }
 ```
+
+## 5. Status Codes
+* status code 추가
+```js
+res.status([code])
+```
