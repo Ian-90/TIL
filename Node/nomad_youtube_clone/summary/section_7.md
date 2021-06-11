@@ -85,6 +85,11 @@ res.status([code])
 * 브라우저를 방문할 때, express가 알아서 브라우저를 위한 세션id를 만들고, 브라우저에게 보내준다.
 * 브라우저가 쿠키dp 세션id를 저장하고, express도 세션을 세션 db에 저장한다.
 
-## 10. Logged In User
+## 10. Logged In User part One
 * id 정보 db를 만들어서 id를 확인하는 기능 추가
 * 로그인하면 유저에 대한 정보를 세션에 담기(유저마다 서로 다른 req.session.obj를 가짐)
+
+## 11. Logged In User part Two
+* pug template는 res.locals에 접근가능
+* localMiddleware 구현
+  * `req.session`에 접근하기 위해 session 미들웨어보다 뒤에 선언해주어야 한다.

@@ -6,7 +6,7 @@ html(lang="ko")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet" href="https://unpkg.com/mvp.css")
     title
-      #{pageTitle} | Wetube
+      #{pageTitle} | #{siteName}
   body
     header
       h1=pageTitle
@@ -14,11 +14,15 @@ html(lang="ko")
         ul
           li
             a(href="/") Home
-            if !req.session.loggedIn
+          if loggedIn
             li
-              a(href="/join") Join
+              a(href="/logout") Log Out
             li
-              a(href="/login") Login
+              a(href="/my-profile") #{loggedInUser.name}의 Profile
+          li
+            a(href="/join") Join
+          li
+            a(href="/login") Login
           li
             a(href="/search") Search
           li
