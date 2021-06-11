@@ -52,3 +52,7 @@ res.status([code])
 ## 6. Login part One
 * user 컨트롤러에서 getLoing, postLogin 컨트롤러 및 login.pug 구현
 
+## 7. Login part Two
+* 로그인 유효성 체크 구현
+  * 비밀번호가 해시값으로 DB에 저장되기 때문에, 비교도 해시값으로 해야한다.
+  * `bcrypt.compare`를 이용한다.
