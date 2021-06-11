@@ -48,6 +48,8 @@ export const postLogin = async (req, res) => {
   if (!ok) {
     return res.status(400).render('login', { pageTitle, errorMessage: 'Wrong password'})
   }
+  req.session.loggedIn = true
+  req.session.user = user
   console.log('LOG USER IN! COMING SOON!')
   return res.redirect('/')
 }
