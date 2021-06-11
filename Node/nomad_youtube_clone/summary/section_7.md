@@ -48,3 +48,7 @@ if (exists) {
 ```js
 res.status([code])
 ```
+
+## 6. Login part One
+* user 컨트롤러에서 getLoing, postLogin 컨트롤러 및 login.pug 구현
+
