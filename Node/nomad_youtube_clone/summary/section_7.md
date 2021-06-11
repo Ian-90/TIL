@@ -21,3 +21,24 @@
   bcrypt.hash()
   ```
   * rainbow table 공격을 막아준다
+
+## 4. Form Validation
+* user 컨트롤러에 email 및 username 중복체크 로직 추가
+```js
+const usernameExists = await User.exists({ $or: [{ username }, { email }] })
+if (usernameExists) {
+  return res.render('join', { pageTitle: 'Join', errorMessage: 'This username is already taken.'})
+}
+const emailExists = await User.exists({ email })
+if (emailExists) {
+  return res.render('join', { pageTitle: 'Join', errorMessage: 'This email is already taken.'})
+}
+```
+
+* $or를 이용하여 리팩토링
+```js
+const exists = await User.exists({ $or: [{ username }, { email }] })
+if (exists) {
+  return res.render('join', { pageTitle: 'Join', errorMessage: 'This email is already taken.'})
+}
+```
