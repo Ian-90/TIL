@@ -56,3 +56,26 @@ res.status([code])
 * 로그인 유효성 체크 구현
   * 비밀번호가 해시값으로 DB에 저장되기 때문에, 비교도 해시값으로 해야한다.
   * `bcrypt.compare`를 이용한다.
+
+## 8. Sessions and Cookies part One
+* 유저를 기억하게 만들기
+  1. 유저에게 쿠키를 보내주기
+  2. 세션 - 백엔드와 브라우저 간에 어떤 활동을 했는지 기억하는 것. 브라우저와 백엔드 사이의 memory history 같은 것
+* express-session을 이용해보자
+  * 설치
+  ```
+  yarn add express-session
+  ```
+
+  * 사용법
+  ```js
+  import session from 'express-session'
+  // 모든 라우터 앞에 선언
+  app.use(session({
+    secret: 'Hello',
+    resave: true,
+    saveUninitialized: true,
+  }))
+  ```
+
+  * 브라우저에서 세션을 보내면 서버에서 저장한다.
