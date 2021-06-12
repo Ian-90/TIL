@@ -122,3 +122,14 @@ res.status([code])
   }))
   ```
 * 서버를 재시작해도 이제는 세션 데이터가 날라가지 않는다.
+
+## 14. Uninitialized Sessions
+* 로그인한 사용자의 세션만 저장하는 것이 좋다. 많은 수의 방문자가 있을 때 모두 다 저장하면 DB에 문제가 생긴다.
+```js
+app.use(session({
+  ...,
+  resave: false,
+  saveUninitialized: false, // 세션을 수정할때만 세션을 DB에 저장하고 쿠키를 넘겨주는 옵션
+}))
+```
+* 세션인증에 대한 문제점 해결책은 토큰 인증
