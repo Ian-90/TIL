@@ -100,3 +100,25 @@ res.status([code])
   * 세션ID - 쿠키에 저장된다. 백엔드에도 저장된다.
   * 세션store - 세션을 저장하는 곳
   * locals - template이 접근할 수있는 response object
+
+## 13. MongoStore
+* 세션 데이터는 쿠키에 저장되지 않고, 세션ID만 저장된다. 세션데이터는 서버에만 저장된다.
+* 서버의 세션 스토리지는 메모리 스토어이고, 실제 사용하기 위해 있는건 아니다.
+* 서버를 재시작하면 세션이 날라가기떄문에, db를 이용해서 저장하자
+* connect-mongo를 이용하여 세션 데이터를 mongodb에 저장
+  * 설치
+  ```
+  yarn add connect-mongo
+  ```
+
+  * 사용법
+  ```js
+  import session from 'express-session'
+  import MongoStore from 'connect-mongo'
+
+  app.use(session({
+    secret: 'foo',
+    store: MongoStore.create(options)
+  }))
+  ```
+* 서버를 재시작해도 이제는 세션 데이터가 날라가지 않는다.
