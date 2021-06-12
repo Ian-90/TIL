@@ -93,3 +93,10 @@ res.status([code])
 * pug template는 res.locals에 접근가능
 * localMiddleware 구현
   * `req.session`에 접근하기 위해 session 미들웨어보다 뒤에 선언해주어야 한다.
+
+## 12. Recap
+* 복습
+  * 쿠키 - 정보를 주고 받는 방법
+  * 세션ID - 쿠키에 저장된다. 백엔드에도 저장된다.
+  * 세션store - 세션을 저장하는 곳
+  * locals - template이 접근할 수있는 response object
