@@ -151,3 +151,19 @@ app.use(session({
 * 환경변수 파일 만들기 -  `.env`
   * .gitignore에 .env 추가
   * .env는 관습적으로 대문자로 적는다
+
+## 16. Environment Variables
+* [dotenv](https://www.npmjs.com/package/dotenv)를 이용하여 .env 파일의 변수들을 읽는다.
+  * 설치
+  ```
+  yarn add dotenv
+  ```
+
+  * 사용법
+  ```js
+  // 가능한 최상단에에서 실행한다.
+  // require를 이용하면 사용처마다 require를 선언해주어야한다.
+  require('dotenv').config()
+  // root파일에 선언
+  import 'dotenv/config'
+  ```
