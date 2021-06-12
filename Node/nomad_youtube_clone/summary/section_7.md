@@ -133,3 +133,21 @@ app.use(session({
 }))
 ```
 * 세션인증에 대한 문제점 해결책은 토큰 인증
+
+## 15. Expiration and Secrets
+* 쿠키의 프로퍼티
+  * secret - 쿠키에 sign할 때 사용하는 문자열. 백엔드가 쿠키를 줬다는걸 보여주기 위함.
+  * Domain - 쿠키를 만든 백엔드가 누구인지 알려줌
+  * Expires - 만료날짜가 지정되지않으면 session cookie로 됨
+  * Max-Age - 세션이 언제 만료되는지 알려줌
+  ```js
+  app.use(session({
+    ...,
+    cookie: {
+      maxAge: 20000,
+    },
+  }))
+  ```
+* 환경변수 파일 만들기 -  `.env`
+  * .gitignore에 .env 추가
+  * .env는 관습적으로 대문자로 적는다
