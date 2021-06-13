@@ -1,7 +1,7 @@
 # [따라하면서 배우는 쿠버네티스](https://www.youtube.com/playlist?list=PLApuRlvrZKohaBHvXAOhUD-RxD0uQ3z0c)
 
 * 목차
-1. 쿠버네티스 소개
+1. [쿠버네티스 소개](./section_1.md)
 2. 쿠버네티스 설치하기
 3. 쿠버네티스로 컨테이너 실행하기
 4. 쿠버네티스 아키텍쳐
