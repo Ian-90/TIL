@@ -187,3 +187,8 @@ app.use(session({
   * [이용가능한 scope 공식문서](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps#available-scopes)
   * 기존의 긴 oauth url 대신 `/github/start` 라우터와 컨트롤러를 구현
   * `URLSearchParams`를 이용하여 옵션들을 인코딩
+
+## 19. Github Login part Three
+* client_id, client_secret, code를 이용하여 github 토큰 얻기
+* client_id, client_secret은 환경변수에 추가
+* `github/finish` 라우터와 컨트롤러 구현
