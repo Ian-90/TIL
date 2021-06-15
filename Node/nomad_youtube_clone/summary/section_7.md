@@ -167,3 +167,17 @@ app.use(session({
   // root파일에 선언
   import 'dotenv/config'
   ```
+
+## 17. Github Login part One
+* 깃헙 OAuth 로그인 과정
+  1. 사용자를 깃헙으로 보낸다. 그러면 사용자는 아이디와 패스워드를 입력하고 정보 공유 승인을 누른다.
+  2. 깃헙은 사용자를 토큰과 함께 우리 웹사이트로 돌려 보낸다.
+  3. 우리는 그 토큰으로 사용자의 정보를 받아온다.
+
+* 깃헙에서 OAuth 사용
+  1. 깃헙 개발자 세팅 접속
+  2. 새 어플리케이션 등록
+  3. 이름 및 url, callback url 입력
+  4. 등록
+
+* 원하는 정보를 얻기 위한 파라미터들 - [공식문서](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps#parameters)
