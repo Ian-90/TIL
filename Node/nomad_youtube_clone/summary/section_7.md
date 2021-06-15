@@ -181,3 +181,9 @@ app.use(session({
   4. 등록
 
 * 원하는 정보를 얻기 위한 파라미터들 - [공식문서](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps#parameters)
+
+## 18. Github Login part Two
+* scope parameter - 유저에게서 얼마나 많이 정보를 읽어내고 어떤 정보를 가져올 것인지에 대한 것
+  * [이용가능한 scope 공식문서](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps#available-scopes)
+  * 기존의 긴 oauth url 대신 `/github/start` 라우터와 컨트롤러를 구현
+  * `URLSearchParams`를 이용하여 옵션들을 인코딩
