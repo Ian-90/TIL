@@ -34,17 +34,15 @@ export const postJoin = async (req, res) => {
   }
 }
 
-export const edit = (req, res) => res.send('Edit User')
-export const remove = (req, res) => res.send('Remove User')
 export const getLogin = (req, res) => res.render('login', { pageTitle: 'Login' })
 export const postLogin = async (req, res) => {
   const pageTitle = 'Login'
   const { username, password } = req.body
-  const user = await User.findOne({ username })
+  const user = await User.findOne({ username, socialOnly: false })
   if (!user) {
     return res.status(400).render('login', { pageTitle, errorMessage: 'An account with this username does not exists'})
   }
-
+  
   const ok = await bcrypt.compare(password, user.password)
   if (!ok) {
     return res.status(400).render('login', { pageTitle, errorMessage: 'Wrong password'})
@@ -83,52 +81,57 @@ export const finishGithubLogin = async (req, res) => {
         Accept: 'application/json'
       },
     })
-  ).json()
-
-  if ('access_token' in tokenRequest) {
-    const { access_token } = tokenRequest
-    const apiUrl = 'https://api.github.com'
-    const userData = await (
-      await fetch(`${apiUrl}/user`, {
-        headers: {
-          Authorization: `token ${access_token}`
-        }
-      })
     ).json()
-    const emailData = await (
-      await fetch(`${apiUrl}/user/emails`, {
-        headers: {
-          Authorization: `token ${access_token}`
-        }
-      })
-    ).json()
-    const emailObj = emailData.find((email) => email.primary === true && email.verified === true)
-    if (!emailObj) {
-      return res.redirect('/login')
-    }
+    
+    if ('access_token' in tokenRequest) {
+      const { access_token } = tokenRequest
+      const apiUrl = 'https://api.github.com'
+      const userData = await (
+        await fetch(`${apiUrl}/user`, {
+          headers: {
+            Authorization: `token ${access_token}`
+          }
+        })
+        ).json()
 
-    const existingUser = await User.findOne({ email: emailObj.email })
-    if (existingUser) {
-      req.session.loggedIn = true
-      req.session.user = existingUser
-      return res.redirect('/')
-    } else {
-      // create account
-      const user = User.create({
-        name: userData.name,
-        username: userData.login,
-        email: emailObj.email,
-        password: '',
-        socialOnly: true,
-        location: userData.location,
-      })
+      const emailData = await (
+        await fetch(`${apiUrl}/user/emails`, {
+          headers: {
+            Authorization: `token ${access_token}`
+          }
+        })
+        ).json()
+
+      const emailObj = emailData.find((email) => email.primary === true && email.verified === true)
+      if (!emailObj) {
+        return res.redirect('/login')
+      }
+          
+      let user = await User.findOne({ email: emailObj.email })
+      if (!user) {
+        // create account
+        user = User.create({
+          name: userData.name,
+          username: userData.login,
+          email: emailObj.email,
+          password: '',
+          socialOnly: true,
+          avatarUrl: userData.avatar_url,
+          location: userData.location,
+        })
+      }
       req.session.loggedIn = true
       req.session.user = user
+      return res.redirect('/')
+    } else {
+      res.redirect('/login')
     }
-  } else {
-    res.redirect('/login')
-  }
 }
-
-export const logout = (req, res) => res.send('Log out')
+      
+export const logout = (req, res) => {
+  req.session.destory()
+  return res.redirect('/')
+}
 export const see = (req, res) => res.send('See User')
+export const edit = (req, res) => res.send('Edit User')
+      
