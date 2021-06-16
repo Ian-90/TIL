@@ -192,3 +192,7 @@ app.use(session({
 * client_id, client_secret, code를 이용하여 github 토큰 얻기
 * client_id, client_secret은 환경변수에 추가
 * `github/finish` 라우터와 컨트롤러 구현
+
+## 20. Github Login part Four
+* node-fetch를 이용하여 fetch 이용
+* github 프로필 정보 가져오기 연동
