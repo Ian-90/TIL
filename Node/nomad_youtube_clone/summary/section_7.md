@@ -213,3 +213,6 @@ app.use(session({
 ## 23. Log Out
 * User 스키마에 avatarUrl 추가
 * 로그아웃 컨트롤러 추가
+
+## 24. Recap
+* github login 복습
