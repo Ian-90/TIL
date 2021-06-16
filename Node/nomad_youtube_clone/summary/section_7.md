@@ -196,3 +196,7 @@ app.use(session({
 ## 20. Github Login part Four
 * node-fetch를 이용하여 fetch 이용
 * github 프로필 정보 가져오기 연동
+
+## 21. Github Login part Five
+* github의 email이 public이 아닐 때 access_token을 이용하여 가져오기
+* primary와 verified가 true인 이메일 얻기
