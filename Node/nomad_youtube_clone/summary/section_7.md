@@ -200,3 +200,11 @@ app.use(session({
 ## 21. Github Login part Five
 * github의 email이 public이 아닐 때 access_token을 이용하여 가져오기
 * primary와 verified가 true인 이메일 얻기
+
+## 22. Github Login part Six
+* 로그인 규칙
+  * DB의 유저가 이메일을 가지고 있을 때, github 로그인한 유저가 이메일이 똑같다면?
+    1. 깃헙말고 기존 DB 유저의 패스로워드로 로그인 하여라
+    2. 같은 이메일이 증명되었으니 깃헙으로 로그인 가능
+    3. 계정이 없다면 어떻게 할 것인가? - 계정생성
+* User 스키마에 socialOnly 추가, password required 옵션 제거(깃헙로그인 시 비밀번호가 빈스트링으로 저장하기 때문에)
