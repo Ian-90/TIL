@@ -48,3 +48,14 @@ router.route('url').all('공통 미들웨어 함수')
 * getChangePassword 컨트롤러 구현
 * change-password.pug 구현
   * 깃헙으로 가입한 경우 비밀번호 변경 불가능 처리
+
+## 6. Change Password part Two
+* mongo에서 계정 삭제
+```
+use wetuebe
+db.sessions.remove({})
+db.users.remove({})
+```
+
+* postChangePassword 컨트롤러 구현
+  * 새로운 비밀번호를 해쉬하기 위해 `user.save()`를 이용
