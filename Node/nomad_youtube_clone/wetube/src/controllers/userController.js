@@ -142,13 +142,26 @@ export const postEdit = async (req, res) => {
     },
     body: { name, email, username, location } 
   } = req
-  await User.findByIdAndUpdate(_id, {
+
+  const findUsername = await User.findOne({ username });
+  const findEmail = await User.findOne({ email });
+
+  if (findUsername._id !== _id || findEmail._id !== _id) {
+    return res.render("editProfile", {
+      pageTitle: "Edit Profile",
+      errorMessage: "User is exist",
+    });
+  }
+
+  const updateUser = await User.findByIdAndUpdate(_id, {
     name,
     email,
     username,
     location,
-  })
-  return res.render('edit-proifle')
+  }, { new: true })
+
+  req.session.user = updateUser
+  return res.redirect('/users/edit')
 }
 
 export const see = (req, res) => res.send('See User')
