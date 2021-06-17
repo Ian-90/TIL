@@ -43,3 +43,8 @@ router.route('url').all('공통 미들웨어 함수')
   ```
 
 * username이나 email이 이미 있는거라면 어떻게 처리 할까? - mongoose의 `exists` 이용
+
+## 5. Change Password part One
+* getChangePassword 컨트롤러 구현
+* change-password.pug 구현
+  * 깃헙으로 가입한 경우 비밀번호 변경 불가능 처리
