@@ -1,0 +1,9 @@
+extends base.pug
+
+block content
+  form(method="POST")
+    input(name="name", type="text", placeholder="Name", required, value=loggedInUser.name)
+    input(name="email", type="email", placeholder="Email", required, value=loggedInUser.email)
+    input(name="username", type="text", placeholder="Username", required, value=loggedInUser.username)
+    input(name="location", type="text", placeholder="Location", required, value=loggedInUser.location)
+    input(type="submit", value="Update Profile")

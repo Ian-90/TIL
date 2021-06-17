@@ -132,6 +132,12 @@ export const logout = (req, res) => {
   req.session.destory()
   return res.redirect('/')
 }
+export const getEdit = (req, res) => {
+  return res.render('edit-profile', { pageTitle: 'Edit Proifle' })
+}
+export const postEdit = (req, res) => {
+  return res.render('edit-proifle')
+}
+
 export const see = (req, res) => res.send('See User')
-export const edit = (req, res) => res.send('Edit User')
       
