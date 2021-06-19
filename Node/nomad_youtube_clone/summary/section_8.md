@@ -104,3 +104,12 @@ const videoSchema = new mongoose.Schema({
 })
 ```
 * postUpload, watch 컨트롤러 기능 추가 및 watch.pug 구현
+
+## 13. Video Owner part Two
+* mongoose의 populate를 이용하여 리팩토링
+```js
+export const watch = async (req, res) => {
+  const video = await Video.findById(id).populate('owner') // 객체값을 가지게됨
+  ...
+}
+```
