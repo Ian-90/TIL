@@ -69,3 +69,11 @@ db.users.remove({})
 * postEdit 컨트롤러 적용
 * uploads 폴더 gitignore에 추가
 * db에 파일을 저장하면 안된다. 폴더에 파일을 저장하고 db에는 파일의 위치만 저장
+
+## 9. Static Files and Recap
+* 브라우저가 uploads 폴더를 볼 수있도록 처리
+  * static file serving - 브라우저에 폴더 노출
+  ```js
+  app.use('/uploads', express.static('uploads'))
+  ```
+* 실제 서버에 파일을 저장하면 서버가 죽었을 때의 파일 보존 문제가 있기 때문에 다른 방식을 써야 한다.
