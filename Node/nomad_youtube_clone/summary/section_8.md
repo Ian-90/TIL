@@ -88,3 +88,19 @@ db.users.remove({})
 * relationship - video는 한명의 owner가 필요하고, user는 여러개의 video를 가질 수 있다
 * profile.pug 구현
 * see 컨트롤러 구현
+
+## 12. Video Owner
+* user에는 해당 user가 업로드한 모든 영상의 id를 저장
+* video에는 해당 영상을 올린 user의 id를 저장
+* Video 모델 - owner 추가
+```js
+const videoSchema = new mongoose.Schema({
+  ...,
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'User', // User 모델에서 ObjectId가 온다는 reference
+  }
+})
+```
+* postUpload, watch 컨트롤러 기능 추가 및 watch.pug 구현
