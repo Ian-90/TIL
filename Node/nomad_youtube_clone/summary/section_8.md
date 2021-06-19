@@ -64,3 +64,8 @@ db.users.remove({})
 * edit-profile에 `type='file'`인 input 추가
 * 파일 업로드를 위해 [multer](https://github.com/expressjs/multer/blob/master/doc/README-ko.md) 미들웨어를 이용
 * upload 미들웨어를 edit post 라우터에 적용
+
+## 8. File Uploads part Two
+* postEdit 컨트롤러 적용
+* uploads 폴더 gitignore에 추가
+* db에 파일을 저장하면 안된다. 폴더에 파일을 저장하고 db에는 파일의 위치만 저장
