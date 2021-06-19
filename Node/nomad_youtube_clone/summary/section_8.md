@@ -137,3 +137,6 @@ userSchema.pre('save', async function() {
   }
 })
 ```
+
+## 16. Conclusions
+* 대부분의 백엔드 구현 완성. 다음부턴 프론트엔드 작업에 조금 더 집중
