@@ -23,6 +23,16 @@ export const publicOnlyMiddleware = (req, res, next) => {
   }
 }
 
-export const uploadFilesMiddleware = multer({
-  dest: 'uploads/'
+export const avatarUploadMiddleware = multer({
+  dest: 'uploads/avatars/*',
+  limits: {
+    fileSize: 30000000,
+  },
+})
+
+export const videoUploadMiddleware = multer({
+  dest: 'uploads/video/*',
+  limits: {
+    fileSize: 10000000,
+  },
 })

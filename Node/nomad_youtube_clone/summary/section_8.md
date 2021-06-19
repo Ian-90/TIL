@@ -77,3 +77,9 @@ db.users.remove({})
   app.use('/uploads', express.static('uploads'))
   ```
 * 실제 서버에 파일을 저장하면 서버가 죽었을 때의 파일 보존 문제가 있기 때문에 다른 방식을 써야 한다.
+
+## 10. Video Upload
+* upload.pug에 video upload input 추가
+* /upload 라우터에 upload 미들웨어 추가
+* postUpload 컨트롤러 구현
+* video 모델에 fileUrl 추가
