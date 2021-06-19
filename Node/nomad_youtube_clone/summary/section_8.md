@@ -126,3 +126,14 @@ const userSchema = new mongoose.Schema({
   }]
 })
 ```
+
+## 15. Bugfix
+* 모델에 미들웨어에서 save가 실행 될때마다 비밀번호가 hash처리 되는 버그 해결 - 비밀번호가 수정됬을 때만 hash 함수 동작하도록 변경
+* User 모델
+```js
+userSchema.pre('save', async function() {
+  if (this.isModified('password')) {
+    this.password = await bcrypt.hash(this.password, 5)
+  }
+})
+```
