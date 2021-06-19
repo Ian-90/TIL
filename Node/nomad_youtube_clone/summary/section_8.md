@@ -113,3 +113,16 @@ export const watch = async (req, res) => {
   ...
 }
 ```
+
+## 14. User's Videos
+* populate를 이용한 리팩토링
+* User 모델 - videos 추가
+```js
+const userSchema = new mongoose.Schema({
+  ...,
+  videos: [{
+    type: mongoose.Types.ObjectId,
+    ref: 'Video',
+  }]
+})
+```
