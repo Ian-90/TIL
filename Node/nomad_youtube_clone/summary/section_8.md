@@ -59,3 +59,8 @@ db.users.remove({})
 
 * postChangePassword 컨트롤러 구현
   * 새로운 비밀번호를 해쉬하기 위해 `user.save()`를 이용
+
+## 7. File Uploads part One
+* edit-profile에 `type='file'`인 input 추가
+* 파일 업로드를 위해 [multer](https://github.com/expressjs/multer/blob/master/doc/README-ko.md) 미들웨어를 이용
+* upload 미들웨어를 edit post 라우터에 적용

@@ -140,7 +140,8 @@ export const postEdit = async (req, res) => {
     session: {
       user: { _id }
     },
-    body: { name, email, username, location } 
+    body: { name, email, username, location },
+    file,
   } = req
 
   const findUsername = await User.findOne({ username });
