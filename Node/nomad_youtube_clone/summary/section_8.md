@@ -83,3 +83,8 @@ db.users.remove({})
 * /upload 라우터에 upload 미들웨어 추가
 * postUpload 컨트롤러 구현
 * video 모델에 fileUrl 추가
+
+## 11. User Profile
+* relationship - video는 한명의 owner가 필요하고, user는 여러개의 video를 가질 수 있다
+* profile.pug 구현
+* see 컨트롤러 구현
