@@ -18,3 +18,40 @@ module.exports = {
   } // 결과물
 }
 ```
+
+## 3. Webpack Configuration part Two
+* output의 path는 다 절대경로를 써야한다.
+  * dirname - 파일까지의 경로 전체
+  * path.resolve(args) - args에 입력하는 파트를 모아서 경로로 만들어 주는 것
+
+* rules - 우리가 각각의 파일 종류에 따라 어떤 전환을 할 건지 결정하는 것
+* loader - rules의 파일을 전환할 때 사용하는 것
+
+* webpack.config.js
+```js
+const path = require('path')
+
+module.exports = {
+  mode: 'development',
+  entry: './src/client/main.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolove(__dirname, 'assets', 'js'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', { targets: 'defaults' }]
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
+```
