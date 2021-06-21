@@ -83,3 +83,28 @@ module.exports = {
   }
 }
 ```
+
+## 6. MiniCssExtractPlugin
+* sass-loader - sass를 css로 변환
+* style-loader - css code를 브라우저에 주입
+* MiniCssExtractPlugin - style-loader 대신 플러그인을 이용하여 css코드를 파일로 분리
+* webpack.config.js
+```js
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+module.exports = {
+  ...,
+  module: {
+    rules: [
+      ...,
+      {
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+      }
+    ]
+  },
+  plugins: [new MiniCssExtractPlugin({
+    filename: 'css/styles.css',
+  })]
+}
+```
