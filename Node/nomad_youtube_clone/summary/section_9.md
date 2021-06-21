@@ -108,3 +108,23 @@ module.exports = {
   })]
 }
 ```
+
+## 7. Better Developer Experience
+* 프론트엔드 코드 변경시 코드를 다시 컴파일 하기
+```js
+module.exports = {
+  ...,
+  watch: true,
+  output: {
+    clean: true, // 빌드를 시작하기전에 output 폴더를 정리
+  },
+}
+```
+
+* 프론트엔드 변경 시 서버 재시작하지 않기 - nodemon.json
+```json
+{
+  "ignore": ["webpack.config.js", "src/client/*", "assets/*"],
+  "exec": "babel-node src/init.js"
+}
+```
