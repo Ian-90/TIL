@@ -128,3 +128,6 @@ module.exports = {
   "exec": "babel-node src/init.js"
 }
 ```
+
+## 8. Recap
+* 웹팩 복습
