@@ -62,3 +62,24 @@ module.exports = {
 // server.js
 app.use('/static', express.static('assets'))
 ```
+
+## 5. SCSS Loader
+* scss를 css로 변환하도록 웹펙 설정 추가
+* loader의 순서는 역순이다
+* webpack.config.js
+```js
+const path = require('path')
+
+module.exports = {
+  ...,
+  module: {
+    rules: [
+      ...,
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
+    ]
+  }
+}
+```
