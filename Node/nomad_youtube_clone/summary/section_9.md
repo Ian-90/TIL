@@ -11,7 +11,7 @@ yarn add webpack webpack-cli -D
 * webpack.config.js - 아주 기본적인 config 이해
 ```js
 module.exports = {
-  entry: './src/client/main.js', // 우리가 처리하고자 하는 파일들
+  entry: './src/client/js/main.js', // 우리가 처리하고자 하는 파일들
   output: {
     filename: 'main.js',
     path: './assets/js', // 결과물을 저장할 경로
@@ -33,10 +33,10 @@ const path = require('path')
 
 module.exports = {
   mode: 'development',
-  entry: './src/client/main.js',
+  entry: './src/client/js/main.js',
   output: {
     filename: 'main.js',
-    path: path.resolove(__dirname, 'assets', 'js'),
+    path: path.resolve(__dirname, 'assets', 'js'),
   },
   module: {
     rules: [
@@ -54,4 +54,11 @@ module.exports = {
     ]
   }
 }
+```
+
+## 4. Webpack Configuration part Three
+* express에 정적파일 접근할 수 있도록 assets 등록
+```js
+// server.js
+app.use('/static', express.static('assets'))
 ```
