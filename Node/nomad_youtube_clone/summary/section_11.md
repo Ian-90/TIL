@@ -19,3 +19,7 @@
 * 비디오플레이어의 현재시간과 전체시간 표시 기능 추가
 
 ## 6. Time Formatting
+* Date 객체와 toISOString 및 substr로 시간을 구하기
+
+## 7. Timeline
+* 비디오플레이어의 재생시간 input과 비디오 태그의 재생시간을 연동
