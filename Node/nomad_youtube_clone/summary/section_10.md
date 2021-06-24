@@ -6,5 +6,7 @@
   * view가 있으면 screen폴더에 관련 파일 생성
   * mixin이나 partials는 component폴더에 관련 파일 생성
 
-## 2. Styles part One
-* 타임랩스 비디오..
+## 2. Styles part One ~ Two
+* 타임랩스 비디오
+
+## 3. Styles Conclusions
