@@ -14,3 +14,4 @@
 8. [USER PROFILE](./summary/section_8.md)
 9. [WEBPACK](./summary/section_9.md)
 10. [STYLES](./summary/section_10.md)
+11. [VIDEO PLAYER](./summary/section_11.md)
