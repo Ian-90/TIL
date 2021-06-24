@@ -17,3 +17,5 @@
 * loadedmetadata - 비디오가 로드되었을 때 나타나는 메타 데이터
 * timeupdate - 비디오의 현재시간을 받는 이벤트
 * 비디오플레이어의 현재시간과 전체시간 표시 기능 추가
+
+## 6. Time Formatting
