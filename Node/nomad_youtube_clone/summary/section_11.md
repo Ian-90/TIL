@@ -3,3 +3,6 @@
 
 ## 2. Play Pause
 * play 버튼 이벤트 추가
+
+## 3. Mute and Unmute
+* mute와 unmute 기능 추가
