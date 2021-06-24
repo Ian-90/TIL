@@ -6,3 +6,9 @@
 
 ## 3. Mute and Unmute
 * mute와 unmute 기능 추가
+
+## 4. Volume
+* input[type="range"]의 이벤트
+  1. change - 드래그가 끝나야 동작
+  2. input - 실시간 동작
+* 볼륨 input과 mute 버튼 연동
