@@ -29,3 +29,13 @@
 
 ## 9. Controls Events part One
 * 비디오플레이어 마우스를 올렸을 때 컨트롤러를 보여주고, 마우스가 떠나면 컨트롤러를 감추는 기능 추가
+
+## 10. Controls Events part Two
+* 마우스가 멈추는걸 감지
+  * `setTimeout`을 이용
+  * 맨처음 마우스가 움직이면 setTimeout 호출
+  * 다시 움직이면 timeout 취소
+  * 또다시 움직이면 setTimeout 호출
+  * 그상태에서 마우스 멈추면 setTimeout 완료
+  * 3초이내로 마우스가 움직이면 setTimeout이 취소되지만, 3초 이상이라면 setTimeout 실행됨
+
