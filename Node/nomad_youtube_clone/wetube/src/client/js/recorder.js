@@ -1,8 +1,9 @@
 const startBtn = document.getElementById('startBtn')
 const video = document.getElementById('preview')
 
-let stream = null
-let recorder = null
+let stream
+let recorder
+let videoFile
 
 const init = async () => {
   stream = await navigator.mediaDevices.getUserMedia({
@@ -22,7 +23,7 @@ const handleStart = () => {
 
   recorder = new MediaRecorder(stream)
   recorder.ondataavailable = (e) => {
-    const videoFile = URL.createObjectURL(e.data)
+    videoFile = URL.createObjectURL(e.data)
     video.srcObject = null
     video.src = videoFile
     video.loop = true
@@ -32,7 +33,11 @@ const handleStart = () => {
 }
 
 const handleDownload = () => {
-
+  const a = document.createElement('a')
+  a.href = videoFile
+  a.download = 'MyRecording.webm'
+  document.body.appendChild(a)
+  a.click()
 }
 
 const handleStop = () => {

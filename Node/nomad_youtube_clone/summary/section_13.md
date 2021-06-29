@@ -13,3 +13,5 @@
 * URL.createObjectURL - 브라우저 메모리에서만 가능한 URL 생성. 파일을 가리키고있는 URL이라고 생각하면 됨.
 * 녹화한 비디오는 브라우저 메모리에 있다.
 
+## 5. Downloading the File
+* a tag의 download 속성을 이용하여 다운로드기능 추가
