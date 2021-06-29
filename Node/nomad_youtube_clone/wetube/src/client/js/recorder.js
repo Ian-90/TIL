@@ -10,7 +10,7 @@ const init = async () => {
     audio: false,
     video: true,
   })
-  // video.srcObject = stream
+  video.srcObject = stream
   video.play()
 }
 

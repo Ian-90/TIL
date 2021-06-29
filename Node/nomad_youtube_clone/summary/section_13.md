@@ -15,3 +15,6 @@
 
 ## 5. Downloading the File
 * a tag의 download 속성을 이용하여 다운로드기능 추가
+
+## 6. Recap
+* 1 ~ 5강 복습
