@@ -16,3 +16,4 @@
 10. [STYLES](./summary/section_10.md)
 11. [VIDEO PLAYER](./summary/section_11.md)
 12. [VIEWS API](./summary/section_12.md)
+13. [VIDEO RECORDER](./summary/section_13.md)
