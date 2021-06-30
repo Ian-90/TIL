@@ -27,3 +27,9 @@
 
 ## 6. Thumbnail Upload part One
 * Download Recording 1번 클릭 후, 다시 클릭 방지 기능 추가
+
+## 7. Thumbnail Upload part Two
+* thumbnail 파일 업로드 기능추가
+* multer에서 멀티파일 업로드 기능 추가
+* recorder 부분 css 수정
+* recorder 코드 수정

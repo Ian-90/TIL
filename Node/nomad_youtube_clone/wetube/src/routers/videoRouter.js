@@ -11,7 +11,10 @@ videoRouter.route('/:id([0-9a-f]{24})/edit').all(protectorMiddleware)
 videoRouter.route('/:id([0-9a-f]{24})/delete').get(deleteVideo).all(protectorMiddleware)
 videoRouter.route('/upload').all(protectorMiddleware)
   .get(getUpload)
-  .post(videoUploadMiddleware.single('video'), postUpload)
+  .post(videoUploadMiddleware.fields([
+    { name: 'video', maxCount: 1 },
+    { name: 'thumb', maxCount: 1 },
+  ]), postUpload)
 
 export default videoRouter
   
