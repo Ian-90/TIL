@@ -19,3 +19,8 @@
 
 ## 4. Thumbnail
 * 비디오 데이터를 ffmpeg 라이브러리를 이용하여 thumbnail 생성
+
+## 5. Recap
+* 1 ~ 4강 복습
+* ffmpeg 파일의 링크 해제
+* 브라우저 메모리에있는 url 제거
