@@ -17,3 +17,4 @@
 11. [VIDEO PLAYER](./summary/section_11.md)
 12. [VIEWS API](./summary/section_12.md)
 13. [VIDEO RECORDER](./summary/section_13.md)
+14. [WEBASSEMBLY VIDEO TRANSCODE](./summary/section_14.md)
