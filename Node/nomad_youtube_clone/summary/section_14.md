@@ -8,3 +8,6 @@
   ```
   yarn add @ffmpeg/ffmpeg @ffmpeg/core
   ```
+
+## 2. Transcode Video
+* [ffmpeg](https://github.com/ffmpegwasm/ffmpeg.wasm)를 이용하여 다운로드 파일을 webm에서 mp4로 변환기능 추가
