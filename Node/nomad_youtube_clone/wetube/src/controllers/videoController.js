@@ -96,7 +96,8 @@ export const deleteVideo = async (req, res) => {
   }
 
   if (String(video.owner) !== String(_id)) {
-    return res.status(430).redirect('/')
+    req.flash('error', 'You are not the owner of the video')
+    return res.status(403).redirect('/')
   }
 
   await Video.findByIdAndDelete(id)
