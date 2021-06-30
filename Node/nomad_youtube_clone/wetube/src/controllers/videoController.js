@@ -53,6 +53,7 @@ export const postEdit = async (req, res) => {
     hashtags: Video.formatHashtags(hashtags),
   })
   await video.save()
+  req.flash('success', 'Changes saved')
   return res.redirect(`/videos/${id}`)
 }
 

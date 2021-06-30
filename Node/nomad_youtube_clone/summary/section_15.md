@@ -9,4 +9,7 @@
   ```js
   req.flash('메세지 종류', '전달할 메세지')
   ```
-  
+
+## 2. Sending Messages
+* flash 미들웨어는 `res.locals.messages`를 만들어준다
+* message.pug로 메세지 구현
