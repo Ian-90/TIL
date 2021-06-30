@@ -24,3 +24,6 @@
 * 1 ~ 4강 복습
 * ffmpeg 파일의 링크 해제
 * 브라우저 메모리에있는 url 제거
+
+## 6. Thumbnail Upload part One
+* Download Recording 1번 클릭 후, 다시 클릭 방지 기능 추가
