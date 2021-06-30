@@ -16,3 +16,6 @@
 * fs에서 생성된 output.mp4를 이용하여 다운로드 기능 추가
 * ArrayBuffer - 비디오 파일을 나타내는 bytes의 배열
 * raw data인 ArrayBuffer를 Blob으로 변환
+
+## 4. Thumbnail
+* 비디오 데이터를 ffmpeg 라이브러리를 이용하여 thumbnail 생성
