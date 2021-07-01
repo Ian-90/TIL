@@ -19,3 +19,4 @@
 13. [VIDEO RECORDER](./summary/section_13.md)
 14. [WEBASSEMBLY VIDEO TRANSCODE](./summary/section_14.md)
 15. [FLASH MESSAGES](./summary/section_15.md)
+16. [COMMENT SECTION](./summary/section_16.md)
