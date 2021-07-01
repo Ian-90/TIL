@@ -31,7 +31,7 @@ block content
     br
     a(href=`${video.id}/edit`) Delete Video &rarr;
 
-  if loggedInUser
+  if loggedIn
     div.video__comments
       form.video__comment-form#commentForm
         textarea(cols="30", rows="10", placeholder="Write nice comments...")
@@ -39,4 +39,5 @@ block content
 
 block scripts
   script(src='/static/js/videoPlayer.js')
-  script(src='/static/js/commentSection.js')
+  if loggedIn
+    script(src='/static/js/commentSection.js')

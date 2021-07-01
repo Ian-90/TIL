@@ -6,3 +6,6 @@
 
 ## 3. Comment Box
 * 댓글창 구현
+
+## 4. API Route part One
+* submit post 기능 구현 및 comment 컨트롤러 틀 추가
