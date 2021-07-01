@@ -12,3 +12,6 @@
 
 ## 5. API Route part Two
 * fetch post 및 express가 json 통신할 수 있도록 미들웨어 추가
+
+## 6. Commenting
+* comment 컨트롤러 구현
