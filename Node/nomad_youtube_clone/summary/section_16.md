@@ -15,3 +15,6 @@
 
 ## 6. Commenting
 * comment 컨트롤러 구현
+
+## 7. Rendering Comments
+* 코멘트가 렌더링되도록 수정 및 코멘트 스타일 추가
