@@ -18,3 +18,6 @@
 
 ## 7. Rendering Comments
 * 코멘트가 렌더링되도록 수정 및 코멘트 스타일 추가
+
+## 8. Realtime Comments
+* reload 제거 및 addComment로 실시간 댓글 추가(js를 이용해서 서버응답을 기다리지 않고 돔에 직접 추가)
