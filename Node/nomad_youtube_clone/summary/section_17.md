@@ -31,3 +31,7 @@
 10. heroku setting에서 config Vars로 환경변수 추가
   * DB_URL 추가
   * COOKIE_SECRET 추가
+
+## 6. Environment Variables
+* heroku가 생성해준 포트로 연결해야됨
+* 깃헙 로그인을 위해 setting에 GH_CLIENT, GH_SECRET를 환경변수 추가
