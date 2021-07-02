@@ -20,3 +20,4 @@
 14. [WEBASSEMBLY VIDEO TRANSCODE](./summary/section_14.md)
 15. [FLASH MESSAGES](./summary/section_15.md)
 16. [COMMENT SECTION](./summary/section_16.md)
+17. [DEPLOYMENT](./summary/section_17.md)
