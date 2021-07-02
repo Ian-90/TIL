@@ -17,3 +17,17 @@
     * 설치 후 heroku login으로 확인 가능
     * heroku는 나의 git history만 보기 때문에 코드변경시 항상 커밋을 해야한다.
     * `heroku logs --tail` - 실시간 서버 로그 보기
+
+## 5. MongoDB Atlas
+1. MongoDB Atlas 계정 생성
+2. Create Project
+3. cluster 추가
+4. free만 이용하기!
+5. 아시아면 싱가포르 지역 선택
+6. 평생무료 선택
+7. IP 주소 추가
+8. DB 유저 생성
+9. application을 선택하면 DB_URL이 생성됨
+10. heroku setting에서 config Vars로 환경변수 추가
+  * DB_URL 추가
+  * COOKIE_SECRET 추가
