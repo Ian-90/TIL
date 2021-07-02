@@ -6,8 +6,10 @@
   "scripts": {
     "start": "node build/init.js",
     "dev:server": "nodemon",
-    "dev:assets": "webpack",
-    "build:server": "babel src -d build" 
+    "dev:assets": "webpack --mode=development -w",
+    "build:server": "babel src -d build",
+    "build:assets": "webpack --mode=production",
+    "build": "yarn build:server && yarn build:assets"
   },
   "license": "MIT",
   "dependencies": {

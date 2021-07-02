@@ -4,3 +4,6 @@
 ## 2. Building the Backend part Two
 * view는 옮기지 않아도 된다.
 * 백엔드 코드 빌드
+
+## 3. Building the Frontend
+* webpack을 development와 production build 구분

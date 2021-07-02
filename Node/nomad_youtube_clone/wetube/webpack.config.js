@@ -4,8 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const BASE_JS = './src/client/js'
 
 module.exports = {
-  mode: 'development',
-  watch: true,
   entry: {
     main: `${BASE_JS}main.js`,
     videoPlayer: `${BASE_JS}videoPlayer.js`,
