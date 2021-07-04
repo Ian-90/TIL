@@ -69,3 +69,6 @@
 
 ## 9. AWS S3 part Three
 * AWS에서 S3 block public access 체크 해제 및 마지막 2개 체크
+
+## 10. Production Environment
+* local multer와 s3 multer 구분 - 환경변수를 이용(process.env.NODE_ENV)
