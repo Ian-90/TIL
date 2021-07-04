@@ -35,3 +35,11 @@
 ## 6. Environment Variables
 * heroku가 생성해준 포트로 연결해야됨
 * 깃헙 로그인을 위해 setting에 GH_CLIENT, GH_SECRET를 환경변수 추가
+
+## 7. Github and AWS S3 part One
+* Github 로그인 callback URL 변경
+* 백엔드 서버를 업로드하는 방법
+  * Github
+    * repository 추가 및 connect
+    * git에 push할 때 마다 재배포
+    
