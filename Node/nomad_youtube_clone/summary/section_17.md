@@ -42,4 +42,28 @@
   * Github
     * repository 추가 및 connect
     * git에 push할 때 마다 재배포
-    
+
+## 8. AWS S3 part Two
+* 비디오 및 이미지파일은 AWS에 저장(heroku에 저장할 때 마다 미디어 파일을 이용할 수 없기 때문)
+  1. AWS S3로 이동
+  2. 버킷 생성
+  3. region 설정
+  4. block public access
+  5. Create Bucket
+
+* API Key 생성
+  1. IAM 이동
+  2. Users 페이지 이동
+  3. Add User
+  4. Programmatic access 체크
+  5. Next Permisson
+  6. S3FullAccess 권한 체크
+  7. Create User
+
+* .env 추가 - 업로드 되는지 테스트하기 위해 추가
+  1. AWS_ID - AWS에서 생성한 access key id 추가
+  2. AWS_SECRET - AWS에서 생성한 secret access key 추가
+  3. heroku에 환경변수 추가
+
+* s3업로드를 위해 multer-s3 추가
+ 
