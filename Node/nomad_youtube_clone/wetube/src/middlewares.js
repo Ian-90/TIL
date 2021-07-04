@@ -13,7 +13,8 @@ const s3 = new aws.S3({
 
 const multerUploader = multerS3({
   s3,
-  bucket: 'my bucket name',
+  bucket: 'my s3 bucket name',
+  acl: 'public-read'
 })
 
 export const localsMiddleware = (req, res, next) => {

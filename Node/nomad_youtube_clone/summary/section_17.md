@@ -66,4 +66,6 @@
   3. heroku에 환경변수 추가
 
 * s3업로드를 위해 multer-s3 추가
- 
+
+## 9. AWS S3 part Three
+* AWS에서 S3 block public access 체크 해제 및 마지막 2개 체크
