@@ -132,4 +132,4 @@ final$.subscribe(console.log)
 ```
 
 ## 2. 강의를 위한 준비물
-![얄코 강의 페이지](https://www.yalco.kr/@rxjs/0-2/)
+[얄코 강의 페이지](https://www.yalco.kr/@rxjs/0-2/)
