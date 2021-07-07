@@ -40,5 +40,7 @@ export class MoviesController {
     return `This will patch a movie with the id: ${movieId}` 
   }
 }
-
 ```
+
+## 2. More Routes
+* 필요한 값들은 `@Param`, `@Body`, `@Query`등등 인자에서 요청해야 한다.
