@@ -31,8 +31,10 @@ docker push smlinux/appjs
 * 컨테이너 하나 === 하나의 애플리케이션
 
 ### 1.2 [Pod의 개념](https://kubernetes.io/ko/docs/concepts/workloads/pods/)
-* 컨테이너를 표현하는 k8s API의 최소 단위
+* 컨테이너를 표현하는 k8s API의 최소 단위d
 * Pod에는 하나 또는 여러 개의 컨테이너가 포함될 수 있음
+* 컨테이너들이 같은 목적으로 자원을 공유
+  * Pod 하나 안에 있는 컨테이너들은 IP 하나를 공유
 
 ### 1.3 Pod 생성 및 확인
 * cli - kubectl run 명령으로 생성
@@ -46,14 +48,14 @@ kubectl run [pod name] --image=[image name]
   apiVersion: v1
   kind: Pod
   metadata:
-    name: webserver
+    name: webserver # Pod의 이름
   spec:
     containers:
-    - name: nginx-container
-      image: nginx:1.14
+    - name: nginx-container # 컨테이너의 이름
+      image: nginx:1.14 # 컨테이너에서 사용할 이미지
       imagePullPolicy: Always
       ports:
-      - containerPort: 80
+      - containerPort: 80 # 컨테이너가 접속할 포트 번호
         protocol: TCP
   ```
   2. 실행
@@ -131,10 +133,11 @@ kubectl delete pod [pod name]
 
 ### 1.5 [Pod 동작 flow](https://kubernetes.io/ko/docs/concepts/workloads/pods/pod-lifecycle/)
 1. flow
-  * Pending - 스케줄링 받기 전까지의 단계
-  * Running - 스케줄링을 받은 후
-  * Succeeded
-  * Failed
+  * Pending - 스케줄링 받기 전까지의 단계. 쿠버네티스 시스템에 이미지를 다운로드 후 파드를 생성하는 중임을 나타낸다.
+  * Running - 스케줄링을 받은 후. 파드안 모든 컨테이너가 실행 중이거나 시작 또는 재시작 상태
+  * Succeeded - 파드 안 모든 컨테이너가 정상 실행 종료된 상태
+  * Failed - 파드 안 모든 컨테이너 중 정상적으로 실행 종료되지 않은 컨테이너가 있는 상태
+  * Unkown - 파드의 상태를 확인할 수 없는 상태
 
 2. flow 확인 해보기
 ```
@@ -142,6 +145,13 @@ kubectl get pods -o wide --watch
 kubectl create -f pod-nginx.yaml
 kubectl delete pop webserver
 ```
+
+3. Status 항목 보기
+```
+kubectl describe pods [pod name]
+```
+  * Status - 현재 파드의 생명주기
+  * Conditions - 파드의 현재 상태 정보
 
 ### 1.6 Quiz
 1. 현재 namespace에서 동작중인 Pod는 몇개인가 - `kubectl get pods`
@@ -172,6 +182,7 @@ kubectl delete pop webserver
 ## 2. livenessProbe를 이용해 self-healing Pod 만들기(kubelet으로 컨테이너 진단하기)
 ### 2.1 Liveness Probe
 * Pod가 계속 실행할 수 있음을 보장. 즉, 건강한 컨테이너로 서비스하는게 목적
+* 컨테이너가 실행됬는지 확인하고, 진단이 실패하면 kubelet은 컨테이너를 종료시키고, 재시작 정책에 따라서 컨테이너를 재시작
 * 사용법 - Pod의 spec에 정의
 ```yml
 apiVersion: v1
@@ -191,7 +202,7 @@ spec:
 
 ### 2.2 [Liveness Probe](https://kubernetes.io/ko/docs/concepts/workloads/pods/pod-lifecycle/#%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%ED%94%84%EB%A1%9C%EB%B8%8C-probe)의 매커니즘
 * 컨테이너의 건강검진 방법
-  1. httpGet probe - 지정한 IP주소, port, path에 HTTP GET 요청을 보내 해당 컨테이너가 응당하는지를 확인. **반환코드가 200이 아니면 컨테이너를 다시 시작**
+  1. httpGet probe - 지정한 IP주소, port, path에 HTTP GET 요청을 보내 해당 컨테이너가 응답하는지를 확인. **반환코드가 200이 아니면 컨테이너를 다시 시작**
   ```yml
   livenessProbe:
     httpGet:
@@ -338,6 +349,16 @@ docker ps
 * [static Pod 만들기](https://kubernetes.io/ko/docs/tasks/configure-pod-container/static-pod/)
 * cka 문제에서 많이 나옴
 
+### 5.3 도커 데스크탑에서 static Pod 확인
+* [도커에서 실행한 리눅스 가상 머신 접속](https://github.com/docker/for-mac/issues/4822)
+```
+docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh
+cd /etc/kubernetes/manifests
+ls alF
+```
+
+* kube-apiserver.yaml을 변경하면 kubelet이 감지하고 재시작 합니다
+
 ## 6. Pod에 Resource 할당하기(cpu/memory request, limit)
 ### 6.1 Resource를 할당하지 않는다면?
 * 한 pod가 resource를 다 써버린다면 다른 pod가 동작하지 않는다. 그렇기 때문에 resource를 제한해주어야 한다.
@@ -410,12 +431,19 @@ kubectl exec [pod name] --env
 ### 8.1 Pod 실행 패턴
 * [Pod를 구성하고 실행하는 패턴](https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/)
 * multi-container Pod
-  1. Sidecar - 누군가 로그를 만들고, 로그를 받아서 실행해주는 파드
-  ![sidecar](./assets/section_5/sidecar.png)
+  1. Sidecar
+    ![sidecar](./assets/section_5/sidecar.png)
+    * 원래 사용하려던 기본 컨테이너의 기능을 확장하거나 강화하는 용도의 컨테이너를 추가
+    * example - 누군가 로그를 만들고, 로그를 받아서 실행해주는 파드 
   2. Adapter - 외부 시스템 상태에 대한 모니터 정보를 Adapter가 받아서 웹서버에게 전달
-  ![adapter](./assets/section_5/adapter.png)
-  3. Ambassador - 유저가 접속했을 때 만들어 지는 데이터를 로드밸런서 역할로 분산시켜서 보내준다.
-  ![ambassador](./assets/section_5/ambassador.png)
+    ![adapter](./assets/section_5/adapter.png)
+    * 파드 외부로 노출되는 정보를 표준화하는 어댑터 컨테이너를 사용하는 패턴
+    * 외부 시스템 상태에 대한 모니터 정보를 Adapter가 받아서 웹서버에게 전달
+
+  3. Ambassador
+    ![ambassador](./assets/section_5/ambassador.png)
+    * 파드안에서 프록시 역할을 하는 컨테이너를 추가하는 패턴
+    * 유저가 접속했을 때 만들어 지는 데이터를 로드밸런서 역할로 분산시켜서 보내준다
 
 ## 9. Quiz
 ### 9.1 Static Pod
