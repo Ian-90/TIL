@@ -54,3 +54,6 @@ nest g s
 * 수업에선 가짜 데이터베이스 사용
 * 서비스에 주입할 타입들은 entity 폴더에 작성
 * 서비스를 생성하여 각 컨트롤러와 연동
+
+## 4. Movies Service part Two
+* 서비스 기능 마무리(delete, update)
