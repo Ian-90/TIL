@@ -44,3 +44,13 @@ export class MoviesController {
 
 ## 2. More Routes
 * 필요한 값들은 `@Param`, `@Body`, `@Query`등등 인자에서 요청해야 한다.
+
+## 3. Movies Service part One
+* Service - 로직을 관리하는 역할
+* 서비스 생성
+```
+nest g s
+```
+* 수업에선 가짜 데이터베이스 사용
+* 서비스에 주입할 타입들은 entity 폴더에 작성
+* 서비스를 생성하여 각 컨트롤러와 연동
