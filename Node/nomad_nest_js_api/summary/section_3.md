@@ -57,3 +57,17 @@ nest g s
 
 ## 4. Movies Service part Two
 * 서비스 기능 마무리(delete, update)
+
+## 5. DTOs and Validation part One
+* DTO(Data Transfer Object) - 데이터 전송 객체
+* class의 유효성 검사 - class-validator, class-transformer 설치
+* 데이터 유효성 검증 - main.ts
+```ts
+app.useGlobalPipes(
+  new ValidationPipe({
+    whitelist: true, // 아무 데코레이터도 없는 어떠한 프로퍼티의 오브젝트를 거른다
+    forbidNonWhitelisted: true,
+    transform: true, // 자동으로 request할 때마다 실제 데이터 타입으로 변환
+  })
+)
+```
