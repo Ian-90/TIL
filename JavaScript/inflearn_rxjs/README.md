@@ -4,7 +4,7 @@
 
 ## 목차
 
-1. [반응형 프로그래밍과 ReactiveX](./section1.md)
-2. [스트림 맛보기](./section2.md)
-3. [Operator - ReactiveX의 다양한 연산자들](./section3.md)
-4. [실전 반응형 프로그래밍](./section4.md)
+1. [반응형 프로그래밍과 ReactiveX](./section_1.md)
+2. [스트림 맛보기](./section_2.md)
+3. [Operator - ReactiveX의 다양한 연산자들](./section_3.md)
+4. [실전 반응형 프로그래밍](./section_4.md)
