@@ -75,3 +75,11 @@ app.useGlobalPipes(
 ## 6. DTOs and Validation part Two
 * @nestjs/mapped-types - 타입을 변환시키고 사용할 수 있게 하는 패키지
   * PartialType
+
+## 7. Modules and Dependency Injection
+* module 생성
+```
+nest g mo
+```
+* module 분리
+* dependency injection - nestjs가 Service를 providers에 두면, Controller에 주입
