@@ -83,3 +83,8 @@ nest g mo
 ```
 * module 분리
 * dependency injection - nestjs가 Service를 providers에 두면, Controller에 주입
+
+## 8. Express on NestJS
+* nestjs는 express위에서 돌아가기 때문에 req,res를 이용가능하다. 하지만 추천하지는 않는다
+* nextjs는 fastify 위에서도 돌아간다
+* fastify의 성능이 더좋아서 express에서 fastify로 전환시 이슈가 없으려면 nestjs용 방법을 사용해야 한다
