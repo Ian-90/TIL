@@ -10,3 +10,6 @@ describe('테스트 대상', () => {
   })
 });
 ```
+
+## 3. Testing getAll and getOne
+* getAll과 getOne 유닛테스트 작성
