@@ -46,4 +46,27 @@ describe('MoviesService', () => {
       }
     })
   })
+
+  describe('deleteOne', () => {    
+    it('delete a moive', () => {
+      service.create({
+        title: 'Test Movie',
+        genres: ['test'],
+        year: 2000,
+      })
+      const beforeDelete = service.getAll().length
+      service.deleteOne(1)
+      const afterDelete = service.getAll().length
+
+      expect(afterDelete).toBeLessThan(beforeDelete)
+    })
+
+    it('should throw a NotFoundException', () => {
+      try {
+        service.update(999, {})
+      } catch(e) {
+        expect(e).toBeInstanceOf(NotFoundException)
+      }
+    })
+  })
 });
