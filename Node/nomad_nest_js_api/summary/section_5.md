@@ -8,3 +8,6 @@
 
 ## 3. Testing PATCH and DELETE movies id
 * `/movies/:id` PATCH, DELETE 관련 테스트 작성
+
+## 4. Finishing Up
+* Nuber eats 수업 추천

@@ -32,10 +32,10 @@ describe('AppController (e2e)', () => {
 
   describe('/movies', () => {
     it('GET', () => {
-      return request(app.getHttpAdapter())
+      return request(app.getHttpServer())
         .get('/movies')
         .expect(200)
-        .expect([{ id: 1 }])
+        .expect([])
     })
 
     it('POST', () => {
