@@ -1,7 +1,7 @@
 import * as request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { AppModule } from './../src/app.module';
-import { INestApplication } from '@nestjs/common';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -12,6 +12,14 @@ describe('AppController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    app.useGlobalPipes(
+      new ValidationPipe(
+        {
+          whitelist: true,
+          forbidNonWhitelisted: true,
+          transform: true,
+        })
+    )
     await app.init();
   });
 
@@ -46,5 +54,21 @@ describe('AppController (e2e)', () => {
         .delete('/movies')
         .expect(404)
     })
+  })
+
+  describe('/movies/:id', () => {
+    it('GET 200', () => {
+      return request(app.getHttpServer())
+        .get('/movies/1')
+        .expect(200)
+    })
+  
+    it('GET 404', () => {
+      return request(app.getHttpServer())
+        .get('/movies/999')
+        .expect(404)
+    })
+    it.todo('DELETE')
+    it.todo('PATCH')
   })
 });
