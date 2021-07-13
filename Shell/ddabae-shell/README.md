@@ -31,3 +31,48 @@
   // 변경사항 확인
   sudo grep [username] /etc/passwd
   ```
+
+## 2. Bash shell과 변수
+### 2.1 Shell의 변수
+* Shell의 변수
+  * 데이터를 넣는 그릇
+  * 선헌할 필요없이 사용 가능
+  * 변수명 - 문자, 숫자, _로 구성될 수 있지만, 시작은 반드시 문자나 _로 시작
+
+* 변수 선언 - `[변수명]=[값]`
+  ```
+  fname=hello
+  score=90
+  ```
+
+* 변수 확인 - `echo $[변수명]`, `set`
+  ```
+  echo $fname
+  // 변수 목록 보기
+  set
+  ```
+
+* 변수 제거 - `unset [변수명]`
+  ```
+  unset fname
+  ```
+
+### 2.2 Shell의 환경변수
+* Shell 환경 변수 - 동작 되는 프로그램에게 영향을 주는 변수
+
+* 환경 변수 선언 - `export [변수명]=[값]`
+  ```
+  export NAME=lee
+  echo $NAME
+  ```
+
+* 시스템에 적용된 환경변수 확인
+```
+env
+```
+
+* 기억해야할 환경변수
+  * PATH - 명령어 탐색 경로
+  * HOME - 홈디렉토리의 경로
+  * USER - 로그인 사용자 이름
+  * SHELL - 로그인 SHELL 이름
