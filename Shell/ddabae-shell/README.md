@@ -76,3 +76,64 @@ env
   * HOME - 홈디렉토리의 경로
   * USER - 로그인 사용자 이름
   * SHELL - 로그인 SHELL 이름
+
+## 3. Bash shell과 Rules 1
+### 3.1 Quoting Rule
+* Metacharacters
+  * shell에서 특별히 의미를 정해 놓은 문자들
+  * `₩ ? ( ) $ ... * % { } [ ]`등
+    ```
+    echo * // 전체를 의미
+    echo a* // a로 시작하는 것
+    echo ???? // 4개의 글자수를 가진 것들
+    touch myFile{1..3} // 1 ~ 3까지 파일을 생성
+    ```
+
+* Quoting Rule
+  * 메타문자의 의미를 제거하고 단순 문자로 변경
+  * Backslash(\) - `\` 바로 뒤의 메타 문자는 특별한 의미를 제거
+    ```
+    touch \*\*\*
+    ```
+  * Double Quotes("") - `""` 내의 모든 메타문지의 의미를 제거. 단 $,``은 제외
+  * Single Quotes('') - `''` 내의 모든 메타문자의 의미를 제거
+
+### 3.2 Nesting commands
+* Command 치환
+  * 명령어의 실행 결과를 치환하여 명령을 실행
+
+* Nesting Commands
+  * `${command}`, ``command``
+  ```
+  echo "Today is $(date)"
+  echo "Today is `date`"
+  echo "Today is $(date +%Y-%m-%d)"
+  echo 'Today is $(date +%Y-%m-%d)' // 위의 결과와는 다르다
+  ```
+### 3.3 Alias
+* alias
+  * shell의 명령에 새로운 이름을 부여
+  * 명령들을 조합하여 새로운 이름의 명령을 생성
+
+* alias 관리 명령
+  * alias 등록 - `alias name='command'`
+  * alias 확인 - `alias or alias name`
+  * alias 삭제 - `unalias name`
+
+### 3.4 Prompt
+* shell의 prompt란?
+  * PS1 변수를 이용해 shell의 기본 프롬프트 모양을 설정
+  * Bash shell에서만 Prompt 모양에 적용 가능한 특수 문자가 존재
+    | 특수문자 | 의미 |
+    |:------:|-----|
+    |\h|호스트 이름|
+    |\u|사용자 이름|
+    |\w|작업 디렉토리 - 절대경로|
+    |\W|작업 디렉토리 - 상대경로|
+    |\d|오늘 날짜|
+    |\t|현재 시간|
+    |\$|$ 또는 # 프롬프트 모양|
+  * 실습
+    ```
+    PS1='\u@\h:\W\$'
+    ```
