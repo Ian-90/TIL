@@ -137,3 +137,43 @@ env
     ```
     PS1='\u@\h:\W\$'
     ```
+
+## 4. Bash shell과 Rules 2
+### 4.1 Redirection
+* Communication Channels
+  * 계정에게 메일 보내기
+    ```
+    mailx [게정명]
+    ```
+    * 표준 입력장치를 키보드로 사용
+
+* Redirection
+  | Communication channels | Redirection characters | 의미|
+  |------------------------|------------------------|----|
+  | STDIN | 0< / 0<< | 입력을 키보드가 아닌 파일을 통해 받음 |
+  | STDOUT | 1> / 1>> | 표준 출력을 터미널이 아닌 파일로 출력 |
+  | STDERR | 2> / 2>> | 표준 에러 출력을 터미널이 아닌 파일로 출력 |
+
+* 0과 1은 생략이 가능하다
+* 실습
+  * STDOUT
+  ```
+  date 1> date.out
+  date 1>> date.out // 누적
+  ```
+
+  * STDERR
+  ```
+  ls a.txt 2> error.txt
+  ls file1 file100 2> /dev/null // 에러메세지 생략
+  ```
+
+### 4.2 Pipeline
+* 명령의 실행결과를 다음 명령의 입력으로 전달
+* 리눅스의 명령어를 조합하여 사용
+* 기호: command1 | command2 | command3
+* 실습
+  ```
+  wc -l // 파일의 총 라인 수 출력
+  ls -l | wc -l
+  ```
