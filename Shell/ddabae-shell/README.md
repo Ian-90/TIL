@@ -176,4 +176,5 @@ env
   ```
   wc -l // 파일의 총 라인 수 출력
   ls -l | wc -l
+  ls -l | more
   ```
