@@ -178,3 +178,68 @@ env
   ls -l | wc -l
   ls -l | more
   ```
+
+## 5. Bash shell script란
+### 5.1 Shell Script란?
+* 리눅스 command들을 모아놓은 ASCII Text 파일(*.sh 파일)
+* 실행 퍼미션을 할당해야 실행 가능
+* Bash shell script에서 특별히 의미가 정해진 기능
+  * `#` - 주석
+  * `#!/bin/bash` - 셔뱅,해시뱅, 스크립트를 실행할 sub shell 이름
+* Shell 구문은 기본 top-down 방식으로 해석해서 실행됨
+* Sub shell
+```
+ls /bin/bash
+pwd
+/bin/bash
+# sub-shell
+  cd /
+  pwd
+  exit
+pwd
+```
+
+### 5.2 실습
+* df 명령어 - 파일시스템 별 디스크사용량을 점검하는 명령어
+```
+df (-h) 명령어
+```
+
+* 예제 1
+  * `sample.sh` 파일 생성
+    ```sh
+    #!/bin/bash
+    #: Title        :Sample bash script
+    #: Date         :2021-05-16
+    #: Author       :"Ian" <hello@gmail.com>
+    #: Version      :1.0
+    #: Description  :Print Hello World
+    echo "Today: $(date +%Y-%m-%d)"
+    echo "Hello, Linux World!"
+    ```
+
+  * 실행 - path를 생략하려면 `PATH=$PATH:~/bin`
+    ```
+    chmod +x sample.sh
+    [path] sample.sh
+    ```
+
+* 예제 2
+  * `varUsage.sh` 파일 생성
+  ```sh
+  #!/bin/bash
+  #: Author       :"Ian" <hello@gmail.com>
+  #: Description  :Print Hello World
+  echo "[/var Directory]"
+  echo "==========================================="
+  date +%Y-%m-%d
+  echo "==========================================="
+  du -sh /var 2> /dev/null
+  echo
+  ```
+
+  * 실행 - path를 생략하려면 `PATH=$PATH:~/bin`
+    ```
+    chmod +x varUsage.sh
+    [path] varUsage.sh
+    ```
