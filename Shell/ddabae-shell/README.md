@@ -243,3 +243,57 @@ df (-h) 명령어
     chmod +x varUsage.sh
     [path] varUsage.sh
     ```
+
+## 6. Positional Parameters
+### 6.1 Positional Paramters란?
+* 위치 매개변수
+* 입력하는 argument들은 $0, $1, $2와 같은 변수에 저장되어 script에 전달
+  * name of shell script: $0
+  * first argument - $1
+  * second argument - $2
+  * Number of arguments in $#
+  * List of all parmeters in $@, $*
+* Special shell variables
+  * 로그인 shell의 PID - $$
+  * 현재 작업 디렉토리 - $PWD
+  * 부모 프로세스 ID - $PPID
+
+### 6.2 실습
+* 예제 1
+  * parameter-exam1.sh
+  ```sh
+  #!/bin/bash
+  #: Usage: parameter-exam1.sh arg1 arg2 arg3
+  echo "The script name: $0"
+  echo "The first argument: $1"
+  echo "The second argument: $2"
+  echo "The number of arguments: $#"
+  echo "The list of arguments: $@"
+  echo "The list of arguments: $*"
+  ```
+
+  * 실행
+  ```
+  chomod +x parameter-exam1.sh
+  [path]/paramter-exam1.sh red blue
+  ```
+
+* 예제 2
+  * parameter-exam2.sh
+  ```sh
+  #!/bin/bash
+  #: Usage: parameter-exam1.sh directory_name
+  echo "[$1 Directory]"
+  echo "====================================="
+  date +%Y-%m-%d
+  echo "====================================="
+  du -sh $1 2> /dev/null # $1 디렉토리의 사이즈
+  echo
+  ```
+
+  * 실행
+  ```
+  chomod +x parameter-exam2.sh
+  [path]/paramter-exam2.sh red blue
+  ```
+
