@@ -297,3 +297,74 @@ df (-h) 명령어
   [path]/paramter-exam2.sh red blue
   ```
 
+## 7. Input & Output
+### 7.1 echo
+* prints text to standard output
+  ```
+  echo [options] [message]
+  ```
+
+* options
+  * `-n` - 메세지 출력 후 newline 문자를 추가하지 않는다
+  * `-e` - backslash escapes문자를 해석하여 특별한 의미를 지정한다
+    * `\t` - TAB 키
+    * `\n` - 줄 바꿈
+    * `\a` - alert(bell)
+
+* example
+  ```
+  echo 'hello linux'
+  echo 'Your time is up > time.txt'
+  echo -n "Name:"
+  echo -e "First\tSecond"
+  ```
+
+### 7.2 read
+* reads text from standard input
+  ```
+  read [opitons] [variable name]
+  ```
+
+* options
+  * `-n` - 지정한 문자수만큼 입력 받는다
+  * `-t` - 지정된 시간안에 입력 받는다
+  * `-s` - silent mode로 입력하는 글자가 보이지 않는다.
+
+* read 명령에서 변수 명 생략 시 기본 REPLY 변수에 채워진다.
+
+* example
+  ```
+  read name score
+  # 변수 값 입력
+  lee 80
+  echo $name $score
+  read -t10 -n8 password
+  read -t10 -n8 -s password
+  read
+  echo -n 'Name: '; read name
+  ```
+
+## 7.3 printf
+* 서식 format에 맞춰서 출력할 수 있는데, C언어의 printf 함수와 동일
+  ```
+  printf [format] [message]
+  ```
+
+* format
+  * `%d or %i` - 숫자
+  * `%s` - 문자열
+  * `%f` - 실수형 숫자
+
+* example
+  ```
+  printf 'hello linux shell\n'
+  printf 'Name: %s \t Score: %i\n' lee 90
+
+  today=`date +%Y%m%d`
+  printf 'date is %s\n' $today
+  
+  printf 'number is %.3f\n' 20
+  # %10s는 10글자 칸 맞춰서 출력. %10.2f 10글자 칸 맞춰서 소수점 2번째자리 까지 출력
+  printf |%10s|%10s|%10.2f\n' ubuntu lee 10
+  printf |%-10s|%-10s|%10.2f\n' ubuntu lee 10
+  ```
