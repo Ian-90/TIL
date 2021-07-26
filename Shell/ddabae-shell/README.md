@@ -368,3 +368,141 @@ df (-h) 명령어
   printf |%10s|%10s|%10.2f\n' ubuntu lee 10
   printf |%-10s|%-10s|%10.2f\n' ubuntu lee 10
   ```
+
+## 8. Branching
+### 8.1 exit
+* 실행된 프로그램이 종료된 상태를 전달
+  ```bash
+  exit [숫자]
+  ```
+  * 0 - 프로그램 또는 명령이 성공으로 종료했음을 의미
+  * 1 ~ 255 - 프로그램 또는 명령이 실패로 종료했음을 의미
+    * 1 - 일반 에러
+    * 2 - Syntax error
+    * 126 - 명령을 실행할 수 없음
+    * 127 - 명령(파일)이 존재하지 않음
+    * 128 + N - 종료 시그널 + N(kill -9 PID로 종료시 128+9=137)
+
+* 종료 코드 값 출력
+  ```bash
+  $?
+  ```
+
+* example
+  ```bash
+  cp file1
+  echo $?
+  sleep 100
+  # Ctrl + c
+  echo $?
+  ```
+
+### 8.2 test
+* 비교 연산자
+  ```
+  test <명령어>
+  ## or
+  [ 명령어 ]
+  ```
+* 명령어 실행결과를 true(0) 또는 false(1)로 리턴한다
+* test 명령어는 다양한 연산자를 지원한다
+  | 연산자 | 설명 |
+  |------|-----|
+  |`x -eq y`| x값과 y값이 같으면 true를 리턴|
+  |`x -gt y`| x값이 y값보다 크면 true를 리턴|
+  |`x -ge y`| x값과 y값보다 크거나 같으면 true를 리턴|
+  |`x -lt y`| x값이 y값보다 작으면 true를 리턴|
+  |`x -le y`| x값이 y값보다 작거나 같으면 true를 리턴|
+  |`x -ne`| x값과 y값이 같지 않으면 true를 리턴|
+  |`-e file`| 파일이 존재하면 true를 리턴|
+  |`-d file`| 파일이 디렉토리이면 true를 리턴|
+  |`-f file`| 파일이 디렉토리이면 true를 리턴|
+  |`-x file`| 파일이 디렉토리이면 true를 리턴|
+
+* 기본 산술 연산 명령어
+  ```bash
+  let
+  expr
+  ```
+
+* example
+  ```bash
+  x=10
+  ## [ $x -lt 5 ]
+  test $x -lt 5
+  echo $?
+  ## [ $x -gt 5 ]
+  test $x -gt 5
+  echo $?
+  ## [ -e /etc/passwd ]
+  test -e /etc/passwd
+  ## [ -f /tmp ]
+  test -f /tmp
+  ```
+
+### 8.3 if-then-fi
+* 조건 명령어. command 실행 결과에 따라 서로 다른 command를 실행
+  ```bash
+  if command
+  then
+    command1
+  else
+    commnad2
+  fi
+  ```
+
+* example
+  * if-exam1.sh
+  ```bash
+  #!/bin/bash
+  echo -n "input number: "
+  read x
+  if test $x -gt 5
+  then
+    echo "x is greater than 5"
+  fi
+  ```
+
+  * if-exam2.sh - `/etc/passwd` 입력 해보기
+  ```bash
+  #!/bin/bash
+  echo -n "input filename: "
+  read filename
+  if [ -e $filename ]
+  then
+    ls -l $filename
+  else
+    echo "$filename file does not exist"
+  fi
+  ```
+
+  * 실습
+  ```
+  chmod -x if-exam1.sh
+  if-exam1.sh
+
+  chmod -x if-exam2.sh
+  if-exam2.sh
+  ```
+
+### 8.4 case
+* $var의 값에 따라 선택해서 명령어를 실행
+  ```bash
+  case "$variable" in
+    pattern1) command1 ;;
+    pattern2) command2 ;;
+    *) command3 ;;
+  esac
+  ```
+
+* example
+  * case-exam1.sh
+  ```bash
+  echo -n "What do you want?"
+  read answer
+  case $answer in
+    [yY]es) echo "System restart.";;
+    [nN]o) echo "shutdown the system";;
+    *) echo "entered incorrectly";;
+  esac
+  ```
