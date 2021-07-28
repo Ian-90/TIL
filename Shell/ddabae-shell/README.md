@@ -506,3 +506,111 @@ df (-h) 명령어
     *) echo "entered incorrectly";;
   esac
   ```
+
+## 9. looping
+### 9.1 산술연산 expr, let
+* expr - 정수형 산술연산(+, -, *, /, %), 논리연산(|, &), 관계연산(=, !=, >, >=, <, <=)
+  ```bash
+  expr 10 + 5
+  expr 5 '*' 2
+  expr 25 '/' 5
+  expr 25 % 5
+  x=5
+  expr $x > 4
+  sum=`expr $x + 10`
+  sum=$(expr $x + 10)
+  ```
+
+* let - 정수형 산술연산, bit 연산(<<, >>, &, |), 논리연산(&&, ||), 단항연산(++, +=, -=)
+  ```bash
+  let sum=x+5
+  let x++
+  let x+=1
+  ((sum=x+5))
+  ((x++))
+  ((x-=1))
+  ```
+
+### 9.2 while and until loop
+* while - while 다음의 command가 **성공하는 동안** do ~ done 사이의 명령어를 반복 실행
+  ```bash
+  while 조건명령어
+  do
+    반복명령어
+  done
+
+  num=1
+  while test $num -le 5
+  do
+    echo Number: $num
+    ((num++))
+  done
+  ```
+* until - until 다음의 command가 **성공할 때 까지** do ~ done 사이의 명령어를 반복 실행
+  ```bash
+  until 조건명령어
+  do
+    반복명령어
+  done
+
+  num=1
+  until test $num -gt 5
+  do
+    echo Number: $num
+    ((num++))
+  done
+  ```
+
+* example
+  * `getend passwd [유저명]` - /etc/passwd 파일에서 유저를 검색
+  * newuser.sh - 계정 생성
+  ```bash
+  #!/bin/bash
+  # Description: Create a user account
+  echo -n "New username:"
+  read username
+  while getent passwd $username &> /dev/null
+  do
+    echo "Sorry, that account $username is already taken. Please pick a different username."
+    echo -n "New username:"
+    read username
+  done
+  sudo useradd -m -s /bin/bash $username
+  ```
+
+### 9.3 for-loop
+* 주어진 list 만큼 do ~ done 사이의 명령어를 반복 실행
+  ```
+  for item in [LIST]
+  do
+    [COMMAND]
+  done
+  ```
+
+* 사용 형식
+  ```bash
+  for NUM in 1 2 3 4 5 6 7 8 9 10
+  do
+    echo $NUM
+  done
+
+  for NUM in $(seq 10)
+  do
+    echo $NUM
+  done
+
+  for file in *
+  do
+    ls $file
+  done
+
+  if [! -d ~/backup]
+  then
+    mkdir ~/backup
+  fi
+  for FILE in *
+  do
+    cp $FILE ~/backup/$FILE.old
+  done
+  ```
+  
