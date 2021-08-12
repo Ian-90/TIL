@@ -125,3 +125,16 @@
 
 ## 17. vimrc 설정하기
 * 영구적 환경설정 저장
+
+## 18. Cheat Sheet
+* 구글에서 vim cheat sheet 검색
+
+## 19. Vim Tutor
+* vim 에디터에 같이 설치됨
+* linux에서는 vimtutor 엔터로 실행
+
+## 20. Vim Adventures
+* [vim을 익히면서 배우는 게임](https://vim-adventures.com/)
+
+## 21. Vim Golf
+* [VimGolf](https://www.vimgolf.com/) - 사용자가 문제를 내면 최소한의 키스트로크로 문제를 풀어서 랭킹 매기는법
