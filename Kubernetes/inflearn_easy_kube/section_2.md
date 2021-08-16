@@ -46,3 +46,9 @@
 * 가상머신 더블클릭
   * root/vargrant
   * kubectl get nodes
+
+## 3. 쿠버네티스 랩을 쉽게 접근하기 위한 터미널 구성
+* Supper Putty - Putty에 접근하는 용도
+* Putty - 각 노드의 세션 정보를 저장하고 세션에 접속 할 수 있도록 해주는 터미널
+* [Puttiy 설치](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+* [Super Putty 설치](https://github.com/jimradford/superputty/releases)
