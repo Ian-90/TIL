@@ -88,3 +88,79 @@ setTimeout(_ => {
   obs2$.subscribe(item => console.log(item))
 }, 20000)
 ```
+
+## 2. Observer(구독자)에게 발행물 구독시키기
+### 2.1 구독자 만들기
+```js
+const { from } = rxjs
+// 옵저버블을 표현할 때 끝에 $을 붙이는게 reactiveX 프로그래밍을 하는사람들 사이의 많이 쓰이는 컨벤션
+const observable$ = from([1, 2, 3, 4, 5])
+
+// 구독자 생성
+const observer = {
+  // 구독자가 하는 일 들
+  next: console.log,
+  error: err => console.error('발행중 오류', err),
+  complete: () => console.log('발행물 완결'),
+}
+
+// 구독시키기
+// 방법 1
+observable.subscribe(observer)
+
+// 방법 2 - 순서는 지켜야 한다.
+observable$.subscribe(
+  console.log,
+  err => console.error('발행중 오류', err),
+  _ => console.log('발행물 완결')
+)
+```
+
+### 2.2 Error와 Complete 살펴보기
+* Error - 발행중 오류가 나면 next, complete가 실행되지 않는다.
+```js
+const { Observable } = rxjs
+
+const obs$ = new Observable(subscriber => {
+  subscriber.next(1)
+  subscriber.next(2)
+  subscriber.next(3)
+  (null)[0]
+  subscriber.next(4)
+})
+
+obs$.subscribe(
+  console.log,
+  err => console.error('발행중 오류', err),
+  _ => console.log('발행물 완결')
+)
+```
+
+* Complete - 중간에 complete가 선언되면 더이상 실행되지 않는다. complete를 실행해줘야 메모리가 낭비 되지 않는다
+```js
+const { Observable } = rxjs
+
+const obs$ = new Observable(subscriber => {
+  subscriber.next(1)
+  subscriber.next(2)
+  subscriber.next(3)
+  subscriber.complete()
+  subscriber.next(4)
+})
+
+obs$.subscribe(
+  console.log,
+  err => console.error('발행중 오류', err),
+  _ => console.log('발행물 완결')
+)
+```
+
+* 구독 해제하기 - 여러 구독자가 있을 때, 특정 구독자를 해제할 떄 사용한다
+```js
+const { interval } = rxjs
+
+const obs$ = interval(1000)
+const subscription = obs$.subscribe(console.log)
+
+setTimeout(_ => subscription.unsubscribe(), 5500)
+```
