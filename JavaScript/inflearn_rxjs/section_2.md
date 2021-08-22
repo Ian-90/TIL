@@ -164,3 +164,18 @@ const subscription = obs$.subscribe(console.log)
 
 setTimeout(_ => subscription.unsubscribe(), 5500)
 ```
+
+## 3. Operator 사용해보기
+### 3.1 Creation operator
+* Observable을 생성
+  * of, from, range, fromEvent, timeout, interval, ...
+* rxjs에서 로드
+
+### 3.2 Pipable operator
+* Observable의 데이터를 pure function으로 가공
+* rxjs.operators에서 로드(map, filter, ...)
+* pipe 함수에 하나 이상 넣어 연결
+* [참고영상](https://www.youtube.com/watch?v=jVG5jvOzu9Y)
+
+### 3.3 마블 다이어그램 읽기
+![마블 다이어 그램](./assets/marble-diagram.png)
