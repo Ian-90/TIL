@@ -15,3 +15,20 @@
   * 각국 사정에 맞게 현지화하여 매장 쇼룸의 룸 세트에 배치
   * 사용 메뉴얼 디자인 - 글이 아닌 그림으로 이해하기 쉬운 메뉴얼 제공
   * 레스토랑은 상품을 파는 하나의 체험의 장
+
+* 예시 - 애플
+  * 애플로고 - 황금비/삼등분의 법칙 적용
+  * 비용보다는 사용자 경험 - 럭셔리 외장제/내장제 사용
+  * ios UI 디자인
+
+* 좋은 UXUI 디자인 원칙
+  1. Less is more, Less but better - 심플한 것이 좋다
+  2. Sustainable - 지속 가능성
+  3. Understandable - 이해하기 쉬운
+  4. Well-Balanced - 잘 균형 잡힌
+  5. Hierarchy - 하이러키(우선순위)
+  6. Chunk & grouping - 그룹
+  7. well-Organized - 잘 정리된
+  8. Highlighthing - 강조
+  9. Affordance / Guide - 어퍼던스 / 안내
+  10. Details - 세심하게
