@@ -67,3 +67,116 @@ from([
     tap(x => console.log('중복 제거 후: ' + x)),
 ).subscribe(x => console.log('발행물: ' + x))
 ```
+## 2. Transformation 연산자들
+* 파이프라인을 통과하는 각 값들을 내가 원하는 일정방식으로 변경해서 내보내는 연산자
+
+### 2.1 map
+* js의 array의 기본기능이며, 주어진 인자를 내가 원하는 형태로 반환
+```js
+const { of } = rxjs
+const { map } = rxjs.operators
+
+of(1, 2, 3, 4, 5).pipe(
+    map(x => x * x)
+).subscribe(console.log)
+
+const { from } = rxjs
+const { map } = rxjs.operators
+
+from([
+    { name: 'apple', price: 1200 },
+    { name: 'carrot', price: 800 },
+    { name: 'meat', price: 5000 },
+    { name: 'milk', price: 2400 }
+]).pipe(
+    map(item => item.price)
+).subscribe(console.log)
+```
+
+### 2.2 pluck
+* 특정객체에서 특정항목만 뽑아내는 연산자
+```js
+const { from } = rxjs
+const { pluck } = rxjs.operators
+
+const obs$ = from([
+    { name: 'apple', price: 1200, info: { category: 'fruit' } },
+    { name: 'carrot', price: 800, info: { category: 'vegetable' } },
+    { name: 'pork', price: 5000, info: { category: 'meet' } },
+    { name: 'milk', price: 2400, info: { category: 'drink' } }
+])
+
+obs$.pipe(
+    pluck('price')
+).subscribe(console.log)
+
+obs$.pipe(
+    pluck('info'),
+    pluck('category'),
+).subscribe(console.log)
+// 순서대로 적어주면 위와 같이 동작
+obs$.pipe(
+    pluck('info', 'category')
+).subscribe(console.log)
+
+// ajax 요청에서 많이 사용
+const { ajax } = rxjs.ajax
+const { pluck } = rxjs.operators
+
+const obs$ = ajax(`http://api.github.com/search/users?q=user:mojombo`).pipe(
+    pluck('response', 'items', 0, 'html_url')
+)
+obs$.subscribe(console.log)
+```
+
+### 2.3 toArray
+* 연속되는 일련의 값들을 한 배열로 묶어서 내보내는 연산자
+```js
+const { range } = rxjs
+const { toArray, filter } = rxjs.operators
+
+range(1, 50).pipe(
+    filter(x => x % 3 === 0),
+    filter(x => x % 2 === 1),
+    toArray()
+).subscribe(console.log)
+```
+
+### 2.4 scan
+* 과정 하나하나를 다 출력할 때 사용되며, 값들을 어떤 배열에 붙여나가거나 한 오브젝트를 따로 둬서 그 항목에 하나씩 카운트를 늘게 만들기도 하며, 다양하게 사용된다
+```js
+const { of } = rxjs
+const { reduce, scan } = rxjs.operators
+
+const obs$ = of(1, 2, 3, 4, 5)
+
+// reduce - 결과만 발행
+obs$.pipe(
+    reduce((acc, x) => { return acc + x }, 0)
+).subscribe(x => console.log('reduce: ' + x))
+
+// scan - 과정을 모두 발행
+obs$.pipe(
+    scan((acc, x) => { return acc + x }, 0)
+).subscribe(x => console.log('scan: ' + x))
+```
+
+### 2.5 zip
+* 스트림의 데이터들을 엮어서 배열로 내보내는 연산자. 스트림중 개수가 가장 적은 것에 맞춰서 배열로 내보낸다.
+```js
+const { from, interval, fromEvent, zip } = rxjs
+const { pluck } = rxjs.operators
+
+const obs1$ = from([1, 2, 3, 4, 5])
+const obs2$ = from(['a', 'b', 'c', 'd', 'e'])
+const obs3$ = from([true, false, 'F', [6, 7, 8], { name: 'zip' }])
+
+zip(obs1$, obs2$).subscribe(console.log) // [1, 'a'], [2, 'b'], ..., [5, 'e']
+
+const obs1$ = from([1, 2, 3, 4, 5, 6, 7])
+
+const obs4$ = interval(1000)
+const obs5$ = fromEvent(document, 'click').pipe(pluck('x'))
+
+zip(obs4$, obs5$).subscribe(console.log)
+```
