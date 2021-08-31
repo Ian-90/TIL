@@ -546,3 +546,72 @@ ajax('http://127.0.0.1:3000/people/name/random').pipe(
     }))
 ).subscribe(console.log, console.error)
 ```
+
+## 5. 시간을 다루는 연산자들 2
+### 5.1 time이 붙은 연산자들
+* 준비코드 - 클릭할 때, 시간차를 누적해서 보여주는 것
+```js
+const { fromEvent } = rxjs
+const { timeInterval, pluck, scan, tap } = rxjs.operators
+
+const clicks$ = fromEvent(document, 'click').pipe(
+    timeInterval(),
+    pluck('interval'),
+    scan((acc, i) => acc + i, 0),
+    tap(x => console.log('CLICKED: ' + x))
+)
+
+clicks$.subscribe()
+```
+
+* debounceTime - 일정시간동안 다음값이 나오지 않아야 마지막값이 시간이 지난 후 출력. 검색창에서 무언가 검색을 할 때, 일련의 요청을 하는 것 같은 작업을 할 때 자주 사용 된다.
+```js
+const { debounceTime } = rxjs.operators
+
+clicks$.pipe(
+    debounceTime(1000)
+).subscribe(x => console.log('OUTPUT: -------- ' + x))
+```
+
+* auditTime - 특정값이 발행되고나서 시간이 지나면 그값 또는 그이후에 생성된 마지막값이 출력.
+```js
+const { auditTime } = rxjs.operators
+
+clicks$.pipe(
+    auditTime(1000)
+).subscribe(x => console.log('OUTPUT: -------- ' + x))
+```
+
+* sampleTime - 어떤 값을 출력하면, 그 다음에 바로 오는 값을 출력. 언제 값을 입력하던 특정시간 간격으로 출력이 되도록 하고 싶을 때 사용.
+```js
+const { sampleTime } = rxjs.operators
+
+clicks$.pipe(
+    sampleTime(1000),
+    timeInterval()
+).subscribe(x => console.log('OUTPUT: -------- ' + x.value + ' :' + x.interval))
+```
+
+* throttleTime
+    * `leading: true` - 어떤 값이 입력될 때 마다 무조건 그 값을 출력. 그 이후 주어진 시간이 지나기 전까지는 값을 출력하지 않음.
+        ```js
+        const { throttleTime } = rxjs.operators
+
+        clicks$.pipe(
+            throttleTime(1000, undefined, { 
+                leading: true, trailing: false 
+            })
+        ).subscribe(x => console.log('OUTPUT: -------- ' + x))
+        ```
+    * `trailing: true` - 어떤 값이 입력될 때 마다 무조건 뒤에 값을 출력. 
+        ```js
+        const { throttleTime } = rxjs.operators
+
+        clicks$.pipe(
+            throttleTime(1000, undefined, { 
+                leading: false, trailing: true 
+            })
+        ).subscribe(x => console.log('OUTPUT: -------- ' + x))
+        ```
+
+### 5.2 time이 붙지 않은 연산자들
