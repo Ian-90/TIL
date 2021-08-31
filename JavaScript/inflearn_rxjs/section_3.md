@@ -615,3 +615,45 @@ clicks$.pipe(
         ```
 
 ### 5.2 time이 붙지 않은 연산자들
+```js
+const { fromEvent, interval } = rxjs
+const { debounce, audit, pluck } = rxjs.operators
+
+fromEvent(document, 'click').pipe(
+	pluck('y'),
+	debounce(y => interval(y * 10))
+).subscribe(console.log);
+
+fromEvent(document, 'click').pipe(
+	pluck('y'),
+	audit(y => interval(y * 10))
+).subscribe(console.log);
+
+const { BehaviorSubject, fromEvent, interval } = rxjs
+const { debounce, tap } = rxjs.operators
+
+const bs = new BehaviorSubject(1000)
+
+fromEvent(document, 'click').pipe(
+    tap(_ => console.log(bs.getValue())),
+    debounce(e => interval(bs.getValue())),
+    tap(_ => bs.next(bs.getValue() + 500))
+).subscribe(_ => console.log('CLICK'));
+
+const { fromEvent, interval } = rxjs
+const { sample } = rxjs.operators
+
+interval(1000).pipe(
+	sample(fromEvent(document, 'click'))
+).subscribe(console.log);
+
+
+const { fromEvent, interval } = rxjs
+const { throttle, timeInterval, pluck } = rxjs.operators
+
+fromEvent(document, 'click').pipe(
+	throttle(e => interval(1000)),
+    timeInterval(),
+    pluck('interval')
+).subscribe(console.log);
+```
