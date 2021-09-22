@@ -100,3 +100,9 @@
   * 개선 아이디어 & 브랜드 적용 안
     * 개선 - 사진청소기 앱처럼 유사도를 선택할 수 있는 기능
     * 브랜드 - 담당하는 브랜드에 착용할 점은 없다.
+  
+## 9. 디자인 패턴 참고사이트 4종!
+* wwit.design
+* mobbin.design
+* www.gdweb.co.kr/main/index.asp
+* www.dbcut.com/bbs/index.php
