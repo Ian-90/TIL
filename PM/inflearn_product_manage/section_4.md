@@ -106,3 +106,18 @@
 * mobbin.design
 * www.gdweb.co.kr/main/index.asp
 * www.dbcut.com/bbs/index.php
+
+## 10. Admin 사이트 구축 프로세스 & 템플릿
+* 프로세스
+  * 범위산출
+    * 마인드 맵
+    * 사이트 맵, IA 정리
+  * 설계
+    * 기능정의
+    * Flowchart
+    * UI 설계
+  * 디자인/퍼블리싱
+  * 개발
+* 템플릿
+  * [metronic](https://keenthemes.com/metronic/)
+  * [envato market](https://themeforest.net/)
