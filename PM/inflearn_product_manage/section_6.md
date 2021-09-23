@@ -49,3 +49,9 @@
 * LOGO 디자인
 * 구글 애널리틱스, 구글 애드센스 적용
 * 사이트 오픈
+
+## 3. 국내 스타트업, 투자사 동향을 파아할 때 참고하기 좋은 서비스 3
+* [STARTUP WEEKLY 뉴스레터](http://glance.media/subscription/subscribe)
+* [더브이씨 (THE VC)](https://thevc.kr) - 투자사 정보
+* [누구머니](https://nugu.money) - 스타트업 창업자들이 남기는 VC 평판 및 리뷰
+
