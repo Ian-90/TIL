@@ -55,3 +55,5 @@
 * [더브이씨 (THE VC)](https://thevc.kr) - 투자사 정보
 * [누구머니](https://nugu.money) - 스타트업 창업자들이 남기는 VC 평판 및 리뷰
 
+## 4. 마케팅 담당자들의 필수 구독 매체, 나스리포트!
+* [나스미디어](https://www.nasmedia.co.kr)
