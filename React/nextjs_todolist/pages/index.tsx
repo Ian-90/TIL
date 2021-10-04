@@ -1,6 +1,7 @@
-import { NextPage } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import TodoList from '../components/TodoList'
 import { TodoType } from '../types/todo'
+import { getTodosAPI } from '../lib/api'
 
 const todos: TodoType[] = [
   {
@@ -47,6 +48,15 @@ const App: NextPage = () => {
       <TodoList todos={todos} />
     </div>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  try {
+    const { data } = await getTodosAPI()
+    return { props: { todos: data } }
+  } catch (e) {
+    return { props: {} }
+  }
 }
 
 export default App

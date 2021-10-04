@@ -1,9 +1,11 @@
-import { FC, useCallback, useMemo } from 'react'
+import { FC, useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { TodoType } from '../../types/todo'
 import palette from '../../styles/palette'
 import TrashCanIcon from '../../public/svg/trash_can.svg'
 import CheckMarkIcon from '../../public/svg/check_mark.svg'
+import { checkTodoAPI, deleteTodoAPI } from '../../lib/api'
+
 
 interface ITodoList {
   todos: TodoType[]
@@ -131,6 +133,7 @@ const Container = styled.div`
 `
 
 const TodoList: FC<ITodoList> = ({ todos }) => {
+  const [localTodos, setLocalTodos] = useState(todos)
   const getTodoColorNums = useCallback(() => {
     let red = 0
     let orange = 0
@@ -139,7 +142,7 @@ const TodoList: FC<ITodoList> = ({ todos }) => {
     let blue = 0
     let navy = 0
   
-    todos.forEach((todo) => {
+    localTodos.forEach((todo) => {
       switch (todo.color) {
         case "red":
           red += 1
@@ -172,16 +175,14 @@ const TodoList: FC<ITodoList> = ({ todos }) => {
       blue,
       navy,
     }
-  }, [todos])
-
-  const todoColorNums = useMemo(getTodoColorNums, [todos])
+  }, [localTodos])
 
   type ObjectIndexType = {
     [key: string]: number | undefined
   }
-  const todoColorNums2 = useMemo(() => {
+  const todoColorNums = useMemo(() => {
     const colors: ObjectIndexType = {}
-    todos.forEach((todo) => {
+    localTodos.forEach((todo) => {
       const value = colors[todo.color]
       if (!value) {
         colors[`${todo.color}`] = 1
@@ -190,7 +191,34 @@ const TodoList: FC<ITodoList> = ({ todos }) => {
       }
     })
     return colors
-  }, [todos])
+  }, [localTodos])
+
+  const checkTodo = async (id: number) => {
+    try {
+      await checkTodoAPI(id);
+      const newTodos = localTodos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, checked: !todo.checked }
+        }
+        return todo
+      })
+      setLocalTodos(newTodos)
+      console.log("체크하였습니다.");
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const deleteTodo = async (id: number) => {
+    try {
+      await deleteTodoAPI(id)
+      const newTodos = localTodos.filter((todo) => todo.id !== id)
+      setLocalTodos(newTodos)
+      console.log('삭제했습니다.')
+    } catch (e) {
+      console.log(e)
+    }
+  }
   return (
     <Container>
       <div className='todo-list-header'>
@@ -218,15 +246,15 @@ const TodoList: FC<ITodoList> = ({ todos }) => {
             <div className='todo-right-side'>
               {todo.checked && (
                 <>
-                  <TrashCanIcon className='todo-trash-can' />
-                  <CheckMarkIcon className='todo-check-mark' />
+                  <TrashCanIcon className='todo-trash-can' onClick={() => deleteTodo(todo.id)} />
+                  <CheckMarkIcon className='todo-check-mark' onClick={() => checkTodo(todo.id)} />
                 </>
               )}
               {!todo.checked && (
                 <button
                   type='button'
                   className='todo-button'
-                  onClick={() => {}}
+                  onClick={() => checkTodo(todo.id)}
                 >
                   
                 </button>
