@@ -2,3 +2,4 @@
 
 * 5장 todolist 만들기
 * 6장 next api
+* 7장 리덕스

@@ -3,6 +3,7 @@ import GlobalStyle from '../styles/GlobalStyle'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import axios from 'axios'
+import { wrapper } from '../store'
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL
 
@@ -17,4 +18,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp)
