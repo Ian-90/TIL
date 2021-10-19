@@ -52,3 +52,19 @@
       * overdue - 기한이 지난 이슈 표시
       * created:생성일 - 이슈가 생성된 날짜로 검색(created:today, created:-2w)
       * updated:생성일 - 생성일에 내용이 변경된 이슈(updated:yesterday)
+
+## 5. JIRA 고급 검색 - JQL #1 - 기본 검색 구문 및 함수
+* JQL(JIRA Query Language) - 지라에서 제공하는 검색용 언어
+  * 어려운 검색 같은 것은 ui로 표현하기 힘들기 때문에 쿼리를 사용
+  * 검색구문과 정렬구문으로 나뉘어짐
+    * ex - 검색구문(project = TODO_K8), 정렬 구문(order by creted DESC)
+    ```
+    project = TODO_K8 order by creted DESC
+    ```
+    * 검색구문
+      * 필드 이름, 연산자, 필드 값으로 이루어짐
+      * 함수 사용도 가능 (ex. `assignee = currentUser()`)
+        * `sprint in closedSprint()` - 종료한 스프린트 목록
+        * `updated > -2w and updated < -3d` - 변경일이 2주전과 3일전 사이의 모든 목록
+        * `created > = startofMonth(-1) and created < = endofMonth(+3)` - 지난달과 3번째 달까지 생성된 모든 목록
+        * `due > = startofWeek(1) and due < = endofWeek(2)` - 이슈 만료기한이 다음주와 다다음주 모든 이슈 목록
