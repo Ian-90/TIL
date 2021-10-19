@@ -68,3 +68,28 @@
         * `updated > -2w and updated < -3d` - 변경일이 2주전과 3일전 사이의 모든 목록
         * `created > = startofMonth(-1) and created < = endofMonth(+3)` - 지난달과 3번째 달까지 생성된 모든 목록
         * `due > = startofWeek(1) and due < = endofWeek(2)` - 이슈 만료기한이 다음주와 다다음주 모든 이슈 목록
+
+## 6. JIRA 고급 검색 - JQL #2 - 연산자와 키워드
+* 연산자 - 필드 이름과 필드 값 사이에 적어주며 어떤 조건으로 필드 값을 사용할 지를 의미
+  * `~`
+    * 특정 문자열 검색
+    * `text ~ "웹 서버"` - 웹 서버라는 단어를 포함하는 모든 이슈 검색(!를 붙이면 제외한 이슈 검색)
+  * `is`
+    * empty()나 null() 함수와 같이 사용
+    * `fixVersion is empty`
+  * `in`
+    * 여러 개의 필드 값이 있을 경우 사용
+    * `project in (TODO_KB, TODO_SCRUM)`
+
+* 키워드 - bool 연산자로 여러 구문을 연결하는데 사용
+  * `and` - 여러 구문 연결
+    * `project = TODO_KB and status = "to do"`
+  * `or`
+    * `reporter = 백엔드개발자 or reporter = currentUser()`
+  * `not`
+    * `not assignee = newUser`
+* 예약어를 사용한다면 따옴표로 묶어서 사용
+* 자동완성 기능
+  * 필드의 앞자리만 입력하면, 자동완성이 나타난다
+  * 최대 15개까지만 표시
+  * 필드이름과 값사이에 연산자도 필드 이름에 따라 자동완성이 나타난다
