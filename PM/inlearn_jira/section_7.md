@@ -93,3 +93,22 @@
   * 필드의 앞자리만 입력하면, 자동완성이 나타난다
   * 최대 15개까지만 표시
   * 필드이름과 값사이에 연산자도 필드 이름에 따라 자동완성이 나타난다
+
+## 7. JIRA 고급 검색 - JQL #3 - history 검색과 사용
+* jql 검색시, 사용자를 지정해야하는 경우 atlansian id로 변경해야 됨
+* was와 changed - history 필드를 이용하여 검색
+* changed에서 가능한 키워드
+  * `AFTER "date"` - 기간 지정
+  * `BEFORE "date"` - 기간 지정
+  * `BY "username"` - 변경자 지정
+  * `DURING ("date1","date2")` - 시작일과 종료일 명시
+  * `ON "date"`
+  * `FROM "oldvalue"`
+  * `TO "newvalue"`
+
+* was에서 가능한 키워드
+  * `AFTER "date"` - 기간 지정
+  * `BEFORE "date"` - 기간 지정
+  * `BY "username"` - 변경자 지정
+  * `DURING ("date1","date2")` - 시작일과 종료일 명시
+  * `ON "date"`
