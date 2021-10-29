@@ -12,3 +12,14 @@
   ```
   node -v
   ```
+
+## 3. package.json 파일 작성하기
+* package.json - 프로젝트의 정보와 프로젝트에서 사용 중인 패키지의 의존성을 관리하는 곳
+  * 생성
+    ```
+    npm init
+    ```
+  * 패키지 추가
+    ```
+    yarn add express jest mongoose node-mocks-http supertest -D
+    ```
