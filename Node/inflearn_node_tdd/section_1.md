@@ -23,3 +23,6 @@
     ```
     yarn add express jest mongoose node-mocks-http supertest -D
     ```
+
+## 4. server.js 파일 작성하기
+* `express_tdd/server.js` 작성
