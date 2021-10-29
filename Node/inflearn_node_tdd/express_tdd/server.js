@@ -3,6 +3,7 @@ const PORT = 5000
 const HOST = '0.0.0.0'
 
 const app = express()
+app.use(express.json())
 
 app.get('/', (req, res) => {
   res.send('Hello World')

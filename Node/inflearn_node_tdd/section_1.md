@@ -26,3 +26,12 @@
 
 ## 4. server.js 파일 작성하기
 * `express_tdd/server.js` 작성
+
+## 5. express.json()
+* Post 요청으로 들어오는 Body 부분을 받기 위해 `express.json()` 추가
+* `express.json()`은 bodyParser 모듈이다
+* 사용법
+```js
+...
+app.use(express.json())
+```
