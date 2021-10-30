@@ -140,3 +140,33 @@ app.use(express.json())
   * `it` - 개별 테스트를 수행하는 곳
   * `expect` - 값을 테스트할 때 마다 사용
   * `matcher` - 다른 방법으로 값을 테스트
+
+## 12. jest.fn()
+* jest.fn이란?
+  * Mock 함수를 생성하는 함수
+  * 단위테스트를 작성할 때, 해당 코드가 의존하는 부분을 가짜로 대체하는 일을 해줌
+
+* 단위 테스트는 왜 독립적이어야 하나요?
+  * 의존적인 부분을 구현하기가 까다로울 경우가 있으며, 의존적인 부분의 상태에 따라서 테스트하고자 하는 부분의 테스트 결과가 영향을 받을 수 있기 때문
+
+* jest.fn을 이용해서 가짜 함수를 생성하여 의존적인 부분으로 인해 영향을 받는 테스트 상황을 해결 가능
+* jest.fn이 생성한 가짜 함수는 어떤 일들이 발생했는지, 어떻게 호출되는지 기억하기 때문에, 이 함수가 내부적으로 어떻게 사용되는지 검증 가능(spy 역할)
+
+* jest.fn 기본 사용법
+  ```js
+  // 1. mock 함수 생성
+  const mockFunction = jest.fn()
+
+  // 2. 인자를 넘겨서도 호출 가능
+  mockFunction('hello')
+
+  // 3. 반환값을 알려주기
+  mockFunction.mockReturnValue('가짜 함수 반환')
+
+  // 4. 몇번 호출, 어떤 인자가 넘어왔는지 검증
+  mockFuntion('hello')
+  mockFuntion()
+  
+  expect(mockFunction).toBeCalledWith('hello')
+  expect(mockFunction).toBeCalledTimes(2)
+  ```
