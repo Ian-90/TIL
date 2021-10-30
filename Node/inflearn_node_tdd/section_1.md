@@ -35,3 +35,28 @@
 ...
 app.use(express.json())
 ```
+
+## 6. route, controller 생성
+* 많이 사용하는 구조
+  * 복잡한 애플리케이션
+    * `Routers 폴더`
+      * 각 route 파일들
+    * `Controllers 폴더`
+      * 각 controller 파일들
+
+  * 간단한 애플리케이션
+    * `routes.js`
+    * `Controllers 폴더`
+
+  * 구현 방법
+  ```js
+  const router = express.Router()
+
+  // 라우터 미들웨어 함수 로드
+  router.get('/', (req, res) => {
+    // controller 로직
+  })
+
+  // 기본앱에 라우터 모듈 마운트
+  app.use('url', router module)
+  ```
