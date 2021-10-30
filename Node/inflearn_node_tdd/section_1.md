@@ -119,3 +119,24 @@ app.use(express.json())
 
   * 단위 테스트 - `*.test.js`
   * 통합 테스트 - `*.test.int.js`
+
+## 11. Jest 파일 구조 및 사용법
+* Jest 파일 구조
+  ```js
+  describe('name', () => {
+    it('test case1', () => {
+      expect('테스트 값').toBe('예상값')
+    })
+
+
+    it('test case2', () => {
+      expect('테스트 값').toBe('예상값')
+    })
+
+    ...
+  })
+  ```
+  * `describe` - 테스트를 그룹화
+  * `it` - 개별 테스트를 수행하는 곳
+  * `expect` - 값을 테스트할 때 마다 사용
+  * `matcher` - 다른 방법으로 값을 테스트
