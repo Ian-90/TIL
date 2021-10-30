@@ -60,3 +60,12 @@ app.use(express.json())
   // 기본앱에 라우터 모듈 마운트
   app.use('url', router module)
   ```
+
+## 7. MongoDB 클러스터 생성
+* 몽고 DB 회원가입 후 Cluster 생성
+  * 한국은 무료버전이 없어서, 싱가폴 선택
+  * 클러스터 티어 설정
+  * 클러스터 이름 설정
+* MongoDB 유저 생성
+  * 클러스터에서 connect 클릭
+  * 이름과 비밀번호 입력 후, 유저 생성

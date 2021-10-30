@@ -5,8 +5,16 @@ const HOST = '0.0.0.0'
 
 const app = express()
 const productRoutes = require('./routes')
-app.use(express.json())
+const mongoose = require('mongoose')
 
+mongoose.connect('mongodb cluster 주소', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log('MongoDB Connected...'))
+  .catch(err => console.log(err))
+
+app.use(express.json())
 app.use('/api/products', productRoutes)
 
 app.get('/', (req, res) => {
