@@ -69,3 +69,13 @@ app.use(express.json())
 * MongoDB 유저 생성
   * 클러스터에서 connect 클릭
   * 이름과 비밀번호 입력 후, 유저 생성
+
+## 8. 몽구스 Model, Schema 생성
+* 몽구스(mongoose)란?
+  * 몽고DB 사용을 위한 다양한 기능을 추가하고 몽고 DB를 더 편리하게 이용하기 위해서 사용하는 모듈
+  * 몽구스를 이용해서 데이터를 만들고 스키마를 만들고, 스키마로 모델을 만듬
+* 몽고DB는 JSON 형식으로 되어있으며, Javascript로 접근하기 위해 몽구스가 Model Class(Collection)와 Model Instance(Documents)를 제공해줌
+* Schema란?
+  * 문서(Document)의 구조, 기본값, 유효성 검사등을 정의하는 곳
+* Model이란?
+  * 레코드 생성, 쿼리, 업데이트, 삭제 등을 위한 데이터베이스 인터페이스 제공
