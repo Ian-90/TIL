@@ -20,3 +20,12 @@
       testEnvironment: 'node'
     }
     ```
+
+## 4. node-mocks-http
+* 단위 테스트 작성
+  * 몽구스 모델을 이용해서 데이터를 저장할 때, `req.body`를 이용해야 하기 때문에, 테스트에도 req 객체가 필요. 단위 테스트에서 req 객체를 얻기위해서 `node-mocks-http` 모듈을 사용.
+  * http 객체 얻는 법
+    ```js
+    req = httpMocks.createRequest()
+    res = httpMocks.createRespones()
+    ```
