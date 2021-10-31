@@ -29,3 +29,6 @@
     req = httpMocks.createRequest()
     res = httpMocks.createRespones()
     ```
+
+## 5. beforeEach
+* beforeEach - 여러 개의 테스트에 공통된 코드가 있다면, 반복을 줄여 줄 수 있는 테스트 함수
