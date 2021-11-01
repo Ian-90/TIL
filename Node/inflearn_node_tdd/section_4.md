@@ -30,3 +30,6 @@
       if (err) throw err
     })
   ```
+
+## 2. 통합 테스트 작성하기
+* `/test/intergration/prouducts.int.test.js`에 구현
