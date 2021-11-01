@@ -32,4 +32,7 @@
   ```
 
 ## 2. 통합 테스트 작성하기
-* `/test/intergration/prouducts.int.test.js`에 구현
+* `/test/intergration/prouducts.int.test.js`에 첫번째 테스트 구현
+
+## 3. 에러 처리를 위한 통합 테스트 작성하기
+* `/test/intergration/prouducts.int.test.js`에 두번쨰 테스트 구현
