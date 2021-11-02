@@ -15,3 +15,6 @@
 * 해야 할 일
   * DB에서 Product 데이터를 가져왔을 때, 200의 Status 값을 전달
   * DB에서 가져온 Product 데이터를 클라이언트에 전달
+
+## 4. getProducts 에러 처리 단위 테스트 작성
+* `/test/unit/product.test.js`에 error handle 테스트 추가
