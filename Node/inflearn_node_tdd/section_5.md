@@ -31,3 +31,6 @@
 * 해야 할 일
   * ProductId에 맞는 데이터가 없을 경우 404 Status 전달
   * 에러가 났을 때 에러 처리
+
+## 8. getProductById 통합 테스트 작성 (1)
+* `/test/intergration/product.int.test.js`에 테스트 추가
