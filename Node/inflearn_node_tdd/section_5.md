@@ -26,3 +26,8 @@
 * 해야 할 일
   * Product Id로 데이터를 가져오기 위한 함수 생성
   * getProductById 함수를 호출할 때 Product Model의 findById 메소드를 route parameter와 함께 호출
+
+## 7. getProductById 단위 테스트 작성(2)
+* 해야 할 일
+  * ProductId에 맞는 데이터가 없을 경우 404 Status 전달
+  * 에러가 났을 때 에러 처리
