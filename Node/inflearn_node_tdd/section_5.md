@@ -21,3 +21,8 @@
 
 ## 5. getProducts 통합 테스트 작성
 * `/test/intergration/product.int.test.js`에 테스트 추가
+
+## 6. getProductById 단위 테스트 작성(1)
+* 해야 할 일
+  * Product Id로 데이터를 가져오기 위한 함수 생성
+  * getProductById 함수를 호출할 때 Product Model의 findById 메소드를 route parameter와 함께 호출

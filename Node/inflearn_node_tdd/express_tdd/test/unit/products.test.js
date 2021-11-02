@@ -3,8 +3,10 @@ const productModel = require('../../models/Product')
 const httpMocks = require('node-mocks-http')
 const newProduct = require('../data/new-product.json')
 const allProducts = require('../data/all-products.json')
+const productId = 'testId'
 productModel.create = jest.fn()
 productModel.find = jest.fn()
+productModel.findById = jest.fn()
 
 let req
 let res
@@ -83,5 +85,17 @@ describe('Product Controller Get', () => {
     productModel.find.mockReturnValue(rejectedPromise)
     await productController.getProducts(req, res, next)
     expect(next).toBeCalledWith(errorMessage)
+  })
+})
+
+describe('Product Controller GetById', () => {
+  it('should have a getProductById', () => {
+    expect(typeof productController.getProductById).toBe('function')
+  })
+
+  it('should call productModel.findById', async () => {
+    req.params.productId = productId
+    await productController.getProductById(req, res, next)
+    expect(productModel.findById).toBeCalledWith(productId)
   })
 })
