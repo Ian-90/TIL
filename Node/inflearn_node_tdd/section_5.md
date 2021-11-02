@@ -34,3 +34,6 @@
 
 ## 8. getProductById 통합 테스트 작성 (1)
 * `/test/intergration/product.int.test.js`에 테스트 추가
+
+## 9. getProductById 통합 테스트 작성 (2)
+* `/test/intergration/product.int.test.js`에 데이터를 가져올 때 데이터가 존재하지 않는 테스트 추가
