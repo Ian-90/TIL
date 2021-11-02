@@ -18,3 +18,6 @@
 
 ## 4. getProducts 에러 처리 단위 테스트 작성
 * `/test/unit/product.test.js`에 error handle 테스트 추가
+
+## 5. getProducts 통합 테스트 작성
+* `/test/intergration/product.int.test.js`에 테스트 추가
