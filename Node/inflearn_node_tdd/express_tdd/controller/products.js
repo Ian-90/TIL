@@ -10,5 +10,5 @@ exports.createProduct = async (req, res, next) => {
 }
 
 exports.getProducts = async (req, res, next) => {
-  
+  await productModel.find({})
 }
