@@ -4,6 +4,7 @@ const httpMocks = require('node-mocks-http')
 const newProduct = require('../data/new-product.json')
 const allProducts = require('../data/all-products.json')
 const productId = 'testId'
+const updatedProduct = { name: 'updated name', description: 'updated description' }
 productModel.create = jest.fn()
 productModel.find = jest.fn()
 productModel.findById = jest.fn()
@@ -133,12 +134,39 @@ describe('Product Controller Update', () => {
 
   it('should call productModel.findByIdAndUpdate', async () => {
     req.params.productId = productId
-    req.body = { name: 'updated name', description: 'updated description' }
+    req.body = updatedProduct
     await productController.updateProduct(req, res, next)
     expect(productModel.findByIdAndUpdate).toHaveBeenCalledWith(
       productId,
-      { name: 'updated name', description: 'updated description' },
+      updatedProduct,
       { new: true },
     )
+  })
+
+  it('should return json body and response code 200', async () => {
+    req.params.productId = productId
+    req.body = updatedProduct
+    productModel.findByIdAndUpdate.mockReturnValue(updatedProduct)
+    await productController.updateProduct(req, res, next)
+    expect(res.statusCode).toBe(200)
+    expect(res._getJSONData()).toStrictEqual(updatedProduct)
+    expect(res._isEndCalled).toBeTruthy()
+  })
+
+  it('should return 404 when item doesnt exist', async () => {
+    productModel.findByIdAndUpdate.mockReturnValue(null)
+    await productController.updateProduct(req, res, next)
+    expect(res.statusCode).toBe(404)
+    expect(res._isEndCalled).toBeTruthy()
+  })
+
+  it('should handle errors', async () => {
+    const errorMessage = {
+      message: 'error'
+    }
+    const rejectedPromise = Promise.reject(errorMessage)
+    productModel.findByIdAndUpdate.mockReturnValue(rejectedPromise)
+    await productController.updateProduct(req, res, next)
+    expect(next).toBeCalledWith(errorMessage)
   })
 })

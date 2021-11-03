@@ -5,3 +5,7 @@
 ## 2. updateProduct 단위 테스트 작성 (1)
 * 해야 할 일
   * updateProduct 함수를 호출할 때 Product Model의 findByIdAndUpdate 메소드 호출
+
+## 3. updateProduct 단위 테스트 작성 (2)
+* 해야 할 일
+  * 데이터 업데이트 성공 후 성공 status와 update된 데이터를 클라이언트로 전송하기
