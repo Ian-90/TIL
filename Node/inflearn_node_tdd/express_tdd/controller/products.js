@@ -47,3 +47,7 @@ exports.updateProduct = async (req, res, next) => {
     next(error)
   }
 }
+
+exports.deleteProduct = async (req, res, next) => {
+  
+}
