@@ -188,11 +188,27 @@ describe('Product Controller Delete', () => {
       name: 'deletedProduct',
       description: 'it is deleted'
     }
-    req.params.productId = productId
     productModel.findByIdAndDelete.mockReturnValue(deletedProduct)
     await productController.deleteProduct(req, res, next)
     expect(res.statusCode).toBe(200)
     expect(res._getJSONData()).toStrictEqual(deletedProduct)
     expect(res._isEndCalled).toBeTruthy()
+  })
+
+  it('should return 404 when item doesnt exist', async () => {
+    productModel.findByIdAndDelete.mockReturnValue(null)
+    await productController.deleteProduct(req, res, next)
+    expect(res.statusCode).toBe(404)
+    expect(res._isEndCalled).toBeTruthy()
+  })
+
+  it('should handle errors', async () => {
+    const errorMessage = {
+      message: 'error delete'
+    }
+    const rejectedPromise = Promise.reject(errorMessage)
+    productModel.findByIdAndDelete.mockReturnValue(rejectedPromise)
+    await productController.deleteProduct(req, res, next)
+    expect(next).toBeCalledWith(errorMessage)
   })
 })
