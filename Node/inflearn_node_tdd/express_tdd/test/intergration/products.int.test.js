@@ -56,3 +56,13 @@ it('should return 404 on PUT /api/products/:productId', async () => {
   const response = await request(app).put(`/api/products/617ff9d4accb6fa480ae6800abc`).send({ name: 'updated name', description: 'updated description' })
   expect(response.statusCode).toBe(500)
 })
+
+it('DELETE /api/products/:productId', async () => {
+  const response = await request(app).delete(`/api/products/${firstProduct._id}`).send()
+  expect(response.statusCode).toBe(200)
+})
+
+it('should return 404 on DELETE /api/products/:productId', async () => {
+  const response = await request(app).delete(`/api/products/${firstProduct._id}`).send()
+  expect(response.statusCode).toBe(404)
+})

@@ -11,3 +11,6 @@
 * 해야 할 일
   * 삭제하는 데이터를 찾지 못한 경우
   * 데이터를 삭제할 때 에러가 난 경우
+
+## 4. deleteProduct 통합 테스트 작성
+* `/test/intergration/product.int.test.js`에 테스트 추가
