@@ -78,3 +78,14 @@ mutation {
   * 여러 계층의 정보들을 한 번에 받아올 수 있음(Underfetching 문제 해결)
 
 * 하나의 endpoint에서 모든 요청을 처리
+
+## 3. Apollo는 뭐고 왜 쓰나요?
+* GraphQL 구현할 솔루션 필요
+  * 백엔드에서 정보를 제공 및 처리
+  * 프론트엔드에서 요청 전송
+  * GraphQLjs, GraphQL Yoga, AWS Amplify, Relay, ...
+
+* Apollo
+  * 백엔드와 프론트엔드 모두 제공
+  * 간편하고 쉬운 설정
+  * 풍성한 기능들 제공
