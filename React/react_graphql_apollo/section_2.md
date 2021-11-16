@@ -9,3 +9,8 @@
 * GraphQL Playground
   * 작성한 GraphQL type, resolver 명세 확인
   * 데이터 요청 및 전송 테스트
+
+## 2. Query 구현하기
+* `ex_project` 폴더에 구현
+  * typeDef에 명세 타입 추가
+  * resolvers에 요청에 따른 데이터 반환 추가
