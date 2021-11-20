@@ -14,3 +14,10 @@
 * `ex_project` 폴더에 구현
   * typeDef에 명세 타입 추가
   * resolvers에 요청에 따른 데이터 반환 추가
+
+## 3. Mutation 구현하기
+* `ex_project` 폴더에 구현
+  * Mutation - 데이터를 변경하기 위한 것
+  * Mutation 추가, 삭제, 수정 구현
+  * typeDef에 명세 타입 추가
+  * resolvers에 요청에 따른 데이터 반환 추가
