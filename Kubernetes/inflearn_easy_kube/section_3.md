@@ -80,3 +80,25 @@ kubectl get nodes -o wide
   kubectl get services
   ```
   * EXTERNAL-IP를 브라우저에 입력하여 확인
+
+## 5. 배포한 것들 삭제하기
+* 배운 것 정리
+  * 파드 - 컨테이너를 모아 놓은 것
+  * 디플로이먼트 - 파드를 모아 놓은 것
+  * 서비스 - 파드를 외부와 연결해주는 것
+
+* 삭제 명령어
+  ```
+  kubectl get service
+  kubectl delete service chk-hn
+  kubectl delete service nginx
+
+  kubectl get deployment
+  kubectl delete deployment chk-hn
+  kubectl delete deployment deploy-nginx
+
+  kubectl get pods
+  kubectl delete pod nginx
+
+  kubectl delete -f ~/_Lecture_k8s_starter.kit/ch2/2.4/metallb.yaml
+  ```
