@@ -33,3 +33,23 @@ kubectl get nodes -o wide
 
 * 브라우저에서 주소에 `<IP>:<port>` 입력하면 확인 가능
 * `curl <IP>:<port>`로도 확인가능
+
+## 3. 파드와 디플로이트먼트(Deployment) 차이
+* 파드를 여러 개 사용하려면?
+  * 디플로이먼트(Deplolyment)를 사용
+
+* 디플로이먼트 배포 실습
+  * create
+    ```
+    kubectl create deployment deploy-nginx --image=nginx
+    kubectl get pods -o wide
+    curl <IP>
+    ```
+
+* 디플로이먼트로 다수의 파드를 배포하는 방법
+  * ReplicaSet 변경
+  * 실습
+    ```
+    kubectl scale deployment deploy-ngixn --replicas=3
+    kubectl get pods
+    ```
