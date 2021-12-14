@@ -50,6 +50,33 @@ kubectl get nodes -o wide
   * ReplicaSet 변경
   * 실습
     ```
-    kubectl scale deployment deploy-ngixn --replicas=3
+    kubectl scale deployment deploy-nginx --replicas=3
     kubectl get pods
     ```
+
+## 4. 외부로 노출하는 더 좋은 방법인 로드밸런서(LoadBalancer)
+* 노드포트(NodePort)로 디플로이먼트 노출
+  ```
+  kubectl expose deployment deploy-nginx --type=NodePort --port=80
+  kubectl get services
+  ```
+
+* 디플로이먼트를 노출하는 가장 좋은 방법
+  * 로드밸런서 타입으로 노출
+  * 로드밸런서 타입을 선언하기 위해서는 MetalLB를 이용
+  * 어디로 접속되어있는지 확인하기 위해서 강사가 만든 chk-hn 이미지를 배포 후 노출
+
+* 노드포트보다 로드밸런서가 좋은 점
+  * 노드의 아이피를 알려 줄 부담이 없다
+  * 로드밸런서를 사용하면 가야 될 경로를 최적화하여 구현가능
+
+* 실습
+  ```
+  kubectl apply -f ~/_Lecture_k8s_starter.kit/ch2/2.4/metallb.yaml ## metallb 설치
+  kubectl create deployment chk-hn --image=sysnet4admin/chk-hn
+  kubectl scale deployment chk-hn --replicas=3
+  kubectl get pods
+  kubectl expose deployment chk-hn --type=LoadBalancer --port=80
+  kubectl get services
+  ```
+  * EXTERNAL-IP를 브라우저에 입력하여 확인
