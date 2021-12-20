@@ -56,3 +56,39 @@
     kubectl scale deployment del-deploy --replicas=9
     kubectl get pods -o wide ## 스케줄러가 균형있게 pod들을 배포
     ```
+
+## 3. 쿠버네티스 마스터 노드의 구성 요소에 문제가 생겼다면
+* 스케줄러가 삭제된다면?
+  ```
+  kubectl get pods -n kube-system -o wide ## 스케줄러 이름 확인
+  kubectl delete pod kube-scheduler-m-k8s -n kube-system
+  kubectl get pods -n kube-system ## 문제가 생겨도 다시 생성
+  ```
+  * pod에 문제가 생겨도 다시 생성하기 때문에 문제가 없다
+
+* 마스터 노드 kubelet이 중단된다면?
+  ```
+  systemctl stop kubelet
+  kubectl delete pod kube-scheduler-m-k8s -n kube-system
+  ctrl + c
+  kubectl get pods -n kube-system ## kube-scheduler-m-k8s의 상태가 terminating 상태
+  kubectl create deployment nginx --image=nginx
+  kubectl get pod
+  kubectl scale deployment nginx --replicas=3
+  kubectl get pods ## 스케줄러가 정상동작중
+  kubectl get pods -n kube-system ## 하지만 terminating 상태
+  kubectl get pods -o wide
+  curl [배포된 nginx pod ip]
+  systemctl start kubelet
+  kubectl get pods -n kube-system
+  ```
+  * 문제가 생긴 것 처럼 보이지만, 마스터 노드에 영향도 받지 않고, 모든 애플리케이션이 배포가 되며, 워커 노드애도 영향받지 않는다.
+
+* 컨테이너 런타임이 중단된다면?
+  ```
+  systemctl stop docker
+  kubectl get pods ## 통신 불가
+  curl [배포된 nginx pod ip] ## 문제가 생김
+  kubectl delete deployment nginx
+  ```
+  * api-server를 핸들링하는 도구이기 때문에, 전체가 먹통이 된다
