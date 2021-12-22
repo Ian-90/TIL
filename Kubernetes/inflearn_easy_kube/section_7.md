@@ -31,3 +31,13 @@
 
   * 워커노드
     * 마스터노드와 달리 kubelet 업그레이드 후 재시작
+
+## 3. 오브젝트 예약 단축어
+* 단축어
+  | 이름 | 축약어 | 오브젝트 이름 | 
+  |:---:|:-----:|:----------:|
+  |nodes| no | Node |
+  |namespaces| ns | Namespace |
+  |deployments| deploy | Deployment |
+  |pods| po | Pod |
+  |services| svc | Service|
