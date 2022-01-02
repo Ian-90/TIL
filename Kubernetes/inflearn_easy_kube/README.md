@@ -8,5 +8,4 @@
 5. [문제를 통해 배우는 쿠버네티스](./section_5.md)
 6. [쿠버네티스 오브젝트](./section_6.md)
 7. [쿠버네티스 Tips](./section_7.md)
-8. [Closing - 강의 마무리](./section_8.md)
-9. [보강수업](./section_9.md)
+8. [보강수업](./section_8.md)
