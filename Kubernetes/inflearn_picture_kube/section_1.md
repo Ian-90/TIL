@@ -27,3 +27,10 @@
 * 23 ~ 46
   * 도커 구성
   * 네트워크 설정
+
+## 4. 쿠버네티스 관련 패키지 설치(k8s_pkg_cfg.sh) 및 실습 편의성 높이기(k_cfg_n_git_clone.sh)
+* `k8s_pkg_cfg.sh`
+  * 쿠버네티스 관련 패키지 설치 및 쿠버네티스에서 동작
+
+* `k_cfg_n_git_clone.sh`
+  * 실습 편의성을 높이기 위해 bash-completion 및 쿠버네티스 alias 추가
