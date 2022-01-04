@@ -34,3 +34,7 @@
 
 * `k_cfg_n_git_clone.sh`
   * 실습 편의성을 높이기 위해 bash-completion 및 쿠버네티스 alias 추가
+
+## 5. 쿠버네티스 설치 바로 전까지 구성하기(Just Vagrant up)
+* 베이그런트로 쿠버네티스용 가상 머신 배포
+* git repo clone 후, ch1.5에서 `vagrant up`으로 가상머신 실행 후 kubectl과 kubeadm 확인
