@@ -38,3 +38,9 @@
 ## 5. 쿠버네티스 설치 바로 전까지 구성하기(Just Vagrant up)
 * 베이그런트로 쿠버네티스용 가상 머신 배포
 * git repo clone 후, ch1.5에서 `vagrant up`으로 가상머신 실행 후 kubectl과 kubeadm 확인
+
+## 6. kubeadm을 통한 쿠버네티스 설치(WO_master_node.sh, WO_work_nodes.sh)
+* kubeadm을 통해서 마스터 노드 및 워커 노드 구성
+* 마스터 노드에서 `_Lecture_k8s_learning.kit/ch1/1.6/WO_master_node.sh`를 실행 및 `kubectl get pod -A`로 파드 확인
+* 워커 노드에서 `_Lecture_k8s_learning.kit/ch1/1.6/WO_worker_nodes.sh`를 실행 및 `kubectl get pod`로 파드 확인
+* 모든 가상머신 삭제 - `vagrant destory -f`
