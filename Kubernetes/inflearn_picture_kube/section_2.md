@@ -45,3 +45,21 @@
     ```
     kubectl run nginx --image-nginx --dry-run=client -o yaml
     ```
+
+## 5. 자주 쓰이는 kubectl 옵션 명령어(events, describe, logs) - 2
+* 쿠베네티스 이벤트 확인
+  ```
+  kubectl get events
+  kubectl get events -n kube-system
+  ```
+
+* 배포된 오브젝트의 상태를 파악
+  ```
+  kubectl descirbe pod nginx
+  ```
+
+* 컨테이너의 로그 확인
+  ```
+  kubectl logs nginx
+  ```
+
