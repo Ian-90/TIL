@@ -30,3 +30,18 @@
 * exec - 파드 내부에 컨테이너로 접속
 * scale - 파드 갯수를 늘리거나 줄임
 * edit - 배포된 오브젝트를 수정
+
+## 4. 자주 쓰이는 kubectl 옵션 명령어(-o yaml, --dry-run=client) - 1
+* 코드를 확인하는 명령어
+  * `-o yaml` - 배포된 오브젝트의 yaml 코드 출력
+  * 실습
+    ```
+    kubectl run nginx --image-nginx -o yaml
+    ```
+
+* 코드를 생성하는 명령어
+  * `--dry-run=client` - 실행이 된 것 처럼 코드를 보여줌
+  * 실습
+    ```
+    kubectl run nginx --image-nginx --dry-run=client -o yaml
+    ```
