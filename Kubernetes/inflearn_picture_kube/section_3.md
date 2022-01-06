@@ -32,3 +32,33 @@ kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.2/pod.yaml
 kubectl get pod
 kubectl delete -f pod po-nginx
 ```
+
+## 3. 디플로이먼트(Deployment)
+* deployment.yaml
+  ```yml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    labels:
+      app: deploy-nginx
+    name: deploy-nginx
+  spec:
+    replicas: 3 ## ReplicaSet을 몇 개 생성할지를 결정
+    selector: ## 템플릿을 선택
+      matchLabels:
+        app: po-nginx
+    template: ## 템플릿
+      metadata:
+        labels:
+          app: po-nginx
+      spec: ## 템플릿에서 사용할 컨테이너 이미지 지정
+        containers:
+        - name: nginx
+          image: nginx
+  ```
+
+* 실습
+```
+kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.3/deployment.yaml
+kubectl get pod
+```
