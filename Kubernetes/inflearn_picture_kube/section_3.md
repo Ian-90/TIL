@@ -98,3 +98,38 @@ kubectl get replicasets.apps
 kubectl get deployments.apps
 kubectl delete replicasets.apps rs-nginx
 ```
+
+## 5. 커맨드(command)와 인자(args)
+```yaml
+...
+spec:
+  containers:
+  ...
+    command: ['/bin/sh', '-c']
+    args:
+    - |
+      echo run multiple-command-w-args
+      echo add commentary
+      sleep 3600
+```
+
+* command - 컨테이너에서 실행되는 커맨드
+* args - 커맨드에 전달되는 인자들
+* 컨테이너에 명령이 필요한 이유
+  1. 컨테이너를 계속 동작하게 하고 싶을 때
+  ```
+  kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.5/simple-wo-command.yaml
+  kubectl get pod -w
+  kubectl delete pod simple-wo-command
+  kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.5/simple-command.yaml
+  kubectl get pod -w
+  kubectl exec simple-command -it -- /bin/bash
+  nslookup kubernetes
+  ```
+
+  2. 사용자가 원하는 명령을 내리고 싶을 때
+  ```
+  kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.5/multiple-command-v1.yaml
+  kubectl get pod
+  kubectl logs multiple-command-v1
+  ```
