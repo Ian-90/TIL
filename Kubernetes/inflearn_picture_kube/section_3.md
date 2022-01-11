@@ -133,3 +133,143 @@ spec:
   kubectl get pod
   kubectl logs multiple-command-v1
   ```
+
+## 6. 잡(Job)
+* Job을 이루는 코드
+  ```yml
+  apiVersion: batch/v1
+  kind: Job
+  metadata:
+    name: job-curl-succ
+  spec:
+    template:
+      spec:
+        containers:
+        - name: net-tools
+          image: sysnet4admin/net-tools
+          command: ['curlchk', 'nginx']
+        restartPolicy: Never ## 문제가 있으면 다시 시작하는 옵션
+  ```
+
+* Job의 기본 동작
+  * 성공하는 경우
+    ```
+    kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.6/0-nginx-svc.yaml
+    kubectl get svc
+    kubectl get pod
+    kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.6/1-1-job-curl-succ.yaml ## ngixn curl check
+    kubectl get pod -w
+    kubectl logs job-curl-succ--1-lnmpq ## pod 이름
+    kubectl logs job-curl-succ--1-lnmpq
+    ```
+
+  * 실패하는 경우
+    ```
+    kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.6/1-2-job-curl-fail.yaml
+    kubectl get pod
+    kubectl logs job-curl-fail--1-qnd6w
+    ```
+
+  * restartPolicy가 없는 경우 - 로그가 기록되지 않는다
+    ```
+    kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.6/1-3-job-make-fail.yaml
+    kubectl get pod
+    kubectl logs job-curl-fail--1-qnd6w
+    ```
+
+* Job의 목적
+  * 어떤 명령을 실행을 하고, 추후의 확인을 하고자 Complete 상태를 유지
+
+* Job의 병렬 실행
+  * job을 1개씩 순차적으로 확인
+    ```yml
+    apiVersion: batch/v1
+    kind: Job
+    metadata:
+      name: job-completions
+    spec:
+      completions: 3
+      template:
+        spec:
+          containers:
+          - name: net-tools
+            image: sysnet4admin/net-tools
+            command: ['curlchk', 'nginx']
+          restartPolicy: Never
+    ```
+
+  * job을 동시에 병렬적으로 3번을 확인
+    ```yml
+    apiVersion: batch/v1
+    kind: Job
+    metadata:
+      name: job-parallelism
+    spec:
+      parallelism: 3
+      template:
+        spec:
+          containers:
+          - name: net-tools
+            image: sysnet4admin/net-tools
+            command: ['curlchk', 'nginx']
+          restartPolicy: Never ## 문제가 있으면 다시 시작하는 옵션
+    ```
+
+  * 실습
+    ```
+    kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.6/2-1-job-completions.yaml
+    kubectl get pod -w ## 순차적으로 확인
+    kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.6/2-2-job-parallelism.yaml
+    kubectl get pod -w ## 병렬적으로 동시에 확인
+    ```
+
+* Job의 자동 종료
+  * job이 설정한시간 동안 동작하고 있다면 자동종료 - 예측되는 동작 이상으로 시간을 설정해주는 것이 좋음
+    ```yml
+    apiVersion: batch/v1
+    kind: Job
+    metadata:
+      name: job-activedeadlineseconds
+    spec:
+      backoffLimit: 3
+      activeDeadlineSeconds: 30
+      template:
+        spec:
+          containers:
+          - name: net-tools
+            image: sysnet4admin/net-tools
+            command: ['/bin/sh', '-c']
+            args:
+            - sleep 60;
+              curlchk nginx;
+          restartPolicy: Never
+    ```
+
+  * job이 종료되고 나서 설정한 시간 이후 종료 - 보통 이것을 쓰는 것이 좋다.
+    ```yml
+    apiVersion: batch/v1
+    kind: Job
+    metadata:
+      name: job-ttlsecondsafterfinished
+    spec:
+      backoffLimit: 3
+      ttlSecondsAfterFinished: 30
+      template:
+        spec:
+          containers:
+          - name: net-tools
+            image: sysnet4admin/net-tools
+            command: ['/bin/sh', '-c']
+            args:
+            - sleep 60;
+              curlchk nginx;
+          restartPolicy: Never ## 문제가 있으면 다시 시작하는 옵션
+    ```
+
+  * 실습
+    ```
+    kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.6/3-1-job-activeDeadlineSeconds.yaml
+    kubectl get pod -w
+    kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.6/3-2-job-ttlSecondsAfterFinished.yaml
+    kubectl get pod -w
+    ```
