@@ -273,3 +273,36 @@ spec:
     kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.6/3-2-job-ttlSecondsAfterFinished.yaml
     kubectl get pod -w
     ```
+
+## 7. 크론잡(CronJob)
+* 크론잡
+  * 잡이 실행됬을 때, 반복적으로 작업해야 할 일이 있을 때 사용
+  ```yml
+  apiVersion: batch/v1
+  kind: CronJob
+  metadata:
+    name: cj-1m-hist10-curl
+  spec:
+    schedule: "*/1 * * * *"
+    successfulJobsHistoryLimit: 10 ## 10회까지 동작한 크론잡 보존
+    jobTemplate:
+      spec:
+        template:
+          spec:
+            containers:
+            - name: net-tools
+              image: sysnet4admin/net-tools
+              command: ['curlchk', 'nginx']
+            restartPolicy: Never
+  ```
+
+* 크론 규칙
+  * 10분마다 실행하고 싶다면? - `*/10 * * * *`
+  * 매일 2시에 실행하고 싶다면? `0 2 * * *`
+
+* 실습
+  ```
+  kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.7/0nginx-svc.yaml
+  kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.7/cronjob-1m-hist10-curl.yaml
+  kubectl get pod -w
+  ```
