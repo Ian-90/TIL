@@ -306,3 +306,33 @@ spec:
   kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.7/cronjob-1m-hist10-curl.yaml
   kubectl get pod -w
   ```
+
+## 8. 데몬셋(DaemonSet)
+* 데몬셋 - 노드마다 1개씩 배포되는 Pod
+  ```yml
+  apiVersion: apps/v1
+  kind: DaemonSet ## 대소문자 구분해야함
+  metadata:
+    labels:
+      app: ds-nginx
+    name: ds-nginx
+  spec:
+    selector:
+      matchLabels:
+        app: po-nginx
+    template:
+      metadata:
+        labels:
+          app: po-nginx
+      spec:
+        containers:
+        - name: nginx
+          image: nginx
+  ```
+
+* 실습
+  ```
+  kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.8/daemonset.yaml
+  kubectl get pod -o wide
+  kubectl get daemonsets.apps -A ## 모든 네임스페이스의 데몬셋 보기
+  ```
