@@ -336,3 +336,34 @@ spec:
   kubectl get pod -o wide
   kubectl get daemonsets.apps -A ## 모든 네임스페이스의 데몬셋 보기
   ```
+
+## 9. 스테이트풀셋(StatefulSet)
+* 스테이트풀셋 - 상탯값을 가지는 Pod. 순서를 가지는 고정이름을 가짐. 순서를 가지거나 고정된 이름을 가져야할 때 사용.
+  ```yml
+  apiVersion: apps/v1
+  kind: StatefulSet
+  metadata:
+    name: sts-chk-hn
+  spec:
+    replicas: 3
+    serviceName: sts-svc-domain ## 필수값
+    selector:
+      matchLabels:
+        app: sts
+    template:
+      metadata:
+        labels:
+          app: sts
+      spec:
+        containers:
+        - name: chk-hn
+          image: sysnet4admin/chk-hn
+  ```
+
+* 실습
+  ```
+  kubectl apply -f _Lecture_k8s_learning.kit/ch3/3.9/statefulset.yaml
+  kubectl get pod -w
+  kubectl scale statefulset sts-chk-hn --replicas=10
+  kubectl get pod -w
+  ```
