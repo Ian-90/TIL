@@ -3,9 +3,9 @@
   * NodePort
   * LoadBalancer
   * ExteranlName
+  * ClusterIP
 
 * 서비스는 아니지만 서비스와 관련된 것들
-  * ClusterIP
   * Headless
   * Endpoints
   * Ingress
@@ -159,4 +159,27 @@
   kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.4/loadbalancer-11.yaml
   kubectl get pod
   kubectl get service
+  ```
+
+## 5. 외부이름(ExternalName)
+* exteranlname-1.yaml
+  ```yml
+  apiVersion: v1
+  kind: service
+  metadata:
+    name: ex-url-1
+    namespace: default
+  spec:
+    type: ExteranlName
+    externalName: sysnet4admin.github.io ## 외부도메인 주소
+  ```
+
+* 실습
+  ```
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.5/externalname-1.yaml
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.5/externalname-2.yaml
+  kubectl get service
+  kubectl net --image-sysnet4admin/net-tools-ifn
+  kubectl exec net -it -- /bin/bash
+  nslookup ex-url-1
   ```
