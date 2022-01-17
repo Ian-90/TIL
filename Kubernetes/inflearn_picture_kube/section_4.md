@@ -115,3 +115,48 @@
   kubectl get pod
   kubectl get service
   ```
+
+
+## 4. 로드밸런서(LoadBalancer)
+* loadbalancer-11.yaml
+  ```yml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: deploy-nginx
+    labels:
+      app: deploy-nginx
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: deploy-nginx
+    template:
+      metadata:
+        labels:
+          app: deploy-nginx
+      spec:
+        containers:
+        - name: nginx
+          image: nginx
+  --- ## 두개의 오브젝트를 배포할 떄 구분
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: lb-nginx
+  spec:
+    selector:
+      app: deploy-nginx ## 노출할 deployment 이름
+    ports:
+      - name: http
+        port: 80
+        targetPort: 80
+    type: LoadBalancer
+  ```
+
+  * 실습
+  ```
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.4/loadbalancer-11.yaml
+  kubectl get pod
+  kubectl get service
+  ```
