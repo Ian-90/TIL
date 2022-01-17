@@ -69,3 +69,49 @@
   kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.2/hostnetworkt.yaml
   kubectl get pod -o wide
   ```
+
+## 3. 노드포트(NodePort)
+* nodeport.yaml - 30000(node) -> 80(svc - port) -> 80(pod - targetPort)
+  ```yml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: deploy-nginx
+    labels:
+      app: deploy-nginx
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: deploy-nginx
+    template:
+      metadata:
+        labels:
+          app: deploy-nginx
+      spec:
+        containers:
+        - name: nginx
+          image: nginx
+  --- ## 두개의 오브젝트를 배포할 떄 구분
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: np-nginx
+  spec:
+    selector:
+      matchLabels:
+        app: deploy-nginx ## 노출할 deployment 이름
+    ports:
+      - name: http
+        port: 80 ## 서비스에 대한 포트
+        targetPort: 80 ## 파드에 대한 포트
+        nodePort: 30000
+    type: NodePort
+  ```
+
+* 실습
+  ```
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.3/nodeport.yaml
+  kubectl get pod
+  kubectl get service
+  ```
