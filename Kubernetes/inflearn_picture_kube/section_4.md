@@ -183,3 +183,85 @@
   kubectl exec net -it -- /bin/bash
   nslookup ex-url-1
   ```
+
+## 6. 클러스터주소(ClusterIP), 헤드리스(Headless)
+* clusterip.yaml
+  ```yml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: deploy-nginx
+    labels:
+      app: deploy-nginx
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: deploy-nginx
+    template:
+      metadata:
+        labels:
+          app: deploy-nginx
+      spec:
+        containers:
+        - name: nginx
+          image: nginx
+  --- ## 두개의 오브젝트를 배포할 떄 구분
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: cl-nginx
+  spec:
+    selector:
+      app: deploy-nginx
+    ports:
+      - name: http
+        port: 80
+        targetPort: 80
+    type: ClusterIP # Pod - ClusterIP - Pod, 파드와 파드의 연결을 위한 내부의 IP
+  ```
+
+* headless.yaml - 클러스터 IP와 동일한 기능을 하지만, IP가 없는 상태
+  ```yml
+  ...
+  --- ## 두개의 오브젝트를 배포할 떄 구분
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: hdl-nginx
+  spec:
+    selector:
+      app: deploy-nginx
+    ports:
+      - name: http
+        port: 80
+        targetPort: 80
+    clusterIP: None
+  ```
+
+* 실습
+  ```
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.6/clusterip.yaml
+  kubectl get pod
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.6/headless.yaml
+  kubectl get pod
+  ```
+
+* statefulset은 고정된 이름을 가지고 있으며, headless는 ip는 없지만, 내부에서 도메인이름으로 통신가능하기 때문에 도메인이름과 statefulset의 서비스 네임을 연동할 수 있다.
+  * 실습
+    ```
+    kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.6/sts-svc-domain-headless.yaml
+    kubectl get pod
+    kubectl get service
+    kubectle exec net -it -- /bin/bash
+    nslookup sts-svc-domain
+    nslookup stst-chk-hn-1.sts-svc-domain
+    exit
+    kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.6/sts-no-answer-headless.yaml
+    kubectl get service
+    kubectle exec net -it -- /bin/bash
+    nslookup test
+    nslookup sts-chk-hn-0.test ## statefulset에 이름을 넣어도 동작하지 않는다.
+    exit
+    kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.6/sts-lb.yaml ## statefulset을 lb타입으로 노출가능
+    ```
