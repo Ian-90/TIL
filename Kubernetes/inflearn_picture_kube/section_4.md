@@ -265,3 +265,84 @@
     exit
     kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.6/sts-lb.yaml ## statefulset을 lb타입으로 노출가능
     ```
+
+## 7. 엔드포인트(Endpoints)
+* loadbalancer.yaml
+  ```yml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: deploy-chk-ip
+    labels:
+      app: deploy-chk-ip
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: deploy-chk-ip
+    template:
+      metadata:
+        labels:
+          app: deploy-chk-ip
+      spec:
+        containers:
+        - name: chk-ip
+          image: sysnet4admin/chk-ip
+  ---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: lb-chk-ip
+  spec:
+    selector:
+      app: deploy-chk-ip
+    ports:
+      - name: http
+        port: 80
+        targetPort: 80
+    type: LoadBalancer
+  ```
+
+* endpoints - 로드밸런서를 통해 도달하는 파드의 ip
+* 실습 - 로드밸런서의 엔드포인트 확인
+  ```
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.7/loadbalancer.yaml
+  kubectl get pod,service
+  kubectl get endpoints
+  kubectl get pod -o wide
+  ```
+
+* service-endpoints.yaml
+  ```yml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: exteranl-data
+  spec:
+    ports:
+      - name: hppt
+        port: 80
+        targetPort: 80 # 따로 type이 선언이 안되었기 때문에 ClusterIP가 기본값이다
+  ---
+  apiVersion: v1
+  kind: Endpoints
+  metadata:
+    name: external-data ## 클러스터 IP와 동일한 이름
+  subsets:
+    - addresses:
+        - ip: 192.168.1.11
+      ports:
+        - name: http
+          port: 80
+  ```
+
+* 실습 - 메뉴얼하게 엔드포인트 생성
+  ```
+  kubectl get service
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.7/service-endpoints.yaml
+  kubectl get service
+  kubectl get endpoints
+  kubectl exec net -it -- /bin/bash
+  nslookup external-data
+  curl external-data
+  ```
