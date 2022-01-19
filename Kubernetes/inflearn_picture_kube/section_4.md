@@ -346,3 +346,103 @@
   nslookup external-data
   curl external-data
   ```
+
+## 8. 인그레스(Ingress)
+* 인그레스와 서비스의 차이
+  * 서비스가 없다면 존재할 수 없음
+  * 실제로 가야되는 경로에 대한 라우팅 정보 제공
+
+* deploy-nginx.yaml
+  ```yml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: deploy-hn
+    labels:
+      app: deploy-hn
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: deploy-hn
+    template:
+      metadata:
+        labels:
+          app: deploy-hn
+      spec:
+        containers:
+        - name: chk-hn
+          image: sysnet4admin/chk-hn
+  ---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: ing-hn
+  spec:
+    selector:
+      app: deploy-hn
+    ports:
+      - name: http
+        port: 80
+        targetPort: 80
+    type: ClusterIP
+  ```
+
+* ingress.yaml
+  ```yml
+  apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    name: nginx-ingress
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+  spec:
+    rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ing-default
+                port:
+                  number: 80
+          - path: /hn
+            pathType: Prefix
+            backend:
+              service:
+                name: ing-hn
+                port:
+                  number: 80
+          - path: /ip
+            pathType: Prefix
+            backend:
+              service:
+                name: ing-ip
+                port:
+                  number: 80
+  ```
+
+* labels와 annotations의 차이
+  * labels - 별명, 별칭
+    * pod, service, ingress, kubernetes object에 대해서 사람들이 관리하려고 쓰는 것
+  * annotations
+    * pod, service, ingress, kubernetes object에서 선언 할 수 있는데 시스템이 인지하는데 쓰는 것
+
+* 실습
+  ```
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.8/deploy-nginx.yaml
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.8/deploy-hn.yaml
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.8/deploy-ip.yaml
+  kubectl get pod,service
+
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.8/ingress.yaml
+  kubectl get ingress -o yaml
+
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.8/ingress_ctrl_nodeport.yaml
+  kubectl get pod -n ingress-nginx
+  kubectl delete -f _Lecture_k8s_learning.kit/ch4/4.8/ingress_ctrl_nodeport.yaml
+
+  kubectl apply -f _Lecture_k8s_learning.kit/ch4/4.8/ingress_ctrl_loadbalancer.yaml
+  kubectl get pod -n ingress-nginx
+  ```
