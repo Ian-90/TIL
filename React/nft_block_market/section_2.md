@@ -5,3 +5,17 @@
 
 ## 2. BApp Demo
 * demo 앱 실행 설명
+
+## 3. Hello, Klaytn
+* [klaytn wallet](https://wallet.klaytn.com/) - Baobab testnet 선택 후, 계정 생성(개인키 생성)
+  * private key는 절대로 공개하면 안됨
+  * private key, wallket key, address는 개인 메모장에 저장
+    * Account - 계좌
+    * Address - 주소
+    * Private key - 개인키
+  * KLAY Faucet에서 테스트용 klay 생성 후, [Klaytnscope](https://scope.klaytn.com/)에서 Babobab 네트워크 선택 후, 주소를 검색하면 테스트용 klay가 들어온걸 확인할 수 있다
+
+* [klaytn ide](https://ide.klaytn.com/#optimize=false&runs=200&evmVersion=constantinople&version=soljson-v0.8.7+commit.e28d00a7.js)
+  * 왼쪽 사이드바
+    * 두번째 메뉴에서 컴파일러 버전 선택
+    * 세번째 메뉴에서 네트워크선택 및 계정을 추가한 후, deploy 버튼으로 배포
