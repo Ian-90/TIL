@@ -19,3 +19,27 @@
   * 왼쪽 사이드바
     * 두번째 메뉴에서 컴파일러 버전 선택
     * 세번째 메뉴에서 네트워크선택 및 계정을 추가한 후, deploy 버튼으로 배포
+
+## 4. 스마트 컨트랙트 개념
+* World Computer
+  * 블록체인 데이터는 누구나 볼 수 있으며, 누구나 사용 가능
+  * 블록체인 - 수많은 스마트컨트랙트들과 개인들과의 트랜잭션의 모음
+
+* Account
+  * Private Key
+    * Address
+    * Balance - 잔고
+  * Smart Contract - 여러개가 있을 수 있음
+    * Address
+    * Balance
+    * Code
+
+* Transaction
+  * 블록체인에서의 모든 거래
+  * 코드에서 돈(KLAY)을 보낼 수 있음
+  * 코드를 실행하는데 돈이 듬
+
+* Fee(수수료)
+  * Gas, Gas Price
+  * 수수료 = GAS * GAS Price
+  * 코드를 실행하는데 수수료를 내야 함
