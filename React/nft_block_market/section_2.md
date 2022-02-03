@@ -43,3 +43,87 @@
   * Gas, Gas Price
   * 수수료 = GAS * GAS Price
   * 코드를 실행하는데 수수료를 내야 함
+
+## 5. NFT 발행: Solidity 기초 (1) ~ (2)
+* NFT
+  * 디지털 자산의 일종으로 대체 불가능한 특정 암호 디지털 자산. 디지털 자산에 대한 소유권을 블록체인에 저장함으로써 위조 및 변조가 불가능하도록 영구 보존하고, 그 소유권을 탈중앙화한 형태로 확인할 수 있도록 한다
+  * 발행(일련번호, 글자, 소유자) - mint
+  * 전송(누가, 누구에게, 무엇을) - transferFrom(form, to, tokenId)
+
+* Practice.sol
+```js
+program solidity >=0.4.24 <=0.5.6;
+
+contract Practice {
+  ## 변수 선언
+  uint256 private totalSupply = 10;
+  string public name = "KlayLion";
+  string public symbol = "KL";
+
+  mapping(unint256 => string) public tokenURIs;
+  mapping(unint256 => address) public tokenOwner;
+
+  address public owner; // contract deployer
+
+  constructor () public {
+    owner = msg.sender;
+  }
+  // 함수 생성
+  function getTotalSupply() public view returns (unint256) {
+    return totalSupply + 1000000
+  }
+
+  // 값을 변경하기 때문에 가스비를 내야함
+  function setTotalSupply(uint256 newSupply) public {
+    // require는 조건문
+    require(owner === msg.sender, 'Not owner');
+    totalSupply = newSupply;
+  }
+
+  function setTokenUri(uint256 id, string memory uri) public {
+    tokenURIs[id] = uri;
+  }
+
+  // mint(tokenId, uri, owner)
+  function mintWithTokenURI(address, to, uint256, tokenId, string memory tokenURI) public returns (bool) {
+    // to에게 tokenId(일련번호)를 발행. 적힐 글자는 tokenURI
+    tokenOwner[tokenId] = to;
+    tokenURIs[tokenId] = tokenURI;
+
+    // add token to the list
+    _ownedTokens[to].push(tokenId);
+
+    return true;
+  }
+
+  // transferFrom(from, to, tokenId) -> owner가 바뀌는 것(from -> to)
+  function safeTransferFrom(address from, address to, uint256 tokenId) public {
+    require(from == msg.sender, "from != msg.sender");
+    require(from == tokenOwner[tokenId], "you are not the owner of the token");
+
+    _removeTokenFromList(from, tokenId)
+    _ownedTokens[to].push(tokenId)
+    tokenOwner[tokenId] = to;
+  }
+
+  // 소유한 토큰 리스트
+  mapping(address => uint256[]) private _ownedTokens
+  function ownedTokens(address owner) public view returns (uint256[] | memory) {
+    return _ownedTokens[owner];
+  }
+
+  function _removeTokenFromList(address from, uint256 tokenId) private {
+    // [10, 15, 19, 20] -> 19번 삭제
+    uint256 lastTokenIdx = _ownedTokens[from].length - 1;
+    for(uint256 i=0; i < ownedTokens[from].length; i++) {
+      if (tokenId == _ownedTokens[from][i]) {
+        // Swap last token with deleting token
+        tokenId = _ownedTokens[from][i] = _ownedTokens[from][lastTokenIdx];
+        _ownedTokens[from][lastTokenIdx] = tokenId
+        break;
+      }
+    }
+    _ownedTokens[from].length--;
+  }
+}
+```
