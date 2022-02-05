@@ -50,11 +50,11 @@
   * 발행(일련번호, 글자, 소유자) - mint
   * 전송(누가, 누구에게, 무엇을) - transferFrom(form, to, tokenId)
 
-* Practice.sol
+* NFTSimple.sol
 ```js
 program solidity >=0.4.24 <=0.5.6;
 
-contract Practice {
+contract NFTSimple {
   ## 변수 선언
   uint256 private totalSupply = 10;
   string public name = "KlayLion";
@@ -127,3 +127,26 @@ contract Practice {
   }
 }
 ```
+
+## 6. Contract 연동하기
+* nft 스마트 컨트랙트 <-> market 스마트 컨트랙트
+  * 컨트랙트를 연동할 때 서로의 interface, 주소를 알아야 한다
+  * 스마트 컨트랙트들은 서로 호출가능하며, 토큰도 교환이 가능하다
+
+* NFTSimple.sol
+```js
+// ...
+contract NFTMarket {
+  function buyNFT(uint256 tokenId, address NFTAdress, address to) public return (bool) {
+    NFTSimple(NFTAdress).safeTransferFrom(address(this), to, tokenId);
+
+    return true
+  }
+}
+```
+
+## 7. KIP-17 (NFT 설명서)
+* KIP - Klaytn Improvement Proposals
+* interface - 사용 설명서
+* [KIP-17](https://github.com/genie19197/lecture-klay-market/blob/master/contracts/KIP17Token.sol) - NFT 설명서
+* KIP-7 - FT 설명서
