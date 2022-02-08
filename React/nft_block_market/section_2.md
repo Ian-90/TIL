@@ -150,3 +150,90 @@ contract NFTMarket {
 * interface - 사용 설명서
 * [KIP-17](https://github.com/genie19197/lecture-klay-market/blob/master/contracts/KIP17Token.sol) - NFT 설명서
 * KIP-7 - FT 설명서
+
+## 8. BApp Market Contract
+1. 발행, 조회
+2. 판매: Market에게 전송
+3. 구매: Market에서 buy 실행
+
+* NFTSimple.sol
+```js
+// ...
+contract NFTMarket {
+  mapping(uint256 => address) public seller;
+
+  function buyNFT(uint256 tokenId, address NFTAdress) public payable return (bool) {
+    // 구매한 사람한테 0.01 KLAY 전송
+    address payable receiver = address(uint160(seller[tokenId]));
+
+    // Send 0.01 KLAY to receiver
+    // 10 ** 18 PEB = 1 KLAY
+    receiver.transfer(10 ** 16);
+  
+    NFTSimple(NFTAdress).safeTransferFrom(address(this), msg.sender, tokenId, '0x00');
+    return true
+  }
+
+  // Market이 토큰을 받았을 때(판매대에 올라갔을 때), 판매자가 누구인지 기록해야함
+  function onKIP17Received(address operator, address from, uint tokenId, bytes memory data) public returns (bytes4) {
+    seller[tokenId] = from;
+
+    return bytes4(keccak256("onKIP17Received(address, address, uint256, bytes)"))
+  }
+}
+
+contract NFTSimple {
+  // ...
+  // onKIP17Received bytes
+  bytes4 private constant _KIP17_RECEIVED = 0x6745782b
+
+  // transferFrom(from, to, tokenId) -> owner가 바뀌는 것(from -> to)
+  function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory _data) public {
+    require(from == msg.sender, "from != msg.sender");
+    require(from == tokenOwner[tokenId], "you are not the owner of the token");
+
+    _removeTokenFromList(from, tokenId)
+    _ownedTokens[to].push(tokenId)
+    tokenOwner[tokenId] = to;
+  
+    // 만약에 받는 쪽이 실행할 코드가 있는 스마트 컨트랙트라면 코드를 실행할 것
+    require(
+      _checkOnKIP17Recevied(from, to, tokenId, _data), "KIP17: transfer to non KIP17Receiver implementer"
+    )
+  }
+
+  function _checkOnKIP17Received(address from, address to, uint256 tokenId, bytes memory _data) internal returns(bool) {
+    bool success;
+    bytes memory returndata;
+  
+    if (!isContract(to)) {
+      return true;
+    }
+
+    (success, returndata) = to.call(
+      abi.encodeWithSelector(
+        _KIP17_RECEIVED,
+        msg.sender,
+        from,
+        tokenId,
+        _data
+      )
+    );
+
+    if (
+      returndata.length !=0 &&
+      abi.decode(returndata, (bytes4)) == _KIP17_RECEIVED
+    ) {
+      return true;
+    }
+
+    return false
+  }
+
+  function isContract(address account) internal view returns (bool) {
+    uint256 size;
+    assembly { size := extcodesize(account)}
+    return size > 0;
+  }
+}
+```
