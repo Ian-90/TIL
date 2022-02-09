@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "remix"
-import { getPosts } from "./post"
+import { getPosts } from "../../post"
 
 export const loader = async () => {
   return getPosts()
