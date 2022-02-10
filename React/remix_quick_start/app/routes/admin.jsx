@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "remix";
+import { Outlet, Link, useLoaderData } from "remix";
 import adminStyles from "~/styles/admin.css";
 import { getPosts } from "~/post";
 
@@ -26,7 +26,9 @@ export default function Admin() {
           ))}
         </ul>
       </nav>
-      <main>...</main>
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 }
