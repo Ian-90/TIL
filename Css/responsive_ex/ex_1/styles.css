@@ -5,3 +5,7 @@
 .lead_more_btn {
   border-radius: 34px;
 }
+
+.card_container {
+  width: 360px;
+}
