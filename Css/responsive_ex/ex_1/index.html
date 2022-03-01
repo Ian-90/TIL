@@ -11,18 +11,22 @@
 <script src="https://kit.fontawesome.com/4e5ef2c2b5.js" crossorigin="anonymous"></script>
 <body>
   <header>
-    <nav class="bg-gray-300 md:p-7 lg:px-36 lg:py-7 flex">
+    <nav class="bg-gray-300 md:p-7 lg:px-36 lg:py-7 flex relative">
       <div>
         <h1 class="text-4xl">LOGO</h1>
       </div>
-      <div class="ml-auto w-10 h-10 bg-gray-100 flex justify-center items-center cursor-pointer lg:hidden">
+      <div class="ml-auto w-10 h-10 bg-gray-100 flex justify-center items-center cursor-pointer lg:hidden" id="nav-menu">
         <i class="text-2xl fa-solid fa-bars"></i>
       </div>
-      <ul class="ml-auto flex items-center space-x-4 text-lg hidden lg:block">
-        <li>About</li>
-        <li>Service</li>
-        <li>Portfolio</li>
-        <li>Contact</li>
+      <ul class="lg:ml-auto lg:flex lg:items-center lg:space-x-4 text-lg hidden" id="nav-menu-list">
+        <li class="md:flex md:items-center md:justify-center md:w-80 md:h-12 md:bg-gray-300 md:border md:border-gray-
+        50 hover:bg-gray-100">About</li>
+        <li class="md:flex md:items-center md:justify-center md:w-80 md:h-12 md:bg-gray-300 md:border md:border-gray-
+        50 hover:bg-gray-100">Service</li>
+        <li class="md:flex md:items-center md:justify-center md:w-80 md:h-12 md:bg-gray-300 md:border md:border-gray-
+        50 hover:bg-gray-100">Portfolio</li>
+        <li class="md:flex md:items-center md:justify-center md:w-80 md:h-12 md:bg-gray-300 md:border md:border-gray-
+        50 hover:bg-gray-100">Contact</li>
       </ul>
     </nav>
   <section class="bg-gray-400 hero_container py-36">
@@ -173,5 +177,6 @@
       </ul>
     </div>
   </footer>
+  <script src="./index.js"></script>
 </body>
 </html>
