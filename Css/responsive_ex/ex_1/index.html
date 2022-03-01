@@ -8,13 +8,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./styles.css">
 </head>
+<script src="https://kit.fontawesome.com/4e5ef2c2b5.js" crossorigin="anonymous"></script>
 <body>
   <header>
-    <nav class="bg-gray-300 px-36 py-7 flex">
+    <nav class="bg-gray-300 md:p-7 lg:px-36 lg:py-7 flex">
       <div>
         <h1 class="text-4xl">LOGO</h1>
       </div>
-      <ul class="ml-auto flex items-center space-x-4 text-lg">
+      <div class="ml-auto w-10 h-10 bg-gray-100 flex justify-center items-center cursor-pointer lg:hidden">
+        <i class="text-2xl fa-solid fa-bars"></i>
+      </div>
+      <ul class="ml-auto flex items-center space-x-4 text-lg hidden lg:block">
         <li>About</li>
         <li>Service</li>
         <li>Portfolio</li>
