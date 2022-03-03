@@ -13,3 +13,21 @@
 .middle_hero_container {
   height: 460px;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .card_container {
+    width: calc(50% - 16px);
+  }
+
+  .card_container > div > img {
+    width: 100%;
+  }
+
+  .card_container:nth-child(even) {
+    margin-left: auto;
+  }
+
+  .card_container:nth-child(2n + 3) {
+    margin-top: 32px;
+  }
+}
