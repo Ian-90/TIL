@@ -15,7 +15,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .card_container {
+  .card_container, .profile_container {
     width: calc(50% - 16px);
   }
 
@@ -23,11 +23,11 @@
     width: 100%;
   }
 
-  .card_container:nth-child(even) {
+  .card_container:nth-child(even), .profile_container:nth-child(even) {
     margin-left: auto;
   }
 
-  .card_container:nth-child(2n + 3) {
+  .card_container:nth-child(2n + 3), .profile_container:nth-child(n + 3) {
     margin-top: 32px;
   }
 }
