@@ -27,7 +27,7 @@
     margin-left: auto;
   }
 
-  .card_container:nth-child(2n + 3), .profile_container:nth-child(n + 3), .member_card_container:nth-child(n + 3) {
+  .card_container:nth-child(2n + 3), .profile_container:nth-child(n + 3), .member_card_container:nth-child(n + 3), footer > div:nth-child(n + 4) {
     margin-top: 32px;
   }
 }
