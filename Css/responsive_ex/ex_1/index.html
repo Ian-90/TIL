@@ -6,19 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Example1</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          'sm': '360px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+          '2xl': '1536px',
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <script src="https://kit.fontawesome.com/4e5ef2c2b5.js" crossorigin="anonymous"></script>
 <body>
   <header>
-    <nav class="bg-gray-300 md:p-7 lg:px-36 lg:py-7 flex relative">
+    <nav class="bg-gray-300 py-5 px-6 md:p-7 lg:px-36 lg:py-7 flex relative">
       <div>
-        <h1 class="text-4xl">LOGO</h1>
+        <h1 class="text-3xl md:text-4xl">LOGO</h1>
       </div>
       <div class="ml-auto w-10 h-10 bg-gray-100 flex justify-center items-center cursor-pointer lg:hidden" id="nav-menu">
         <i class="text-2xl fa-solid fa-bars"></i>
       </div>
-      <ul class="lg:ml-auto lg:flex lg:items-center lg:space-x-4 text-lg hidden" id="nav-menu-list">
+      <ul class="sm:w-full md:w-fit lg:ml-auto lg:flex lg:items-center lg:space-x-4 text-lg hidden" id="nav-menu-list">
         <li>About</li>
         <li>Service</li>
         <li>Portfolio</li>
