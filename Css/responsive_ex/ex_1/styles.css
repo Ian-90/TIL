@@ -36,4 +36,12 @@
   .hero_container {
     height: 560px;
   }
+
+  .card_container {
+    width: 100%;
+  }
+
+  .card_container:nth-child(n + 1) {
+    margin-top: 32px;
+  }
 }
