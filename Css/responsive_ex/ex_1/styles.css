@@ -31,3 +31,9 @@
     margin-top: 32px;
   }
 }
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .hero_container {
+    height: 560px;
+  }
+}
