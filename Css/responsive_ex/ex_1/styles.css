@@ -37,6 +37,10 @@
     height: 560px;
   }
 
+  .middle_hero_container {
+    height: 300px;
+  }
+
   .card_container {
     width: 100%;
   }
