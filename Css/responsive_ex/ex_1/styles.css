@@ -45,7 +45,12 @@
     width: 100%;
   }
 
-  .card_container:nth-child(n + 2), .profile_container:nth-child(n + 2) {
+  .member_card_container > img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card_container:nth-child(n + 2), .profile_container:nth-child(n + 2), .member_card_container:nth-child(n + 2) {
     margin-top: 32px;
   }
 }
