@@ -45,7 +45,7 @@
     width: 100%;
   }
 
-  .card_container:nth-child(n + 2) {
+  .card_container:nth-child(n + 2), .profile_container:nth-child(n + 2) {
     margin-top: 32px;
   }
 }
