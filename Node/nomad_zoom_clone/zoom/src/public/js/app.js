@@ -24,17 +24,13 @@ socket.addEventListener('close', () => {
   console.log('DisConnected from Server')
 })
 
-setTimeout(() => {
-  socket.send('hello from the browser')
-}, 10000)
-
 function handleSubmit(event) {
   event.preventDefault()
   const input = messageForm.querySelector('input')
   socket.send(makeMessage('new_message', input.value))
   const li = document.createElement('li')
-  li.innerText = `You: ${input.value}`
-  message.append(li)
+  // li.innerText = `You: ${input.value}`
+  // message.append(li)
   input.value = ''
 }
 
@@ -46,4 +42,4 @@ function handleNickSubmit(event) {
 }
 
 messageForm.addEventListener('submit', handleSubmit)
-nikcForm.addEventListener('submit', nickSubmit)
+nikcForm.addEventListener('submit', handleNickSubmit)

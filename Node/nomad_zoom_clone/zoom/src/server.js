@@ -25,7 +25,7 @@ wss.on('connection', (socket) => {
   socket.on('message', (msg) => {
     console.log(msg.toString())
     const message = JSON.parse(msg)
-    switch(parsed.type) {
+    switch(message.type) {
       case "new_message":
         sockets.forEach(aSocket => aSocket.send(`${socket.nickname}: ${message.payload.toString()}`))
       case "nickname":
@@ -36,7 +36,6 @@ wss.on('connection', (socket) => {
   socket.on('close', () => {
     console.log('Disconnected from the Broswer')
   })
-  socket.send('hello')
 })
 
 server.listen(3000, handleListen)
