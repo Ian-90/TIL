@@ -26,3 +26,17 @@ Zoom Clone using NODEJS, WebRTC and Websockets
 
 ### 1.3 WebSocket Events
 * [MDN WebSocket](https://developer.mozilla.org/ko/docs/Web/API/WebSocket)
+
+## 2. SOCKETIO
+
+### 2.1 SocketIO vs WebSockets
+* SocketIO
+  * 웹소켓을 이용해서 실시간, 양방향, 이벤트 기반 통신을 제공하는 프레임워크
+  * 웹소켓이 이용이 불가능해도 SocketIO가 다른 방법(http long-polling)을 이용
+
+
+## 2.2 Installing SocketIO
+* 설치
+```
+yarn add socket.io
+```
