@@ -35,8 +35,16 @@ Zoom Clone using NODEJS, WebRTC and Websockets
   * 웹소켓이 이용이 불가능해도 SocketIO가 다른 방법(http long-polling)을 이용
 
 
-## 2.2 Installing SocketIO
+### 2.2 Installing SocketIO
 * 설치
 ```
 yarn add socket.io
 ```
+
+### 2.3 SocketIO is Amazing
+* string뿐만 아니라 object 전송 가능
+* emit에서 여러개의 인자를 보낼 수 있다
+
+### 2.4 Recap
+* SocketIO는 서버가 종료되면 재연결을 시도함
+* 끝날 때 실행되는 함수를 인자로 보내고 싶으면, 함수를 마지막 인자에 넣어야 한다. 이 함수는 백엔드가 아닌 프론트엔드에서 실행 시키는 코드이다. 보안적으로 안전해야 하기 때문이다.
