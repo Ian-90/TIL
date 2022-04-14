@@ -32,3 +32,14 @@
   cat /etc/passwd | tail -n 15
   cat /etc/passwd | tail -n +5
   ```
+
+## 3. 몇 줄이나 적혀있니? - wc
+* `wc` - line/word/byte count 출력
+* 자주 사용되는 옵션
+  * -l :라인수 만 출력
+* ex
+  ```
+  wc [FILENAME]
+  wc -l [FILENAME]
+  cat [FILENAME] | wc -l
+  ```
