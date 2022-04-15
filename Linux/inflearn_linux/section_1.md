@@ -43,3 +43,19 @@
   wc -l [FILENAME]
   cat [FILENAME] | wc -l
   ```
+
+## 4. 줄번호 좀 보여줘 - nl
+* `nl` - 파일 내용을 라인 넘버와 함께 출력
+* 자주 사용되는 옵션
+  * -ba :모든 라인에 대해 라인 넘버링
+  * -v N :시작 라인 넘버를 N으로 지정
+  * -s :라인 넘버 출력 후 출력할 separator 지정
+* ex
+  ```
+  cat FILENAME
+  nl FILENAME
+  nl -ba FILENAME
+  nl -ba -s ":" FILENAME
+  nl -ba -s ":" FILENAME | tail
+  ```
+
