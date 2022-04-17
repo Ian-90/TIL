@@ -48,3 +48,12 @@ yarn add socket.io
 ### 2.4 Recap
 * SocketIO는 서버가 종료되면 재연결을 시도함
 * 끝날 때 실행되는 함수를 인자로 보내고 싶으면, 함수를 마지막 인자에 넣어야 한다. 이 함수는 백엔드가 아닌 프론트엔드에서 실행 시키는 코드이다. 보안적으로 안전해야 하기 때문이다.
+
+
+### 2.5 Rooms
+* [socket](https://socket.io/docs/v4/server-api/#socket)
+  * socket.rooms - 내가 속한 모든 rooms
+  * socket.join - room에 참가하는 기능
+
+### 2.6 Room Messages
+* [socket.to](https://socket.io/docs/v4/server-api/#sockettoroom) - 메세지 보내기

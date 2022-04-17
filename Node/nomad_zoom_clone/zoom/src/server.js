@@ -17,12 +17,17 @@ const server = http.createServer(app)
 const io = SocketIO(server)
 
 io.on('connection', socket => {
-  console.log(socket)
+  // console.log(socket)
+  socket.onAny((event) => {
+    console.log(`Socket Event: ${event}`)
+  })
   socket.on('enter_room', (roomName, done) => {
-    console.log(roomName)
-    setTimeout(() => {
-      done('hello from the backend')
-    }, 10000)
+    console.log('id', socket.id)
+    console.log('1',socket.rooms)
+    socket.join(roomName)
+    console.log('2',socket.rooms)
+    done()
+    socket.to(roomName).emit('welcome')
   })
 })
 
