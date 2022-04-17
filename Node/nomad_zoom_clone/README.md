@@ -57,3 +57,9 @@ yarn add socket.io
 
 ### 2.6 Room Messages
 * [socket.to](https://socket.io/docs/v4/server-api/#sockettoroom) - 메세지 보내기
+
+### 2.7 Room Notifications
+* disconnectiong event로 유저가 떠났다는걸 알려주기
+
+### 2.8 Nicknames
+* nickname 추가

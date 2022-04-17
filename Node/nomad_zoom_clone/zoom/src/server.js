@@ -17,18 +17,28 @@ const server = http.createServer(app)
 const io = SocketIO(server)
 
 io.on('connection', socket => {
-  // console.log(socket)
+  socket['nickname'] = 'Anonymous'
+
   socket.onAny((event) => {
     console.log(`Socket Event: ${event}`)
   })
+
   socket.on('enter_room', (roomName, done) => {
-    console.log('id', socket.id)
-    console.log('1',socket.rooms)
     socket.join(roomName)
-    console.log('2',socket.rooms)
     done()
-    socket.to(roomName).emit('welcome')
+    socket.to(roomName).emit('welcome', socket.nickname)
   })
+
+  socket.on('disconnection', () => {
+    socket.rooms.forEach(room => socket.to(room).emit('bye', socket.nickname))
+  })
+
+  socket.on('new_message', (msg, roomName, done) => {
+    socket.to(roomName).emit('new_message', `${socket.nickname}: ${msg}`)
+    done()
+  })
+
+  socket.on('nickname', nickname => socket['nickname'] = nickname)
 })
 
 // const wss = new WebSocket.WebSocketServer({ server })
