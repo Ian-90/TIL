@@ -71,3 +71,15 @@ yarn add socket.io
 
 ### 2.10 Room Count part Two
 * 새로운 방 생성 모두(연결된 모든 소켓)에게 노티 구현
+
+### 2.11 User Count
+* 방안에 있는 사람수 세기
+
+### 2.12 Admin Panel
+* 백엔드를 위한 [Admin UI](https://socket.io/docs/v4/admin-ui/)
+* 설치
+  ```
+  yarn add @socket.io/admin-ui
+  ```
+* 온라인 데모
+  * https://admin.socket.io 접속 후, 서버 연동
