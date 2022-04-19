@@ -16,14 +16,14 @@ const handleListen = () => console.log('Listening on http://localhost:3000')
 
 const server = http.createServer(app)
 // const io = SocketIO(server)
-const wsServer = new Server(server, {
+const io = new Server(server, {
   cors: {
     origin: ['https://admin.socket.io'],
     credentials: true,
   }
 })
 
-instrument(wsServer, {
+instrument(io, {
   auth: false,
 })
 
