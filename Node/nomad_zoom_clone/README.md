@@ -63,3 +63,11 @@ yarn add socket.io
 
 ### 2.8 Nicknames
 * nickname 추가
+
+### 2.9 Room Count part One
+* [Adapter](https://socket.io/docs/v4/glossary/#adapter) - 다른 서버들 사이에 실시간 애플리케이션 동기화
+  * 규모 크면 모든 클라이언트가 같은 서버에 connection되지 않기 때문에, Adapter가 DB를 이용하여 서버간 통신을 한다.
+* room ID를 socket ID에서 찾을 수 있다면, private room이며, 그게아니면 public room이다
+
+### 2.10 Room Count part Two
+* 새로운 방 생성 모두(연결된 모든 소켓)에게 노티 구현
