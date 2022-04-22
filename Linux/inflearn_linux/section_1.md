@@ -59,3 +59,30 @@
   nl -ba -s ":" FILENAME | tail
   ```
 
+## 5. 정렬 좀 해볼래? - sort
+* `sort` - 정렬하여 출력
+* 자주 사용되는 옵션
+  * 위치 지정
+    * -k, --key=KEYDEF :key에 의한 정렬 수행
+    * -t, --filed-seperator :필드 구분자(기본값은 공백문자)
+  * 정렬 기준
+    * -f, --ignore-case
+    * -g, --general-numeric-sort
+    * -n, --numeric-sort
+    * -r, --reverse
+    * -u, --unique
+  * 키 지정 방법
+    * `F[.C][OPTS][,F[.C][OPTS]]`
+      * F - filed number
+      * C - character position
+      * OPTS - ordering option
+      
+* ex
+  ```
+  cat /etc/passwd | sort
+  cat /etc/passwd | sort -t: -k 3
+  cat /etc/passwd | sort -t: -k 3 -n
+  cat /etc/passwd | sort -t: -k 3 -n --debug
+  cat /etc/passwd | sort -t: -k 2,2 --debug
+  cat /etc/passwd | sort -t: -k 5,5 -k 1,1 --debug
+  ```
