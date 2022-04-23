@@ -86,3 +86,22 @@
   cat /etc/passwd | sort -t: -k 2,2 --debug
   cat /etc/passwd | sort -t: -k 5,5 -k 1,1 --debug
   ```
+
+## 6. 중복 좀 없애줄래? - uniq
+* `uniq` - 중복된 내용 제거하고 출력. 연속적으로 중복된 것만 제거
+* 자주 사용되는 옵션
+  * -d, --repeated :중복된 내용만 출력
+  * -u, --unique : 중복되지 않은 내용만 출력
+  * -i, --ignore-case : 대소문자 무시
+
+* ex
+  ```
+  nl uniq_sample
+  uniq uniq_sample | nl
+  sort uniq_sample | uniq | nl
+  sort uniq_smaple | uniq -i | nl
+  sort uniq_sample | uniq -d | nl
+  sort uniq_sample | uniq -u | nl
+  grep "shm_open" *.c | awk -F: '{print $1}' | uniq
+  ```
+  * uniq_sample - 랜덤 이름이 들어간 파일
