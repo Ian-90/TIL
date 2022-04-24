@@ -105,3 +105,21 @@
   grep "shm_open" *.c | awk -F: '{print $1}' | uniq
   ```
   * uniq_sample - 랜덤 이름이 들어간 파일
+
+## 7. 텍스트 자르기 - cut
+* `cut` - 컬럼 잘라내기
+* 자주 사용되는 옵션
+  * -b, --bytes=LIST :byte 선택
+  * -c, --characters=LIST :character 선택
+  * -f, --fields=LIST :필드(컬럼) 선택
+  * -d, --delimiter=DELIM :tab 대신 사용할 구분자 지정
+  * --complement :선택 반전
+  * --output-delimiter=STRING :출력시 사용할 구분자 지정
+
+* ex
+  ```
+  head /etc/passwd | cut -d ':' -f 1,7
+  head /etc/passwd | cut -d ':' -f 1,7 --output-delimiter=': '
+  ls -al | cut -b -10
+  ls -al | cut -b -10 --complement
+  ```
