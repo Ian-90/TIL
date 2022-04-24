@@ -83,3 +83,12 @@ yarn add socket.io
   ```
 * 온라인 데모
   * https://admin.socket.io 접속 후, 서버 연동
+
+## 3. VIDEO CALL
+
+### 3.1 User Video
+* [MediaDevices.getUserMedia()](https://developer.mozilla.org/ko/docs/Web/API/MediaDevices/getUserMedia)
+
+### 3.2 Call Controls
+* 유저 카메라 목록 생성
+  * [MediaDevices.enumerateDevices()](https://developer.mozilla.org/ko/docs/Web/API/MediaDevices/enumerateDevices)
