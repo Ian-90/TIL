@@ -92,3 +92,13 @@ yarn add socket.io
 ### 3.2 Call Controls
 * 유저 카메라 목록 생성
   * [MediaDevices.enumerateDevices()](https://developer.mozilla.org/ko/docs/Web/API/MediaDevices/enumerateDevices)
+
+### 3.3 Camera Switch
+* 특정 브라우저에서 특정 카메라를 사용하도록 컨트롤러 추가
+
+### 3.4 Introduction to WebRTC
+* WebRTC(Web Real-Time Communication)
+  * peer to peer
+    * signaling이 끝나면 서버랑 연결이 된다.
+    * 서버 - 상대가 어디있는지 알기 위해 사용. 브라우저는 서버한테 위치와 configuration만 전달
+    * 영상과 오디오는 서버로 전달되지 않는다.
