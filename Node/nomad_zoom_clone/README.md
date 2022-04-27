@@ -102,3 +102,9 @@ yarn add socket.io
     * signaling이 끝나면 서버랑 연결이 된다.
     * 서버 - 상대가 어디있는지 알기 위해 사용. 브라우저는 서버한테 위치와 configuration만 전달
     * 영상과 오디오는 서버로 전달되지 않는다.
+
+### 3.5 Rooms
+* video call을 처리하기 위한 룸 생성
+
+### 3.6 Offers
+* 룸에 들갔을 때 브라우저 연결 생성
