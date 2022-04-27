@@ -123,3 +123,24 @@
   ls -al | cut -b -10
   ls -al | cut -b -10 --complement
   ```
+
+## 8. 텍스트 찾아 바꾸기 - tr
+* `tr` - 어떤 내용을 변환한다.
+* 자주 사용되는 옵션
+  * -c, -C, --complement
+  * -d, --delete
+  * SET
+    - CHAR1-CHAR2 : CHAR1부터 CHAR2까지(예: 'a-z')
+    - [:alnum:] : 문자 + 숫자
+    - [:alpha:] : 문자
+    - [:blank:] : 공백
+    - [:space:] : 공백 + newline
+    - [:digit:] / [:xdigit:] : 10진수 숫자 / 16진수 숫자
+    - [:lower:] / [:upper:] : 소문자 / 대문자
+* ex
+  ```
+  tr [OPTION]... SET1 [SET2]
+  head /etc/passwd | tr -d '/' ## 모든 / 삭제
+  head /etc/passwd | tr ':' '%' ## :를 %으로 변환
+  head /etc/passwd | [:lower:] [:upper:] ## 모든 소문자가 모든 대문자로 변환
+  ```
