@@ -144,3 +144,23 @@
   head /etc/passwd | tr ':' '%' ## :를 %으로 변환
   head /etc/passwd | [:lower:] [:upper:] ## 모든 소문자가 모든 대문자로 변환
   ```
+
+## 9. 줄단위 작업 - sed
+* `sed` - stream editor
+* 자주 사용되는 옵션
+  * {RANGE}p : range 내의 라인을 출력
+  * {RANGE}d : range 내의 라인을 삭제
+  * /SEARCHPATTERN/p : SEACHPATTERN과 매치되는 라인을 출력
+  * /SEARCHPATTERN/d : SEACHPATTERN과 매치되는 라인을 삭제
+  * s/REGEX/REPLACE/ : REGEX에 매치되는 부분을 REPLACE로 교체(substitue)
+* ex
+  ```
+  head /etc/passwd | sed -n '1,3p'
+  head /etc/passwd | sed '1,3d'
+  head /etc/passwd | sed -n '/nologin/p'
+  head /etc/passwd | sed 's/daemon/DAEMON/'
+  head /etc/passwd | sed 's/daemon/DAEMON/g'
+  head /etc/passwd | sed '3,5 s/:/^/g'
+  head /etc/passwd | sed -n '/games/,+2p'
+  head /etc/passwd | sed -n '/games/,10p'
+  ```
