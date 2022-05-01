@@ -108,3 +108,9 @@ yarn add socket.io
 
 ### 3.6 Offers
 * 룸에 들갔을 때 브라우저 연결 생성
+
+### 3.7 Answers
+* 룸에 들어갔을 떄 피어 A는 offer를 생성하고, 피어 B는 answer를 생성
+
+### 3.8 IceCandidate
+* offer와 answer를 모두 받는것이 끝났을 떄, 연결된 피어 간에 양쪽에서 icecandidate 이벤트 실행이 시작됨
