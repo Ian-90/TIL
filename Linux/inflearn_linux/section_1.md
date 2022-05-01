@@ -161,6 +161,6 @@
   head /etc/passwd | sed 's/daemon/DAEMON/'
   head /etc/passwd | sed 's/daemon/DAEMON/g'
   head /etc/passwd | sed '3,5 s/:/^/g'
-  head /etc/passwd | sed -n '/games/,+2p'
-  head /etc/passwd | sed -n '/games/,10p'
+  head /etc/passwd | sed -n '/games/,+2p' ## 검색된 결과부터 2번째줄까지 출력(상대적인 경로)
+  head /etc/passwd | sed -n '/games/,10p' ## 검색된 games부터 10번쨰 줄까지 출력
   ```
