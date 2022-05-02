@@ -114,3 +114,20 @@ yarn add socket.io
 
 ### 3.8 IceCandidate
 * offer와 answer를 모두 받는것이 끝났을 떄, 연결된 피어 간에 양쪽에서 icecandidate 이벤트 실행이 시작됨
+
+### 3.9 Senders
+* 카메라 변경 시 연결된 피어에도 적용
+* sender - 피어로 보내진 media stream track을 컨트롤하게 해주는 것
+* [local tunnel](https://www.npmjs.com/package/localtunnel) - 서버를 일시적으로 공유
+  * `lt --port 3000`
+
+### 3.10 STUN
+* 컴퓨터랑 폰이랑 같은 와이파이에 있지 않으면 에러가 발생. 그러므로 STUN Server를 이용해야 함.
+* STUN Server - 컴퓨터가 공용 IP 주소를 찾게해주는 것
+  * 실제로는 개인의 STUN Server를 사용해야하지만, 구글 스턴서버를 이용하여 수업에서 활용
+
+### 3.11 Conclusions
+* DataChannel 이용해보기
+* WebRTC 단점
+  * 피어가 너무 많으면 느려진다.
+  * 피어가 너무 많으면 SFU 기술을 사용
