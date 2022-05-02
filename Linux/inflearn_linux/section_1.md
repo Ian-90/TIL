@@ -164,3 +164,23 @@
   head /etc/passwd | sed -n '/games/,+2p' ## 검색된 결과부터 2번째줄까지 출력(상대적인 경로)
   head /etc/passwd | sed -n '/games/,10p' ## 검색된 games부터 10번쨰 줄까지 출력
   ```
+
+## 10. 강력한 스크립팅 - awk
+* `awk` - 텍스트 처리 script language. `awk options 'selection _criteria {action}' input-file`
+* 자주 사용되는 옵션
+  * -F : filed seperator 지정
+* 주요 내장 변수
+  * $1, $2, $2, ... : Nth field
+  * NR : number of records
+  * NF : number of fields
+  * FS : field separator(default `white space`)
+  * RS : record separator(default `new line`)
+  * OFS : Output field separator
+  * ORS : Output record separator
+* ex
+  ```
+  wc /etc/passwd | awk '{ print $1 }'
+  head /etc/passwd | awk -F: '{ print $1 }'
+  head /etc/passwd | awk -F: '/sy/ { print $1 }' ## sy 검색해서 출력
+  head /etc/passwd | awk -F: '{ print NR, $1 }'
+  ```
