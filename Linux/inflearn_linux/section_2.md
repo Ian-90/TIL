@@ -40,3 +40,20 @@
   find . -name "*.md" -exec stat
   find . -name "*.md" -ok rm -f
   ```
+
+## 2. 텍스트 검색 - grep
+* `grep [OPTIONS] PATTERN [FILE...]` - 파일 내용 중 원하는 내용을 찾는다.
+* 자주 사용되는 옵션
+  * -r : recurive
+  * -i : ignore case
+  * -v : invert match
+  * -q : quiet mode
+* example
+  ```
+  grep ## *.md
+  grep fork *.c -q
+  grep "\<for\>" *.md
+  grep "^" *.md ## 라인의 시작 찾기
+  ls -al | grep posix
+  find . | grep posix
+  ```
