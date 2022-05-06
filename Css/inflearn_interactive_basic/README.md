@@ -4,7 +4,7 @@
 
 1. [마우스를 활용한 인터랙티브](./section_1.md)
 2. 예제 사이트 같이 만들어보기 2종 - section_2 폴더에 실습
-3. [센스있는 Mouse over UI 구현](./section_3.md)
+3. 센스있는 Mouse over UI 구현 - section_3 폴더에 실습
 4. [스크롤 값을 활용한 인터랙티브](./section_4.md)
 5. [초간단 패럴렉스 페이지 2종 제작](./section_5.md)
 6. [실전 패럴랙스, 레이어 7개 제어하기](./section_6.md)
