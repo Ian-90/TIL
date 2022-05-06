@@ -83,3 +83,14 @@
   locate main.c -n 10
   locate --regex "/usr/src/.*\<main.c$$"
   ```
+
+## 5. 실행 파일 위치 검색 - which
+* `which` - 실행 파일의 위치를 보여준다.
+* 자주 사용되는 옵션
+  * 없음
+* example
+  ```
+  which ls
+  which chmod
+  which ls strace chmod
+  ```
