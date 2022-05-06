@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    position: relative;
+    background: #000;
+    overflow: hidden;
+  }
+  .human {
+    position: absolute;
+    width: 300px;
+    left: calc(50% - 150px);
+    z-index: 100;
+  }
+</style>
+<body>
+  <h1>test</h1>
+  <img src="../assets//layer-7.png" class="human" alt="사람">
+  <img src="../assets/layer-1.jpg" class="bg" alt="벽">
+  <script>
+    let human
+    let bg
+    let x = 0
+    let y = 0
+    let mouseX = 0
+    let mouseY = 0
+    let speed = 0.09
+
+    function loop() {
+      mouseX += (x - mouseX) * speed
+      mouseY += (y - mouseY) * speed
+      human.style.transform = `translate(${-mouseX / 6}px, ${-mouseY / 6}px)`
+      bg.style.transform = `translate(${mouseX / 6}px, ${mouseY / 6}px)`
+
+      window.requestAnimationFrame(loop)
+    }
+
+    window.onload = function () {
+      human = document.getElementsByClassName('human')[0]
+      bg = document.getElementsByClassName('bg')[0]
+
+      function mouseFunc(e) {
+        x = (e.clientX - window.innerWidth / 2)
+        y = (e.clientY - window.innerHeight / 2)
+      }
+
+      window.addEventListener('mousemove', mouseFunc, false)
+  
+      loop()
+    }
+  </script>
+</body>
+</html>
