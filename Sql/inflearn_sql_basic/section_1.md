@@ -90,3 +90,12 @@
   WHERE
     id = 4;
   ```
+
+* 삭제
+  ```sql
+  -- 테이블의 특정 데이터 삭제
+  DELETE FROM
+    burgers
+  WHERE
+    id = 4;
+  ```
