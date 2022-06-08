@@ -9,7 +9,7 @@
 5. [고급 타입](./section_5.md)
 6. [제네릭](./section_6.md)
 7. [데코레이터](./section_7.md)
-8. [연습시간! Drag & Drop 프로젝트를 만들어 봅시다](./section_8.md)
+8. 연습시간! Drag & Drop 프로젝트를 만들어 봅시다 - project_1 폴더에 구현
 9. [모듈 및 네임스페이스](./section_9.md)
 10. [TypeScript와 함께 Webpack 사용하기](./section_10.md)
 11. [타사 라이브러리 및 TypeScript](./section_11.md)
