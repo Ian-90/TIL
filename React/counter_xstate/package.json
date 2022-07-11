@@ -1,0 +1,12 @@
+{
+  "name": "counter_xstate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "devDependencies": {
+    "xstate": "^4.32.1"
+  }
+}
