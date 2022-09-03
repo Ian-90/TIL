@@ -13,6 +13,6 @@
 9. [모듈 및 네임스페이스](./section_9.md)
 10. [TypeScript와 함께 Webpack 사용하기](./section_10.md)
 11. [타사 라이브러리 및 TypeScript](./section_11.md)
-12. [연습시간! 장소 선택 및 공유 앱(Google 맵 포함)](./section_12.md)
+12. 연습시간! 장소 선택 및 공유 앱(Google 맵 포함) - project_2 폴더에 구현
 13. [React.js 및 TypeScript](./section_13.md)
 14. [Node.js + Express 및 TypeScript](./section_14.md)
