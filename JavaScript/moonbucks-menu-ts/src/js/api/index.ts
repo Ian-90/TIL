@@ -1,6 +1,10 @@
 const BASE_URL = "http://localhost:3000/api"
 
-const HTTP_METHOD = {
+interface IHTTP_METHOD {
+  [method: string]: <T>(data?: T) => RequestInit
+}
+
+const HTTP_METHOD: IHTTP_METHOD = {
   POST(data) {
     return {
       method: 'POST',
@@ -26,27 +30,39 @@ const HTTP_METHOD = {
   }
 }
 
-const request = async (url, option) => {
+const request = async (url: URL | RequestInfo, option?: RequestInit) => {
   const res = await fetch(url, option)
   if (!res.ok) {
     alert('에러가 발생했습니다.')
-    console.error(e)
   }
 
   return res.json()
 }
 
-const requestWithoutJson = async (url, option) => {
+const requestWithoutJson = async (url: URL | RequestInfo, option?: RequestInit) => {
   const res = await fetch(url, option)
   if (!res.ok) {
     alert('에러가 발생했습니다.')
-    console.error(e)
   }
 
   return res
 }
 
-const MenuApi = {
+type MenuByCategory = {
+  id: string
+  isSoldOut: boolean
+  name: string
+} 
+
+interface IMenuApi {
+  getAllMenuByCategory: (category: string) => Promise<MenuByCategory[]>
+  createMenu: (category: string, name: string) => Promise<MenuByCategory>
+  updateMenu: (category: string, name: string, menuId: string) => Promise<MenuByCategory>
+  toggleSoldOutMenu: (category: string, menuId: string) => Promise<MenuByCategory>
+  deleteMenu: (category: string, menuId: string) => Promise<Response>
+}
+
+const MenuApi: IMenuApi = {
   async getAllMenuByCategory(category) {
     return request(`${BASE_URL}/category/${category}/menu`)
   },
@@ -64,7 +80,7 @@ const MenuApi = {
   },
   async toggleSoldOutMenu(category, menuId) {
     return request(
-      `${BASE_URL}/api/category/${category}/menu/${menuId}/soldout`,
+      `${BASE_URL}/category/${category}/menu/${menuId}/soldout`,
       HTTP_METHOD.PUT(),
     )
   },
