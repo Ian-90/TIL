@@ -48,7 +48,7 @@ const requestWithoutJson = async (url: URL | RequestInfo, option?: RequestInit) 
   return res
 }
 
-type MenuByCategory = {
+export type MenuByCategory = {
   id: string
   isSoldOut: boolean
   name: string
