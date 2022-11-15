@@ -254,7 +254,27 @@ JOIN orders ON
 
 ### 4.2 Quiz
 * 주문#10 장바구니에 담긴 상품들의 총합은?
+  ```sql
+  SELECT
+    SUM(order_details.count * products.price)
+  FROM orders
+  JOIN order_details ON
+    order_details.order_id = orders.id
+      AND
+    orders.id = 10
+  JOIN products ON products.id = order_detai크s.product_id;
+  ```
+
 * 상품#11 우유식빵의 총 판매 금액은?
+  ```sql
+  SELECT
+    SUM(products.price * order_details.count)
+  JOIN products ON
+    order_details.product_id = products.id
+      AND
+    products.id = 11
+  ```
+
 * 쿠마가 구매한 모든 상품 목록들 중, 다음을 조회하시오.
   * 테이블
     | 구매자명 | 상품명 | 가격 | 주문수량 |
@@ -262,5 +282,51 @@ JOIN orders ON
     | 쿠마 | 무항생제 특란 20구 | 7200 | 1 |
     | 쿠마 | 나가사키짬뽕 5입 | 4480 | 1 |
     | ... | ... | ... | ... |
+  * sql
+    ```sql
+  SELECT
+    users.nickname AS "구매자명",
+    products.name AS "상품명",
+    products.price AS "가격",
+    order_details.count AS "주문수량"
+  FROM users
+  JOIN orders ON
+    orders.user_id = users.id
+    AND
+    users.nickname = '쿠마'
+  LEFT JOIN order_details ON
+    order_details.order_id = orders.id
+  JOIN products ON
+    products.id = order_details.product_id;    
+    ```
+
 * 호크가 구매한 모든 상품의 총 구매 가격은?
+  ```sql
+  SELECT
+    SUM(products.price * order_details.count)
+  FROM
+    users
+  JOIN orders ON
+    orders.user_id = users.id
+      AND
+    users.nickname = '호크'
+  JOIN orders_details ON
+    order_details.order_id = orders.id
+      AND
+    orders.status = 'DELIVERED'
+  JOIN products ON
+    products.id = order_details.product_id
+  ```
+
 * 호크가 결제한 총 금액은?
+  ```sql
+  SELECT
+    SUM(payments.amount)
+  FROM users
+  JOIN orders ON
+    orders.user_id = users.id
+      AND
+    users.nickname = '호크'
+  LEFT JOIN payments ON
+    payments.order_id = orders.id;
+  ```
