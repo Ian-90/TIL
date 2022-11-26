@@ -214,7 +214,7 @@
   HAVING
     SUM(order_details.count) IS NOT NULL
   ORDER BY
-    "누적 매출" DESC
+    "누적 판매량" DESC
   LIMIT
     5
   ```
