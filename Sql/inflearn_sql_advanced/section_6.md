@@ -36,7 +36,7 @@
   FROM
     users
   JOIN orders ON
-    orders.users_id = users.id
+    orders.user_id = users.id
       AND
     orders.status = "DELIVERED"
   GROUP BY
@@ -45,7 +45,34 @@
 
 ### 1.5 Quiz
 * 상품별 총 주문 횟수와 주문 금액을 조회하시오.
+  ```sql
+  SELECT
+    products.name AS "상품명",
+    SUM(order_details.count) AS "주문 횟수",
+    SUM(products.price * order_details.count) AS "주문 금액"
+  FROM
+    products
+  JOIN order_details ON
+    order_details.product_id = products.id
+  GROUP BY products.name
+  ```
 * 사용자 닉네임별 배송 완료 주문 수와 총 결제 금액을 조회하시오.
+  ```sql
+  SELECT
+    users.nickname AS "사용자 닉네임",
+    COUNT(*) AS "배송 완료 주문 수",
+    SUM(payments.amount) AS "결제 금액"
+  FROM
+    users
+  JOIN orders ON
+    orders.user_id = users.id
+      AND
+    orders.status = 'DELIVERED'
+  JOIN
+    payments ON payments.order_id = orders.id
+  GROUP BY
+    users.nickname
+  ```
 
 ## 2. HAVING, ORDER BY, LIMIT 절
 ### 2.1 개요
@@ -72,9 +99,9 @@
 * 다음 쿼리는 상품명과 가격을 기준으로, 누적 판매정보를 조죄한다. 이를 참고하여 주어진 문제 풀기
   ```sql
   SELECT
-    products.name AS "상품명"
-    products.price AS "가격"
-    SUM(order_details.count) AS "누적 판매량"
+    products.name AS "상품명",
+    products.price AS "가격",
+    SUM(order_details.count) AS "누적 판매량",
     SUM(products.price * order_details.count) AS "누적 매출"
   FROM
     products
@@ -88,9 +115,9 @@
 * 누적 매출이 35000원 이상인 상품을 조회하시오.
   ```sql
   SELECT
-    products.name AS "상품명"
-    products.price AS "가격"
-    SUM(order_details.count) AS "누적 판매량"
+    products.name AS "상품명",
+    products.price AS "가격",
+    SUM(order_details.count) AS "누적 판매량",
     SUM(products.price * order_details.count) AS "누적 매출"
   FROM
     products
@@ -107,9 +134,9 @@
 * 누적 매출이 2만원 이상이면서, 누적 판매량도 10개 이상인 상품을 조회하시오.
   ```sql
   SELECT
-    products.name AS "상품명"
-    products.price AS "가격"
-    SUM(order_details.count) AS "누적 판매량"
+    products.name AS "상품명",
+    products.price AS "가격",
+    SUM(order_details.count) AS "누적 판매량",
     SUM(products.price * order_details.count) AS "누적 매출"
   FROM
     products
@@ -128,9 +155,9 @@
 * 누적 매출이 없는 제품을 가격 기준으로 오름차순 정렬하여 조회하시오.
   ```sql
   SELECT
-    products.name AS "상품명"
-    products.price AS "가격"
-    SUM(order_details.count) AS "누적 판매량"
+    products.name AS "상품명",
+    products.price AS "가격",
+    SUM(order_details.count) AS "누적 판매량",
     SUM(products.price * order_details.count) AS "누적 매출"
   FROM
     products
@@ -149,9 +176,9 @@
 * 누적 매출 상위 5개 상품을 조회하시오
   ```sql
   SELECT
-    products.name AS "상품명"
+    products.name AS "상품명",
     products.price AS "가격"
-    SUM(order_details.count) AS "누적 판매량"
+    SUM(order_details.count) AS "누적 판매량",
     SUM(products.price * order_details.count) AS "누적 매출"
   FROM
     products
@@ -171,4 +198,45 @@
 
 ### 2.7 Quiz
 * 누적 판매량 상위 5개 상품을 조회하시오.
+  ```sql
+  SELECT
+    products.name AS "상품명",
+    products.price AS "가격",
+    SUM(order_details.count) AS "누적 판매량",
+    SUM(products.price * order_details.count) AS "누적 매출"
+  FROM
+    products
+  LEFT JOIN order_details ON
+    order_details.product_id = products.id
+  GROUP BY
+    products.name,
+    products.price
+  HAVING
+    SUM(order_details.count) IS NOT NULL
+  ORDER BY
+    "누적 매출" DESC
+  LIMIT
+    5
+  ```
+
 * 가격 하위 5개 상품의 누적 매출을 조회하시오.
+  ```sql
+  SELECT
+    products.name AS "상품명",
+    products.price AS "가격",
+    SUM(order_details.count) AS "누적 판매량",
+    SUM(products.price * order_details.count) AS "누적 매출"
+  FROM
+    products
+  LEFT JOIN order_details ON
+    order_details.product_id = products.id
+  GROUP BY
+    products.name,
+    products.price
+  HAVING
+  	SUM(products.price * order_details.count) IS NOT NULL
+  ORDER BY
+    "가격" ASC
+  LIMIT
+    5
+  ```
