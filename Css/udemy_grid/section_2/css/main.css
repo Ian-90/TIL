@@ -1,0 +1,33 @@
+/* Put your code here */
+.grid {
+  display: grid;
+  grid-template: [row1-start] 100px [row1-end row2-start] 100px [row2-end]
+  / 200px auto 150px;
+  /* grid-row-gap: 10px;
+  grid-column-gap: 10px; */
+  grid-gap: 10px;
+}
+
+/* .grid div:nth-child(1) {
+  grid-row: auto / span 2;
+}
+
+.grid div:nth-child(2) {
+  grid-row-start: row2-start;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.grid div:nth-child(5) {
+  grid-row: row1-start / row1-end;
+  grid-column: 1 /3;
+} */
+
+.grid div:nth-child(6) {
+  order: -1;
+}
+
+.grid div:nth-child(3) {
+  order: 1;
+}
