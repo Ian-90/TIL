@@ -1,0 +1,25 @@
+/* Put your code here */
+.grid {
+  display: grid;
+  grid-template: 100px 100px 100px / repeat(12,  [small] 20xp [large] 40px);
+}
+
+.grid div:nth-child(1) {
+  grid-column: 1 / span 24;
+}
+
+.grid div:nth-child(2) {
+  grid-column: col 3 / col 9; /* 3 / 9 와 같다. 하지만 이름을 붙인 것이 가독성이 좋다*/
+}
+.grid div:nth-child(3) {
+  grid-column: auto / span 6;
+}
+.grid div:nth-child(4) {
+  grid-column: auto / span 6;
+}
+.grid div:nth-child(5) {
+  grid-column: auto / span 12;
+}
+.grid div:nth-child(6) {
+  grid-column: auto / span 12;
+}
