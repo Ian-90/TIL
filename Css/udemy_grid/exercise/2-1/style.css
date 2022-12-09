@@ -1,0 +1,35 @@
+body {
+  margin: 40px auto;
+  max-width: 980px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 64px 400px 240px;
+  grid-gap: 8px 8px;
+}
+
+.header {
+  background: #232930;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 3;
+}
+
+.main {
+  background: #b8bcc2;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 2;
+}
+
+.sidebar {
+  background: #848b91;
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 1;
+}
+
+.container div:nth-child(4) {
+  background: #4c4a4f;
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 3;
+}
