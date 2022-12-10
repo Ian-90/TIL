@@ -1,0 +1,17 @@
+body {
+  margin: 40px auto;
+}
+
+.container {
+  display: grid;
+  /* width: 500px; */
+  width: 540px;
+  /* grid-template: 100px 100px / repeat(auto-fill, minmax(100px, 200px)); */
+  /* grid-template: 100px 100px / repeat(auto-fill, minmax(100px, 1fr)); */
+  grid-template: 100px 100px / repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 10px;
+}
+
+.container div {
+  background: #acb3bf;
+}

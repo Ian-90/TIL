@@ -1,0 +1,14 @@
+body {
+  margin: 40px auto;
+  max-width: 980px;
+}
+
+.container {
+  display: grid;
+  grid-template: repeat(12, minmax(36px, 60px)) / repeat(6, minmax(40px, 100px));
+  grid-gap: 8px 8px;
+}
+
+.container div {
+  background: #acb3bf;
+}
