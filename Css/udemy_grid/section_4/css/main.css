@@ -1,0 +1,25 @@
+/* Put your code here */
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template: 150px 150px / 200px 200px 200px;
+  border: 1px solid #fff;
+  padding: 10px;
+  height: 400px;
+  justify-content: center;
+  align-content: center;
+}
+
+.grid div:nth-child(1) {
+  justify-self: start;
+}
+
+.grid div:nth-child(3) {
+  justify-self: end;
+  align-self: end;
+}
+
+.grid div:nth-child(5) {
+  justify-self: center;
+  align-self: start;
+}
