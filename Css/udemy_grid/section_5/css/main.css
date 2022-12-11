@@ -1,0 +1,17 @@
+/* Put your code here */
+.grid {
+  display: grid;
+  grid: 150px 150px / auto-flow 150px;
+  /* equivalent to
+  grid-auto-flow: column;
+  grid-template-columns: none;
+  grid-auto-columns: 150px;
+  grid-template-rows: 150px 150px;
+  grid-auto-rows: auto;
+  */
+  grid-gap: 10px;
+}
+
+.grid div:nth-child(2) {
+  grid-column: 1 / span 3;
+}
