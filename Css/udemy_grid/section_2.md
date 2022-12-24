@@ -67,7 +67,7 @@
 ## 6. 거터 정의하기
 * grid-row-gap - 그리드 아이템들 사이의 행 간격
 * grid-column-gap - 그리드 아이템들 사이의 열 간격
-* grid-gap - 그리으 아이템들 사이의 행과 열 간격 단축 명령어
+* grid-gap - 그리드 아이템들 사이의 행과 열 간격 단축 명령어
   ```css
   .container {
     display: grid;
