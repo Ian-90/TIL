@@ -1,0 +1,17 @@
+.container {
+  height: 400px;
+  border: 1px solid black;
+  display: grid;
+  grid-template: repeat(2, 100px) / repeat(3, 300px);
+  grid-gap: 10px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: end;
+}
+
+.container div {
+  background: #acb3bf;
+  color: #fff;
+  padding: 12px 24px;
+}
