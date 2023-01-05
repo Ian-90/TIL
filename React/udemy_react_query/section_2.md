@@ -9,7 +9,7 @@
 
 ### 2. Pagination과 Pre-fetch
 * pagination으로 쿼리를 부르면 캐시가 없기 때문에, 페이지 이동마다 로딩이 뜸. 이것을 개선하기 위하여 pre-fetching을 사용. 꼭 pagination이 아니더라도 다음에 유저가 클릭할 확률이 높은것들은 prefetching을 사용하는 것이 더 좋다
-* prefetching의 목적은 캐시된 데이터를 표시하면서, 백그라운드에서 데이터의 업데이트 여부를 서버에서 확인하는 것.
+* prefetching의 목적은 데이터를 캐시에 추가하여, 캐시된 데이터를 표시하면서, 백그라운드에서 데이터의 업데이트 여부를 서버에서 확인하는 것.
 
 ### 3. isLoading vs isFetching
 * isFetching
@@ -21,3 +21,6 @@
 
 ### 4. mutation
 * 서버에 데이터를 업데이트하도록 네트워크 호출을 실시
+* mutate 함수를 반환하며, 서버를 호출할 때 사용
+* 데이터를 저장하지 않으므로, 쿼리 키는 필요 없음
+* isLoading만 존재
