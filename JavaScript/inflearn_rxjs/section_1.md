@@ -5,10 +5,26 @@
   * 선언형 프로그래밍
 
 ### 1.2 ReactiveX의 세 요소
+```js
+const { range } = rxjs
+const { filter, take, map, toArrary } =  rxjs.operators
+
+range(1, 20) // Observable
+  .pipe(
+    // Operator
+    filter(n => n % 2 === 0),
+    take(5),
+    map(n => Math.pow(n, 2)),
+    toArray(),
+    map(arr => arr.join(', ))
+  )
+  // Observer
+  .subscribe(console.log)
+```
 1. Observable - 관찰될 수 있는 일련의 값들을 발행
   *  Stream - 연속적으로 발행되어 나온 값들
 2. Operator - 순수함수
-3. Observer - 파이브만 쳐다보며 값을 기다리다가 값이 나오면 최종작업을 실행 
+3. Observer - 파이프만 쳐다보며 값을 기다리다가 값이 나오면 최종작업을 실행 
 
 ### 1.3 Reactive X를 왜 사용하는가
 * 평면적인 배열, 시간의 흐름, 사용자의 동작, 네트워크 요청의 결과까지 전부 스트림으로 만들어서 파이프라인으로 흘려보내 처리하기 때문
@@ -94,7 +110,7 @@ const scroll$ = merge(
   fromEvent(document, 'mousewheel'),
   fromEvent(document, 'wheel'),
 ).pipe(
-  throttleTiem(1000),
+  throttleTime(1000),
   map(s => s.deltaY > 0 ? 1 : -1)
 )
 
