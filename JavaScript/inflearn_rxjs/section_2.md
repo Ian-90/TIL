@@ -50,6 +50,7 @@ obs$.subscribe(result => console.log(result.response))
 const { Observable } = rxjs
 
 const obs$ = new Observable(subscriber => {
+  // next 함수 - 발행되는 값으로 subscribe의 콜백 함수를 실행
   subscriber.next(1)
   subscriber.next(2)
   subscriber.next(3)
@@ -96,11 +97,12 @@ const { from } = rxjs
 // 옵저버블을 표현할 때 끝에 $을 붙이는게 reactiveX 프로그래밍을 하는사람들 사이의 많이 쓰이는 컨벤션
 const observable$ = from([1, 2, 3, 4, 5])
 
-// 구독자 생성
+// 구독자 생성 - next, error 또는 next만 있어도 된다.
 const observer = {
-  // 구독자가 하는 일 들
+  // 구독자가 하는 일 들, stream의 값을들 하나하나 처리
   next: console.log,
   error: err => console.error('발행중 오류', err),
+  // 값을 다 발행한 뒤에는 complete를 실행하여 메모리 해제
   complete: () => console.log('발행물 완결'),
 }
 
@@ -155,33 +157,86 @@ obs$.subscribe(
 )
 ```
 
-* 구독 해제하기 - 여러 구독자가 있을 때, 특정 구독자를 해제할 떄 사용한다
+* 구독 해제하기 - 하나의 옵저버블에 여러 구독자가 있을 때, 특정 구독자를 해제할 때 사용한다
 ```js
 const { interval } = rxjs
 
 const obs$ = interval(1000)
 const subscription = obs$.subscribe(console.log)
-
+// 특정 구독자 해제
 setTimeout(_ => subscription.unsubscribe(), 5500)
+// 다시 시작
+setTimeout(_ => obs$.subscribe(console.log), 7500)
 ```
 
 ## 3. Operator 사용해보기
 ### 3.1 Creation operator
-* Observable을 생성
+* Observable을 생성하는 연산자들
   * of, from, range, fromEvent, timeout, interval, ...
 * rxjs에서 로드
 
 ### 3.2 Pipable operator
-* Observable의 데이터를 pure function으로 가공
+* Observable의 데이터를 **pure function**(부작용을 일으키지 않는 함수. 현존하는 데이터를 수정하지 않음)으로 가공
 * rxjs.operators에서 로드(map, filter, ...)
 * pipe 함수에 하나 이상 넣어 연결
+* pipe에는 **하나 이상**의 operator들이 쉼표로 구분되어 들어갈 수 있음
 * [참고영상](https://www.youtube.com/watch?v=jVG5jvOzu9Y)
+  ```js
+  const { range } = rxjs
+
+  const { filter, map } = rxjs.operators
+  const observable$ = range(1, 10)
+
+  const observer = {
+    next: x => console.log(x + ' 발행'),
+    error: err => console.error('발행중 오류', err),
+    complete: () => console.log('발행물 완결'),
+  }
+
+  observable$.pipe(
+    // 순수 함수
+    filter(x => x % 2 === 0),
+    map(x => x * x)
+  ).subscribe(observer)
+  ```
+
+* 시간, 이벤트에 의한 발행물에 적용
+  ```js
+  // 시간
+  const { interval } = rxjs
+
+  const { tap, filter, map } = rxjs.operators
+  const observable$ = interval(1000) 
+
+  // ... observer 정의
+
+  observable$.pipe(
+    // tap - 파이프를 거칠 때 원하는 동작을 미리 한번 실행하는 함수
+    tap(console.log),
+    filter(x => x % 2 === 0),
+    map(x => x * x)
+  ).subscribe(observer)
+
+  // 이벤트
+  const { fromEvent } = rxjs
+
+  const { map } = rxjs.operators
+  const observable$ = fromEvent(document, 'click') 
+
+  // ... observer 정의
+
+  observable$.pipe(
+    map(e => e.x + ' ' + e.y),
+  ).subscribe(observer)
+  ```
 
 ### 3.3 마블 다이어그램 읽기
 ![마블 다이어 그램](./assets/marble-diagram.png)
+  * 시간의 흐름(옵저버블의 흐름)에 따라 원이 찍힘(값을 발행)
 
 ## 4. 내맘대로 발행하는 Subject
 ### 4.1 코드로 보는 Subject
+* 값을 발행되는 시점을 특정하게 셋팅할 경우이거나 특정 프로그램의 상태를 변수 대신 저장하는 경우 사용
 ```js
 const { Subject } = rxjs
 const subject = new Subject()
@@ -253,6 +308,12 @@ const subject = new Subject()
 const obs$ = interval(1000)
 
 obs$.subscribe(subject)
+/*
+위와 동일한 코드
+obs$.subscribe(x => {
+  subject.next(x)
+})
+*/
 
 subject.subscribe(x => console.log('바로구독: ' + x))
 setTimeout(_ => {
@@ -305,7 +366,7 @@ subject.next(6)
 subject.next(7)
 ```
 
-* AsyncSubject - Complete 후의 마지막 값만 발행
+* AsyncSubject - Complete 후의 마지막 값만 모든 구독자에게 발행
 ```js
 const { AsyncSubject } = rxjs
 const subject = new AsyncSubject()
