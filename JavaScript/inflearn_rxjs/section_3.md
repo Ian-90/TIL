@@ -24,7 +24,7 @@ const obs$ = from([
 obs$.pipe(first()).subscribe(x => console.log('first: ' + x))
 obs$.pipe(last()).subscribe(x => console.log('last: ' + x))
 obs$.pipe(elementAt(5)).subscribe(x => console.log('elementAt: ' + x))
-obs$.pipe(distinct()).subscribe(x => console.log('distinct: ' + x))
+obs$.pipe(distinct()).subscribe(x => console.log('distinct: ' + x)) // 중복된 값을 제거
 obs$.pipe(
     filter(x => x % 2 === 1)
 ).subscribe(x => console.log('filter: ' + x))
@@ -43,7 +43,7 @@ obs$.pipe(
 
 // 한 번 이상 나온 홀수들의 갯수, 합
 obs$.pipe(
-    distnc(),
+    distinct(),
     filter(x => x % 2 === 1),
     count(),
     reduce((acc, x) => acc + x, 0)
@@ -67,6 +67,7 @@ from([
     tap(x => console.log('중복 제거 후: ' + x)),
 ).subscribe(x => console.log('발행물: ' + x))
 ```
+
 ## 2. Transformation 연산자들
 * 파이프라인을 통과하는 각 값들을 내가 원하는 일정방식으로 변경해서 내보내는 연산자
 
@@ -75,14 +76,14 @@ from([
 ```js
 const { of } = rxjs
 const { map } = rxjs.operators
-
+// 단순한 형태
 of(1, 2, 3, 4, 5).pipe(
     map(x => x * x)
 ).subscribe(console.log)
 
 const { from } = rxjs
 const { map } = rxjs.operators
-
+// 복잡한 형태
 from([
     { name: 'apple', price: 1200 },
     { name: 'carrot', price: 800 },
@@ -203,7 +204,7 @@ range(1, 20).pipe(
 ).subscribe(console.log)
 
 interval(1000).pipe(
-    take(5)
+    take(5) // 특정 스트림의 COMPLETE 시점
 ).subscribe(
     console.log,
     err => console.error(err),
@@ -370,7 +371,7 @@ fromEvent(document, 'click').pipe(
 )
 ```
 
-* skipLast - 뒤에서부터 N개 건너뛰기
+* skipLast - 뒤에서부터 N개 건너뛰기. takeLast와는 조금 다름
 ```js
 const { range, interval, fromEvent } = rxjs
 const { skipLast, pluck } = rxjs.operators
