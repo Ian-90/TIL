@@ -479,7 +479,7 @@ const { timestamp, pluck, map } = rxjs.operators
 
 fromEvent(document, 'click').pipe(
     pluck('x'),
-    timestamp()
+    timestamp() // 발행이 된 시점
 ).subscribe(console.log)
 
 fromEvent(document, 'click').pipe(
@@ -499,7 +499,7 @@ const { timeInterval, pluck } = rxjs.operators
 
 fromEvent(document, 'click').pipe(
     pluck('x'),
-    timeInterval()
+    timeInterval() // 이전 클릭으로 부터 얼마나 시간이 지났는지
 ).subscribe(console.log)
 
 interval(1000).pipe(
