@@ -33,3 +33,40 @@
 
 ### 5. _app.js
 * 모든 파일에 적용할 레이아웃이나 설정이 있다면 여기에 추가
+
+### 6. 페이지 사전 렌더링 작동 방식
+* Page Pre-Rendering
+  * req -> /some-route -> return pre rendered page -> hydrate withe react code once loaded -> page / App is interactive
+
+* Next.js의 Pre-rendering
+  * Static Generation
+    * 사전 렌더링되는 시점은 build할 때 생성
+    * 기본적으로 배포 후 사전 렌더링되는 페이지는 변경되지 않는다. **데이터 변경시 재배포 해야된다**
+    * 데이터를 가져와서 추가해야 한다면, 페이지 컴포넌트에서 `getStaticProps` 함수를 이용
+      ```js
+      // page.js
+      export async function getStaticProps() {
+        ...
+        return {
+          props: {
+            ...
+          },
+          revalidate: 1,
+        }
+      }
+      ```
+      * 컴포넌트를 호출하기 전에 이 함수를 호출
+      * 페이지에서 필요한 props를 준비
+      * 클라이언트 측에서 절대 실행되지 않으며, 서버에서만 돌아가는 코드(파일 시스템 접근, 데이터베이스 연결, api fetch 등등...) 실행 가능
+      * revalidate 옵션을 사용하면 페이지를 몇초 간격으로 생성하여 페이지를 교체. 이 옵션을 이용하면 재배포할 필요가 없음
+    * `getStaticPaths`
+      * 빌드시 동적 페이지에 대한 모든 페이지를 생성해야 하기 때문에 사용
+      * 동적인 세그먼트가 있을 때 사용
+
+  * Server-side Rendering
+    * 요청이 들어올 때 마다 페이지를 재생성
+
+### 7. Vercel 배포
+1. repository connect and import
+2. 환경변수 셋팅
+3. deploy
