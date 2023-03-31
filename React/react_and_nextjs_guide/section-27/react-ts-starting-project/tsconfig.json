@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    // 작성한 코드를 어떤 자바스크립트 버전으로 변환할 건지 결정
+    "target": "es5",
+    // 어떤 타입이 타입스크립트에서 기본으로 지원되는지 결정
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    // js 파일 포함 여부
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // 가장 엄격한 설정
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    // JSX 코드를 지원할 건지, 결과물로 어떤 코드를 생성할 건지 결정
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
+}

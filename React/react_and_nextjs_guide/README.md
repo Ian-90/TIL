@@ -3,4 +3,5 @@
 # 목차
 1. [Next.js 소개](./section_22.md)
 2. [리액트 앱 테스트(단위테스트)](./section_26.md)
-3. [선택: 리액트 훅 소개](./section_28.md)
+3. [리액트 + TypeScript](./section_27.md)
+4. [선택: 리액트 훅 소개](./section_28.md)
