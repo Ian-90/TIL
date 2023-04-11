@@ -2,3 +2,4 @@
 
 # 목차
 1. [소개](./section_1.md)
+2. [간단한 앱: Color Button](./section_2.md)
