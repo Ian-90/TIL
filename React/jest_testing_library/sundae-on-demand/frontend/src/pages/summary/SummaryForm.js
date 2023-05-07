@@ -5,8 +5,13 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import { useState } from "react";
 
 
-const SummaryForm = () => {
+const SummaryForm = ({ setOrderPhase }) => {
   const [checked, setChecked] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setOrderPhase('completed')
+  }
   const popover = (
     <Popover id="test">
       <Popover.Body>No ice cream will actually be delivered</Popover.Body>
@@ -21,7 +26,7 @@ const SummaryForm = () => {
     </span>
   );
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Form.Group controlId="terms-and-conditions">
         <Form.Check
           type="checkbox"
