@@ -1,6 +1,6 @@
 import { rest } from "msw";
 
-const sleep = (ms) =>
+export const sleep = (ms) =>
   new Promise((resolve, reject) => {
     setTimeout(resolve, ms);
   });
