@@ -179,3 +179,83 @@
     * themes/
     * abstracts/
     * vendors/
+
+# 2. Sass
+## 2.1 Variable and Nesting Selector
+```scss
+$color-primary: #f9ed69;
+
+div {
+  background-color: $color-primary;
+
+  button {
+    display: block;
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
+```
+* Variable - `$변수명: 값`
+* Nesting Selector - {} 내부에 selector 선언
+
+## 2.2 Mixins, Extends and Functions
+* Mixins
+  ```scss
+  @mixin clearfix {
+    &::after {
+      content: '';
+      clear: both;
+      display: table;
+    }
+  }
+
+  @mixin style-link-text($textColor) {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $textColor;
+  }
+
+  nav {
+    @include clearfix;
+
+    a {
+      @include style-link-text($color-text-dark);
+    }
+  }
+  ```
+  * 여러 줄의 코드로 된 거대한 변수
+
+* Functions
+  ```scss
+  @function divide($a, $b) {
+    @return $a / $b
+  }
+
+  div {
+    margin: divide(60, 2) * 1px; // 30px
+  }
+  ```
+
+* extend
+  ```scss
+  %btn-placeholder {
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    width: $width-button;
+    @include style-link-text($color-text-light);
+  }
+
+  .btn-main {
+    &:link {
+      @extend %btn-placeholder;
+    }
+  }
+
+  .btn-hot {
+    &:link {
+      @extend %btn-placeholder;
+    }
+  }
+  ```
