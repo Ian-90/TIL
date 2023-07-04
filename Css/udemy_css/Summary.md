@@ -259,3 +259,20 @@ div {
     }
   }
   ```
+
+## 3. Responsive Design Principles
+1. FLUID LAYOUTS
+  * To allow webpage to adapt to the current viewport width(or even height)
+  * Use %(or vh / vw) unit instead of px ofr elements that should adapt to viewport(usually layout)
+  * Use max-width instead of width
+
+2. RESPONSIVE UNITS
+  * Use rem unit instead of px for most lengths
+  * To make it easy to scale the entire layout down(or up) automatically
+
+3. FLEXIBLE IMAGES
+  * By default, images don't scale automatically as we change the viewport, so we need to fix that
+  * Always use % for image dimensions,togehter with the max-width property
+
+4. MEDIA QUERIES
+  * To change CSS styles on certain viewport widths(called breakpoints)
