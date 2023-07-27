@@ -276,3 +276,32 @@ div {
 
 4. MEDIA QUERIES
   * To change CSS styles on certain viewport widths(called breakpoints)
+
+## 4. Advanced Responsive Design
+### 4.1 Mobile First vs Desktop First, Break Point
+* Desktop First
+  * 큰 화면의 CSS작성 -> 작은 화면에 맞게 미디어 쿼리 작성
+  * 전통적인 방식이면서 배우기 쉬움
+  * 미디어 쿼리 max-width를 이용
+
+* Mobile First
+  * 작은 화면의 CSS 작성 -> 큰 화면에 맞게 미디어 쿼리 작성
+  * 미디어 쿼리 min-width를 이용
+  * 장점
+    * 웹이나 앱으로 인터페이스를 좁힘
+    * 작은 화면에 디자인 제약 조건이 있어서 콘텐츠를 우선
+  * 단점
+    * 데스크탑 버전에서 여백이 많아서 공허함을 느낌
+    * 데스크탑 버전에서는 공간이 넓기 때문에 디자인에 대한 제약이 없음
+    * 클라이언트들은 데스크탑 버전의 프로토타입을 보기를 원함
+    * 특정 비즈니스 영역에서는 모바일 보다는 데스크탑을 많이 사용할 수 있다
+
+* Break Point 결정 방법
+  * BAD
+    * 특정 인기장치에 맞게 최적화된 브레이크 포인트 설정
+  * GOOD
+    * 전체 인터넷에서 가장 많이 사용된 장치의 넓이들로 브레이크 포인트 설정
+  * PERFECT
+    * 모든 장치를 무시하고 콘텐츠와 디자인만 보는 방식
+    * 화면 넓이를 늘리거나 줄일 때 디자인이 깨지는 순간을 브레이크 포인트로 설정
+    * 매우 어려움
