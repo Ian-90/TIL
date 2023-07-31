@@ -316,3 +316,23 @@ div {
     * 크기는 상관없이 픽셀 밀도(1센치 또는 1인치에서 발견되는 픽셀의 양)가 중요. 저화질 또는 고화질 제공
   * art direction
     * 더 작은 해상도로 다른 스크린 크기와 완전히 다른 이미지로 구현
+
+### 4.3 CSS Build Process
+```json
+{
+  ...,
+  "scripts": {
+    ...,
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+    "prefix:css": "postcss -use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed"
+  }
+}
+```
+1. main.sass
+2. style.comp.css(compilation)
+3. style.concat.css(concatenation)
+4. style.prefix.css(prefixing)
+5. style.compressing.css
