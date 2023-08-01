@@ -336,3 +336,84 @@ div {
 3. style.concat.css(concatenation)
 4. style.prefix.css(prefixing)
 5. style.compressing.css
+
+## 5. FlexBox Master
+### 5.1 FlexBox
+![flex concept](https://developer.mozilla.org/ko/docs/Learn/CSS/CSS_layout/Flexbox/flex_terms.png)
+* container
+  * flex-direction - 주축(main axis)의 방향을 지정
+  * flex-wrap - 아이템이 새 라인에 wrapping해야 할 경우, container의 공간이 충분하지 않을 경우 정의
+  * justify-content - flex item이 중심축(main axis)을 따라 어떻게 정렬할지 정의
+  * align-item - 가로축(cross axis)을 따라 정렬하도록 정의
+  * align-content - row가 1개 이상일 때만 적용되는 것
+
+* item
+  * align-self - align-item과 비슷하지만 1개의 item에만 적용
+  * order - container 안에 item이 나타나야하는 순서
+  * flex-grow - container 안에서 item에 할당 가능한 공간의 정도 
+  * flex-shrink - item이 container 공간보다 클 때, 공간을 축소하는 정도
+  * flex-basis - 기본 폭
+
+### 5.2 Basic to Flex Container, Item
+```html
+<div class="container">
+  <div class="item">1</div>
+  <div class="item i2">2</div>
+  <div class="item i3">3</div>
+  <div class="item i4">4</div>
+  <div class="item">5</div>
+  <div class="item">6</div>
+  <div class="item">7</div>
+  <div class="item">8</div>
+  <div class="item">9</div>
+  <div class="item">10</div>
+</div>
+```
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #ccc;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 30px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}
+
+.i2 {
+  height: 200px;
+  /*
+  flex-basis: 300px;
+  flex-shrink: 0;
+  */
+  flex: 0 0 300px;
+}
+
+.i3 {
+  order: 1;
+  flex: 1;
+}
+
+.i4 {
+  font-size: 90px;
+  align-self: flex-end;
+  order: -1;
+}
+```
