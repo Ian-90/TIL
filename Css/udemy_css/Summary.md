@@ -417,3 +417,115 @@ div {
   order: -1;
 }
 ```
+
+## 6. Grid Layouts
+### 6.1 Grid
+* container
+  * grid-template-rows
+  * grid-template-columns
+  * grid-template-ares
+
+  * grid-row-gap
+  * grid-column-gap
+
+  * justify-items
+  * align-items
+  * justify-content
+  * align-content
+
+  * grid-auto-rows
+  * grid-auto-columns
+  * grid-auto-flow
+
+* item
+  * grid-row-start
+  * grid-row-end
+  * grid-column-start
+  * grid-column-end
+
+  * justify-self 
+  * align-self 
+
+  * order
+
+### 6.2 grid layout example
+* positioning, spanning grid item
+  ```html
+  <div class="container">
+    <div class="item item--1">1: Orange</div>
+    <div class="item item--2">2: Green</div>
+    <div class="item item--3">3: Violet</div>
+    <div class="item item--4">4: Pink</div>
+    <div class="item item--5">5: Blue</div>
+    <div class="item item--6">6: Brown</div>
+  </div>
+  ```
+
+  ```scss
+  .container {
+    background-color: #eee;
+    width: 1000px;
+    margin: 30px auto;
+
+    display: grid;
+    // grid-template-rows: 150px 150px;
+    grid-template-rows: repeat(2, 150px);
+    // grid-template-columns: repeat(2, 150px) 1fr;
+    // grid-template-columns: 50% 1fr 2fr; 
+    grid-template-columns: repeat(3, 1fr); 
+
+    // grid-row-gap: 30px;
+    // grid-column-gap: 30px;
+    grid-gap: 30px;
+  }
+
+  .item {
+    padding: 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: white;
+
+    &--1 {
+      background-color: orangered;
+      // grid-row-start: 2;
+      // grid-row-end: 3;
+      // grid-column-start: 2;
+      // grid-column-end: 3;
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+      z-index: 10;
+    }
+    &--2 {
+      background-color: yellowgreen;
+      // grid-column: 2 / span 2;
+      grid-column: 1 / -1;
+    }
+    &--3 {
+      background-color: blueviolet;
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+    }
+    &--4 {
+      background-color: palevioletred;
+    }
+    &--5 {
+      background-color: royalblue;
+      // grid-row: 1 / 2;
+      // grid-column: 3 / 4;
+      grid-area: 1 / 3 / 3 / 4;
+    }
+    &--6 {
+      background-color: goldenrod;
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+    }
+  }
+  ```
+* [challenge](https://stackblitz.com/edit/vitejs-vite-xnc39s?file=styles.scss)
+* [naming grid lines](https://stackblitz.com/edit/vitejs-vite-z1qhfq?file=styles.scss)
+* [naming grid areas](https://stackblitz.com/edit/vitejs-vite-xaprt5?file=styles.scss)
+* [implicit grid vs explicit grid](https://stackblitz.com/edit/vitejs-vite-588j17?file=styles.scss)
+* [aligning grid items](https://stackblitz.com/edit/vitejs-vite-ogssvm?file=styles.scss)
+* [aligning tracks](https://stackblitz.com/edit/vitejs-vite-hvnlf5?file=styles.scss)
+* [min-content, max-content, minmax function](https://stackblitz.com/edit/vitejs-vite-zfjqjr?file=main.js)
+* [auto-fit and auto-fill](https://stackblitz.com/edit/vitejs-vite-cm2gcf?file=styles.scss)
